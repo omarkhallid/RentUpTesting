@@ -22,10 +22,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class LoginTest {
-
-   
-    
+public class LoginTest {   
     public String getCellData(int row, int col) throws Exception {
         XSSFSheet ExcelWSheet;
         XSSFWorkbook ExcelWBook;
@@ -47,18 +44,13 @@ public class LoginTest {
         }
     }
     
-    public WebDriver login(WebDriver driver) throws Exception{
-        String email = getCellData(1, 0);
-    	String password = getCellData(1, 1);
-
-        // Set Firefox Web Driver
-        System.setProperty("webdriver.gecko.driver", new java.io.File(".").getCanonicalPath() + "\\" + "geckodriver.exe");
+    public WebDriver login(WebDriver driver , String email ,String password) throws Exception{
+        
     	
 
         // Puts an Implicit wait, Will wait for 10 seconds before throwing exception
         //driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-        driver.manage().window().setSize(new Dimension(1050, 800));
-        driver.manage().window().setPosition(new Point(900, 0));
+        driver.manage().window().maximize();
         // Launch website
         driver.navigate().to("http://rentup.co/");
         // Maximize the browser
@@ -93,11 +85,40 @@ public class LoginTest {
     }
     
     @Test
+    public void FirefoxInvalidTest() throws Exception {
+
+    	String username = getCellData(2, 0);
+    	String password = getCellData(2, 1);
+
+        // Set Firefox Web Driver
+        System.setProperty("webdriver.gecko.driver", new java.io.File(".").getCanonicalPath() + "\\" + "geckodriver.exe");
+    	WebDriver driver = new FirefoxDriver();
+        
+        driver = login(driver,username,password);
+      
+        try {
+            // Check whether a certain element appears which confirms that the login was not successful
+            assertEquals(false, driver.findElement(By.xpath("/html/body/div/div/div/header/nav/div/div[4]/ul/li[1]/div/button/div")).isDisplayed()); 
+        } catch(NoSuchElementException e){
+            assertTrue(true);
+        }
+        Thread.sleep(2000);
+        
+        // Close the web driver
+        driver.close();
+    }
+    
+    @Test
     public void FirefoxLoginTest() throws Exception {
+        String email = getCellData(1, 0);
+    	String password = getCellData(1, 1);
+
+        // Set Firefox Web Driver
+        System.setProperty("webdriver.gecko.driver", new java.io.File(".").getCanonicalPath() + "\\" + "geckodriver.exe");
         
         WebDriver driver = new FirefoxDriver();
         
-        driver = login(driver);
+        driver = login(driver,email,password);
         
     	try {
             // Check whether a certain element appears which confirms that the login was not successful
@@ -110,5 +131,102 @@ public class LoginTest {
         // Close the web driver
         driver.close();
     }
+    @Test
+    public void ChromeInvalidTest() throws Exception {
 
+    	String username = getCellData(2, 0);
+    	String password = getCellData(2, 1);
+
+        // Set Firefox Web Driver
+       System.setProperty("webdriver.chrome.driver", new java.io.File(".").getCanonicalPath()+"\\" + "chromedriver.exe");
+    	WebDriver driver = new ChromeDriver();
+        
+        driver = login(driver,username,password);
+      
+        try {
+            // Check whether a certain element appears which confirms that the login was not successful
+            assertEquals(false, driver.findElement(By.xpath("/html/body/div/div/div/header/nav/div/div[4]/ul/li[1]/div/button/div")).isDisplayed()); 
+        } catch(NoSuchElementException e){
+            assertTrue(true);
+        }
+        Thread.sleep(2000);
+        
+        // Close the web driver
+        driver.close();
+    }
+
+    @Test
+    public void ChromeValidTest() throws Exception {
+
+    String email = getCellData(1, 0);
+    	String password = getCellData(1, 1);
+
+        // Set Firefox Web Driver
+        System.setProperty("webdriver.chrome.driver", new java.io.File(".").getCanonicalPath()+"\\" + "chromedriver.exe");
+    	WebDriver driver = new ChromeDriver();
+        
+        driver = login(driver,email,password);
+        
+    	try {
+            // Check whether a certain element appears which confirms that the login was not successful
+            assertEquals(false, driver.findElement(By.xpath("/html/body/div/div/div/header/nav/div/div[4]/ul/li[1]/div/button/div")).isDisplayed()); 
+        } catch(NoSuchElementException e){
+            assertTrue(true);
+        }
+        Thread.sleep(2000);
+        
+        // Close the web driver
+        driver.close();
+
+    }
+
+    @Test
+    public void EdgeInvalidTest() throws Exception {
+
+    	String username = getCellData(2, 0);
+    	String password = getCellData(2, 1);
+
+        // Set Firefox Web Driver
+        
+        System.setProperty("webdriver.edge.driver", new java.io.File(".").getCanonicalPath()+"\\" + "msedgedriver.exe");
+    	WebDriver driver = new EdgeDriver();
+        driver = login(driver,username,password);
+      
+        try {
+            // Check whether a certain element appears which confirms that the login was not successful
+            assertEquals(false, driver.findElement(By.xpath("/html/body/div/div/div/header/nav/div/div[4]/ul/li[1]/div/button/div")).isDisplayed()); 
+        } catch(NoSuchElementException e){
+            assertTrue(true);
+        }
+        Thread.sleep(2000);
+        
+        // Close the web driver
+        driver.close();
+    }
+
+    @Test
+    public void EdgeValidTest() throws Exception {
+
+    String email = getCellData(1, 0);
+    	String password = getCellData(1, 1);
+
+        // Set Firefox Web Driver
+        System.setProperty("webdriver.edge.driver", new java.io.File(".").getCanonicalPath()+"\\" + "msedgedriver.exe");
+    	WebDriver driver = new EdgeDriver();
+       
+        
+        driver = login(driver,email,password);
+        
+    	try {
+            // Check whether a certain element appears which confirms that the login was not successful
+            assertEquals(false, driver.findElement(By.xpath("/html/body/div/div/div/header/nav/div/div[4]/ul/li[1]/div/button/div")).isDisplayed()); 
+        } catch(NoSuchElementException e){
+            assertTrue(true);
+        }
+        Thread.sleep(2000);
+        
+        // Close the web driver
+        driver.close();
+
+    }
 }
