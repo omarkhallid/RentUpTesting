@@ -1,3 +1,4 @@
+<<<<<<< OURS
 package demo;
 
 import static org.junit.Assert.*;
@@ -20,6 +21,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
+//test
+
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class LoginTest {
