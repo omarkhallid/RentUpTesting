@@ -1,0 +1,762 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="6" failures="0" hostname="OmarsComputer" name="demo.LoginTest" skipped="0" tests="6" time="50.121" timestamp="2022-08-03T12:42:08">
+  <properties>
+    <property name="libs.spring-framework300.classpath" value="C:\Program Files\NetBeans-14\netbeans\platform\modules\org-apache-commons-logging.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\cglib-2.2.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-3.0\spring-aop-3.2.18.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-3.0\spring-aspects-3.2.18.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-3.0\spring-beans-3.2.18.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-3.0\spring-context-3.2.18.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-3.0\spring-context-support-3.2.18.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-3.0\spring-core-3.2.18.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-3.0\spring-expression-3.2.18.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-3.0\spring-instrument-3.2.18.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-3.0\spring-instrument-tomcat-3.2.18.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-3.0\spring-jdbc-3.2.18.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-3.0\spring-jms-3.2.18.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-3.0\spring-orm-3.2.18.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-3.0\spring-oxm-3.2.18.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-3.0\spring-struts-3.2.18.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-3.0\spring-test-3.2.18.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-3.0\spring-tx-3.2.18.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-3.0\spring-web-3.2.18.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-3.0\spring-webmvc-3.2.18.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-3.0\spring-webmvc-portlet-3.2.18.RELEASE.jar" />
+    <property name="javac.test.classpath" value="lib/commons-codec-1.9.jar:lib/commons-logging-1.1.3.jar:lib/junit-4.12.jar:lib/selenium-server-standalone-3.5.0.jar:lib/log4j-1.2.17.jar:lib/poi-3.13-20150929.jar:lib/poi-examples-3.13-20150929.jar:lib/poi-excelant-3.13-20150929.jar:lib/poi-ooxml-3.13-20150929.jar:lib/poi-ooxml-schemas-3.13-20150929.jar:lib/poi-scratchpad-3.13-20150929.jar:lib/xmlbeans-2.6.0.jar:build/classes:C:\Program Files\NetBeans-14\netbeans\platform\modules\ext\junit-4.13.2.jar:C:\Program Files\NetBeans-14\netbeans\platform\modules\ext\hamcrest-core-1.3.jar" />
+    <property name="java.specification.version" value="17" />
+    <property name="libs.spring-framework500.classpath" value="C:\Program Files\NetBeans-14\netbeans\platform\modules\org-apache-commons-logging.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\cglib-2.2.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-5\spring-aop-5.2.9.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-5\spring-aspects-5.2.9.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-5\spring-beans-5.2.9.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-5\spring-context-5.2.9.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-5\spring-context-indexer-5.2.9.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-5\spring-context-support-5.2.9.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-5\spring-core-5.2.9.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-5\spring-expression-5.2.9.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-5\spring-instrument-5.2.9.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-5\spring-jcl-5.2.9.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-5\spring-jdbc-5.2.9.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-5\spring-jms-5.2.9.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-5\spring-messaging-5.2.9.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-5\spring-orm-5.2.9.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-5\spring-oxm-5.2.9.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-5\spring-test-5.2.9.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-5\spring-tx-5.2.9.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-5\spring-web-5.2.9.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-5\spring-webflux-5.2.9.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-5\spring-webmvc-5.2.9.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-5\spring-websocket-5.2.9.RELEASE.jar" />
+    <property name="jar.index.metainf" value="false" />
+    <property name="libs.spring-framework400.classpath" value="C:\Program Files\NetBeans-14\netbeans\platform\modules\org-apache-commons-logging.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\cglib-2.2.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-4\spring-aop-4.3.29.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-4\spring-aspects-4.3.29.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-4\spring-beans-4.3.29.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-4\spring-context-4.3.29.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-4\spring-context-support-4.3.29.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-4\spring-core-4.3.29.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-4\spring-expression-4.3.29.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-4\spring-instrument-4.3.29.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-4\spring-instrument-tomcat-4.3.29.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-4\spring-jdbc-4.3.29.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-4\spring-jms-4.3.29.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-4\spring-messaging-4.3.29.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-4\spring-orm-4.3.29.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-4\spring-oxm-4.3.29.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-4\spring-test-4.3.29.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-4\spring-tx-4.3.29.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-4\spring-web-4.3.29.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-4\spring-webmvc-4.3.29.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-4\spring-webmvc-portlet-4.3.29.RELEASE.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-4\spring-websocket-4.3.29.RELEASE.jar" />
+    <property name="libs.spring-webmvc4.0.javadoc" value="" />
+    <property name="test.binaryincludes" value="&lt;nothing&gt;" />
+    <property name="debug-transport" value="dt_shmem" />
+    <property name="libs.javaee-web-api-8.0.src" value="" />
+    <property name="java.vendor.url" value="https://java.oracle.com/" />
+    <property name="debug.modulepath" value="" />
+    <property name="libs.jsp-compilation.src" value="" />
+    <property name="libs.eclipselink.javadoc" value="C:\Program Files\NetBeans-14\netbeans\java\modules\ext\docs\jakarta.persistence-2.2.3-doc.zip" />
+    <property name="libs.JWSAntTasks.javadoc" value="" />
+    <property name="file.reference.log4j-1.2.17.jar" value="lib/log4j-1.2.17.jar" />
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17.0.1\bin" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner demo.LoginTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\Omar Fekry\Documents\NetBeansProjects\RentUp\build\test\results\TEST-demo.LoginTest.xml crashfile=C:\Users\Omar Fekry\Documents\NetBeansProjects\RentUp\build\junitvmwatcher10843875709247688699.properties propsfile=C:\Users\Omar Fekry\Documents\NetBeansProjects\RentUp\build\junit12378897908229142741.properties" />
+    <property name="jdk.debug" value="release" />
+    <property name="libs.spring-framework300.src" value="" />
+    <property name="javadoc.use" value="true" />
+    <property name="javadoc.notree" value="false" />
+    <property name="basedir" value="C:\Users\Omar Fekry\Documents\NetBeansProjects\RentUp" />
+    <property name="application.vendor" value="ZZ00FL865" />
+    <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="libs.jsf20.classpath" value="C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\jsf-2_2\javax.faces.jar" />
+    <property name="netbeans.extbrowser.manual_chrome_plugin_install" value="yes" />
+    <property name="netbeans.default_userdir_root" value="C:\Users\Omar Fekry\AppData\Roaming\NetBeans" />
+    <property name="libs.spring-framework500.javadoc" value="" />
+    <property name="libs.jsp-compilation-syscp.src" value="" />
+    <property name="jdk.home" value="C:\Program Files\Java\jdk-17.0.1" />
+    <property name="java.runtime.version" value="17.0.1+12-LTS-39" />
+    <property name="libs.eclipselink.maven-pom" value="" />
+    <property name="libs.metro.maven-pom" value="" />
+    <property name="libs.JAXB-ENDORSED.javadoc" value="" />
+    <property name="sun.java2d.noddraw" value="true" />
+    <property name="guice.disable.misplaced.annotation.check" value="true" />
+    <property name="sun.zip.disableMemoryMapping" value="true" />
+    <property name="jnidispatch.path" value="C:\Users\OMARFE~1\AppData\Local\Temp\jna--1454728702\jna1816224940500964997.dll" />
+    <property name="libs.jsf12.src" value="" />
+    <property name="libs.jsp-compilation.javadoc" value="" />
+    <property name="libs.primefaces.javadoc" value="" />
+    <property name="libs.groovy-all.maven-pom" value="" />
+    <property name="libs.restapi.src" value="" />
+    <property name="libs.junit_5.javadoc" value="C:\Program Files\NetBeans-14\netbeans\platform\docs\junit-jupiter-api-5.6.0-javadoc.jar;C:\Program Files\NetBeans-14\netbeans\platform\docs\junit-jupiter-params-5.6.0-javadoc.jar;C:\Program Files\NetBeans-14\netbeans\platform\docs\junit-jupiter-engine-5.6.0-javadoc.jar" />
+    <property name="dist.archive.excludes" value="" />
+    <property name="java.io.tmpdir" value="C:\Users\OMARFE~1\AppData\Local\Temp\" />
+    <property name="java.version" value="17.0.1" />
+    <property name="libs.jakartaee-api-8.0.javadoc" value="C:\Program Files\NetBeans-14\netbeans\enterprise\docs\jakartaee8-doc-api.jar" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="file.reference.poi-ooxml-3.13-20150929.jar" value="lib/poi-ooxml-3.13-20150929.jar" />
+    <property name="native.encoding" value="UTF-8" />
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-17.0.1\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\BellSoft\LibericaJDK-8\bin\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Microsoft\jdk-11.0.12.7-hotspot\bin;c:\windows\system32;c:\windows;c:\windows\system32\wbem;c:\windows\system32\windowspowershell\v1.0\;c:\windows\system32\openssh\;c:\windows\system32;c:\windows;c:\windows\system32\wbem;c:\windows\system32\windowspowershell\v1.0\;c:\windows\system32\openssh\;c:\program files\microsoft sql server\client sdk\odbc\170\tools\binn\;c:\program files (x86)\microsoft sql server\150\tools\binn\;c:\program files\microsoft sql server\150\tools\binn\;c:\program files\microsoft sql server\150\dts\binn\;c:\program files (x86)\microsoft sql server\150\dts\binn\;c:\program files\calibre2\;c:\windows\system32;c:\windows;c:\windows\system32\wbem;c:\windows\system32\windowspowershell\v1.0\;c:\windows\system32\openssh\;c:\program files\microsoft sql server\130\tools\binn\;c:\program files\putty\;c:\program files\git\cmd;c:\program files\nvidia corporation\nvidia nvdlisr;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\dotnet\;C:\Program Files\Cloudflare\Cloudflare WARP\;C:\Users\Omar Fekry\.poetry\bin;C:\Users\Omar Fekry\AppData\Local\Microsoft\WindowsApps;C:\Users\Omar Fekry\.dotnet\tools;C:\Users\Omar Fekry;C:\Users\Omar Fekry\.poetry\bin;C:\Program Files\WireGuard;C:\Users\Omar Fekry\AppData\Local\pypoetry\Cache\virtualenvs\wgcf-qKa5o5Qb-py3.9\Scripts\;;." />
+    <property name="libs.hamcrest.src" value="" />
+    <property name="java.vendor" value="Oracle Corporation" />
+    <property name="libs.groovy-all.src" value="" />
+    <property name="libs.testng.javadoc" value="C:\Program Files\NetBeans-14\netbeans\platform\docs\testng-6.13.1-javadoc.jar" />
+    <property name="meta.inf.dir" value="src/META-INF" />
+    <property name="compile.on.save" value="true" />
+    <property name="libs.testng.maven-pom" value="" />
+    <property name="org.openide.version" value="deprecated" />
+    <property name="run.classpath" value="lib/commons-codec-1.9.jar:lib/commons-logging-1.1.3.jar:lib/junit-4.12.jar:lib/selenium-server-standalone-3.5.0.jar:lib/log4j-1.2.17.jar:lib/poi-3.13-20150929.jar:lib/poi-examples-3.13-20150929.jar:lib/poi-excelant-3.13-20150929.jar:lib/poi-ooxml-3.13-20150929.jar:lib/poi-ooxml-schemas-3.13-20150929.jar:lib/poi-scratchpad-3.13-20150929.jar:lib/xmlbeans-2.6.0.jar:build/classes" />
+    <property name="libs.jaxb.src" value="" />
+    <property name="sun.awt.enableExtraMouseButtons" value="true" />
+    <property name="test.src.dir" value="test" />
+    <property name="org.openide.major.version" value="IDE/1" />
+    <property name="file.reference.junit-4.12.jar" value="lib/junit-4.12.jar" />
+    <property name="libs.spring-framework300.javadoc" value="" />
+    <property name="ap.proc.none.internal" value="" />
+    <property name="org.openide.specification.version" value="6.2" />
+    <property name="user.timezone" value="Africa/Cairo" />
+    <property name="jar.index" value="false" />
+    <property name="libs.jpa20-persistence.classpath" value="C:\Program Files\NetBeans-14\netbeans\java\modules\ext\eclipselink\jakarta.persistence-2.2.3.jar" />
+    <property name="libs.junit_5.classpath" value="C:\Program Files\NetBeans-14\netbeans\platform\modules\ext\junit-jupiter-api-5.6.0.jar;C:\Program Files\NetBeans-14\netbeans\platform\modules\ext\junit-jupiter-params-5.6.0.jar;C:\Program Files\NetBeans-14\netbeans\platform\modules\ext\junit-jupiter-engine-5.6.0.jar" />
+    <property name="java.vm.specification.version" value="17" />
+    <property name="libs.eclipselinkmodelgen.javadoc" value="" />
+    <property name="javadoc.noindex" value="false" />
+    <property name="javadoc.private" value="false" />
+    <property name="libs.spring-webmvc4.0.maven-pom" value="" />
+    <property name="libs.JAXB-ENDORSED.maven-pom" value="" />
+    <property name="user.home" value="C:\Users\Omar Fekry" />
+    <property name="libs.eclipselinkmodelgen.maven-pom" value="" />
+    <property name="have.sources" value="true" />
+    <property name="annotation.processing.processors.list" value="" />
+    <property name="javac.deprecation" value="false" />
+    <property name="build.generated.sources.dir" value="build/generated-sources" />
+    <property name="plugin.manager.check.updates" value="false" />
+    <property name="netbeans.autoupdate.language" value="en" />
+    <property name="libs.eclipselinkmodelgen.src" value="" />
+    <property name="build.compiler.emacs" value="true" />
+    <property name="build.classes.excludes" value="**/*.java,**/*.form" />
+    <property name="dist.jar" value="dist/SeleniumLab.jar" />
+    <property name="libs.jakartaee-web-api-9.0.classpath" value="C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\jakarta.jakartaee-web-api-9.0.0.jar" />
+    <property name="libs.spring-webmvc4.0.classpath" value="C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-4\spring-webmvc-4.3.29.RELEASE.jar" />
+    <property name="libs.javaee-endorsed-api-7.0.javadoc" value="C:\Program Files\NetBeans-14\netbeans\enterprise\docs\javaee-doc-api.jar" />
+    <property name="os.version" value="10.0" />
+    <property name="netbeans.home" value="C:\Program Files\NetBeans-14\netbeans\platform" />
+    <property name="libs.CopyLibs.javadoc" value="" />
+    <property name="debug-transport-by-os" value="dt_shmem" />
+    <property name="libs.jsf20.src" value="" />
+    <property name="libs.javaee-api-8.0.javadoc" value="C:\Program Files\NetBeans-14\netbeans\enterprise\docs\javaee-doc-api.jar" />
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+    <property name="libs.jstl.javadoc" value="C:\Program Files\NetBeans-14\netbeans\enterprise\docs\javaee-doc-api.jar" />
+    <property name="libs.javaee-endorsed-api-7.0.maven-pom" value="" />
+    <property name="libs.jaxws21.classpath" value="C:\Program Files\NetBeans-14\netbeans\java\modules\ext\jaxws22\api\jakarta.jws-api.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\jaxws22\api\jakarta.xml.soap-api.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\jaxws22\api\jakarta.xml.ws-api.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\jaxws22\FastInfoset.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\jaxws22\gmbal-api-only.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\jaxws22\ha-api.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\jaxws22\jakarta.mail.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\jaxws22\jaxws-rt.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\jaxws22\jaxws-tools.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\jaxws22\management-api.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\jaxws22\mimepull.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\jaxws22\policy.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\jaxws22\saaj-impl.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\jaxws22\stax-ex.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\jaxws22\stax2-api.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\jaxws22\streambuffer.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\jaxws22\woodstox-core.jar;C:\Program Files\NetBeans-14\netbeans\ide\modules\ext\jaxb\api\jaxb-api.jar;C:\Program Files\NetBeans-14\netbeans\ide\modules\ext\jaxb\activation.jar;C:\Program Files\NetBeans-14\netbeans\ide\modules\ext\jaxb\jaxb-impl.jar;C:\Program Files\NetBeans-14\netbeans\ide\modules\ext\jaxb\jaxb-xjc.jar" />
+    <property name="libs.restapi.classpath" value="C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\jaxrs-2.1\jakarta.ws.rs-api-2.1.6.jar" />
+    <property name="os.arch" value="amd64" />
+    <property name="build.generated.dir" value="build/generated" />
+    <property name="libs.groovy-all.javadoc" value="" />
+    <property name="libs.jakartaee-api-8.0.classpath" value="C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\jakarta.jakartaee-api-8.0.0.jar" />
+    <property name="libs.javaee-web-api-7.0.javadoc" value="C:\Program Files\NetBeans-14\netbeans\enterprise\docs\javaee-doc-api.jar" />
+    <property name="libs.javaee-endorsed-api-6.0.src" value="" />
+    <property name="libs.jsf12.maven-pom" value="" />
+    <property name="libs.javaee-endorsed-api-7.0.classpath" value="C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\javaee7-endorsed\javax.annotation-api.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\javaee7-endorsed\javax.xml.soap-api.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\javaee7-endorsed\jaxb-api-osgi.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\javaee7-endorsed\jaxws-api.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\javaee7-endorsed\jsr181-api.jar" />
+    <property name="org.netbeans.io.suspend" value="0" />
+    <property name="libs.primefaces.maven-pom" value="" />
+    <property name="ant.project.name" value="SeleniumLab" />
+    <property name="dist.javadoc.dir" value="dist/javadoc" />
+    <property name="default.javac.target" value="17" />
+    <property name="javac.fork" value="true" />
+    <property name="libs.eclipselink.classpath" value="C:\Program Files\NetBeans-14\netbeans\java\modules\ext\eclipselink\org.eclipse.persistence.core-2.7.10.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\eclipselink\org.eclipse.persistence.asm-9.2.0.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\eclipselink\org.eclipse.persistence.antlr-2.7.10.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\eclipselink\org.eclipse.persistence.jpa-2.7.10.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\eclipselink\org.eclipse.persistence.jpa.jpql-2.7.10.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\eclipselink\org.eclipse.persistence.moxy-2.7.10.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\eclipselink\jakarta.persistence-2.2.3.jar" />
+    <property name="libs.struts.classpath" value="C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\struts\antlr-2.7.2.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\struts\bsf-2.3.0.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\struts\commons-beanutils-1.8.0.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\struts\commons-chain-1.2.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\struts\commons-digester-1.8.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\struts\commons-fileupload-1.1.1.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\struts\commons-io-1.1.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\struts\commons-logging-1.0.4.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\struts\commons-validator-1.3.1.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\struts\jstl-1.0.2.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\struts\oro-2.0.8.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\struts\standard-1.0.6.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\struts\struts-core-1.3.10.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\struts\struts-el-1.3.10.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\struts\struts-extras-1.3.10.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\struts\struts-faces-1.3.10.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\struts\struts-mailreader-dao-1.3.10.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\struts\struts-scripting-1.3.10.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\struts\struts-taglib-1.3.10.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\struts\struts-tiles-1.3.10.jar" />
+    <property name="libs.PostgreSQLDriver.maven-pom" value="" />
+    <property name="libs.absolutelayout.src" value="" />
+    <property name="testng.mode" value="testng" />
+    <property name="annotation.processing.enabled.in.editor" value="false" />
+    <property name="java.vm.compressedOopsMode" value="Zero based" />
+    <property name="file.reference.poi-scratchpad-3.13-20150929.jar" value="lib/poi-scratchpad-3.13-20150929.jar" />
+    <property name="netbeans.productversion" value="Apache NetBeans IDE 14" />
+    <property name="mkdist.disabled" value="false" />
+    <property name="libs.javaee-web-api-6.0.javadoc" value="C:\Program Files\NetBeans-14\netbeans\enterprise\docs\javaee-doc-api.jar" />
+    <property name="libs.groovy-all.classpath" value="C:\Program Files\NetBeans-14\netbeans\groovy\modules\ext\groovy-3.0.8.jar;C:\Program Files\NetBeans-14\netbeans\groovy\modules\ext\groovy-ant-3.0.8.jar" />
+    <property name="libs.javaee-api-7.0.maven-pom" value="" />
+    <property name="libs.absolutelayout.javadoc" value="" />
+    <property name="file.reference.poi-excelant-3.13-20150929.jar" value="lib/poi-excelant-3.13-20150929.jar" />
+    <property name="annotation.processing.processor.options" value="" />
+    <property name="libs.jaxb.maven-pom" value="" />
+    <property name="libs.javaee-api-6.0.maven-pom" value="" />
+    <property name="dist.dir" value="dist" />
+    <property name="build.dir" value="build" />
+    <property name="libs.graaljs.maven-pom" value="" />
+    <property name="netbeans.autoupdate.variant" value="" />
+    <property name="javadoc.version" value="false" />
+    <property name="libs.metro.src" value="" />
+    <property name="libs.metro.classpath" value="C:\Program Files\NetBeans-14\netbeans\ide\modules\ext\jaxb\activation.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\metro\webservices-api.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\metro\webservices-extra-api.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\metro\webservices-extra.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\metro\webservices-rt.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\metro\webservices-tools.jar" />
+    <property name="libs.CopyLibs.classpath" value="C:\Program Files\NetBeans-14\netbeans\java\ant\extra\org-netbeans-modules-java-j2seproject-copylibstask.jar" />
+    <property name="sun.os.patch.level" value="" />
+    <property name="file.reference.poi-examples-3.13-20150929.jar" value="lib/poi-examples-3.13-20150929.jar" />
+    <property name="javac.test.processorpath" value="lib/commons-codec-1.9.jar:lib/commons-logging-1.1.3.jar:lib/junit-4.12.jar:lib/selenium-server-standalone-3.5.0.jar:lib/log4j-1.2.17.jar:lib/poi-3.13-20150929.jar:lib/poi-examples-3.13-20150929.jar:lib/poi-excelant-3.13-20150929.jar:lib/poi-ooxml-3.13-20150929.jar:lib/poi-ooxml-schemas-3.13-20150929.jar:lib/poi-scratchpad-3.13-20150929.jar:lib/xmlbeans-2.6.0.jar:build/classes:C:\Program Files\NetBeans-14\netbeans\platform\modules\ext\junit-4.13.2.jar:C:\Program Files\NetBeans-14\netbeans\platform\modules\ext\hamcrest-core-1.3.jar" />
+    <property name="libs.javaee-web-api-7.0.maven-pom" value="" />
+    <property name="libs.javaee-web-api-8.0.maven-pom" value="" />
+    <property name="netbeans.dirs" value="C:\Program Files\NetBeans-14\netbeans\nb;C:\Program Files\NetBeans-14\netbeans\ergonomics;C:\Program Files\NetBeans-14\netbeans\ide;C:\Program Files\NetBeans-14\netbeans\extide;C:\Program Files\NetBeans-14\netbeans\java;C:\Program Files\NetBeans-14\netbeans\apisupport;C:\Program Files\NetBeans-14\netbeans\webcommon;C:\Program Files\NetBeans-14\netbeans\websvccommon;C:\Program Files\NetBeans-14\netbeans\enterprise;C:\Program Files\NetBeans-14\netbeans\mobility;C:\Program Files\NetBeans-14\netbeans\profiler;C:\Program Files\NetBeans-14\netbeans\python;C:\Program Files\NetBeans-14\netbeans\php;C:\Program Files\NetBeans-14\netbeans\identity;C:\Program Files\NetBeans-14\netbeans\harness;C:\Program Files\NetBeans-14\netbeans\cnd;C:\Program Files\NetBeans-14\netbeans\cndext;C:\Program Files\NetBeans-14\netbeans\cpplite;C:\Program Files\NetBeans-14\netbeans\dlight;C:\Program Files\NetBeans-14\netbeans\groovy;C:\Program Files\NetBeans-14\netbeans\extra;C:\Program Files\NetBeans-14\netbeans\javacard;C:\Program Files\NetBeans-14\netbeans\javafx" />
+    <property name="libs.hamcrest.maven-pom" value="" />
+    <property name="javac.processorpath" value="lib/commons-codec-1.9.jar:lib/commons-logging-1.1.3.jar:lib/junit-4.12.jar:lib/selenium-server-standalone-3.5.0.jar:lib/log4j-1.2.17.jar:lib/poi-3.13-20150929.jar:lib/poi-examples-3.13-20150929.jar:lib/poi-excelant-3.13-20150929.jar:lib/poi-ooxml-3.13-20150929.jar:lib/poi-ooxml-schemas-3.13-20150929.jar:lib/poi-scratchpad-3.13-20150929.jar:lib/xmlbeans-2.6.0.jar" />
+    <property name="libs.javaee-api-6.0.javadoc" value="C:\Program Files\NetBeans-14\netbeans\enterprise\docs\javaee-doc-api.jar" />
+    <property name="libs.JWSAntTasks.maven-pom" value="" />
+    <property name="file.reference.commons-logging-1.1.3.jar" value="lib/commons-logging-1.1.3.jar" />
+    <property name="run.modulepath" value="" />
+    <property name="do.archive+manifest.available" value="true" />
+    <property name="apple.laf.useScreenMenuBar" value="true" />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="user.country" value="AE" />
+    <property name="libs.jakartaee-api-9.0.maven-pom" value="" />
+    <property name="libs.restapi.javadoc" value="" />
+    <property name="libs.jpa20-persistence.src" value="" />
+    <property name="endorsed.classpath" value="" />
+    <property name="javac.test.sourcepath" value="C:\Users\Omar Fekry\Documents\NetBeansProjects\RentUp\build\empty" />
+    <property name="libs.spring-webmvc3.0.maven-pom" value="" />
+    <property name="junit.selected.version" value="4" />
+    <property name="includes" value="**" />
+    <property name="libs.jsf12.javadoc" value="C:\Program Files\NetBeans-14\netbeans\enterprise\docs\javaee-doc-api.jar" />
+    <property name="libs.hamcrest.classpath" value="C:\Program Files\NetBeans-14\netbeans\platform\modules\ext\hamcrest-core-1.3.jar" />
+    <property name="javadoc.splitindex" value="true" />
+    <property name="libs.JWSAntTasks.classpath" value="C:\Program Files\NetBeans-14\netbeans\java\ant\extra\org-netbeans-modules-javawebstart-anttasks.jar" />
+    <property name="junit.available" value="true" />
+    <property name="javac.processormodulepath" value="" />
+    <property name="javadoc.encoding" value="UTF-8" />
+    <property name="libs.jstl.src" value="" />
+    <property name="netbeans.hash.code" value="unique=NB_EXTIDE_JAVA_PHP_WEBCOMMON_WEBEE07e1cde72-1f4b-4ae1-bcd5-57c224ebf2e8_c23e5e27-8a0d-42fe-ab55-55ccf18bd5ff" />
+    <property name="libs.jsp-compilation-syscp.maven-pom" value="" />
+    <property name="libs.spring-webmvc3.0.classpath" value="C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-3.0\spring-webmvc-3.2.18.RELEASE.jar" />
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+    <property name="libs.jaxb.javadoc" value="C:\Program Files\NetBeans-14\netbeans\ide\docs\jaxb-api-doc.jar" />
+    <property name="manifest.available" value="true" />
+    <property name="libs.spring-framework500.maven-pom" value="" />
+    <property name="run.jvmargs.ide" value="" />
+    <property name="ant.core.lib" value="C:\Program Files\NetBeans-14\netbeans\extide\ant\lib\ant.jar" />
+    <property name="ant.file.SeleniumLab" value="C:\Users\Omar Fekry\Documents\NetBeansProjects\RentUp\build.xml" />
+    <property name="libs.jsp-compilation.maven-pom" value="" />
+    <property name="file.reference.commons-codec-1.9.jar" value="lib/commons-codec-1.9.jar" />
+    <property name="javac.profile.cmd.line.arg" value="" />
+    <property name="libs.jakartaee-api-9.0.classpath" value="C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\jakarta.jakartaee-api-9.0.0.jar" />
+    <property name="application.title" value="SeleniumLab" />
+    <property name="do.archive+main.class.available" value="true" />
+    <property name="javac.test.modulepath" value="" />
+    <property name="ignore.failing.tests" value="true" />
+    <property name="libs.PostgreSQLDriver.javadoc" value="" />
+    <property name="libs.jsp-compilation-syscp.classpath" value="C:\Program Files\NetBeans-14\netbeans\extide\ant\lib\ant.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\servlet3.1-jsp2.3-api.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\glassfish-jspparser-4.0.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\jstl-impl.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\jsf-2_2\javax.faces.jar" />
+    <property name="libs.jsp-compilation.classpath" value="C:\Program Files\NetBeans-14\netbeans\extide\ant\lib\ant.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\servlet3.1-jsp2.3-api.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\glassfish-jspparser-4.0.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\jsf-2_2\javax.faces.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\jstl-api.jar;C:\Program Files\NetBeans-14\netbeans\extide\ant\lib\ant-launcher.jar" />
+    <property name="libs.javaee-api-6.0.classpath" value="C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\javaee-api-6.0.jar" />
+    <property name="libs.javaee-api-7.0.classpath" value="C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\javaee-api-7.0.jar" />
+    <property name="sun.cpu.isalist" value="amd64" />
+    <property name="libs.restapi.maven-pom" value="" />
+    <property name="javadoc.preview" value="true" />
+    <property name="do.depend" value="false" />
+    <property name="sun.arch.data.model" value="64" />
+    <property name="libs.jakartaee-web-api-9.0.maven-pom" value="" />
+    <property name="libs.javaee-endorsed-api-7.0.src" value="" />
+    <property name="annotation.processing.enabled" value="true" />
+    <property name="libs.junit_5.src" value="C:\Program Files\NetBeans-14\netbeans\platform\docs\junit-jupiter-api-5.6.0-sources.jar;C:\Program Files\NetBeans-14\netbeans\platform\docs\junit-jupiter-params-5.6.0-sources.jar;C:\Program Files\NetBeans-14\netbeans\platform\docs\junit-jupiter-engine-5.6.0-sources.jar" />
+    <property name="libs.jaxb.classpath" value="C:\Program Files\NetBeans-14\netbeans\ide\modules\ext\jaxb\jaxb-impl.jar;C:\Program Files\NetBeans-14\netbeans\ide\modules\ext\jaxb\jaxb-xjc.jar;C:\Program Files\NetBeans-14\netbeans\ide\modules\ext\jaxb\activation.jar;C:\Program Files\NetBeans-14\netbeans\ide\modules\ext\jaxb\api\jaxb-api.jar" />
+    <property name="libs.javaee-api-8.0.classpath" value="C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\javaee-api-8.0.jar" />
+    <property name="ant.file.type.SeleniumLab" value="file" />
+    <property name="libs.CopyLibs.src" value="" />
+    <property name="javac.source" value="1.8" />
+    <property name="java.specification.vendor" value="Oracle Corporation" />
+    <property name="java.version.date" value="2021-10-19" />
+    <property name="java.home" value="C:\Program Files\Java\jdk-17.0.1" />
+    <property name="work.dir" value="C:\Users\Omar Fekry\Documents\NetBeansProjects\RentUp" />
+    <property name="jna.boot.library.name" value="jnidispatch-nb" />
+    <property name="javac.test.compilerargs" value="" />
+    <property name="libs.PostgreSQLDriver.classpath" value="C:\Program Files\NetBeans-14\netbeans\ide\modules\ext\postgresql-42.2.16.jar" />
+    <property name="libs.graaljs.javadoc" value="" />
+    <property name="libs.spring-webmvc3.0.javadoc" value="" />
+    <property name="libs.JAXB-ENDORSED.src" value="" />
+    <property name="user.script" value="" />
+    <property name="manifest.encoding" value="UTF-8" />
+    <property name="libs.spring-framework400.src" value="" />
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+    <property name="run.test.modulepath" value="" />
+    <property name="libs.graaljs.classpath" value="C:\Program Files\NetBeans-14\netbeans\webcommon\modules\ext\js-20.3.0.jar;C:\Program Files\NetBeans-14\netbeans\webcommon\modules\ext\js-launcher-20.3.0.jar;C:\Program Files\NetBeans-14\netbeans\webcommon\modules\ext\regex-20.3.0.jar;C:\Program Files\NetBeans-14\netbeans\webcommon\modules\ext\icu4j-67.1.jar;C:\Program Files\NetBeans-14\netbeans\ide\modules\ext\graal-sdk-20.3.0.jar;C:\Program Files\NetBeans-14\netbeans\ide\modules\ext\launcher-common-20.3.0.jar;C:\Program Files\NetBeans-14\netbeans\ide\modules\ext\truffle-api-20.3.0.jar" />
+    <property name="libs.javaee-web-api-6.0.classpath" value="C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\javaee-web-api-6.0.jar" />
+    <property name="libs.jsp-compiler.javadoc" value="" />
+    <property name="debug.test.modulepath" value="" />
+    <property name="libs.javaee-web-api-7.0.classpath" value="C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\javaee-web-api-7.0.jar" />
+    <property name="file.encoding" value="UTF-8" />
+    <property name="java.util.logging.config.class" value="org.netbeans.core.startup.TopLogging" />
+    <property name="https.nonProxyHosts" value="localhost|127.0.0.1|OmarsComputer" />
+    <property name="libs.restlib.javadoc" value="" />
+    <property name="libs.absolutelayout.classpath" value="C:\Program Files\NetBeans-14\netbeans\java\modules\ext\AbsoluteLayout.jar" />
+    <property name="do.archive" value="true" />
+    <property name="libs.struts.maven-pom" value="" />
+    <property name="built-jar.properties" value="C:\Users\Omar Fekry\Documents\NetBeansProjects\RentUp\build\built-jar.properties" />
+    <property name="nb.native.filechooser" value="false" />
+    <property name="libs.testng.src" value="" />
+    <property name="libs.javaee-web-api-8.0.classpath" value="C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\javaee-web-api-8.0.jar" />
+    <property name="platform.active" value="default_platform" />
+    <property name="manifest.file" value="manifest.mf" />
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+    <property name="libs.struts.javadoc" value="C:\Program Files\NetBeans-14\netbeans\enterprise\docs\struts-1.3.10-javadoc.zip" />
+    <property name="default.javac.source" value="17" />
+    <property name="libs.javaee-web-api-8.0.javadoc" value="C:\Program Files\NetBeans-14\netbeans\enterprise\docs\javaee-doc-api.jar" />
+    <property name="netbeans.dynamic.classpath" value="C:\Program Files\NetBeans-14\netbeans\platform\core\asm-9.2.jar;C:\Program Files\NetBeans-14\netbeans\platform\core\asm-commons-9.2.jar;C:\Program Files\NetBeans-14\netbeans\platform\core\asm-tree-9.2.jar;C:\Program Files\NetBeans-14\netbeans\platform\core\core-base.jar;C:\Program Files\NetBeans-14\netbeans\platform\core\core.jar;C:\Program Files\NetBeans-14\netbeans\platform\core\org-netbeans-libs-asm.jar;C:\Program Files\NetBeans-14\netbeans\platform\core\org-openide-filesystems-compat8.jar;C:\Program Files\NetBeans-14\netbeans\platform\core\org-openide-filesystems.jar;C:\Program Files\NetBeans-14\netbeans\nb\core\org-netbeans-upgrader.jar;C:\Program Files\NetBeans-14\netbeans\nb\core\locale\core_nb.jar" />
+    <property name="libs.eclipselinkmodelgen.classpath" value="C:\Program Files\NetBeans-14\netbeans\java\modules\ext\eclipselink\org.eclipse.persistence.jpa.modelgen.processor-2.7.10.jar" />
+    <property name="netbeans.buildnumber" value="14-c4f2d87113e1a2d2d4e21e8952e1f99612d5b3fd" />
+    <property name="endorsed.classpath.cmd.line.arg" value="" />
+    <property name="libs.jpa20-persistence.maven-pom" value="" />
+    <property name="build.sysclasspath" value="ignore" />
+    <property name="os.name" value="Windows 10" />
+    <property name="libs.CopyLibs.maven-pom" value="" />
+    <property name="libs.jakartaee-api-8.0.maven-pom" value="" />
+    <property name="jdkBug6558476" value="false" />
+    <property name="http.nonProxyHosts" value="localhost|127.0.0.1|OmarsComputer" />
+    <property name="javadoc.author" value="false" />
+    <property name="main.class" value="seleniumlab.SeleniumLab" />
+    <property name="libs.jsp-compilation-syscp.javadoc" value="" />
+    <property name="ant.file.type.SeleniumLab-impl" value="file" />
+    <property name="source.encoding" value="UTF-8" />
+    <property name="jar.compress" value="false" />
+    <property name="libs.javaee-api-7.0.javadoc" value="C:\Program Files\NetBeans-14\netbeans\enterprise\docs\javaee-doc-api.jar" />
+    <property name="libs.spring-webmvc5.0.src" value="" />
+    <property name="libs.jsf20.maven-pom" value="" />
+    <property name="libs.restlib.classpath" value="C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\jersey2\jakarta.annotation-api-1.3.5.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\jersey2\jakarta.persistence-api-2.2.3.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\jersey2\jakarta.servlet-api-4.0.4.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\jersey2\jakarta.validation-api-2.0.2.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\jersey2\jakarta.xml.bind-api-2.3.3.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\jersey2\jersey-client-2.34.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\jersey2\jersey-common-2.34.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\jersey2\jersey-server-2.34.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\jersey2\jersey-entity-filtering-2.34.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\jersey2\jersey-hk2-2.34.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\jersey2\jersey-media-moxy-2.34.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\jersey2\jersey-container-servlet-2.34.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\jersey2\jersey-container-servlet-core-2.34.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\jersey2\hk2-api-2.6.1.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\jersey2\hk2-locator-2.6.1.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\jersey2\hk2-utils-2.6.1.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\jersey2\jakarta.inject-2.6.1.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\jersey2\aopalliance-repackaged-2.6.1.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\jersey2\osgi.core-8.0.0.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\jersey2\osgi-resource-locator-1.0.3.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\eclipselink\org.eclipse.persistence.core-2.7.10.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\eclipselink\org.eclipse.persistence.asm-9.2.0.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\eclipselink\org.eclipse.persistence.antlr-2.7.10.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\eclipselink\org.eclipse.persistence.jpa-2.7.10.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\eclipselink\org.eclipse.persistence.jpa.jpql-2.7.10.jar;C:\Program Files\NetBeans-14\netbeans\java\modules\ext\eclipselink\org.eclipse.persistence.moxy-2.7.10.jar" />
+    <property name="libs.jakartaee-web-api-8.0.javadoc" value="C:\Program Files\NetBeans-14\netbeans\enterprise\docs\jakartaee8-doc-api.jar" />
+    <property name="apple.awt.graphics.UseQuartz" value="true" />
+    <property name="libs.graaljs.src" value="" />
+    <property name="run.jvmargs" value="" />
+    <property name="libs.primefaces.src" value="" />
+    <property name="ant.file" value="C:\Users\Omar Fekry\Documents\NetBeansProjects\RentUp\build.xml" />
+    <property name="libs.struts.src" value="" />
+    <property name="path.separator" value=";" />
+    <property name="libs.JAXB-ENDORSED.classpath" value="C:\Program Files\NetBeans-14\netbeans\ide\modules\ext\jaxb\api\jaxb-api.jar" />
+    <property name="libs.restlib.src" value="" />
+    <property name="build.test.results.dir" value="build/test/results" />
+    <property name="libs.jaxws21.javadoc" value="C:\Program Files\NetBeans-14\netbeans\java\docs\jaxws-api-doc.zip" />
+    <property name="libs.spring-framework400.maven-pom" value="" />
+    <property name="libs.javaee-endorsed-api-6.0.javadoc" value="C:\Program Files\NetBeans-14\netbeans\enterprise\docs\javaee-doc-api.jar" />
+    <property name="ap.processors.internal" value="" />
+    <property name="ant.file.SeleniumLab-impl" value="C:\Users\Omar Fekry\Documents\NetBeansProjects\RentUp\nbproject\build-impl.xml" />
+    <property name="libs.jsf12.classpath" value="C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\jsf-1_2\jsf-api.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\jsf-1_2\jsf-impl.jar" />
+    <property name="libs.spring-webmvc5.0.javadoc" value="" />
+    <property name="libs.hamcrest.javadoc" value="" />
+    <property name="libs.spring-framework400.javadoc" value="" />
+    <property name="do.jar" value="true" />
+    <property name="java.vm.info" value="mixed mode, sharing" />
+    <property name="libs.primefaces.classpath" value="C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\primefaces\primefaces-5.0.jar" />
+    <property name="libs.jaxws21.maven-pom" value="" />
+    <property name="run.test.classpath" value="lib/commons-codec-1.9.jar:lib/commons-logging-1.1.3.jar:lib/junit-4.12.jar:lib/selenium-server-standalone-3.5.0.jar:lib/log4j-1.2.17.jar:lib/poi-3.13-20150929.jar:lib/poi-examples-3.13-20150929.jar:lib/poi-excelant-3.13-20150929.jar:lib/poi-ooxml-3.13-20150929.jar:lib/poi-ooxml-schemas-3.13-20150929.jar:lib/poi-scratchpad-3.13-20150929.jar:lib/xmlbeans-2.6.0.jar:build/classes:C:\Program Files\NetBeans-14\netbeans\platform\modules\ext\junit-4.13.2.jar:C:\Program Files\NetBeans-14\netbeans\platform\modules\ext\hamcrest-core-1.3.jar:build/test/classes" />
+    <property name="java.class.version" value="61.0" />
+    <property name="javadoc.encoding.used" value="UTF-8" />
+    <property name="src.dir" value="src" />
+    <property name="debug.classpath" value="lib/commons-codec-1.9.jar:lib/commons-logging-1.1.3.jar:lib/junit-4.12.jar:lib/selenium-server-standalone-3.5.0.jar:lib/log4j-1.2.17.jar:lib/poi-3.13-20150929.jar:lib/poi-examples-3.13-20150929.jar:lib/poi-excelant-3.13-20150929.jar:lib/poi-ooxml-3.13-20150929.jar:lib/poi-ooxml-schemas-3.13-20150929.jar:lib/poi-scratchpad-3.13-20150929.jar:lib/xmlbeans-2.6.0.jar:build/classes" />
+    <property name="ant.project.default-target" value="default" />
+    <property name="excludes" value="" />
+    <property name="libs.javaee-api-7.0.src" value="" />
+    <property name="run.test.jvmargs" value="" />
+    <property name="libs.junit_4.javadoc" value="C:\Program Files\NetBeans-14\netbeans\platform\docs\junit-4.13.2-javadoc.jar" />
+    <property name="sun.jnu.encoding" value="Cp1252" />
+    <property name="libs.spring-webmvc4.0.src" value="" />
+    <property name="sun.java2d.dpiaware" value="true" />
+    <property name="main.class.available" value="true" />
+    <property name="libs.jsf20.javadoc" value="C:\Program Files\NetBeans-14\netbeans\enterprise\docs\javaee-doc-api.jar" />
+    <property name="netbeans.importclass" value="org.netbeans.upgrade.AutoUpgrade" />
+    <property name="netbeans.autoupdate.version" value="1.23" />
+    <property name="empty.dir" value="C:\Users\Omar Fekry\Documents\NetBeansProjects\RentUp\build\empty" />
+    <property name="file.reference.poi-ooxml-schemas-3.13-20150929.jar" value="lib/poi-ooxml-schemas-3.13-20150929.jar" />
+    <property name="netbeans.user" value="C:\Users\Omar Fekry\AppData\Roaming\NetBeans\14" />
+    <property name="file.separator" value="\" />
+    <property name="line.separator" value="&#xd;&#xa;" />
+    <property name="javadoc.additionalparam" value="" />
+    <property name="libs.spring-webmvc5.0.classpath" value="C:\Program Files\NetBeans-14\netbeans\java\modules\ext\spring-5\spring-webmvc-5.2.9.RELEASE.jar" />
+    <property name="libs.restlib.maven-pom" value="" />
+    <property name="javac.debug" value="true" />
+    <property name="libs.testng.classpath" value="C:\Program Files\NetBeans-14\netbeans\platform\modules\ext\testng-6.14.3.jar;C:\Program Files\NetBeans-14\netbeans\platform\modules\ext\jcommander-1.78.jar" />
+    <property name="file.reference.selenium-server-standalone-3.5.0.jar" value="lib/selenium-server-standalone-3.5.0.jar" />
+    <property name="libs.jsp-compiler.src" value="" />
+    <property name="file.reference.poi-3.13-20150929.jar" value="lib/poi-3.13-20150929.jar" />
+    <property name="user.name" value="Omar Fekry" />
+    <property name="build.classes.dir" value="build/classes" />
+    <property name="javadoc.windowtitle" value="" />
+    <property name="nb.junit.single" value="false" />
+    <property name="nb.internal.action.name" value="test" />
+    <property name="libs.javaee-api-8.0.maven-pom" value="" />
+    <property name="libs.jaxws21.src" value="" />
+    <property name="libs.jakartaee-web-api-9.0.javadoc" value="C:\Program Files\NetBeans-14\netbeans\enterprise\docs\jakartaee9-doc-api.jar" />
+    <property name="jna.loaded" value="true" />
+    <property name="file.reference.xmlbeans-2.6.0.jar" value="lib/xmlbeans-2.6.0.jar" />
+    <property name="libs.junit_5.maven-pom" value="" />
+    <property name="libs.jpa20-persistence.javadoc" value="C:\Program Files\NetBeans-14\netbeans\java\modules\ext\docs\jakarta.persistence-2.2.3-doc.zip" />
+    <property name="ant.junit.enabletestlistenerevents" value="true" />
+    <property name="libs.JWSAntTasks.src" value="" />
+    <property name="ant.home" value="C:\Program Files\NetBeans-14\netbeans\extide\ant" />
+    <property name="libs.spring-webmvc3.0.src" value="" />
+    <property name="javac.external.vm" value="true" />
+    <property name="debug.test.classpath" value="lib/commons-codec-1.9.jar:lib/commons-logging-1.1.3.jar:lib/junit-4.12.jar:lib/selenium-server-standalone-3.5.0.jar:lib/log4j-1.2.17.jar:lib/poi-3.13-20150929.jar:lib/poi-examples-3.13-20150929.jar:lib/poi-excelant-3.13-20150929.jar:lib/poi-ooxml-3.13-20150929.jar:lib/poi-ooxml-schemas-3.13-20150929.jar:lib/poi-scratchpad-3.13-20150929.jar:lib/xmlbeans-2.6.0.jar:build/classes:C:\Program Files\NetBeans-14\netbeans\platform\modules\ext\junit-4.13.2.jar:C:\Program Files\NetBeans-14\netbeans\platform\modules\ext\hamcrest-core-1.3.jar:build/test/classes" />
+    <property name="have.tests" value="true" />
+    <property name="testng.debug.mode" value="" />
+    <property name="javac.target" value="1.8" />
+    <property name="ant.version" value="Apache Ant(TM) version 1.10.8 compiled on May 10 2020" />
+    <property name="libs.absolutelayout.maven-pom" value="" />
+    <property name="java.failonerror" value="true" />
+    <property name="javac.modulepath" value="" />
+    <property name="libs.spring-framework500.src" value="" />
+    <property name="libs.javaee-api-6.0.src" value="" />
+    <property name="user.properties.file" value="C:\Users\Omar Fekry\AppData\Roaming\NetBeans\14\build.properties" />
+    <property name="netbeans.autoupdate.country" value="AE" />
+    <property name="nb.wait.for.caches" value="true" />
+    <property name="java.class.path" value="C:\Users\Omar Fekry\Documents\NetBeansProjects\RentUp\lib\commons-codec-1.9.jar;C:\Users\Omar Fekry\Documents\NetBeansProjects\RentUp\lib\commons-logging-1.1.3.jar;C:\Users\Omar Fekry\Documents\NetBeansProjects\RentUp\lib\junit-4.12.jar;C:\Users\Omar Fekry\Documents\NetBeansProjects\RentUp\lib\selenium-server-standalone-3.5.0.jar;C:\Users\Omar Fekry\Documents\NetBeansProjects\RentUp\lib\log4j-1.2.17.jar;C:\Users\Omar Fekry\Documents\NetBeansProjects\RentUp\lib\poi-3.13-20150929.jar;C:\Users\Omar Fekry\Documents\NetBeansProjects\RentUp\lib\poi-examples-3.13-20150929.jar;C:\Users\Omar Fekry\Documents\NetBeansProjects\RentUp\lib\poi-excelant-3.13-20150929.jar;C:\Users\Omar Fekry\Documents\NetBeansProjects\RentUp\lib\poi-ooxml-3.13-20150929.jar;C:\Users\Omar Fekry\Documents\NetBeansProjects\RentUp\lib\poi-ooxml-schemas-3.13-20150929.jar;C:\Users\Omar Fekry\Documents\NetBeansProjects\RentUp\lib\poi-scratchpad-3.13-20150929.jar;C:\Users\Omar Fekry\Documents\NetBeansProjects\RentUp\lib\xmlbeans-2.6.0.jar;C:\Users\Omar Fekry\Documents\NetBeansProjects\RentUp\build\classes;C:\Program Files\NetBeans-14\netbeans\platform\modules\ext\junit-4.13.2.jar;C:\Program Files\NetBeans-14\netbeans\platform\modules\ext\hamcrest-core-1.3.jar;C:\Users\Omar Fekry\Documents\NetBeansProjects\RentUp\build\test\classes;C:\Program Files\NetBeans-14\netbeans\extide\ant\lib\ant-launcher.jar;C:\Program Files\NetBeans-14\netbeans\extide\ant\lib\ant.jar;C:\Program Files\NetBeans-14\netbeans\extide\ant\lib\ant-junit.jar;C:\Program Files\NetBeans-14\netbeans\extide\ant\lib\ant-junit4.jar" />
+    <property name="libs.javaee-web-api-6.0.maven-pom" value="" />
+    <property name="java.vm.vendor" value="Oracle Corporation" />
+    <property name="ap.supported.internal" value="true" />
+    <property name="user.variant" value="" />
+    <property name="netbeans.home+have.tests" value="true" />
+    <property name="test.binaryexcludes" value="" />
+    <property name="javac.compilerargs" value="" />
+    <property name="libs.jstl.maven-pom" value="" />
+    <property name="libs.jakartaee-web-api-8.0.src" value="" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="libs.junit_4.src" value="C:\Program Files\NetBeans-14\netbeans\platform\docs\junit-4.13.2-sources.jar" />
+    <property name="libs.jakartaee-api-9.0.src" value="" />
+    <property name="user.language" value="en" />
+    <property name="copylibs.rebase" value="true" />
+    <property name="libs.javaee-web-api-6.0.src" value="" />
+    <property name="maven.defaultProjectBuilder.disableGlobalModelCache" value="true" />
+    <property name="javadoc.nonavbar" value="false" />
+    <property name="libs.javaee-api-8.0.src" value="" />
+    <property name="ant.java.version" value="17" />
+    <property name="libs.junit_4.classpath" value="C:\Program Files\NetBeans-14\netbeans\platform\modules\ext\junit-4.13.2.jar" />
+    <property name="libs.jakartaee-api-9.0.javadoc" value="C:\Program Files\NetBeans-14\netbeans\enterprise\docs\jakartaee9-doc-api.jar" />
+    <property name="test.binarytestincludes" value="" />
+    <property name="sun.awt.keepWorkingSetOnMinimize" value="true" />
+    <property name="libs.junit_4.maven-pom" value="" />
+    <property name="libs.spring-webmvc5.0.maven-pom" value="" />
+    <property name="libs.jsp-compiler.maven-pom" value="" />
+    <property name="runtime.encoding" value="UTF-8" />
+    <property name="libs.jakartaee-web-api-8.0.classpath" value="C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\jakarta.jakartaee-web-api-8.0.0.jar" />
+    <property name="javac.classpath" value="lib/commons-codec-1.9.jar:lib/commons-logging-1.1.3.jar:lib/junit-4.12.jar:lib/selenium-server-standalone-3.5.0.jar:lib/log4j-1.2.17.jar:lib/poi-3.13-20150929.jar:lib/poi-examples-3.13-20150929.jar:lib/poi-excelant-3.13-20150929.jar:lib/poi-ooxml-3.13-20150929.jar:lib/poi-ooxml-schemas-3.13-20150929.jar:lib/poi-scratchpad-3.13-20150929.jar:lib/xmlbeans-2.6.0.jar" />
+    <property name="nb.junit.batch" value="true" />
+    <property name="build.test.classes.dir" value="build/test/classes" />
+    <property name="libs.spring-framework300.maven-pom" value="" />
+    <property name="ant.project.invoked-targets" value="test" />
+    <property name="netbeans.automatic.build" value="true" />
+    <property name="libs.jstl.classpath" value="C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\jstl-impl.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\jstl-api.jar" />
+    <property name="ap.cmd.line.internal" value="" />
+    <property name="libs.PostgreSQLDriver.src" value="" />
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/" />
+    <property name="annotation.processing.source.output" value="build/generated-sources/ap-source-output" />
+    <property name="libs.javaee-endorsed-api-6.0.maven-pom" value="" />
+    <property name="user.dir" value="C:\Users\Omar Fekry\Documents\NetBeansProjects\RentUp" />
+    <property name="platform.java" value="C:\Program Files\Java\jdk-17.0.1/bin/java" />
+    <property name="application.args" value="" />
+    <property name="org.xml.sax.driver" value="com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser" />
+    <property name="libs.jakartaee-web-api-8.0.maven-pom" value="" />
+    <property name="libs.eclipselink.src" value="" />
+    <property name="java.vm.version" value="17.0.1+12-LTS-39" />
+    <property name="libs.metro.javadoc" value="C:\Program Files\NetBeans-14\netbeans\enterprise\docs\webservices-api-javadoc.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\docs\webservices-extra-javadoc.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\docs\webservices-extra-api-javadoc.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\docs\webservices-rt-javadoc.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\docs\webservices-tools-javadoc.jar" />
+    <property name="libs.jakartaee-web-api-9.0.src" value="" />
+    <property name="sun.awt.datatransfer.timeout" value="1000" />
+    <property name="libs.jsp-compiler.classpath" value="C:\Program Files\NetBeans-14\netbeans\enterprise\ant\extra\jspcompile.jar" />
+    <property name="libs.jakartaee-api-8.0.src" value="" />
+    <property name="libs.javaee-web-api-7.0.src" value="" />
+    <property name="junit.forkmode" value="perTest" />
+    <property name="annotation.processing.run.all.processors" value="true" />
+    <property name="libs.javaee-endorsed-api-6.0.classpath" value="C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\javaee6-endorsed\javax.annotation.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\javaee6-endorsed\jaxb-api-osgi.jar;C:\Program Files\NetBeans-14\netbeans\enterprise\modules\ext\javaee6-endorsed\webservices-api-osgi.jar" />
+  </properties>
+  <testcase classname="demo.LoginTest" name="ChromeInvalidTest" time="1.768">
+    <error message="unknown error: cannot find Chrome binary&#xa;Build info: version: &apos;3.5.0&apos;, revision: &apos;8def36e068&apos;, time: &apos;2017-08-10T23:00:22.093Z&apos;&#xa;System info: host: &apos;OMARSCOMPUTER&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.1&apos;&#xa;Driver info: driver.version: ChromeDriver&#xa;remote stacktrace: Backtrace:&#xa;&#x9;Ordinal0 [0x00D95FD3+2187219]&#xa;&#x9;Ordinal0 [0x00D2E6D1+1763025]&#xa;&#x9;Ordinal0 [0x00C43E78+802424]&#xa;&#x9;Ordinal0 [0x00C6016E+917870]&#xa;&#x9;Ordinal0 [0x00C5E691+910993]&#xa;&#x9;Ordinal0 [0x00C917F0+1120240]&#xa;&#x9;Ordinal0 [0x00C9144A+1119306]&#xa;&#x9;Ordinal0 [0x00C8C9A6+1100198]&#xa;&#x9;Ordinal0 [0x00C66F80+946048]&#xa;&#x9;Ordinal0 [0x00C67E76+949878]&#xa;&#x9;GetHandleVerifier [0x010390C2+2721218]&#xa;&#x9;GetHandleVerifier [0x0102AAF0+2662384]&#xa;&#x9;GetHandleVerifier [0x00E2137A+526458]&#xa;&#x9;GetHandleVerifier [0x00E20416+522518]&#xa;&#x9;Ordinal0 [0x00D34EAB+1789611]&#xa;&#x9;Ordinal0 [0x00D397A8+1808296]&#xa;&#x9;Ordinal0 [0x00D39895+1808533]&#xa;&#x9;Ordinal0 [0x00D426C1+1844929]&#xa;&#x9;BaseThreadInitThunk [0x76DF6739+25]&#xa;&#x9;RtlGetFullPathName_UEx [0x77D18FEF+1215]&#xa;&#x9;RtlGetFullPathName_UEx [0x77D18FBD+1165]&#xa;" type="org.openqa.selenium.WebDriverException">org.openqa.selenium.WebDriverException: unknown error: cannot find Chrome binary
+Build info: version: &apos;3.5.0&apos;, revision: &apos;8def36e068&apos;, time: &apos;2017-08-10T23:00:22.093Z&apos;
+System info: host: &apos;OMARSCOMPUTER&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.1&apos;
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+	Ordinal0 [0x00D95FD3+2187219]
+	Ordinal0 [0x00D2E6D1+1763025]
+	Ordinal0 [0x00C43E78+802424]
+	Ordinal0 [0x00C6016E+917870]
+	Ordinal0 [0x00C5E691+910993]
+	Ordinal0 [0x00C917F0+1120240]
+	Ordinal0 [0x00C9144A+1119306]
+	Ordinal0 [0x00C8C9A6+1100198]
+	Ordinal0 [0x00C66F80+946048]
+	Ordinal0 [0x00C67E76+949878]
+	GetHandleVerifier [0x010390C2+2721218]
+	GetHandleVerifier [0x0102AAF0+2662384]
+	GetHandleVerifier [0x00E2137A+526458]
+	GetHandleVerifier [0x00E20416+522518]
+	Ordinal0 [0x00D34EAB+1789611]
+	Ordinal0 [0x00D397A8+1808296]
+	Ordinal0 [0x00D39895+1808533]
+	Ordinal0 [0x00D426C1+1844929]
+	BaseThreadInitThunk [0x76DF6739+25]
+	RtlGetFullPathName_UEx [0x77D18FEF+1215]
+	RtlGetFullPathName_UEx [0x77D18FBD+1165]
+
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$new$0(W3CHandshakeResponse.java:57)
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$getResponseFunction$2(W3CHandshakeResponse.java:104)
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$24(ProtocolHandshake.java:360)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:1002)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:363)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:137)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:142)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:641)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:254)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:236)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:137)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:178)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:167)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:124)
+	at demo.LoginTest.ChromeInvalidTest(LoginTest.java:138)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+</error>
+  </testcase>
+  <testcase classname="demo.LoginTest" name="ChromeValidTest" time="0.417">
+    <error message="unknown error: cannot find Chrome binary&#xa;Build info: version: &apos;3.5.0&apos;, revision: &apos;8def36e068&apos;, time: &apos;2017-08-10T23:00:22.093Z&apos;&#xa;System info: host: &apos;OMARSCOMPUTER&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.1&apos;&#xa;Driver info: driver.version: ChromeDriver&#xa;remote stacktrace: Backtrace:&#xa;&#x9;Ordinal0 [0x00D95FD3+2187219]&#xa;&#x9;Ordinal0 [0x00D2E6D1+1763025]&#xa;&#x9;Ordinal0 [0x00C43E78+802424]&#xa;&#x9;Ordinal0 [0x00C6016E+917870]&#xa;&#x9;Ordinal0 [0x00C5E691+910993]&#xa;&#x9;Ordinal0 [0x00C917F0+1120240]&#xa;&#x9;Ordinal0 [0x00C9144A+1119306]&#xa;&#x9;Ordinal0 [0x00C8C9A6+1100198]&#xa;&#x9;Ordinal0 [0x00C66F80+946048]&#xa;&#x9;Ordinal0 [0x00C67E76+949878]&#xa;&#x9;GetHandleVerifier [0x010390C2+2721218]&#xa;&#x9;GetHandleVerifier [0x0102AAF0+2662384]&#xa;&#x9;GetHandleVerifier [0x00E2137A+526458]&#xa;&#x9;GetHandleVerifier [0x00E20416+522518]&#xa;&#x9;Ordinal0 [0x00D34EAB+1789611]&#xa;&#x9;Ordinal0 [0x00D397A8+1808296]&#xa;&#x9;Ordinal0 [0x00D39895+1808533]&#xa;&#x9;Ordinal0 [0x00D426C1+1844929]&#xa;&#x9;BaseThreadInitThunk [0x76DF6739+25]&#xa;&#x9;RtlGetFullPathName_UEx [0x77D18FEF+1215]&#xa;&#x9;RtlGetFullPathName_UEx [0x77D18FBD+1165]&#xa;" type="org.openqa.selenium.WebDriverException">org.openqa.selenium.WebDriverException: unknown error: cannot find Chrome binary
+Build info: version: &apos;3.5.0&apos;, revision: &apos;8def36e068&apos;, time: &apos;2017-08-10T23:00:22.093Z&apos;
+System info: host: &apos;OMARSCOMPUTER&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.1&apos;
+Driver info: driver.version: ChromeDriver
+remote stacktrace: Backtrace:
+	Ordinal0 [0x00D95FD3+2187219]
+	Ordinal0 [0x00D2E6D1+1763025]
+	Ordinal0 [0x00C43E78+802424]
+	Ordinal0 [0x00C6016E+917870]
+	Ordinal0 [0x00C5E691+910993]
+	Ordinal0 [0x00C917F0+1120240]
+	Ordinal0 [0x00C9144A+1119306]
+	Ordinal0 [0x00C8C9A6+1100198]
+	Ordinal0 [0x00C66F80+946048]
+	Ordinal0 [0x00C67E76+949878]
+	GetHandleVerifier [0x010390C2+2721218]
+	GetHandleVerifier [0x0102AAF0+2662384]
+	GetHandleVerifier [0x00E2137A+526458]
+	GetHandleVerifier [0x00E20416+522518]
+	Ordinal0 [0x00D34EAB+1789611]
+	Ordinal0 [0x00D397A8+1808296]
+	Ordinal0 [0x00D39895+1808533]
+	Ordinal0 [0x00D426C1+1844929]
+	BaseThreadInitThunk [0x76DF6739+25]
+	RtlGetFullPathName_UEx [0x77D18FEF+1215]
+	RtlGetFullPathName_UEx [0x77D18FBD+1165]
+
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$new$0(W3CHandshakeResponse.java:57)
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$getResponseFunction$2(W3CHandshakeResponse.java:104)
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$24(ProtocolHandshake.java:360)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:1002)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:363)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:137)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:142)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:641)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:254)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:236)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:137)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:178)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:167)
+	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:124)
+	at demo.LoginTest.ChromeValidTest(LoginTest.java:176)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+</error>
+  </testcase>
+  <testcase classname="demo.LoginTest" name="EdgeInvalidTest" time="1.283">
+    <error message="session not created: This version of MSEdgeDriver only supports MSEdge version 101&#xa;Current browser version is 103.0.1264.77 with binary path C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe&#xa;Build info: version: &apos;3.5.0&apos;, revision: &apos;8def36e068&apos;, time: &apos;2017-08-10T23:00:22.093Z&apos;&#xa;System info: host: &apos;OMARSCOMPUTER&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.1&apos;&#xa;Driver info: driver.version: EdgeDriver&#xa;remote stacktrace: Backtrace:&#xa;&#x9;Microsoft::Applications::Events::EventProperties::unpack [0x00007FF78FA8CC42+24658]&#xa;&#x9;Microsoft::Applications::Events::time_ticks_t::time_ticks_t [0x00007FF78F9CD332+539986]&#xa;&#x9;Ordinal0 [0x00007FF78F4D0F05+659205]&#xa;&#x9;Ordinal0 [0x00007FF78F4FBD6F+834927]&#xa;&#x9;Ordinal0 [0x00007FF78F4F7214+815636]&#xa;&#x9;Ordinal0 [0x00007FF78F4F2F3B+798523]&#xa;&#x9;Ordinal0 [0x00007FF78F52CD9D+1035677]&#xa;&#x9;Ordinal0 [0x00007FF78F5274B3+1012915]&#xa;&#x9;Ordinal0 [0x00007FF78F4FE440+844864]&#xa;&#x9;Ordinal0 [0x00007FF78F4FF848+849992]&#xa;&#x9;Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF78F7917F8+120584]&#xa;&#x9;Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF78F77CE3E+36174]&#xa;&#x9;Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF78F78003C+48972]&#xa;&#x9;Microsoft::Applications::Events::EventProperty::to_string [0x00007FF78F5D0716+30806]&#xa;&#x9;Microsoft::Applications::Events::time_ticks_t::time_ticks_t [0x00007FF78F9D4601+569377]&#xa;&#x9;Microsoft::Applications::Events::time_ticks_t::time_ticks_t [0x00007FF78F9D9034+588372]&#xa;&#x9;Microsoft::Applications::Events::time_ticks_t::time_ticks_t [0x00007FF78F9D918D+588717]&#xa;&#x9;Microsoft::Applications::Events::time_ticks_t::time_ticks_t [0x00007FF78F9E291E+627518]&#xa;&#x9;BaseThreadInitThunk [0x00007FFC8A9C54E0+16]&#xa;&#x9;RtlUserThreadStart [0x00007FFC8CB2485B+43]&#xa;" type="org.openqa.selenium.SessionNotCreatedException">org.openqa.selenium.SessionNotCreatedException: session not created: This version of MSEdgeDriver only supports MSEdge version 101
+Current browser version is 103.0.1264.77 with binary path C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe
+Build info: version: &apos;3.5.0&apos;, revision: &apos;8def36e068&apos;, time: &apos;2017-08-10T23:00:22.093Z&apos;
+System info: host: &apos;OMARSCOMPUTER&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.1&apos;
+Driver info: driver.version: EdgeDriver
+remote stacktrace: Backtrace:
+	Microsoft::Applications::Events::EventProperties::unpack [0x00007FF78FA8CC42+24658]
+	Microsoft::Applications::Events::time_ticks_t::time_ticks_t [0x00007FF78F9CD332+539986]
+	Ordinal0 [0x00007FF78F4D0F05+659205]
+	Ordinal0 [0x00007FF78F4FBD6F+834927]
+	Ordinal0 [0x00007FF78F4F7214+815636]
+	Ordinal0 [0x00007FF78F4F2F3B+798523]
+	Ordinal0 [0x00007FF78F52CD9D+1035677]
+	Ordinal0 [0x00007FF78F5274B3+1012915]
+	Ordinal0 [0x00007FF78F4FE440+844864]
+	Ordinal0 [0x00007FF78F4FF848+849992]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF78F7917F8+120584]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF78F77CE3E+36174]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF78F78003C+48972]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF78F5D0716+30806]
+	Microsoft::Applications::Events::time_ticks_t::time_ticks_t [0x00007FF78F9D4601+569377]
+	Microsoft::Applications::Events::time_ticks_t::time_ticks_t [0x00007FF78F9D9034+588372]
+	Microsoft::Applications::Events::time_ticks_t::time_ticks_t [0x00007FF78F9D918D+588717]
+	Microsoft::Applications::Events::time_ticks_t::time_ticks_t [0x00007FF78F9E291E+627518]
+	BaseThreadInitThunk [0x00007FFC8A9C54E0+16]
+	RtlUserThreadStart [0x00007FFC8CB2485B+43]
+
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$new$0(W3CHandshakeResponse.java:57)
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$getResponseFunction$2(W3CHandshakeResponse.java:104)
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$24(ProtocolHandshake.java:360)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:1002)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:363)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:137)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:142)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:641)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:254)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:236)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:137)
+	at org.openqa.selenium.edge.EdgeDriver.&lt;init&gt;(EdgeDriver.java:150)
+	at org.openqa.selenium.edge.EdgeDriver.&lt;init&gt;(EdgeDriver.java:139)
+	at org.openqa.selenium.edge.EdgeDriver.&lt;init&gt;(EdgeDriver.java:96)
+	at demo.LoginTest.EdgeInvalidTest(LoginTest.java:210)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+</error>
+  </testcase>
+  <testcase classname="demo.LoginTest" name="EdgeValidTest" time="2.462">
+    <error message="session not created: This version of MSEdgeDriver only supports MSEdge version 101&#xa;Current browser version is 103.0.1264.77 with binary path C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe&#xa;Build info: version: &apos;3.5.0&apos;, revision: &apos;8def36e068&apos;, time: &apos;2017-08-10T23:00:22.093Z&apos;&#xa;System info: host: &apos;OMARSCOMPUTER&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.1&apos;&#xa;Driver info: driver.version: EdgeDriver&#xa;remote stacktrace: Backtrace:&#xa;&#x9;Microsoft::Applications::Events::EventProperties::unpack [0x00007FF78FA8CC42+24658]&#xa;&#x9;Microsoft::Applications::Events::time_ticks_t::time_ticks_t [0x00007FF78F9CD332+539986]&#xa;&#x9;Ordinal0 [0x00007FF78F4D0F05+659205]&#xa;&#x9;Ordinal0 [0x00007FF78F4FBD6F+834927]&#xa;&#x9;Ordinal0 [0x00007FF78F4F7214+815636]&#xa;&#x9;Ordinal0 [0x00007FF78F4F2F3B+798523]&#xa;&#x9;Ordinal0 [0x00007FF78F52CD9D+1035677]&#xa;&#x9;Ordinal0 [0x00007FF78F5274B3+1012915]&#xa;&#x9;Ordinal0 [0x00007FF78F4FE440+844864]&#xa;&#x9;Ordinal0 [0x00007FF78F4FF848+849992]&#xa;&#x9;Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF78F7917F8+120584]&#xa;&#x9;Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF78F77CE3E+36174]&#xa;&#x9;Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF78F78003C+48972]&#xa;&#x9;Microsoft::Applications::Events::EventProperty::to_string [0x00007FF78F5D0716+30806]&#xa;&#x9;Microsoft::Applications::Events::time_ticks_t::time_ticks_t [0x00007FF78F9D4601+569377]&#xa;&#x9;Microsoft::Applications::Events::time_ticks_t::time_ticks_t [0x00007FF78F9D9034+588372]&#xa;&#x9;Microsoft::Applications::Events::time_ticks_t::time_ticks_t [0x00007FF78F9D918D+588717]&#xa;&#x9;Microsoft::Applications::Events::time_ticks_t::time_ticks_t [0x00007FF78F9E291E+627518]&#xa;&#x9;BaseThreadInitThunk [0x00007FFC8A9C54E0+16]&#xa;&#x9;RtlUserThreadStart [0x00007FFC8CB2485B+43]&#xa;" type="org.openqa.selenium.SessionNotCreatedException">org.openqa.selenium.SessionNotCreatedException: session not created: This version of MSEdgeDriver only supports MSEdge version 101
+Current browser version is 103.0.1264.77 with binary path C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe
+Build info: version: &apos;3.5.0&apos;, revision: &apos;8def36e068&apos;, time: &apos;2017-08-10T23:00:22.093Z&apos;
+System info: host: &apos;OMARSCOMPUTER&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.1&apos;
+Driver info: driver.version: EdgeDriver
+remote stacktrace: Backtrace:
+	Microsoft::Applications::Events::EventProperties::unpack [0x00007FF78FA8CC42+24658]
+	Microsoft::Applications::Events::time_ticks_t::time_ticks_t [0x00007FF78F9CD332+539986]
+	Ordinal0 [0x00007FF78F4D0F05+659205]
+	Ordinal0 [0x00007FF78F4FBD6F+834927]
+	Ordinal0 [0x00007FF78F4F7214+815636]
+	Ordinal0 [0x00007FF78F4F2F3B+798523]
+	Ordinal0 [0x00007FF78F52CD9D+1035677]
+	Ordinal0 [0x00007FF78F5274B3+1012915]
+	Ordinal0 [0x00007FF78F4FE440+844864]
+	Ordinal0 [0x00007FF78F4FF848+849992]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF78F7917F8+120584]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF78F77CE3E+36174]
+	Microsoft::Applications::Events::EventProperty::EventProperty [0x00007FF78F78003C+48972]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF78F5D0716+30806]
+	Microsoft::Applications::Events::time_ticks_t::time_ticks_t [0x00007FF78F9D4601+569377]
+	Microsoft::Applications::Events::time_ticks_t::time_ticks_t [0x00007FF78F9D9034+588372]
+	Microsoft::Applications::Events::time_ticks_t::time_ticks_t [0x00007FF78F9D918D+588717]
+	Microsoft::Applications::Events::time_ticks_t::time_ticks_t [0x00007FF78F9E291E+627518]
+	BaseThreadInitThunk [0x00007FFC8A9C54E0+16]
+	RtlUserThreadStart [0x00007FFC8CB2485B+43]
+
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$new$0(W3CHandshakeResponse.java:57)
+	at org.openqa.selenium.remote.W3CHandshakeResponse.lambda$getResponseFunction$2(W3CHandshakeResponse.java:104)
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$24(ProtocolHandshake.java:360)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:1002)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:363)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:137)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:142)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:641)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:254)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:236)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:137)
+	at org.openqa.selenium.edge.EdgeDriver.&lt;init&gt;(EdgeDriver.java:150)
+	at org.openqa.selenium.edge.EdgeDriver.&lt;init&gt;(EdgeDriver.java:139)
+	at org.openqa.selenium.edge.EdgeDriver.&lt;init&gt;(EdgeDriver.java:96)
+	at demo.LoginTest.EdgeValidTest(LoginTest.java:248)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+</error>
+  </testcase>
+  <testcase classname="demo.LoginTest" name="FirefoxInvalidTest" time="41.86">
+    <error message="Element &lt;a class=&quot;HeaderMenu-link flex-shrink-0 no-underline&quot; href=&quot;/login&quot;&gt; is not clickable at point (30,937) because another element &lt;html id=&quot;top&quot;&gt; obscures it&#xa;Build info: version: &apos;3.5.0&apos;, revision: &apos;8def36e068&apos;, time: &apos;2017-08-10T23:00:22.093Z&apos;&#xa;System info: host: &apos;OMARSCOMPUTER&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.1&apos;&#xa;Driver info: org.openqa.selenium.firefox.FirefoxDriver&#xa;Capabilities [{moz:profile=C:\Users\OMARFE~1\AppData\Local\Temp\rust_mozprofile29tJbW, moz:geckodriverVersion=0.31.0, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, moz:headless=false, moz:windowless=false, platform=ANY, proxy=Proxy(), moz:accessibilityChecks=false, moz:useNonSpecCompliantPointerOrigin=false, acceptInsecureCerts=false, browserVersion=103.0.1, moz:shutdownTimeout=60000.0, moz:processID=18888.0, browserName=firefox, moz:buildID=20220729222726, javascriptEnabled=true, moz:platformVersion=10.0, platformName=windows, setWindowRect=true, moz:webdriverClick=true}]&#xa;Session ID: 8ec6db8a-b56f-40ca-958d-bb31c96189c2" type="org.openqa.selenium.WebDriverException">org.openqa.selenium.WebDriverException: Element &lt;a class=&quot;HeaderMenu-link flex-shrink-0 no-underline&quot; href=&quot;/login&quot;&gt; is not clickable at point (30,937) because another element &lt;html id=&quot;top&quot;&gt; obscures it
+Build info: version: &apos;3.5.0&apos;, revision: &apos;8def36e068&apos;, time: &apos;2017-08-10T23:00:22.093Z&apos;
+System info: host: &apos;OMARSCOMPUTER&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.1&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{moz:profile=C:\Users\OMARFE~1\AppData\Local\Temp\rust_mozprofile29tJbW, moz:geckodriverVersion=0.31.0, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, moz:headless=false, moz:windowless=false, platform=ANY, proxy=Proxy(), moz:accessibilityChecks=false, moz:useNonSpecCompliantPointerOrigin=false, acceptInsecureCerts=false, browserVersion=103.0.1, moz:shutdownTimeout=60000.0, moz:processID=18888.0, browserName=firefox, moz:buildID=20220729222726, javascriptEnabled=true, moz:platformVersion=10.0, platformName=windows, setWindowRect=true, moz:webdriverClick=true}]
+Session ID: 8ec6db8a-b56f-40ca-958d-bb31c96189c2
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:641)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:275)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:82)
+	at demo.LoginTest.FirefoxInvalidTest(LoginTest.java:75)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+</error>
+  </testcase>
+  <testcase classname="demo.LoginTest" name="FirefoxValidTest" time="2.168">
+    <error message="Reached error page: about:neterror?e=dnsNotFound&amp;u=https%3A//www.github.com/&amp;c=UTF-8&amp;d=We%20can%E2%80%99t%20connect%20to%20the%20server%20at%20www.github.com.&#xa;Build info: version: &apos;3.5.0&apos;, revision: &apos;8def36e068&apos;, time: &apos;2017-08-10T23:00:22.093Z&apos;&#xa;System info: host: &apos;OMARSCOMPUTER&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.1&apos;&#xa;Driver info: org.openqa.selenium.firefox.FirefoxDriver&#xa;Capabilities [{moz:profile=C:\Users\OMARFE~1\AppData\Local\Temp\rust_mozprofileFHjL5V, moz:geckodriverVersion=0.31.0, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, moz:headless=false, moz:windowless=false, platform=ANY, proxy=Proxy(), moz:accessibilityChecks=false, moz:useNonSpecCompliantPointerOrigin=false, acceptInsecureCerts=false, browserVersion=103.0.1, moz:shutdownTimeout=60000.0, moz:processID=18784.0, browserName=firefox, moz:buildID=20220729222726, javascriptEnabled=true, moz:platformVersion=10.0, platformName=windows, setWindowRect=true, moz:webdriverClick=true}]&#xa;Session ID: 6d0d3a24-7a34-403b-b149-a2dc94af945b" type="org.openqa.selenium.WebDriverException">org.openqa.selenium.WebDriverException: Reached error page: about:neterror?e=dnsNotFound&amp;u=https%3A//www.github.com/&amp;c=UTF-8&amp;d=We%20can%E2%80%99t%20connect%20to%20the%20server%20at%20www.github.com.
+Build info: version: &apos;3.5.0&apos;, revision: &apos;8def36e068&apos;, time: &apos;2017-08-10T23:00:22.093Z&apos;
+System info: host: &apos;OMARSCOMPUTER&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.1&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{moz:profile=C:\Users\OMARFE~1\AppData\Local\Temp\rust_mozprofileFHjL5V, moz:geckodriverVersion=0.31.0, timeouts={implicit=0.0, pageLoad=300000.0, script=30000.0}, pageLoadStrategy=normal, unhandledPromptBehavior=dismiss and notify, strictFileInteractability=false, moz:headless=false, moz:windowless=false, platform=ANY, proxy=Proxy(), moz:accessibilityChecks=false, moz:useNonSpecCompliantPointerOrigin=false, acceptInsecureCerts=false, browserVersion=103.0.1, moz:shutdownTimeout=60000.0, moz:processID=18784.0, browserName=firefox, moz:buildID=20220729222726, javascriptEnabled=true, moz:platformVersion=10.0, platformName=windows, setWindowRect=true, moz:webdriverClick=true}]
+Session ID: 6d0d3a24-7a34-403b-b149-a2dc94af945b
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:82)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:641)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteNavigation.to(RemoteWebDriver.java:949)
+	at demo.LoginTest.FirefoxValidTest(LoginTest.java:110)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+</error>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 103.0.5060.134 (8ec6fce403b3feb0869b0732eda8bd95011d333c-refs/branch-heads/5060@{#1262}) on port 18877
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+log4j:WARN No appenders could be found for logger (org.apache.http.client.protocol.RequestAddCookies).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+Starting ChromeDriver 103.0.5060.134 (8ec6fce403b3feb0869b0732eda8bd95011d333c-refs/branch-heads/5060@{#1262}) on port 39272
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Starting MSEdgeDriver 101.0.1210.53 (019dbf6dd738aa1846d87f5734878db0ee9df370) on port 40920
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping MSEdgeDriver safe.
+MSEdgeDriver was started successfully.
+Starting MSEdgeDriver 101.0.1210.53 (019dbf6dd738aa1846d87f5734878db0ee9df370) on port 11193
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping MSEdgeDriver safe.
+MSEdgeDriver was started successfully.
+1659530534109	geckodriver	INFO	Listening on 127.0.0.1:33897
+1659530534124	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\OMARFE~1\\AppData\\Local\\Temp\\rust_mozprofile29tJbW"
+1659530534503	Marionette	INFO	Marionette enabled
+1659530534508	Marionette	INFO	Listening on port 52123
+Read port: 52123
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\OMARFE~1\\AppData\\Local\\Temp\\rust_mozprofile29tJbW\\search.json.mozlz4", (void 0)))
+Aug 03, 2022 2:42:16 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 769))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 421))
+1659530575972	geckodriver	INFO	Listening on 127.0.0.1:46103
+1659530575993	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\OMARFE~1\\AppData\\Local\\Temp\\rust_mozprofileFHjL5V"
+1659530576373	Marionette	INFO	Marionette enabled
+1659530576379	Marionette	INFO	Listening on port 52202
+Read port: 52202
+console.error: Region.jsm: "Error fetching region" (new TypeError("NetworkError when attempting to fetch resource.", ""))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 421))
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\OMARFE~1\\AppData\\Local\\Temp\\rust_mozprofileFHjL5V\\search.json.mozlz4", (void 0)))
+Aug 03, 2022 2:42:57 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+1659530577919	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+]]></system-err>
+</testsuite>
