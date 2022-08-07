@@ -11,7 +11,10 @@ import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.runners.MethodSorters;
+import org.junit.jupiter.*;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.NoSuchElementException;
@@ -21,11 +24,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-//test
 
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Tests {   
+    
+    
+    
+    
     public String getCellData(int row, int col) throws Exception {
         XSSFSheet ExcelWSheet;
         XSSFWorkbook ExcelWBook;
@@ -86,6 +92,12 @@ public class Tests {
         
     
     }
+    
+//    @BeforeTest
+//    public static void start(){
+//        org.junit.jupiter.engine.execution.parallel.enabled = true;
+//        org.junit.jupiter.engine.execution.parallel.mode.default = concurrent;
+//    }
     
     @Test
     public void FirefoxInvalidTest() throws Exception {
@@ -232,5 +244,5 @@ public class Tests {
         driver.close();
 
     }
-    }
+    
 }
