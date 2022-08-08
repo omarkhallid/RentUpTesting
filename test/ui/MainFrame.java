@@ -4,10 +4,13 @@
  */
 package ui;
 
+import demo.SearchTests;
 import java.awt.Dimension;
 import java.util.ArrayList;
 import javax.swing.JCheckBox;
 import javax.swing.*;
+import org.junit.internal.TextListener;
+import org.junit.runner.JUnitCore;
 import ui.*;
 
 /**
@@ -96,7 +99,6 @@ public class MainFrame extends javax.swing.JFrame {
 
         layeredPane.setBackground(new java.awt.Color(255, 0, 102));
         layeredPane.setMinimumSize(new java.awt.Dimension(800, 1000));
-        layeredPane.setPreferredSize(new java.awt.Dimension(800, 1000));
         layeredPane.setLayout(new java.awt.GridBagLayout());
 
         mainPanel.setBackground(new java.awt.Color(249, 249, 249));
@@ -375,7 +377,7 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(5, 15, 5, 0);
         mainPanel.add(jLabel9, gridBagConstraints);
 
-        loginLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/loading_2.gif"))); // NOI18N
+        loginLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/cross.png"))); // NOI18N
         loginLabel.setMaximumSize(new java.awt.Dimension(40, 40));
         loginLabel.setMinimumSize(new java.awt.Dimension(40, 40));
         loginLabel.setName("loginStatusLabel"); // NOI18N
@@ -622,7 +624,16 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_deselectAllButtonActionPerformed
 
     private void testButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testButtonActionPerformed
-        // TODO add your handling code here:
+        if (searchCheckBox.isSelected()){
+            searchLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/loading_2.gif")));
+            JUnitCore junit = new JUnitCore();
+            junit.addListener(new TextListener(System.out));
+            if (junit.run(SearchTests.class).wasSuccessful())
+                searchLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/check.gif")));
+            else
+                searchLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.gif")));
+           
+        }
     }//GEN-LAST:event_testButtonActionPerformed
 
     private void loginEditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginEditButtonActionPerformed
