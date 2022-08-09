@@ -98,7 +98,9 @@ public class MainFrame extends javax.swing.JFrame {
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
         layeredPane.setBackground(new java.awt.Color(255, 0, 102));
+        layeredPane.setMaximumSize(new java.awt.Dimension(800, 1000));
         layeredPane.setMinimumSize(new java.awt.Dimension(800, 1000));
+        layeredPane.setPreferredSize(new java.awt.Dimension(800, 1000));
         layeredPane.setLayout(new java.awt.GridBagLayout());
 
         mainPanel.setBackground(new java.awt.Color(249, 249, 249));
@@ -218,7 +220,9 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(5, 15, 5, 0);
         mainPanel.add(jLabel8, gridBagConstraints);
 
-        rrLLLabel.setText("jLabel1");
+        rrLLLabel.setMaximumSize(new java.awt.Dimension(40, 40));
+        rrLLLabel.setMinimumSize(new java.awt.Dimension(40, 40));
+        rrLLLabel.setPreferredSize(new java.awt.Dimension(40, 40));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 13;
@@ -267,7 +271,9 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(12, 16, 12, 16);
         mainPanel.add(coLLEditButton, gridBagConstraints);
 
-        alLLLabel.setText("jLabel1");
+        alLLLabel.setMaximumSize(new java.awt.Dimension(40, 40));
+        alLLLabel.setMinimumSize(new java.awt.Dimension(40, 40));
+        alLLLabel.setPreferredSize(new java.awt.Dimension(40, 40));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 11;
@@ -298,7 +304,9 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(5, 15, 5, 0);
         mainPanel.add(jLabel10, gridBagConstraints);
 
-        coLLLabel.setText("jLabel1");
+        coLLLabel.setMaximumSize(new java.awt.Dimension(40, 40));
+        coLLLabel.setMinimumSize(new java.awt.Dimension(40, 40));
+        coLLLabel.setPreferredSize(new java.awt.Dimension(40, 40));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 14;
@@ -357,7 +365,9 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(0, 25, 0, 0);
         mainPanel.add(signupCheckBox, gridBagConstraints);
 
-        arLLLabel.setText("jLabel1");
+        arLLLabel.setMaximumSize(new java.awt.Dimension(40, 40));
+        arLLLabel.setMinimumSize(new java.awt.Dimension(40, 40));
+        arLLLabel.setPreferredSize(new java.awt.Dimension(40, 40));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 12;
@@ -377,7 +387,6 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(5, 15, 5, 0);
         mainPanel.add(jLabel9, gridBagConstraints);
 
-        loginLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/cross.png"))); // NOI18N
         loginLabel.setMaximumSize(new java.awt.Dimension(40, 40));
         loginLabel.setMinimumSize(new java.awt.Dimension(40, 40));
         loginLabel.setName("loginStatusLabel"); // NOI18N
@@ -415,7 +424,9 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(0, 25, 0, 0);
         mainPanel.add(arLLCheckBox, gridBagConstraints);
 
-        signupLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/check.png"))); // NOI18N
+        signupLabel.setMaximumSize(new java.awt.Dimension(40, 40));
+        signupLabel.setMinimumSize(new java.awt.Dimension(40, 40));
+        signupLabel.setPreferredSize(new java.awt.Dimension(40, 40));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 3;
@@ -435,7 +446,10 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(0, 25, 0, 0);
         mainPanel.add(arTTCheckBox, gridBagConstraints);
 
-        prTTLabel.setText("jLabel1");
+        prTTLabel.setMaximumSize(new java.awt.Dimension(40, 40));
+        prTTLabel.setMinimumSize(new java.awt.Dimension(40, 40));
+        prTTLabel.setName(""); // NOI18N
+        prTTLabel.setPreferredSize(new java.awt.Dimension(40, 40));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 6;
@@ -518,7 +532,9 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(12, 16, 12, 16);
         mainPanel.add(rrTTEditButton, gridBagConstraints);
 
-        rrTTLabel.setText("jLabel1");
+        rrTTLabel.setMaximumSize(new java.awt.Dimension(40, 40));
+        rrTTLabel.setMinimumSize(new java.awt.Dimension(40, 40));
+        rrTTLabel.setPreferredSize(new java.awt.Dimension(40, 40));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 8;
@@ -526,7 +542,9 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         mainPanel.add(rrTTLabel, gridBagConstraints);
 
-        arTTLabel.setText("jLabel1");
+        arTTLabel.setMaximumSize(new java.awt.Dimension(40, 40));
+        arTTLabel.setMinimumSize(new java.awt.Dimension(40, 40));
+        arTTLabel.setPreferredSize(new java.awt.Dimension(40, 40));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 7;
@@ -534,7 +552,9 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         mainPanel.add(arTTLabel, gridBagConstraints);
 
-        searchLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/cross.png"))); // NOI18N
+        searchLabel.setMaximumSize(new java.awt.Dimension(40, 40));
+        searchLabel.setMinimumSize(new java.awt.Dimension(40, 40));
+        searchLabel.setPreferredSize(new java.awt.Dimension(40, 40));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 4;
@@ -542,7 +562,9 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         mainPanel.add(searchLabel, gridBagConstraints);
 
-        coTTLabel.setText("jLabel1");
+        coTTLabel.setMaximumSize(new java.awt.Dimension(40, 40));
+        coTTLabel.setMinimumSize(new java.awt.Dimension(40, 40));
+        coTTLabel.setPreferredSize(new java.awt.Dimension(40, 40));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 9;
@@ -576,11 +598,7 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(12, 16, 12, 16);
         mainPanel.add(coTTEditButton, gridBagConstraints);
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        layeredPane.add(mainPanel, gridBagConstraints);
+        layeredPane.add(mainPanel, new java.awt.GridBagConstraints());
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
@@ -603,7 +621,14 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_rrLLEditButtonActionPerformed
 
     private void alLLEditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alLLEditButtonActionPerformed
-        // TODO add your handling code here:
+        AddListingPanel panel = new AddListingPanel(layeredPane);
+        
+        layeredPane.add(panel, new java.awt.GridBagConstraints());
+        panel.setSize(layeredPane.getWidth(), layeredPane.getHeight());
+        layeredPane.setLayer(panel, 1);
+        mainPanel.setVisible(false);
+        layeredPane.revalidate();
+        layeredPane.repaint();
     }//GEN-LAST:event_alLLEditButtonActionPerformed
 
     private void prTTEditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prTTEditButtonActionPerformed
@@ -624,14 +649,26 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_deselectAllButtonActionPerformed
 
     private void testButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testButtonActionPerformed
+        
+        
+        for(JLabel label : labels)
+            label.setIcon(null);
+        
+        
         if (searchCheckBox.isSelected()){
-            searchLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/loading_2.gif")));
+            searchLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
             JUnitCore junit = new JUnitCore();
             junit.addListener(new TextListener(System.out));
-            if (junit.run(SearchTests.class).wasSuccessful())
-                searchLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/check.gif")));
-            else
-                searchLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.gif")));
+            new Thread(){
+                public void run(){
+                    if (junit.run(SearchTests.class).wasSuccessful())
+                        searchLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
+                    else
+                        searchLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
+                }
+            }.start();
+            
+            
            
         }
     }//GEN-LAST:event_testButtonActionPerformed
@@ -657,6 +694,7 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_loginCheckBoxActionPerformed
 
     private void searchEditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchEditButtonActionPerformed
+        
         searchPanel searchpanel = new searchPanel(layeredPane);
         
         layeredPane.add(searchpanel, new java.awt.GridBagConstraints());
@@ -683,6 +721,18 @@ public class MainFrame extends javax.swing.JFrame {
         checks.add(arLLCheckBox);
         checks.add(rrLLCheckBox);
         checks.add(coLLCheckBox);
+        
+        labels.add(loginLabel);
+        labels.add(signupLabel);
+        labels.add(searchLabel);
+        labels.add(prTTLabel);
+        labels.add(arTTLabel);
+        labels.add(rrTTLabel);
+        labels.add(coTTLabel);
+        labels.add(alLLLabel);
+        labels.add(arLLLabel);
+        labels.add(rrLLLabel);
+        labels.add(coLLLabel);
     }//GEN-LAST:event_formWindowOpened
 
     /**
@@ -722,6 +772,7 @@ public class MainFrame extends javax.swing.JFrame {
     }
     
     private ArrayList<JCheckBox> checks = new ArrayList<JCheckBox>();
+    private ArrayList<JLabel> labels = new ArrayList<JLabel>();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox alLLCheckBox;
