@@ -5,6 +5,7 @@
 package ui;
 
 import demo.SearchTests;
+import demo.logintest;
 import java.awt.Dimension;
 import java.util.ArrayList;
 import javax.swing.JCheckBox;
@@ -17,12 +18,12 @@ import ui.*;
  *
  * @author Omar Fekry
  */
-public class MainFrame extends javax.swing.JFrame {
+public class MainFrame1 extends javax.swing.JFrame {
 
     /**
      * Creates new form MainFrame
      */
-    public MainFrame() {
+    public MainFrame1() {
         initComponents();
     }
 
@@ -641,6 +642,14 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void prTTEditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prTTEditButtonActionPerformed
         // TODO add your handling code here:
+         PostRequestPanel panel = new PostRequestPanel(layeredPane);
+        
+        layeredPane.add(panel, new java.awt.GridBagConstraints());
+        panel.setSize(layeredPane.getWidth(), layeredPane.getHeight());
+        layeredPane.setLayer(panel, 1);
+        mainPanel.setVisible(false);
+        layeredPane.revalidate();
+        layeredPane.repaint();
     }//GEN-LAST:event_prTTEditButtonActionPerformed
 
     private void signupEditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupEditButtonActionPerformed
@@ -675,14 +684,33 @@ public class MainFrame extends javax.swing.JFrame {
                         searchLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
                 }
             }.start();
-            
-            
-           
         }
+        if (loginCheckBox.isSelected()){
+            loginLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
+            JUnitCore junit = new JUnitCore();
+            junit.addListener(new TextListener(System.out));
+            new Thread(){
+                public void run(){
+                    if (junit.run(logintest.class).wasSuccessful())
+                        loginLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
+                    else
+                        loginLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
+                }
+            }.start();
+        }
+        
     }//GEN-LAST:event_testButtonActionPerformed
 
     private void loginEditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginEditButtonActionPerformed
         // TODO add your handling code here:
+        LoginPanel panel = new LoginPanel(layeredPane);
+        
+        layeredPane.add(panel, new java.awt.GridBagConstraints());
+        panel.setSize(layeredPane.getWidth(), layeredPane.getHeight());
+        layeredPane.setLayer(panel, 1);
+        mainPanel.setVisible(false);
+        layeredPane.revalidate();
+        layeredPane.repaint();
     }//GEN-LAST:event_loginEditButtonActionPerformed
 
     private void arTTEditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arTTEditButtonActionPerformed
@@ -703,11 +731,11 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void searchEditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchEditButtonActionPerformed
         
-        SearchPanel searchpanel = new SearchPanel(layeredPane);
+        searchPanel panel = new searchPanel(layeredPane);
         
-        layeredPane.add(searchpanel, new java.awt.GridBagConstraints());
-        searchpanel.setSize(layeredPane.getWidth(), layeredPane.getHeight());
-        layeredPane.setLayer(searchpanel, 1);
+        layeredPane.add(panel, new java.awt.GridBagConstraints());
+        panel.setSize(layeredPane.getWidth(), layeredPane.getHeight());
+        layeredPane.setLayer(panel, 1);
         mainPanel.setVisible(false);
         layeredPane.revalidate();
         layeredPane.repaint();
@@ -760,21 +788,22 @@ public class MainFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainFrame1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainFrame1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainFrame1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainFrame1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainFrame().setVisible(true);
+                new MainFrame1().setVisible(true);
             }
         });
     }

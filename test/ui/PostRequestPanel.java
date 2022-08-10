@@ -1,28 +1,28 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package ui;
 
-import demo.logintest;
-import ui.LoginPanel;
+import demo.Methods;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JComboBox;
-import javax.swing.JOptionPane;
+import javax.swing.JLayeredPane;
 
 /**
  *
  * @author Tarek Radwan
  */
-public class PostRequestPanel extends javax.swing.JFrame {
+public class PostRequestPanel extends javax.swing.JPanel {
+
+    private final JLayeredPane layeredPane;
 
     /**
-     * Creates new form PostRequest
+     * Creates new form Post
      */
-    public PostRequestPanel() {
+    public PostRequestPanel(JLayeredPane layeredPane)  {
         initComponents();
-        
+        this.layeredPane = layeredPane;
     }
 
     /**
@@ -34,15 +34,25 @@ public class PostRequestPanel extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttons = new javax.swing.ButtonGroup();
-        buttons2 = new javax.swing.ButtonGroup();
-        buttons3 = new javax.swing.ButtonGroup();
-        buttons4 = new javax.swing.ButtonGroup();
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
+        buttonGroup3 = new javax.swing.ButtonGroup();
+        buttonGroup4 = new javax.swing.ButtonGroup();
+        jLabel8 = new javax.swing.JLabel();
+        term1 = new javax.swing.JRadioButton();
+        term2 = new javax.swing.JRadioButton();
+        term3 = new javax.swing.JRadioButton();
+        jLabel9 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        status1 = new javax.swing.JRadioButton();
         jComboBox1 = new javax.swing.JComboBox<>();
+        status2 = new javax.swing.JRadioButton();
         jComboBox2 = new javax.swing.JComboBox<>();
+        status3 = new javax.swing.JRadioButton();
         jLabel2 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        budget1 = new javax.swing.JTextField();
         jComboBox3 = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -55,111 +65,12 @@ public class PostRequestPanel extends javax.swing.JFrame {
         ThirdDuration = new javax.swing.JRadioButton();
         jLabel7 = new javax.swing.JLabel();
         budget = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        term1 = new javax.swing.JRadioButton();
-        term2 = new javax.swing.JRadioButton();
-        term3 = new javax.swing.JRadioButton();
-        jLabel9 = new javax.swing.JLabel();
-        status1 = new javax.swing.JRadioButton();
-        status2 = new javax.swing.JRadioButton();
-        status3 = new javax.swing.JRadioButton();
-        jLabel10 = new javax.swing.JLabel();
-        budget1 = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         property1 = new javax.swing.JRadioButton();
         property2 = new javax.swing.JRadioButton();
         property3 = new javax.swing.JRadioButton();
         jButton1 = new javax.swing.JButton();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("PostRequest");
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel1.setText("Post a Request Form");
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cairo", "Giza", "Luxor", "Alexanderia", "Dahab" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
-
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masr El Gedida", "Zamalek", "Maadi" }));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
-            }
-        });
-
-        jLabel2.setText("Select a City ");
-
-        jLabel3.setText("Select a district");
-
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Almazah", "El Korba", "El Nozha" }));
-
-        jLabel4.setText("Select neighbourhood");
-
-        jLabel5.setText("choose duration");
-
-        buttons.add(nightsbutton);
-        nightsbutton.setText("Nights");
-        nightsbutton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nightsbuttonActionPerformed(evt);
-            }
-        });
-
-        buttons.add(MonthsButton);
-        MonthsButton.setSelected(true);
-        MonthsButton.setText("Months");
-        MonthsButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MonthsButtonActionPerformed(evt);
-            }
-        });
-
-        buttons.add(YearsButton);
-        YearsButton.setText("Years");
-        YearsButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                YearsButtonActionPerformed(evt);
-            }
-        });
-
-        jLabel6.setText("choose duration number ");
-
-        buttons2.add(firstDuration);
-        firstDuration.setText("3");
-        firstDuration.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                firstDurationActionPerformed(evt);
-            }
-        });
-
-        buttons2.add(SecondDuration);
-        SecondDuration.setSelected(true);
-        SecondDuration.setText("4");
-        SecondDuration.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SecondDurationActionPerformed(evt);
-            }
-        });
-
-        buttons2.add(ThirdDuration);
-        ThirdDuration.setText("8");
-        ThirdDuration.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ThirdDurationActionPerformed(evt);
-            }
-        });
-
-        jLabel7.setText("Enter budget (333)");
-
-        budget.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                budgetActionPerformed(evt);
-            }
-        });
+        jButton2 = new javax.swing.JButton();
 
         jLabel8.setText("choose a term ");
 
@@ -187,7 +98,10 @@ public class PostRequestPanel extends javax.swing.JFrame {
 
         jLabel9.setText("Furnishing status");
 
-        buttons3.add(status1);
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setText("Post a Request Form");
+
+        buttonGroup3.add(status1);
         status1.setText("Furnished");
         status1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -195,7 +109,14 @@ public class PostRequestPanel extends javax.swing.JFrame {
             }
         });
 
-        buttons3.add(status2);
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cairo", "Giza", "Luxor", "Alexanderia", "Dahab" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+
+        buttonGroup3.add(status2);
         status2.setSelected(true);
         status2.setText("Unfurnished");
         status2.addActionListener(new java.awt.event.ActionListener() {
@@ -204,10 +125,21 @@ public class PostRequestPanel extends javax.swing.JFrame {
             }
         });
 
-        buttons3.add(status3);
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masr El Gedida", "Zamalek", "Maadi" }));
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2ActionPerformed(evt);
+            }
+        });
+
+        buttonGroup3.add(status3);
         status3.setText("Serviced Apartment");
 
+        jLabel2.setText("Select a City ");
+
         jLabel10.setText("Minimum rooms (2)");
+
+        jLabel3.setText("Select a district");
 
         budget1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -215,9 +147,75 @@ public class PostRequestPanel extends javax.swing.JFrame {
             }
         });
 
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Almazah", "El Korba", "El Nozha" }));
+
+        jLabel4.setText("Select neighbourhood");
+
+        jLabel5.setText("choose duration");
+
+        buttonGroup1.add(nightsbutton);
+        nightsbutton.setText("Nights");
+        nightsbutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nightsbuttonActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(MonthsButton);
+        MonthsButton.setSelected(true);
+        MonthsButton.setText("Months");
+        MonthsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MonthsButtonActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(YearsButton);
+        YearsButton.setText("Years");
+        YearsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                YearsButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setText("choose duration number ");
+
+        buttonGroup2.add(firstDuration);
+        firstDuration.setText("3");
+        firstDuration.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                firstDurationActionPerformed(evt);
+            }
+        });
+
+        buttonGroup2.add(SecondDuration);
+        SecondDuration.setSelected(true);
+        SecondDuration.setText("4");
+        SecondDuration.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SecondDurationActionPerformed(evt);
+            }
+        });
+
+        buttonGroup2.add(ThirdDuration);
+        ThirdDuration.setText("8");
+        ThirdDuration.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ThirdDurationActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("Enter budget (333)");
+
+        budget.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                budgetActionPerformed(evt);
+            }
+        });
+
         jLabel11.setText("Property types");
 
-        buttons4.add(property1);
+        buttonGroup4.add(property1);
         property1.setText("Duplex");
         property1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -225,11 +223,11 @@ public class PostRequestPanel extends javax.swing.JFrame {
             }
         });
 
-        buttons4.add(property2);
+        buttonGroup4.add(property2);
         property2.setSelected(true);
         property2.setText("Hotel Room");
 
-        buttons4.add(property3);
+        buttonGroup4.add(property3);
         property3.setText("Villa");
         property3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -245,8 +243,16 @@ public class PostRequestPanel extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
+        jButton2.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
+        jButton2.setText("Back");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -282,7 +288,7 @@ public class PostRequestPanel extends javax.swing.JFrame {
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addComponent(ThirdDuration)
                                                 .addGap(22, 22, 22)))))
-                                .addContainerGap(60, Short.MAX_VALUE))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(budget)
                                 .addGap(63, 63, 63))))
@@ -325,7 +331,9 @@ public class PostRequestPanel extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(200, 200, 200)
-                        .addComponent(jButton1)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -389,16 +397,32 @@ public class PostRequestPanel extends javax.swing.JFrame {
                     .addComponent(property1)
                     .addComponent(property2)
                     .addComponent(property3))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                .addGap(24, 24, 24))
         );
-
-        pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void term1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_term1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_term1ActionPerformed
+
+    private void term2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_term2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_term2ActionPerformed
+
+    private void term3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_term3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_term3ActionPerformed
+
+    private void status1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_status1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_status1ActionPerformed
+
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-       String value = jComboBox1.getSelectedItem().toString();
+        String value = jComboBox1.getSelectedItem().toString();
         if(value.equals("Cairo"))
         {
             jComboBox2.removeAllItems();
@@ -436,9 +460,9 @@ public class PostRequestPanel extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
-        
-        try
+    private void status2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_status2ActionPerformed
+        // TODO add your handling code here:
+         try
         {
         String value2 = jComboBox2.getSelectedItem().toString();
    
@@ -506,21 +530,97 @@ public class PostRequestPanel extends javax.swing.JFrame {
                     System.out.println(e);
                 }
        
+    }//GEN-LAST:event_status2ActionPerformed
+
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+
+        try
+        {
+            String value2 = jComboBox2.getSelectedItem().toString();
+
+            if(value2.equals("Masr El Gedida"))
+            {
+                jComboBox3.removeAllItems();
+                jComboBox3.addItem("Almazah");
+                jComboBox3.addItem("El Korba");
+                jComboBox3.addItem("El Nozha");
+            }
+            if(value2.equals("Zamalek"))
+            {
+                jComboBox3.removeAllItems();
+                jComboBox3.addItem("nothing");
+
+            }
+            if(value2.equals("Maadi"))
+            {
+                jComboBox3.removeAllItems();
+                jComboBox3.addItem("Cornich El Maadi");
+
+            }
+            if(value2.equals("Agouza"))
+            {
+                jComboBox3.removeAllItems();
+                jComboBox3.addItem("nothing");
+            }
+            if(value2.equals("Dokki"))
+            {
+                jComboBox3.removeAllItems();
+                jComboBox3.addItem("nothing");
+            }
+            if(value2.equals("October"))
+            {
+                jComboBox3.removeAllItems();
+                jComboBox3.addItem("Hay El Motamayez");
+                jComboBox3.addItem("West Somid");
+            }
+            if(value2.equals("nothing"))
+            {
+                jComboBox3.removeAllItems();
+                jComboBox3.addItem("nothing");
+
+            }
+            if(value2.equals("Blue Hole"))
+            {
+                jComboBox3.removeAllItems();
+                jComboBox3.addItem("nothing");
+            }
+            if(value2.equals("Canyon"))
+            {
+                jComboBox3.removeAllItems();
+                jComboBox3.addItem("Canyon Estate");
+                jComboBox3.addItem("Tropitel");
+            }
+            if(value2.equals("Laguna"))
+            {
+                jComboBox3.removeAllItems();
+                jComboBox3.addItem("Gannet Sinai");
+                jComboBox3.addItem("Golden Heights");
+            }
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }
+
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
+    private void budget1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_budget1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_budget1ActionPerformed
+
     private void nightsbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nightsbuttonActionPerformed
-        // TODO add your handling code here:genderGroup.getSelection().getActionCommand(); 
-        
+        // TODO add your handling code here:genderGroup.getSelection().getActionCommand();
+
     }//GEN-LAST:event_nightsbuttonActionPerformed
 
     private void MonthsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MonthsButtonActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_MonthsButtonActionPerformed
 
     private void YearsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_YearsButtonActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_YearsButtonActionPerformed
 
     private void firstDurationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstDurationActionPerformed
@@ -533,42 +633,29 @@ public class PostRequestPanel extends javax.swing.JFrame {
 
     private void ThirdDurationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ThirdDurationActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_ThirdDurationActionPerformed
 
     private void budgetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_budgetActionPerformed
         // TODO add your handling code here:
-//        String b = budget.getText().trim();
-//        if(!(budget.getText().isEmpty()))
-//        {
-//            System.out.println("hehe");
-//        }
-        
+        //        String b = budget.getText().trim();
+        //        if(!(budget.getText().isEmpty()))
+        //        {
+            //            System.out.println("hehe");
+            //        }
+
     }//GEN-LAST:event_budgetActionPerformed
 
-    private void term1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_term1ActionPerformed
+    private void property1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_property1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_term1ActionPerformed
-
-    private void term2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_term2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_term2ActionPerformed
-
-    private void status1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_status1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_status1ActionPerformed
-
-    private void budget1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_budget1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_budget1ActionPerformed
+    }//GEN-LAST:event_property1ActionPerformed
 
     private void property3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_property3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_property3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        logintest t = new logintest();  
+          Methods t = new Methods();  
        
         if(!(jComboBox1.getSelectedItem().equals("Cairo")))
         {
@@ -576,7 +663,7 @@ public class PostRequestPanel extends javax.swing.JFrame {
             try {
                 t.setCellData(e, 5, 0);
             } catch (Exception ex) {
-                Logger.getLogger(LoginPanel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PostRequestPanel.class.getName()).log(Level.SEVERE, null, ex);
             }   
         }
         else
@@ -584,7 +671,7 @@ public class PostRequestPanel extends javax.swing.JFrame {
             try {
                 t.setCellData("z", 5, 0);
             } catch (Exception ex) {
-                Logger.getLogger(LoginPanel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PostRequestPanel.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         if(!(jComboBox2.getSelectedItem().equals("Masr El Gedida")))
@@ -593,7 +680,7 @@ public class PostRequestPanel extends javax.swing.JFrame {
             try {
                 t.setCellData(e, 5, 1);
             } catch (Exception ex) {
-                Logger.getLogger(LoginPanel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PostRequestPanel.class.getName()).log(Level.SEVERE, null, ex);
             }   
         }
         else
@@ -601,7 +688,7 @@ public class PostRequestPanel extends javax.swing.JFrame {
             try {
                 t.setCellData("z", 5, 1);
             } catch (Exception ex) {
-                Logger.getLogger(LoginPanel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PostRequestPanel.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         if(!(jComboBox3.getSelectedItem().equals("Almazah")))
@@ -610,7 +697,7 @@ public class PostRequestPanel extends javax.swing.JFrame {
             try {
                 t.setCellData(e, 5, 2);
             } catch (Exception ex) {
-                Logger.getLogger(LoginPanel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PostRequestPanel.class.getName()).log(Level.SEVERE, null, ex);
             }   
         }
         else
@@ -618,7 +705,7 @@ public class PostRequestPanel extends javax.swing.JFrame {
             try {
                 t.setCellData("z", 5, 2);
             } catch (Exception ex) {
-                Logger.getLogger(LoginPanel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PostRequestPanel.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         
@@ -637,7 +724,7 @@ public class PostRequestPanel extends javax.swing.JFrame {
                 }
                 
             } catch (Exception ex) {
-                Logger.getLogger(LoginPanel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PostRequestPanel.class.getName()).log(Level.SEVERE, null, ex);
             }   
         }
         else
@@ -645,7 +732,7 @@ public class PostRequestPanel extends javax.swing.JFrame {
             try {
                 t.setCellData("z", 5, 4);
             } catch (Exception ex) {
-                Logger.getLogger(LoginPanel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PostRequestPanel.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
          if(!(MonthsButton.isSelected()))
@@ -662,7 +749,7 @@ public class PostRequestPanel extends javax.swing.JFrame {
                 }
                 
             } catch (Exception ex) {
-                Logger.getLogger(LoginPanel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PostRequestPanel.class.getName()).log(Level.SEVERE, null, ex);
             }   
         }
         else
@@ -670,7 +757,7 @@ public class PostRequestPanel extends javax.swing.JFrame {
             try {
                 t.setCellData("z", 5, 3);
             } catch (Exception ex) {
-                Logger.getLogger(LoginPanel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PostRequestPanel.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
          
@@ -681,7 +768,7 @@ public class PostRequestPanel extends javax.swing.JFrame {
             try {
                 t.setCellData(e, 5, 5);
             } catch (Exception ex) {
-                Logger.getLogger(LoginPanel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PostRequestPanel.class.getName()).log(Level.SEVERE, null, ex);
             }   
         }
         else
@@ -689,7 +776,7 @@ public class PostRequestPanel extends javax.swing.JFrame {
             try {
                 t.setCellData("z", 5, 5);
             } catch (Exception ex) {
-                Logger.getLogger(LoginPanel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PostRequestPanel.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
          
@@ -722,7 +809,7 @@ public class PostRequestPanel extends javax.swing.JFrame {
                 }
                 
             } catch (Exception ex) {
-                Logger.getLogger(LoginPanel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PostRequestPanel.class.getName()).log(Level.SEVERE, null, ex);
             }   
         
           
@@ -740,7 +827,7 @@ public class PostRequestPanel extends javax.swing.JFrame {
                 }
                 
             } catch (Exception ex) {
-                Logger.getLogger(LoginPanel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PostRequestPanel.class.getName()).log(Level.SEVERE, null, ex);
             }   
         }
         else
@@ -748,7 +835,7 @@ public class PostRequestPanel extends javax.swing.JFrame {
             try {
                 t.setCellData("z", 5, 9);
             } catch (Exception ex) {
-                Logger.getLogger(LoginPanel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PostRequestPanel.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
           if(!(budget1.getText().isEmpty()))
@@ -757,7 +844,7 @@ public class PostRequestPanel extends javax.swing.JFrame {
             try {
                 t.setCellData(e, 5, 10);
             } catch (Exception ex) {
-                Logger.getLogger(LoginPanel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PostRequestPanel.class.getName()).log(Level.SEVERE, null, ex);
             }   
         }
         else
@@ -765,7 +852,7 @@ public class PostRequestPanel extends javax.swing.JFrame {
             try {
                 t.setCellData("z", 5, 10);
             } catch (Exception ex) {
-                Logger.getLogger(LoginPanel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PostRequestPanel.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
           if(!( property2.isSelected()))
@@ -782,7 +869,7 @@ public class PostRequestPanel extends javax.swing.JFrame {
                 }
                 
             } catch (Exception ex) {
-                Logger.getLogger(LoginPanel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PostRequestPanel.class.getName()).log(Level.SEVERE, null, ex);
             }   
         }
         else
@@ -790,7 +877,7 @@ public class PostRequestPanel extends javax.swing.JFrame {
             try {
                 t.setCellData("z", 5, 11);
             } catch (Exception ex) {
-                Logger.getLogger(LoginPanel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PostRequestPanel.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
           
@@ -799,53 +886,14 @@ public class PostRequestPanel extends javax.swing.JFrame {
           
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void term3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_term3ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_term3ActionPerformed
+        layeredPane.remove(this);
+        layeredPane.getComponentsInLayer(0)[0].setVisible(true);
+        layeredPane.revalidate();
+        layeredPane.repaint();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void status2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_status2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_status2ActionPerformed
-
-    private void property1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_property1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_property1ActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PostRequestPanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PostRequestPanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PostRequestPanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PostRequestPanel.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new PostRequestPanel().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton MonthsButton;
@@ -854,12 +902,13 @@ public class PostRequestPanel extends javax.swing.JFrame {
     private javax.swing.JRadioButton YearsButton;
     private javax.swing.JTextField budget;
     private javax.swing.JTextField budget1;
-    private javax.swing.ButtonGroup buttons;
-    private javax.swing.ButtonGroup buttons2;
-    private javax.swing.ButtonGroup buttons3;
-    private javax.swing.ButtonGroup buttons4;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.ButtonGroup buttonGroup3;
+    private javax.swing.ButtonGroup buttonGroup4;
     private javax.swing.JRadioButton firstDuration;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
