@@ -7,6 +7,8 @@ package ui;
 import demo.Methods;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.*;
@@ -21,32 +23,15 @@ public class searchPanel extends javax.swing.JPanel {
      * Creates new form searchPanel
      */
     
-    public String getCellData(int row, int col) {
-        XSSFWorkbook ExcelWBook;
-        XSSFSheet ExcelWSheet;
-        
-        try {
-            // Open the Excel file
-            FileInputStream ExcelFile = new FileInputStream("Login.xlsx");
-
-            // Access the required test data sheet
-            ExcelWBook = new XSSFWorkbook(ExcelFile);
-            ExcelWSheet = ExcelWBook.getSheet("Sheet1");
-            DataFormatter formatter = new DataFormatter();
-            String cellData = formatter.formatCellValue(ExcelWSheet.getRow(row).getCell(col));
-            ExcelWBook.close();
-            return cellData;
-        }
-        catch (IOException e){
-            return "Error in opening the file";
-        }
-    }
-    
     public searchPanel(JLayeredPane layeredPane) {
         initComponents();
         this.layeredPane = layeredPane;
         
-        searchTextField.setText(getCellData(10, 0));
+        try {
+            searchTextField.setText(Methods.getCellData(10, 0));
+        } catch (Exception ex) {
+            Logger.getLogger(searchPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
         
         
@@ -68,10 +53,9 @@ public class searchPanel extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
         searchTextField = new javax.swing.JTextField();
 
-        setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 5));
-        setMaximumSize(new java.awt.Dimension(800, 1000));
-        setMinimumSize(new java.awt.Dimension(800, 1000));
-        setPreferredSize(new java.awt.Dimension(800, 1000));
+        setMaximumSize(new java.awt.Dimension(700, 700));
+        setMinimumSize(new java.awt.Dimension(700, 700));
+        setPreferredSize(new java.awt.Dimension(700, 700));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel1.setText("Search Key");
@@ -99,7 +83,7 @@ public class searchPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(216, 216, 216)
+                .addGap(154, 154, 154)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1)
@@ -110,12 +94,12 @@ public class searchPanel extends javax.swing.JPanel {
                             .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(114, 114, 114)))
-                .addContainerGap(215, Short.MAX_VALUE))
+                .addContainerGap(187, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(376, 376, 376)
+                .addGap(232, 232, 232)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(searchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -123,7 +107,7 @@ public class searchPanel extends javax.swing.JPanel {
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(404, Short.MAX_VALUE))
+                .addContainerGap(258, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

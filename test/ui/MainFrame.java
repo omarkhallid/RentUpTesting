@@ -85,10 +85,10 @@ public class MainFrame extends javax.swing.JFrame {
         setTitle("Rentup Automated Tester");
         setBackground(new java.awt.Color(255, 255, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setMaximumSize(new java.awt.Dimension(710, 710));
-        setMinimumSize(new java.awt.Dimension(710, 710));
+        setMaximumSize(new java.awt.Dimension(715, 735));
+        setMinimumSize(new java.awt.Dimension(715, 735));
         setName("mainFrame"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(710, 710));
+        setPreferredSize(new java.awt.Dimension(715, 735));
         setSize(new java.awt.Dimension(700, 700));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
@@ -703,7 +703,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void searchEditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchEditButtonActionPerformed
         
-        SearchPanel searchpanel = new SearchPanel(layeredPane);
+        searchPanel searchpanel = new searchPanel(layeredPane);
         
         layeredPane.add(searchpanel, new java.awt.GridBagConstraints());
         searchpanel.setSize(layeredPane.getWidth(), layeredPane.getHeight());
