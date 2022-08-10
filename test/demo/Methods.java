@@ -36,13 +36,6 @@ public class Methods {
             ExcelWSheet = ExcelWBook.getSheet("Sheet1");
             DataFormatter formatter = new DataFormatter();
             String cellData = formatter.formatCellValue(ExcelWSheet.getRow(row).getCell(col));
-            /*ExcelWSheet.createRow(5);
-            ExcelWSheet.createRow(5).createCell(5);
-            System.out.println(ExcelWSheet.getRow(5).getCell(6).getCellType());
-            ExcelWSheet.getRow(5).getCell(5).setCellValue("test");
-            FileOutputStream out = new FileOutputStream(new File("Login.xlsx"));
-            ExcelWBook.write(out);
-            out.close();*/
             ExcelWBook.close();
             return cellData;
         }
@@ -68,10 +61,11 @@ public class Methods {
             
             ExcelWSheet.getRow(row).getCell(col).setCellValue(val);
             
-            FileOutputStream out = new FileOutputStream(new File("Login.xlsx"));
+            FileOutputStream out = new FileOutputStream(new File(new java.io.File(".").getCanonicalPath() + "\\" + "Login.xlsx"));
             ExcelWBook.write(out);
             out.close();
             ExcelWBook.close();
+            System.out.println("Saved " + val + " to (" + row + ", " + col + ")");
         }
         catch (IOException e){
             System.out.println("Couldn't save to file");
@@ -93,12 +87,13 @@ public class Methods {
         
         // Click on Sign in button
         Thread.sleep(2000);
-        driver.findElement(By.xpath("/html/body/div/div/div/header/nav/div/div[4]/ul/li[2]/button/span")).click();
-
+        driver.findElement(By.cssSelector("#nav-collapse > ul > li:nth-child(3) > button")).click();
+        Thread.sleep(2000);
         // Enter the username and password
         try{
-            driver.findElement(By.xpath("//*[@id=\"__BVID__98\"]")).sendKeys(email);
-            driver.findElement(By.xpath("//*[@id=\"__BVID__103\"]")).sendKeys(password);
+            //Thread.sleep(2000);
+            driver.findElements(By.tagName("input")).get(0).sendKeys(email);
+            driver.findElements(By.tagName("input")).get(1).sendKeys(password);
         }
         catch(Exception ex){
             driver.close();

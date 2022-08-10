@@ -35,9 +35,10 @@ public class SearchTests {
         System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
         System.setProperty("webdriver.edge.driver", "msedgedriver.exe");
         System.setProperty("webdriver.gecko.driver", "geckodriver.exe");
-    	WebDriver driver = new EdgeDriver();
+    	WebDriver driver = new ChromeDriver();
         
-        driver = login(driver,getCellData(1, 0),getCellData(1, 1));
+        //driver = login(driver,getCellData(1, 0),getCellData(1, 1));
+        driver.navigate().to("http://rentup.co/");
 
         while(true){
             try{
