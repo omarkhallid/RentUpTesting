@@ -107,12 +107,12 @@ public class LoginTests {
     	WebDriver driver = new ChromeDriver();
         
         driver = login(driver,email,password);
-        
+        Thread.sleep(4000);
     	try {
             // Check whether a certain element appears which confirms that the login was not successful
-            assertEquals(false, driver.findElement(By.xpath("/html/body/div/div/div/header/nav/div/div[4]/ul/li[1]/div/button/div")).isDisplayed()); 
+            assertEquals(true, driver.findElement(By.className("user-avatar")).isDisplayed()); 
         } catch(NoSuchElementException e){
-            assertTrue(true);
+            assertTrue(false);
         }
         Thread.sleep(2000);
         
