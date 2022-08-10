@@ -41,7 +41,6 @@ public class MainFrame extends javax.swing.JFrame {
         layeredPane = new javax.swing.JLayeredPane();
         mainPanel = new javax.swing.JPanel();
         loginCheckBox = new javax.swing.JCheckBox();
-        testButton = new javax.swing.JButton();
         alLLCheckBox = new javax.swing.JCheckBox();
         coTTCheckBox = new javax.swing.JCheckBox();
         coLLCheckBox = new javax.swing.JCheckBox();
@@ -72,6 +71,7 @@ public class MainFrame extends javax.swing.JFrame {
         buttonPanel = new javax.swing.JPanel();
         selectAllButton = new javax.swing.JButton();
         deselectAllButton = new javax.swing.JButton();
+        testButton = new javax.swing.JButton();
         arTTEditButton = new javax.swing.JButton();
         rrTTEditButton = new javax.swing.JButton();
         rrTTLabel = new javax.swing.JLabel();
@@ -85,11 +85,11 @@ public class MainFrame extends javax.swing.JFrame {
         setTitle("Rentup Automated Tester");
         setBackground(new java.awt.Color(255, 255, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setMaximumSize(new java.awt.Dimension(750, 750));
-        setMinimumSize(new java.awt.Dimension(750, 750));
+        setMaximumSize(new java.awt.Dimension(710, 710));
+        setMinimumSize(new java.awt.Dimension(710, 710));
         setName("mainFrame"); // NOI18N
-        setResizable(false);
-        setSize(new java.awt.Dimension(750, 750));
+        setPreferredSize(new java.awt.Dimension(710, 710));
+        setSize(new java.awt.Dimension(700, 700));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -98,16 +98,16 @@ public class MainFrame extends javax.swing.JFrame {
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
         layeredPane.setBackground(new java.awt.Color(255, 0, 102));
-        layeredPane.setMaximumSize(new java.awt.Dimension(750, 750));
-        layeredPane.setMinimumSize(new java.awt.Dimension(750, 750));
-        layeredPane.setPreferredSize(new Dimension(750, 750));
+        layeredPane.setMaximumSize(new java.awt.Dimension(700, 700));
+        layeredPane.setMinimumSize(new java.awt.Dimension(700, 700));
+        layeredPane.setPreferredSize(new Dimension(700, 700));
         layeredPane.setLayout(new java.awt.GridBagLayout());
 
         mainPanel.setBackground(new java.awt.Color(249, 249, 249));
-        mainPanel.setMaximumSize(layeredPane.getMaximumSize());
-        mainPanel.setMinimumSize(layeredPane.getMinimumSize());
+        mainPanel.setMaximumSize(new java.awt.Dimension(700, 700));
+        mainPanel.setMinimumSize(new java.awt.Dimension(700, 700));
         mainPanel.setName("mainPanel"); // NOI18N
-        mainPanel.setPreferredSize(layeredPane.getPreferredSize());
+        mainPanel.setPreferredSize(new java.awt.Dimension(700, 700));
         mainPanel.setLayout(new java.awt.GridBagLayout());
 
         loginCheckBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -125,28 +125,8 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 45;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.weightx = 0.1;
-        gridBagConstraints.insets = new java.awt.Insets(0, 25, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(6, 25, 6, 0);
         mainPanel.add(loginCheckBox, gridBagConstraints);
-
-        testButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        testButton.setText("Start Testing");
-        testButton.setMaximumSize(new java.awt.Dimension(129, 40));
-        testButton.setMinimumSize(new java.awt.Dimension(129, 40));
-        testButton.setName("loginEditButton"); // NOI18N
-        testButton.setPreferredSize(new java.awt.Dimension(129, 40));
-        testButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                testButtonActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 15;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
-        gridBagConstraints.weightx = 0.1;
-        gridBagConstraints.weighty = 0.1;
-        gridBagConstraints.insets = new java.awt.Insets(9, 5, 5, 17);
-        mainPanel.add(testButton, gridBagConstraints);
 
         alLLCheckBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         alLLCheckBox.setSelected(true);
@@ -157,7 +137,7 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 45;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.weightx = 0.1;
-        gridBagConstraints.insets = new java.awt.Insets(0, 25, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(6, 25, 6, 0);
         mainPanel.add(alLLCheckBox, gridBagConstraints);
 
         coTTCheckBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -168,7 +148,7 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.gridy = 9;
         gridBagConstraints.ipadx = 45;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 25, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(6, 25, 6, 0);
         mainPanel.add(coTTCheckBox, gridBagConstraints);
 
         coLLCheckBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -180,7 +160,7 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 45;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.weightx = 0.1;
-        gridBagConstraints.insets = new java.awt.Insets(0, 25, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(6, 25, 6, 0);
         mainPanel.add(coLLCheckBox, gridBagConstraints);
 
         rrLLCheckBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -192,7 +172,7 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 45;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.weightx = 0.1;
-        gridBagConstraints.insets = new java.awt.Insets(0, 25, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(6, 25, 6, 0);
         mainPanel.add(rrLLCheckBox, gridBagConstraints);
 
         prTTCheckBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -204,7 +184,7 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 45;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.weightx = 0.1;
-        gridBagConstraints.insets = new java.awt.Insets(0, 25, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(6, 25, 6, 0);
         mainPanel.add(prTTCheckBox, gridBagConstraints);
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -214,13 +194,12 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.gridy = 5;
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.weighty = 0.1;
-        gridBagConstraints.insets = new java.awt.Insets(5, 15, 5, 0);
+        gridBagConstraints.insets = new java.awt.Insets(16, 15, 16, 0);
         mainPanel.add(jLabel8, gridBagConstraints);
 
-        rrLLLabel.setMaximumSize(new java.awt.Dimension(40, 40));
-        rrLLLabel.setMinimumSize(new java.awt.Dimension(40, 40));
-        rrLLLabel.setPreferredSize(new java.awt.Dimension(40, 40));
+        rrLLLabel.setMaximumSize(new java.awt.Dimension(35, 35));
+        rrLLLabel.setMinimumSize(new java.awt.Dimension(35, 35));
+        rrLLLabel.setPreferredSize(new java.awt.Dimension(35, 35));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 13;
@@ -239,7 +218,7 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 12;
-        gridBagConstraints.insets = new java.awt.Insets(5, 16, 5, 16);
+        gridBagConstraints.insets = new java.awt.Insets(0, 16, 0, 16);
         mainPanel.add(arLLEditButton, gridBagConstraints);
 
         loginEditButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -253,7 +232,7 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.insets = new java.awt.Insets(5, 16, 5, 16);
+        gridBagConstraints.insets = new java.awt.Insets(0, 16, 0, 16);
         mainPanel.add(loginEditButton, gridBagConstraints);
 
         coLLEditButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -266,12 +245,12 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 14;
-        gridBagConstraints.insets = new java.awt.Insets(5, 16, 5, 16);
+        gridBagConstraints.insets = new java.awt.Insets(0, 16, 0, 16);
         mainPanel.add(coLLEditButton, gridBagConstraints);
 
-        alLLLabel.setMaximumSize(new java.awt.Dimension(40, 40));
-        alLLLabel.setMinimumSize(new java.awt.Dimension(40, 40));
-        alLLLabel.setPreferredSize(new java.awt.Dimension(40, 40));
+        alLLLabel.setMaximumSize(new java.awt.Dimension(35, 35));
+        alLLLabel.setMinimumSize(new java.awt.Dimension(35, 35));
+        alLLLabel.setPreferredSize(new java.awt.Dimension(35, 35));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 11;
@@ -288,7 +267,7 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.gridy = 8;
         gridBagConstraints.ipadx = 45;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 25, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(6, 25, 6, 0);
         mainPanel.add(rrTTCheckBox, gridBagConstraints);
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -298,13 +277,12 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.gridy = 1;
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.weighty = 0.1;
-        gridBagConstraints.insets = new java.awt.Insets(5, 15, 5, 0);
+        gridBagConstraints.insets = new java.awt.Insets(16, 15, 16, 0);
         mainPanel.add(jLabel10, gridBagConstraints);
 
-        coLLLabel.setMaximumSize(new java.awt.Dimension(40, 40));
-        coLLLabel.setMinimumSize(new java.awt.Dimension(40, 40));
-        coLLLabel.setPreferredSize(new java.awt.Dimension(40, 40));
+        coLLLabel.setMaximumSize(new java.awt.Dimension(35, 35));
+        coLLLabel.setMinimumSize(new java.awt.Dimension(35, 35));
+        coLLLabel.setPreferredSize(new java.awt.Dimension(35, 35));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 14;
@@ -323,7 +301,7 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 11;
-        gridBagConstraints.insets = new java.awt.Insets(5, 16, 5, 16);
+        gridBagConstraints.insets = new java.awt.Insets(0, 16, 0, 16);
         mainPanel.add(alLLEditButton, gridBagConstraints);
 
         searchCheckBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -335,7 +313,7 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 45;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.weightx = 0.1;
-        gridBagConstraints.insets = new java.awt.Insets(0, 25, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(6, 25, 6, 0);
         mainPanel.add(searchCheckBox, gridBagConstraints);
 
         signupEditButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -348,7 +326,7 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 3;
-        gridBagConstraints.insets = new java.awt.Insets(5, 16, 5, 16);
+        gridBagConstraints.insets = new java.awt.Insets(0, 16, 0, 16);
         mainPanel.add(signupEditButton, gridBagConstraints);
 
         signupCheckBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -360,12 +338,12 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 45;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.weightx = 0.1;
-        gridBagConstraints.insets = new java.awt.Insets(0, 25, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(6, 25, 6, 0);
         mainPanel.add(signupCheckBox, gridBagConstraints);
 
-        arLLLabel.setMaximumSize(new java.awt.Dimension(40, 40));
-        arLLLabel.setMinimumSize(new java.awt.Dimension(40, 40));
-        arLLLabel.setPreferredSize(new java.awt.Dimension(40, 40));
+        arLLLabel.setMaximumSize(new java.awt.Dimension(35, 35));
+        arLLLabel.setMinimumSize(new java.awt.Dimension(35, 35));
+        arLLLabel.setPreferredSize(new java.awt.Dimension(35, 35));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 12;
@@ -381,14 +359,13 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.gridy = 10;
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.weighty = 0.1;
-        gridBagConstraints.insets = new java.awt.Insets(5, 15, 5, 0);
+        gridBagConstraints.insets = new java.awt.Insets(16, 15, 16, 0);
         mainPanel.add(jLabel9, gridBagConstraints);
 
-        loginLabel.setMaximumSize(new java.awt.Dimension(40, 40));
-        loginLabel.setMinimumSize(new java.awt.Dimension(40, 40));
+        loginLabel.setMaximumSize(new java.awt.Dimension(35, 35));
+        loginLabel.setMinimumSize(new java.awt.Dimension(35, 35));
         loginLabel.setName("loginStatusLabel"); // NOI18N
-        loginLabel.setPreferredSize(new java.awt.Dimension(40, 40));
+        loginLabel.setPreferredSize(new java.awt.Dimension(35, 35));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 2;
@@ -407,7 +384,7 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 13;
-        gridBagConstraints.insets = new java.awt.Insets(5, 16, 5, 16);
+        gridBagConstraints.insets = new java.awt.Insets(0, 16, 0, 16);
         mainPanel.add(rrLLEditButton, gridBagConstraints);
 
         arLLCheckBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -419,12 +396,12 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 45;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.weightx = 0.1;
-        gridBagConstraints.insets = new java.awt.Insets(0, 25, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(6, 25, 6, 0);
         mainPanel.add(arLLCheckBox, gridBagConstraints);
 
-        signupLabel.setMaximumSize(new java.awt.Dimension(40, 40));
-        signupLabel.setMinimumSize(new java.awt.Dimension(40, 40));
-        signupLabel.setPreferredSize(new java.awt.Dimension(40, 40));
+        signupLabel.setMaximumSize(new java.awt.Dimension(35, 35));
+        signupLabel.setMinimumSize(new java.awt.Dimension(35, 35));
+        signupLabel.setPreferredSize(new java.awt.Dimension(35, 35));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 3;
@@ -441,13 +418,13 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.gridy = 7;
         gridBagConstraints.ipadx = 45;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 25, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(6, 25, 6, 0);
         mainPanel.add(arTTCheckBox, gridBagConstraints);
 
-        prTTLabel.setMaximumSize(new java.awt.Dimension(40, 40));
-        prTTLabel.setMinimumSize(new java.awt.Dimension(40, 40));
+        prTTLabel.setMaximumSize(new java.awt.Dimension(35, 35));
+        prTTLabel.setMinimumSize(new java.awt.Dimension(35, 35));
         prTTLabel.setName(""); // NOI18N
-        prTTLabel.setPreferredSize(new java.awt.Dimension(40, 40));
+        prTTLabel.setPreferredSize(new java.awt.Dimension(35, 35));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 6;
@@ -466,13 +443,15 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 6;
-        gridBagConstraints.insets = new java.awt.Insets(5, 16, 5, 16);
+        gridBagConstraints.insets = new java.awt.Insets(0, 16, 0, 16);
         mainPanel.add(prTTEditButton, gridBagConstraints);
 
         buttonPanel.setBackground(mainPanel.getBackground());
+        buttonPanel.setMaximumSize(new java.awt.Dimension(362, 35));
+        buttonPanel.setMinimumSize(new java.awt.Dimension(362, 35));
         buttonPanel.setName("buttonPanel"); // NOI18N
-        buttonPanel.setPreferredSize(new java.awt.Dimension(900, 100));
-        buttonPanel.setLayout(new javax.swing.BoxLayout(buttonPanel, javax.swing.BoxLayout.LINE_AXIS));
+        buttonPanel.setPreferredSize(new java.awt.Dimension(362, 35));
+        buttonPanel.setLayout(new java.awt.GridBagLayout());
 
         selectAllButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         selectAllButton.setText("Select All");
@@ -483,7 +462,10 @@ public class MainFrame extends javax.swing.JFrame {
                 selectAllButtonActionPerformed(evt);
             }
         });
-        buttonPanel.add(selectAllButton);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        buttonPanel.add(selectAllButton, gridBagConstraints);
 
         deselectAllButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         deselectAllButton.setText("Deselect All");
@@ -494,14 +476,35 @@ public class MainFrame extends javax.swing.JFrame {
                 deselectAllButtonActionPerformed(evt);
             }
         });
-        buttonPanel.add(deselectAllButton);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        buttonPanel.add(deselectAllButton, gridBagConstraints);
+
+        testButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        testButton.setText("Start Testing");
+        testButton.setMaximumSize(new java.awt.Dimension(140, 31));
+        testButton.setMinimumSize(new java.awt.Dimension(140, 31));
+        testButton.setName("loginEditButton"); // NOI18N
+        testButton.setPreferredSize(new java.awt.Dimension(140, 31));
+        testButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                testButtonActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
+        gridBagConstraints.weightx = 0.1;
+        buttonPanel.add(testButton, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.insets = new java.awt.Insets(18, 13, 6, 0);
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.insets = new java.awt.Insets(0, 13, 0, 13);
         mainPanel.add(buttonPanel, gridBagConstraints);
 
         arTTEditButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -514,7 +517,7 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 7;
-        gridBagConstraints.insets = new java.awt.Insets(5, 16, 5, 16);
+        gridBagConstraints.insets = new java.awt.Insets(0, 16, 0, 16);
         mainPanel.add(arTTEditButton, gridBagConstraints);
 
         rrTTEditButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -527,12 +530,12 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 8;
-        gridBagConstraints.insets = new java.awt.Insets(5, 16, 5, 16);
+        gridBagConstraints.insets = new java.awt.Insets(0, 16, 0, 16);
         mainPanel.add(rrTTEditButton, gridBagConstraints);
 
-        rrTTLabel.setMaximumSize(new java.awt.Dimension(40, 40));
-        rrTTLabel.setMinimumSize(new java.awt.Dimension(40, 40));
-        rrTTLabel.setPreferredSize(new java.awt.Dimension(40, 40));
+        rrTTLabel.setMaximumSize(new java.awt.Dimension(35, 35));
+        rrTTLabel.setMinimumSize(new java.awt.Dimension(35, 35));
+        rrTTLabel.setPreferredSize(new java.awt.Dimension(35, 35));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 8;
@@ -540,9 +543,9 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         mainPanel.add(rrTTLabel, gridBagConstraints);
 
-        arTTLabel.setMaximumSize(new java.awt.Dimension(40, 40));
-        arTTLabel.setMinimumSize(new java.awt.Dimension(40, 40));
-        arTTLabel.setPreferredSize(new java.awt.Dimension(40, 40));
+        arTTLabel.setMaximumSize(new java.awt.Dimension(35, 35));
+        arTTLabel.setMinimumSize(new java.awt.Dimension(35, 35));
+        arTTLabel.setPreferredSize(new java.awt.Dimension(35, 35));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 7;
@@ -550,9 +553,9 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         mainPanel.add(arTTLabel, gridBagConstraints);
 
-        searchLabel.setMaximumSize(new java.awt.Dimension(40, 40));
-        searchLabel.setMinimumSize(new java.awt.Dimension(40, 40));
-        searchLabel.setPreferredSize(new java.awt.Dimension(40, 40));
+        searchLabel.setMaximumSize(new java.awt.Dimension(35, 35));
+        searchLabel.setMinimumSize(new java.awt.Dimension(35, 35));
+        searchLabel.setPreferredSize(new java.awt.Dimension(35, 35));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 4;
@@ -560,9 +563,9 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         mainPanel.add(searchLabel, gridBagConstraints);
 
-        coTTLabel.setMaximumSize(new java.awt.Dimension(40, 40));
-        coTTLabel.setMinimumSize(new java.awt.Dimension(40, 40));
-        coTTLabel.setPreferredSize(new java.awt.Dimension(40, 40));
+        coTTLabel.setMaximumSize(new java.awt.Dimension(35, 35));
+        coTTLabel.setMinimumSize(new java.awt.Dimension(35, 35));
+        coTTLabel.setPreferredSize(new java.awt.Dimension(35, 35));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 9;
@@ -580,7 +583,7 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 4;
-        gridBagConstraints.insets = new java.awt.Insets(5, 16, 5, 16);
+        gridBagConstraints.insets = new java.awt.Insets(0, 16, 0, 16);
         mainPanel.add(searchEditButton, gridBagConstraints);
 
         coTTEditButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -593,7 +596,7 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 9;
-        gridBagConstraints.insets = new java.awt.Insets(5, 16, 5, 16);
+        gridBagConstraints.insets = new java.awt.Insets(0, 16, 0, 16);
         mainPanel.add(coTTEditButton, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -602,7 +605,11 @@ public class MainFrame extends javax.swing.JFrame {
         layeredPane.add(mainPanel, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 6);
         getContentPane().add(layeredPane, gridBagConstraints);
 
         pack();
