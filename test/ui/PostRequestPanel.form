@@ -76,7 +76,6 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -94,10 +93,6 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="budget1" max="32767" attributes="0"/>
-                              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="term2" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="status2" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -111,11 +106,17 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="property2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="property3" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
+                              <Component id="property3" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="budget1" min="-2" pref="394" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -229,7 +230,7 @@
     <Component class="javax.swing.JRadioButton" name="term1">
       <Properties>
         <Property name="selected" type="boolean" value="true"/>
-        <Property name="text" type="java.lang.String" value="will get pet"/>
+        <Property name="text" type="java.lang.String" value="Minimum contract (12) months"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="term1ActionPerformed"/>
@@ -237,7 +238,7 @@
     </Component>
     <Component class="javax.swing.JRadioButton" name="term2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Free WiFi"/>
+        <Property name="text" type="java.lang.String" value="Eviction Notice at least (3) months prior"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="term2ActionPerformed"/>
@@ -245,7 +246,7 @@
     </Component>
     <Component class="javax.swing.JRadioButton" name="term3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Mobile charger"/>
+        <Property name="text" type="java.lang.String" value="No Security Deposit"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="term3ActionPerformed"/>

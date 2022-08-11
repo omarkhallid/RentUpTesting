@@ -75,21 +75,21 @@ public class PostRequestPanel extends javax.swing.JPanel {
         jLabel8.setText("choose a term ");
 
         term1.setSelected(true);
-        term1.setText("will get pet");
+        term1.setText("Minimum contract (12) months");
         term1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 term1ActionPerformed(evt);
             }
         });
 
-        term2.setText("Free WiFi");
+        term2.setText("Eviction Notice at least (3) months prior");
         term2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 term2ActionPerformed(evt);
             }
         });
 
-        term3.setText("Mobile charger");
+        term3.setText("No Security Deposit");
         term3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 term3ActionPerformed(evt);
@@ -294,7 +294,6 @@ public class PostRequestPanel extends javax.swing.JPanel {
                                 .addGap(63, 63, 63))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10)
                             .addComponent(jLabel11)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -308,9 +307,6 @@ public class PostRequestPanel extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(budget1)
-                                .addGap(57, 57, 57))
-                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(term2)
                                     .addComponent(status2))
@@ -321,9 +317,14 @@ public class PostRequestPanel extends javax.swing.JPanel {
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(property2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(property3)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                                .addGap(87, 87, 87))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(budget1, javax.swing.GroupLayout.PREFERRED_SIZE, 394, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(65, 65, 65))))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -793,7 +794,7 @@ public class PostRequestPanel extends javax.swing.JPanel {
                 }
                 if ((term2.isSelected()))
                 {
-                    t.setCellData("Free WiFi", 5, 7);
+                    t.setCellData("Eviction Notice at least (3) months prior", 5, 7);
                 }
                 else
                 {
@@ -801,7 +802,7 @@ public class PostRequestPanel extends javax.swing.JPanel {
                 }
                 if ((term3.isSelected()))
                 {
-                    t.setCellData("Mobile charger", 5, 8);
+                    t.setCellData("No Security Deposit", 5, 8);
                 }
                 else
                 {
