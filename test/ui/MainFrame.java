@@ -4,7 +4,10 @@
  */
 package ui;
 
+import demo.LoginTests;
 import demo.SearchTests;
+import demo.SignupTests;
+import demo.logintest;
 import java.awt.Dimension;
 import java.util.ArrayList;
 import javax.swing.JCheckBox;
@@ -133,7 +136,7 @@ public class MainFrame extends javax.swing.JFrame {
         alLLCheckBox.setText("Add Listing");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 11;
+        gridBagConstraints.gridy = 6;
         gridBagConstraints.ipadx = 45;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.weightx = 0.1;
@@ -145,7 +148,7 @@ public class MainFrame extends javax.swing.JFrame {
         coTTCheckBox.setText("Counter Offer");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 9;
+        gridBagConstraints.gridy = 10;
         gridBagConstraints.ipadx = 45;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.insets = new java.awt.Insets(6, 25, 6, 0);
@@ -180,7 +183,7 @@ public class MainFrame extends javax.swing.JFrame {
         prTTCheckBox.setText("Post A Request");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridy = 5;
         gridBagConstraints.ipadx = 45;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.weightx = 0.1;
@@ -191,7 +194,7 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel8.setText("Tenant:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridy = 7;
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         gridBagConstraints.insets = new java.awt.Insets(16, 15, 16, 0);
@@ -253,7 +256,7 @@ public class MainFrame extends javax.swing.JFrame {
         alLLLabel.setPreferredSize(new java.awt.Dimension(35, 35));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 11;
+        gridBagConstraints.gridy = 6;
         gridBagConstraints.ipadx = 28;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         gridBagConstraints.weightx = 0.1;
@@ -264,7 +267,7 @@ public class MainFrame extends javax.swing.JFrame {
         rrTTCheckBox.setText("Reject Request");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 8;
+        gridBagConstraints.gridy = 9;
         gridBagConstraints.ipadx = 45;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.insets = new java.awt.Insets(6, 25, 6, 0);
@@ -300,7 +303,7 @@ public class MainFrame extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 11;
+        gridBagConstraints.gridy = 6;
         gridBagConstraints.insets = new java.awt.Insets(0, 16, 0, 16);
         mainPanel.add(alLLEditButton, gridBagConstraints);
 
@@ -356,7 +359,7 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel9.setText("Landlord:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 10;
+        gridBagConstraints.gridy = 11;
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         gridBagConstraints.insets = new java.awt.Insets(16, 15, 16, 0);
@@ -415,7 +418,7 @@ public class MainFrame extends javax.swing.JFrame {
         arTTCheckBox.setText("Accept Request");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 7;
+        gridBagConstraints.gridy = 8;
         gridBagConstraints.ipadx = 45;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.insets = new java.awt.Insets(6, 25, 6, 0);
@@ -427,7 +430,7 @@ public class MainFrame extends javax.swing.JFrame {
         prTTLabel.setPreferredSize(new java.awt.Dimension(35, 35));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridy = 5;
         gridBagConstraints.ipadx = 28;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         gridBagConstraints.weightx = 0.1;
@@ -442,7 +445,7 @@ public class MainFrame extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridy = 5;
         gridBagConstraints.insets = new java.awt.Insets(0, 16, 0, 16);
         mainPanel.add(prTTEditButton, gridBagConstraints);
 
@@ -516,7 +519,7 @@ public class MainFrame extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 7;
+        gridBagConstraints.gridy = 8;
         gridBagConstraints.insets = new java.awt.Insets(0, 16, 0, 16);
         mainPanel.add(arTTEditButton, gridBagConstraints);
 
@@ -529,7 +532,7 @@ public class MainFrame extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 8;
+        gridBagConstraints.gridy = 9;
         gridBagConstraints.insets = new java.awt.Insets(0, 16, 0, 16);
         mainPanel.add(rrTTEditButton, gridBagConstraints);
 
@@ -538,7 +541,7 @@ public class MainFrame extends javax.swing.JFrame {
         rrTTLabel.setPreferredSize(new java.awt.Dimension(35, 35));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 8;
+        gridBagConstraints.gridy = 9;
         gridBagConstraints.ipadx = 28;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         mainPanel.add(rrTTLabel, gridBagConstraints);
@@ -548,7 +551,7 @@ public class MainFrame extends javax.swing.JFrame {
         arTTLabel.setPreferredSize(new java.awt.Dimension(35, 35));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 7;
+        gridBagConstraints.gridy = 8;
         gridBagConstraints.ipadx = 28;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         mainPanel.add(arTTLabel, gridBagConstraints);
@@ -568,7 +571,7 @@ public class MainFrame extends javax.swing.JFrame {
         coTTLabel.setPreferredSize(new java.awt.Dimension(35, 35));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 9;
+        gridBagConstraints.gridy = 10;
         gridBagConstraints.ipadx = 28;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         mainPanel.add(coTTLabel, gridBagConstraints);
@@ -595,7 +598,7 @@ public class MainFrame extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 9;
+        gridBagConstraints.gridy = 10;
         gridBagConstraints.insets = new java.awt.Insets(0, 16, 0, 16);
         mainPanel.add(coTTEditButton, gridBagConstraints);
 
@@ -644,7 +647,14 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_prTTEditButtonActionPerformed
 
     private void signupEditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupEditButtonActionPerformed
-        // TODO add your handling code here:
+        SignupPanel panel = new SignupPanel(layeredPane);
+        
+        layeredPane.add(panel, new java.awt.GridBagConstraints());
+        panel.setSize(layeredPane.getWidth(), layeredPane.getHeight());
+        layeredPane.setLayer(panel, 1);
+        mainPanel.setVisible(false);
+        layeredPane.revalidate();
+        layeredPane.repaint();
     }//GEN-LAST:event_signupEditButtonActionPerformed
 
     private void coLLEditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_coLLEditButtonActionPerformed
@@ -662,6 +672,36 @@ public class MainFrame extends javax.swing.JFrame {
         for(JLabel label : labels)
             label.setIcon(null);
         
+        if (loginCheckBox.isSelected()){
+            loginLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
+            JUnitCore junit = new JUnitCore();
+            junit.addListener(new TextListener(System.out));
+            new Thread(){
+                public void run(){
+                    if (junit.run(logintest.class).wasSuccessful())
+                        loginLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
+                    else
+                        loginLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
+                }
+            }.start(); 
+           
+        }
+        
+        
+        if (signupCheckBox.isSelected()){
+            signupLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
+            JUnitCore junit = new JUnitCore();
+            junit.addListener(new TextListener(System.out));
+            new Thread(){
+                public void run(){
+                    if (junit.run(SignupTests.class).wasSuccessful())
+                        signupLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
+                    else
+                        signupLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
+                }
+            }.start(); 
+           
+        }
         
         if (searchCheckBox.isSelected()){
             searchLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
@@ -675,14 +715,20 @@ public class MainFrame extends javax.swing.JFrame {
                         searchLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
                 }
             }.start();
-            
-            
-           
         }
+        
+        
     }//GEN-LAST:event_testButtonActionPerformed
 
     private void loginEditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginEditButtonActionPerformed
-        // TODO add your handling code here:
+        LoginPanel panel = new LoginPanel(layeredPane);
+        
+        layeredPane.add(panel, new java.awt.GridBagConstraints());
+        panel.setSize(layeredPane.getWidth(), layeredPane.getHeight());
+        layeredPane.setLayer(panel, 1);
+        mainPanel.setVisible(false);
+        layeredPane.revalidate();
+        layeredPane.repaint();
     }//GEN-LAST:event_loginEditButtonActionPerformed
 
     private void arTTEditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arTTEditButtonActionPerformed

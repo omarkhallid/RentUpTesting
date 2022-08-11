@@ -94,6 +94,7 @@ public class Methods {
             //Thread.sleep(2000);
             driver.findElements(By.tagName("input")).get(0).sendKeys(email);
             driver.findElements(By.tagName("input")).get(1).sendKeys(password);
+            Thread.sleep(2000);
         }
         catch(Exception ex){
             driver.close();

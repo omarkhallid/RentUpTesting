@@ -4,8 +4,9 @@
  */
 package ui;
 
+import demo.Methods;
 import demo.logintest;
-import ui.LoginPanel;
+import ui.LoginFrame;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JComboBox;
@@ -574,51 +575,51 @@ public class PostRequestPanel extends javax.swing.JFrame {
         {
             String e = jComboBox1.getSelectedItem().toString();
             try {
-                t.setCellData(e, 5, 0);
+                Methods.setCellData(e, 5, 0);
             } catch (Exception ex) {
-                Logger.getLogger(LoginPanel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(LoginFrame.class.getName()).log(Level.SEVERE, null, ex);
             }   
         }
         else
         {
             try {
-                t.setCellData("z", 5, 0);
+                Methods.setCellData("z", 5, 0);
             } catch (Exception ex) {
-                Logger.getLogger(LoginPanel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(LoginFrame.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         if(!(jComboBox2.getSelectedItem().equals("Masr El Gedida")))
         {
             String e = jComboBox2.getSelectedItem().toString();
             try {
-                t.setCellData(e, 5, 1);
+                Methods.setCellData(e, 5, 1);
             } catch (Exception ex) {
-                Logger.getLogger(LoginPanel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(LoginFrame.class.getName()).log(Level.SEVERE, null, ex);
             }   
         }
         else
         {
             try {
-                t.setCellData("z", 5, 1);
+                Methods.setCellData("z", 5, 1);
             } catch (Exception ex) {
-                Logger.getLogger(LoginPanel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(LoginFrame.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         if(!(jComboBox3.getSelectedItem().equals("Almazah")))
         {
             String e = jComboBox3.getSelectedItem().toString();
             try {
-                t.setCellData(e, 5, 2);
+                Methods.setCellData(e, 5, 2);
             } catch (Exception ex) {
-                Logger.getLogger(LoginPanel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(LoginFrame.class.getName()).log(Level.SEVERE, null, ex);
             }   
         }
         else
         {
             try {
-                t.setCellData("z", 5, 2);
+                Methods.setCellData("z", 5, 2);
             } catch (Exception ex) {
-                Logger.getLogger(LoginPanel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(LoginFrame.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         
@@ -629,23 +630,23 @@ public class PostRequestPanel extends javax.swing.JFrame {
             try {
                 if((firstDuration.isSelected()))
                 {
-                    t.setCellData("3", 5, 4);
+                    Methods.setCellData("3", 5, 4);
                 }
                 else
                 {
-                    t.setCellData("8", 5, 4);
+                    Methods.setCellData("8", 5, 4);
                 }
                 
             } catch (Exception ex) {
-                Logger.getLogger(LoginPanel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(LoginFrame.class.getName()).log(Level.SEVERE, null, ex);
             }   
         }
         else
         {
             try {
-                t.setCellData("z", 5, 4);
+                Methods.setCellData("z", 5, 4);
             } catch (Exception ex) {
-                Logger.getLogger(LoginPanel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(LoginFrame.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
          if(!(MonthsButton.isSelected()))
@@ -654,23 +655,23 @@ public class PostRequestPanel extends javax.swing.JFrame {
             try {
                 if((nightsbutton.isSelected()))
                 {
-                    t.setCellData("nights", 5, 3);
+                    Methods.setCellData("nights", 5, 3);
                 }
                 else
                 {
-                    t.setCellData("years", 5, 3);
+                    Methods.setCellData("years", 5, 3);
                 }
                 
             } catch (Exception ex) {
-                Logger.getLogger(LoginPanel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(LoginFrame.class.getName()).log(Level.SEVERE, null, ex);
             }   
         }
         else
         {
             try {
-                t.setCellData("z", 5, 3);
+                Methods.setCellData("z", 5, 3);
             } catch (Exception ex) {
-                Logger.getLogger(LoginPanel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(LoginFrame.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
          
@@ -679,17 +680,17 @@ public class PostRequestPanel extends javax.swing.JFrame {
         {
             String e = budget.getText().trim();
             try {
-                t.setCellData(e, 5, 5);
+                Methods.setCellData(e, 5, 5);
             } catch (Exception ex) {
-                Logger.getLogger(LoginPanel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(LoginFrame.class.getName()).log(Level.SEVERE, null, ex);
             }   
         }
         else
         {   
             try {
-                t.setCellData("z", 5, 5);
+                Methods.setCellData("z", 5, 5);
             } catch (Exception ex) {
-                Logger.getLogger(LoginPanel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(LoginFrame.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
          
@@ -698,31 +699,31 @@ public class PostRequestPanel extends javax.swing.JFrame {
             try {
                 if((term1.isSelected()))
                 {
-                    t.setCellData("z", 5, 6);
+                    Methods.setCellData("z", 5, 6);
                 }
                 else
                 {
-                    t.setCellData("NA", 5, 6);
+                    Methods.setCellData("NA", 5, 6);
                 }
                 if ((term2.isSelected()))
                 {
-                    t.setCellData("Free WiFi", 5, 7);
+                    Methods.setCellData("Free WiFi", 5, 7);
                 }
                 else
                 {
-                    t.setCellData("NA", 5, 7);
+                    Methods.setCellData("NA", 5, 7);
                 }
                 if ((term3.isSelected()))
                 {
-                    t.setCellData("Mobile charger", 5, 8);
+                    Methods.setCellData("Mobile charger", 5, 8);
                 }
                 else
                 {
-                    t.setCellData("NA", 5, 8);
+                    Methods.setCellData("NA", 5, 8);
                 }
                 
             } catch (Exception ex) {
-                Logger.getLogger(LoginPanel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(LoginFrame.class.getName()).log(Level.SEVERE, null, ex);
             }   
         
           
@@ -732,40 +733,40 @@ public class PostRequestPanel extends javax.swing.JFrame {
             try {
                 if((status1.isSelected()))
                 {
-                    t.setCellData("Furnished", 5, 9);
+                    Methods.setCellData("Furnished", 5, 9);
                 }
                 else
                 {
-                    t.setCellData("Serviced Apartment", 5, 9);
+                    Methods.setCellData("Serviced Apartment", 5, 9);
                 }
                 
             } catch (Exception ex) {
-                Logger.getLogger(LoginPanel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(LoginFrame.class.getName()).log(Level.SEVERE, null, ex);
             }   
         }
         else
         {
             try {
-                t.setCellData("z", 5, 9);
+                Methods.setCellData("z", 5, 9);
             } catch (Exception ex) {
-                Logger.getLogger(LoginPanel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(LoginFrame.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
           if(!(budget1.getText().isEmpty()))
         {
             String e = budget1.getText().trim();
             try {
-                t.setCellData(e, 5, 10);
+                Methods.setCellData(e, 5, 10);
             } catch (Exception ex) {
-                Logger.getLogger(LoginPanel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(LoginFrame.class.getName()).log(Level.SEVERE, null, ex);
             }   
         }
         else
         {   
             try {
-                t.setCellData("z", 5, 10);
+                Methods.setCellData("z", 5, 10);
             } catch (Exception ex) {
-                Logger.getLogger(LoginPanel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(LoginFrame.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
           if(!( property2.isSelected()))
@@ -774,23 +775,23 @@ public class PostRequestPanel extends javax.swing.JFrame {
             try {
                 if(( property1.isSelected()))
                 {
-                    t.setCellData("Duplex", 5, 11);
+                    Methods.setCellData("Duplex", 5, 11);
                 }
                 else
                 {
-                    t.setCellData("Villa", 5, 11);
+                    Methods.setCellData("Villa", 5, 11);
                 }
                 
             } catch (Exception ex) {
-                Logger.getLogger(LoginPanel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(LoginFrame.class.getName()).log(Level.SEVERE, null, ex);
             }   
         }
         else
         {
             try {
-                t.setCellData("z", 5, 11);
+                Methods.setCellData("z", 5, 11);
             } catch (Exception ex) {
-                Logger.getLogger(LoginPanel.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(LoginFrame.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
           

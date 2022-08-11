@@ -34,6 +34,30 @@ public class AddListingPanel extends javax.swing.JPanel {
             else if (furnishingStatus.equals("Serviced Property"))
                 servicedPropertyRB.setSelected(true);
             
+            String propertyType = Methods.getCellData(14, 4);
+            if (propertyType.equals("Apartment"))
+                apartmentRB.setSelected(true);
+            else if (propertyType.equals("Studio"))
+                studioRB.setSelected(true);
+            else if (propertyType.equals("Villa"))
+                villaRB.setSelected(true);
+            
+            bedroomsSpinner.setValue(Integer.parseInt(Methods.getCellData(14, 5)));
+            bathroomsSpinner.setValue(Integer.parseInt(Methods.getCellData(14, 6)));
+            
+            propertyNameTextField.setText(Methods.getCellData(14, 7));
+            
+            if (!Methods.getCellData(14, 8).equals("")){
+                perNightRB.setSelected(true);
+                rentTextField.setText(Methods.getCellData(14, 8));
+            }
+            else if (!Methods.getCellData(14, 9).equals("")){
+                perMonthRB.setSelected(true);
+                rentTextField.setText(Methods.getCellData(14, 9));
+            }
+                
+            descriptionTextArea.setText(Methods.getCellData(14, 10));
+            
             
         } catch (Exception ex){
             System.out.println(ex.getMessage());
@@ -82,7 +106,7 @@ public class AddListingPanel extends javax.swing.JPanel {
         rentTextField = new javax.swing.JTextField();
         propertyNameTextField = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        descriptionTextField = new javax.swing.JTextArea();
+        descriptionTextArea = new javax.swing.JTextArea();
         jLabel9 = new javax.swing.JLabel();
         neighborhoodTextField = new javax.swing.JTextField();
 
@@ -202,15 +226,18 @@ public class AddListingPanel extends javax.swing.JPanel {
 
         propertyNameTextField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
         jScrollPane1.setPreferredSize(new java.awt.Dimension(334, 101));
 
-        descriptionTextField.setColumns(20);
-        descriptionTextField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        descriptionTextField.setRows(5);
-        descriptionTextField.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        descriptionTextField.setMaximumSize(new java.awt.Dimension(320, 125));
-        descriptionTextField.setMinimumSize(new java.awt.Dimension(320, 125));
-        jScrollPane1.setViewportView(descriptionTextField);
+        descriptionTextArea.setColumns(20);
+        descriptionTextArea.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        descriptionTextArea.setRows(5);
+        descriptionTextArea.setAutoscrolls(false);
+        descriptionTextArea.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        descriptionTextArea.setMaximumSize(new java.awt.Dimension(320, 125));
+        descriptionTextArea.setMinimumSize(new java.awt.Dimension(320, 125));
+        jScrollPane1.setViewportView(descriptionTextArea);
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel9.setText("Add Listing");
@@ -374,7 +401,7 @@ public class AddListingPanel extends javax.swing.JPanel {
         else
             Methods.setCellData(rentTextField.getText(), 14, 9);
         
-        Methods.setCellData(descriptionTextField.getText(), 14, 10);
+        Methods.setCellData(descriptionTextArea.getText(), 14, 10);
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -419,7 +446,7 @@ public class AddListingPanel extends javax.swing.JPanel {
     private javax.swing.JSpinner bathroomsSpinner;
     private javax.swing.JSpinner bedroomsSpinner;
     private javax.swing.JComboBox<String> cityComboBox;
-    private javax.swing.JTextArea descriptionTextField;
+    private javax.swing.JTextArea descriptionTextArea;
     private javax.swing.JComboBox<String> districtComboBox;
     private javax.swing.JRadioButton furnishedRB;
     private javax.swing.ButtonGroup furnishingStatusButtonGroup;
