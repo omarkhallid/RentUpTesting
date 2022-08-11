@@ -5,6 +5,7 @@
 package ui;
 
 import demo.LoginTests;
+import demo.Methods;
 import demo.PostRequesttest;
 import demo.SearchTests;
 import demo.SignupTests;
@@ -22,7 +23,7 @@ import ui.*;
  * @author Omar Fekry
  */
 public class MainFrame extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form MainFrame
      */
@@ -76,6 +77,7 @@ public class MainFrame extends javax.swing.JFrame {
         selectAllButton = new javax.swing.JButton();
         deselectAllButton = new javax.swing.JButton();
         testButton = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
         arTTEditButton = new javax.swing.JButton();
         rrTTEditButton = new javax.swing.JButton();
         rrTTLabel = new javax.swing.JLabel();
@@ -497,11 +499,25 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         gridBagConstraints.weightx = 0.1;
         buttonPanel.add(testButton, gridBagConstraints);
+
+        jComboBox1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chrome", "Edge", "Firefox" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
+        buttonPanel.add(jComboBox1, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -811,6 +827,14 @@ public class MainFrame extends javax.swing.JFrame {
         labels.add(coLLLabel);
     }//GEN-LAST:event_formWindowOpened
 
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+        
+        String choice = jComboBox1.getSelectedItem().toString();
+        Methods.setCellData(choice, 1, 2);
+        
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -871,6 +895,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton coTTEditButton;
     private javax.swing.JLabel coTTLabel;
     private javax.swing.JButton deselectAllButton;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;

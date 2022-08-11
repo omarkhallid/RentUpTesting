@@ -42,6 +42,24 @@ public class SignupTests {
     public void ChromeTest() throws Exception {
 
         String name, email, password, phone;
+        WebDriver driver=null;
+        if(Methods.getCellData(1,2).equals("Chrome"))
+        {
+            System.setProperty("webdriver.chrome.driver", new java.io.File(".").getCanonicalPath()+"\\" + "chromedriver.exe");
+    	    driver = new ChromeDriver();
+        }
+        else if (Methods.getCellData(1,2).equals("Edge"))
+        {
+            System.setProperty("webdriver.edge.driver", new java.io.File(".").getCanonicalPath()+"\\" + "msedgedriver.exe");
+    	    driver = new EdgeDriver();
+        }
+        else if (Methods.getCellData(1,2).equals("Firefox"))
+        {
+             System.setProperty("webdriver.gecko.driver", new java.io.File(".").getCanonicalPath() + "\\" + "geckodriver.exe");
+             driver = new FirefoxDriver();
+        }
+        
+        
         
         if (!getCellData(19, 0).equals(""))
             name = getCellData(19, 0);
@@ -64,10 +82,7 @@ public class SignupTests {
         else
             phone = getCellData(18, 3);
         
-        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-        System.setProperty("webdriver.edge.driver", "msedgedriver.exe");
-        System.setProperty("webdriver.gecko.driver", "geckodriver.exe");
-    	WebDriver driver = new ChromeDriver();
+        
         driver.manage().window().maximize();
         
         driver.navigate().to("http://rentup.co/");
