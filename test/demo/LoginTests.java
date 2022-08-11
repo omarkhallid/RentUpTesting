@@ -99,7 +99,7 @@ public class LoginTests {
     @Test
     public void ChromeValidLoginTest() throws Exception {
 
-    String email = getCellData(1, 0);
+        String email = getCellData(1, 0);
     	String password = getCellData(1, 1);
 
         // Set Firefox Web Driver

@@ -20,6 +20,51 @@ public class AddListingPanel extends javax.swing.JPanel {
     public AddListingPanel(JLayeredPane layeredPane) {
         initComponents();
         this.layeredPane = layeredPane;
+        
+        try{
+            cityComboBox.setSelectedItem(Methods.getCellData(14, 0));
+            districtComboBox.setSelectedItem(Methods.getCellData(14, 1));
+            neighborhoodTextField.setText(Methods.getCellData(14, 2));
+            
+            String furnishingStatus = Methods.getCellData(14, 3);
+            if (furnishingStatus.equals("Furnished"))
+                furnishedRB.setSelected(true);
+            else if (furnishingStatus.equals("Unfurnished"))
+                unfurnishedRB.setSelected(true);
+            else if (furnishingStatus.equals("Serviced Property"))
+                servicedPropertyRB.setSelected(true);
+            
+            String propertyType = Methods.getCellData(14, 4);
+            if (propertyType.equals("Apartment"))
+                apartmentRB.setSelected(true);
+            else if (propertyType.equals("Studio"))
+                studioRB.setSelected(true);
+            else if (propertyType.equals("Villa"))
+                villaRB.setSelected(true);
+            
+            bedroomsSpinner.setValue(Integer.parseInt(Methods.getCellData(14, 5)));
+            bathroomsSpinner.setValue(Integer.parseInt(Methods.getCellData(14, 6)));
+            
+            propertyNameTextField.setText(Methods.getCellData(14, 7));
+            
+            if (!Methods.getCellData(14, 8).equals("")){
+                perNightRB.setSelected(true);
+                rentTextField.setText(Methods.getCellData(14, 8));
+            }
+            else if (!Methods.getCellData(14, 9).equals("")){
+                perMonthRB.setSelected(true);
+                rentTextField.setText(Methods.getCellData(14, 9));
+            }
+                
+            descriptionTextArea.setText(Methods.getCellData(14, 10));
+            
+            
+        } catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        
+        
+        
     }
 
     /**
@@ -48,20 +93,20 @@ public class AddListingPanel extends javax.swing.JPanel {
         jLabel11 = new javax.swing.JLabel();
         cityComboBox = new javax.swing.JComboBox<>();
         districtComboBox = new javax.swing.JComboBox<>();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jRadioButton5 = new javax.swing.JRadioButton();
-        jRadioButton6 = new javax.swing.JRadioButton();
+        furnishedRB = new javax.swing.JRadioButton();
+        unfurnishedRB = new javax.swing.JRadioButton();
+        servicedPropertyRB = new javax.swing.JRadioButton();
+        apartmentRB = new javax.swing.JRadioButton();
+        studioRB = new javax.swing.JRadioButton();
+        villaRB = new javax.swing.JRadioButton();
         bedroomsSpinner = new javax.swing.JSpinner();
         bathroomsSpinner = new javax.swing.JSpinner();
-        jRadioButton7 = new javax.swing.JRadioButton();
-        jRadioButton8 = new javax.swing.JRadioButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        perNightRB = new javax.swing.JRadioButton();
+        perMonthRB = new javax.swing.JRadioButton();
+        rentTextField = new javax.swing.JTextField();
+        propertyNameTextField = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        descriptionTextArea = new javax.swing.JTextArea();
         jLabel9 = new javax.swing.JLabel();
         neighborhoodTextField = new javax.swing.JTextField();
 
@@ -69,16 +114,24 @@ public class AddListingPanel extends javax.swing.JPanel {
         setMinimumSize(new java.awt.Dimension(700, 700));
         setPreferredSize(new java.awt.Dimension(700, 700));
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButton1.setText("Save");
+        jButton1.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        jButton1.setMaximumSize(new java.awt.Dimension(60, 30));
+        jButton1.setMinimumSize(new java.awt.Dimension(60, 30));
+        jButton1.setPreferredSize(new java.awt.Dimension(60, 30));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButton2.setText("Back");
+        jButton2.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        jButton2.setMaximumSize(new java.awt.Dimension(60, 30));
+        jButton2.setMinimumSize(new java.awt.Dimension(60, 30));
+        jButton2.setPreferredSize(new java.awt.Dimension(60, 30));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -126,31 +179,31 @@ public class AddListingPanel extends javax.swing.JPanel {
         districtComboBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         districtComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Garden City", "New Maadi", "Shorouk City", "Zamalek" }));
 
-        furnishingStatusButtonGroup.add(jRadioButton1);
-        jRadioButton1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jRadioButton1.setSelected(true);
-        jRadioButton1.setText("Furnished");
+        furnishingStatusButtonGroup.add(furnishedRB);
+        furnishedRB.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        furnishedRB.setSelected(true);
+        furnishedRB.setText("Furnished");
 
-        furnishingStatusButtonGroup.add(jRadioButton2);
-        jRadioButton2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jRadioButton2.setText("Unfurnished");
+        furnishingStatusButtonGroup.add(unfurnishedRB);
+        unfurnishedRB.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        unfurnishedRB.setText("Unfurnished");
 
-        furnishingStatusButtonGroup.add(jRadioButton3);
-        jRadioButton3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jRadioButton3.setText("Serviced Property");
+        furnishingStatusButtonGroup.add(servicedPropertyRB);
+        servicedPropertyRB.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        servicedPropertyRB.setText("Serviced Property");
 
-        propertyTypeButtonGroup.add(jRadioButton4);
-        jRadioButton4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jRadioButton4.setSelected(true);
-        jRadioButton4.setText("Apartment");
+        propertyTypeButtonGroup.add(apartmentRB);
+        apartmentRB.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        apartmentRB.setSelected(true);
+        apartmentRB.setText("Apartment");
 
-        propertyTypeButtonGroup.add(jRadioButton5);
-        jRadioButton5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jRadioButton5.setText("Studio");
+        propertyTypeButtonGroup.add(studioRB);
+        studioRB.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        studioRB.setText("Studio");
 
-        propertyTypeButtonGroup.add(jRadioButton6);
-        jRadioButton6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jRadioButton6.setText("Villa");
+        propertyTypeButtonGroup.add(villaRB);
+        villaRB.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        villaRB.setText("Villa");
 
         bedroomsSpinner.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         bedroomsSpinner.setModel(new javax.swing.SpinnerNumberModel(1, 1, 5, 1));
@@ -160,23 +213,31 @@ public class AddListingPanel extends javax.swing.JPanel {
         bathroomsSpinner.setModel(new javax.swing.SpinnerNumberModel(1, 1, 5, 1));
         bathroomsSpinner.setValue(1);
 
-        rentButtonGroup.add(jRadioButton7);
-        jRadioButton7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jRadioButton7.setSelected(true);
-        jRadioButton7.setText("Per Night");
+        rentButtonGroup.add(perNightRB);
+        perNightRB.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        perNightRB.setSelected(true);
+        perNightRB.setText("Per Night");
 
-        rentButtonGroup.add(jRadioButton8);
-        jRadioButton8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jRadioButton8.setText("Per Month");
+        rentButtonGroup.add(perMonthRB);
+        perMonthRB.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        perMonthRB.setText("Per Month");
 
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        rentTextField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        jTextField2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        propertyNameTextField.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(334, 101));
+
+        descriptionTextArea.setColumns(20);
+        descriptionTextArea.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        descriptionTextArea.setRows(5);
+        descriptionTextArea.setAutoscrolls(false);
+        descriptionTextArea.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        descriptionTextArea.setMaximumSize(new java.awt.Dimension(320, 125));
+        descriptionTextArea.setMinimumSize(new java.awt.Dimension(320, 125));
+        jScrollPane1.setViewportView(descriptionTextArea);
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel9.setText("Add Listing");
@@ -190,63 +251,61 @@ public class AddListingPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(31, 31, 31)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel4))
+                        .addGap(56, 56, 56)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(148, 148, 148)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(apartmentRB)
+                                .addGap(18, 18, 18)
+                                .addComponent(studioRB)
+                                .addGap(18, 18, 18)
+                                .addComponent(villaRB))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(25, 25, 25)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel10)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel11)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel4))
-                                .addGap(56, 56, 56)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jRadioButton4)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(districtComboBox, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(cityComboBox, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addComponent(furnishedRB)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jRadioButton5)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jRadioButton6))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(districtComboBox, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(cityComboBox, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                                .addComponent(jRadioButton1)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(jRadioButton2))
-                                            .addComponent(neighborhoodTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jRadioButton3))
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(bathroomsSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(bedroomsSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jRadioButton7)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jRadioButton8))
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addComponent(unfurnishedRB))
+                                    .addComponent(neighborhoodTextField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addComponent(servicedPropertyRB))
+                            .addComponent(propertyNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(bathroomsSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(bedroomsSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(rentTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(perNightRB)
+                                .addGap(18, 18, 18)
+                                .addComponent(perMonthRB))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(281, 281, 281)
-                        .addComponent(jLabel9)))
+                        .addComponent(jLabel9))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(163, 163, 163)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(12, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(layout.createSequentialGroup()
+                .addGap(17, 17, 17)
                 .addComponent(jLabel9)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -267,18 +326,18 @@ public class AddListingPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(7, 7, 7)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jRadioButton1)
-                            .addComponent(jRadioButton2)
-                            .addComponent(jRadioButton3)))
+                            .addComponent(furnishedRB)
+                            .addComponent(unfurnishedRB)
+                            .addComponent(servicedPropertyRB)))
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(3, 3, 3)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jRadioButton4)
-                            .addComponent(jRadioButton5)
-                            .addComponent(jRadioButton6)))
+                            .addComponent(apartmentRB)
+                            .addComponent(studioRB)
+                            .addComponent(villaRB)))
                     .addComponent(jLabel4))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -291,30 +350,59 @@ public class AddListingPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(propertyNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(rentTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton7)
-                    .addComponent(jRadioButton8))
+                    .addComponent(perNightRB)
+                    .addComponent(perMonthRB))
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel10)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15))
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        //Methods.setCellData(searchTextField.getText(), 10, 0);
+        Methods.setCellData(cityComboBox.getSelectedItem().toString(), 14, 0);
+        Methods.setCellData(districtComboBox.getSelectedItem().toString(), 14, 1);
+        Methods.setCellData(neighborhoodTextField.getText(), 14, 2);
+        if (furnishedRB.isSelected())
+            Methods.setCellData("Furnished", 14, 3);
+        else if (unfurnishedRB.isSelected())
+            Methods.setCellData("Unfurnished", 14, 3);
+        else
+            Methods.setCellData("Serviced Property", 14, 3);
+        
+        if (apartmentRB.isSelected())
+            Methods.setCellData("Apartment", 14, 4);
+        else if (studioRB.isSelected())
+            Methods.setCellData("Studio", 14, 4);
+        else
+            Methods.setCellData("Villa", 14, 4);
+        
+        Methods.setCellData((bedroomsSpinner.getValue().toString()), 14, 5);
+        Methods.setCellData((bathroomsSpinner.getValue().toString()), 14, 6);
+        
+        Methods.setCellData(propertyNameTextField.getText(), 14, 7);
+        
+        Methods.setCellData("", 14, 8);
+        Methods.setCellData("", 14, 9);
+        
+        if (perNightRB.isSelected()) 
+            Methods.setCellData(rentTextField.getText(), 14, 8);
+        else
+            Methods.setCellData(rentTextField.getText(), 14, 9);
+        
+        Methods.setCellData(descriptionTextArea.getText(), 14, 10);
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -354,10 +442,13 @@ public class AddListingPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton apartmentRB;
     private javax.swing.JSpinner bathroomsSpinner;
     private javax.swing.JSpinner bedroomsSpinner;
     private javax.swing.JComboBox<String> cityComboBox;
+    private javax.swing.JTextArea descriptionTextArea;
     private javax.swing.JComboBox<String> districtComboBox;
+    private javax.swing.JRadioButton furnishedRB;
     private javax.swing.ButtonGroup furnishingStatusButtonGroup;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -372,20 +463,17 @@ public class AddListingPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JRadioButton jRadioButton6;
-    private javax.swing.JRadioButton jRadioButton7;
-    private javax.swing.JRadioButton jRadioButton8;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField neighborhoodTextField;
+    private javax.swing.JRadioButton perMonthRB;
+    private javax.swing.JRadioButton perNightRB;
+    private javax.swing.JTextField propertyNameTextField;
     private javax.swing.ButtonGroup propertyTypeButtonGroup;
     private javax.swing.ButtonGroup rentButtonGroup;
+    private javax.swing.JTextField rentTextField;
+    private javax.swing.JRadioButton servicedPropertyRB;
+    private javax.swing.JRadioButton studioRB;
+    private javax.swing.JRadioButton unfurnishedRB;
+    private javax.swing.JRadioButton villaRB;
     // End of variables declaration//GEN-END:variables
 }

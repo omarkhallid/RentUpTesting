@@ -36,7 +36,7 @@ public class SearchTests {
         System.setProperty("webdriver.edge.driver", "msedgedriver.exe");
         System.setProperty("webdriver.gecko.driver", "geckodriver.exe");
     	WebDriver driver = new ChromeDriver();
-        
+        driver.manage().window().maximize();
         //driver = login(driver,getCellData(1, 0),getCellData(1, 1));
         driver.navigate().to("http://rentup.co/");
 
@@ -52,7 +52,11 @@ public class SearchTests {
         try{
             //type searchPhrase into search field
             driver.findElements(By.tagName("input")).get(1).sendKeys(searchPhrase);
-            driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div.home-front > main > div > div > div > div > div > div > div:nth-child(2) > div > div > form > div.search-field-cintainer.position-relative > ul > li:nth-child(1)")).click();
+            Thread.sleep(5000);
+            //type choose first option from dropdown list
+            driver.findElements(By.tagName("ul")).get(2).findElement(By.tagName("li")).click();
+            Thread.sleep(4000);
+            
             
         }
         catch(Exception ex){
@@ -60,20 +64,15 @@ public class SearchTests {
             assertTrue(false);
         }
         
-        
-            
-            
-        
-        
     	try {
             // Check whether a certain element appears which confirms that the login was not successful
-            assertEquals(false, driver.findElement(By.xpath("/html/body/div/div/div/header/nav/div/div[4]/ul/li[1]/div/button/div"))); 
+            boolean flag = driver.findElement(By.className("property-container")).findElement(By.tagName("a")).getAttribute("href").contains(searchPhrase.toLowerCase());
+            driver.close();
+            assertEquals(true, flag); 
         } catch(NoSuchElementException e){
-            assertTrue(true);
+            driver.close();
+            assertTrue(false);
         }
-        
-        // Close the web driver
-        driver.close();
 
     }
 }

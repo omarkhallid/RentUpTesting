@@ -10,7 +10,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.apache.poi.ss.usermodel.DataFormatter;
+import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import static org.junit.Assert.assertTrue;
@@ -44,20 +44,20 @@ public class Methods {
         }
     }
     
-    public static void setCellData(String val, int row, int col) {
+    public static void setCellData(final String val, int row, int col) {
         XSSFWorkbook ExcelWBook;
         XSSFSheet ExcelWSheet;
 
         try {
             // Open the Excel file
-            FileInputStream ExcelFile = new FileInputStream("Login.xlsx");
+            FileInputStream ExcelFile = new FileInputStream(new java.io.File(".").getCanonicalPath() + "\\" + "Login.xlsx");
 
             // Access the required test data sheet
             ExcelWBook = new XSSFWorkbook(ExcelFile);
             ExcelWSheet = ExcelWBook.getSheet("Sheet1");
             
             if (ExcelWSheet.getRow(row).getCell(col) == null)
-                ExcelWSheet.getRow(row).createCell(col, 2);
+                ExcelWSheet.getRow(row).createCell(col, 1);
             
             ExcelWSheet.getRow(row).getCell(col).setCellValue(val);
             
@@ -94,6 +94,7 @@ public class Methods {
             //Thread.sleep(2000);
             driver.findElements(By.tagName("input")).get(0).sendKeys(email);
             driver.findElements(By.tagName("input")).get(1).sendKeys(password);
+            Thread.sleep(2000);
         }
         catch(Exception ex){
             driver.close();

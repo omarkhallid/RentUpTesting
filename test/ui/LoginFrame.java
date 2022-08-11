@@ -1,34 +1,38 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package ui;
 
 import demo.Methods;
+import demo.logintest;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JLayeredPane;
+import javax.swing.JOptionPane;
+import org.junit.internal.TextListener;
+import org.junit.runner.JUnitCore;
 
 /**
  *
- * @author Omar Fekry
+ * @author Tarek Radwan
  */
-public class LoginPanel extends javax.swing.JPanel {
+public class LoginFrame extends javax.swing.JFrame {
 
     /**
-     * Creates new form LoginPanel
+     * Creates new form login
      */
     private JLayeredPane layeredPane;
     
-    public LoginPanel(JLayeredPane layeredPane) {
+    public LoginFrame(JLayeredPane layeredPane) {
         initComponents();
-        this.layeredPane = layeredPane;
         try{
-            emailTextField.setText(Methods.getCellData(2, 0));
-            passwordTextField.setText(Methods.getCellData(2, 1));
+            Methods.getCellData(2, 0);
+            Methods.getCellData(2, 1);
         } catch (Exception ex){
             System.out.println(ex.getMessage());
         }
     }
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -49,8 +53,10 @@ public class LoginPanel extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(700, 700));
         setMinimumSize(new java.awt.Dimension(700, 700));
+        setPreferredSize(new java.awt.Dimension(700, 700));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setText("Login");
@@ -97,12 +103,12 @@ public class LoginPanel extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 103, Short.MAX_VALUE)
+                .addGap(0, 161, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
                     .addComponent(jLabel2))
@@ -152,6 +158,8 @@ public class LoginPanel extends javax.swing.JPanel {
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void emailTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTextFieldActionPerformed
