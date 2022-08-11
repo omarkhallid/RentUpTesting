@@ -48,10 +48,11 @@ public class SearchTests {
                 break;
             } catch(Exception e){}
         }
+        Thread.sleep(2000);
         try{
             //type searchPhrase into search field
             driver.findElements(By.tagName("input")).get(1).sendKeys(searchPhrase);
-            driver.findElements(By.tagName("input")).get(1).submit();
+            driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div.home-front > main > div > div > div > div > div > div > div:nth-child(2) > div > div > form > div.search-field-cintainer.position-relative > ul > li:nth-child(1)")).click();
             
         }
         catch(Exception ex){

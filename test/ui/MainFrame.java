@@ -4,6 +4,7 @@
  */
 package ui;
 
+import demo.PostRequesttest;
 import demo.SearchTests;
 import demo.logintest;
 import java.awt.Dimension;
@@ -18,12 +19,12 @@ import ui.*;
  *
  * @author Omar Fekry
  */
-public class MainFrame1 extends javax.swing.JFrame {
+public class MainFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form MainFrame
      */
-    public MainFrame1() {
+    public MainFrame() {
         initComponents();
     }
 
@@ -86,10 +87,10 @@ public class MainFrame1 extends javax.swing.JFrame {
         setTitle("Rentup Automated Tester");
         setBackground(new java.awt.Color(255, 255, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setMaximumSize(new java.awt.Dimension(710, 710));
-        setMinimumSize(new java.awt.Dimension(710, 710));
+        setMaximumSize(new java.awt.Dimension(715, 735));
+        setMinimumSize(new java.awt.Dimension(715, 735));
         setName("mainFrame"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(710, 710));
+        setPreferredSize(new java.awt.Dimension(715, 735));
         setSize(new java.awt.Dimension(700, 700));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
@@ -698,6 +699,19 @@ public class MainFrame1 extends javax.swing.JFrame {
                 }
             }.start();
         }
+        if (prTTCheckBox.isSelected()){
+            prTTLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
+            JUnitCore junit = new JUnitCore();
+            junit.addListener(new TextListener(System.out));
+            new Thread(){
+                public void run(){
+                    if (junit.run(PostRequesttest.class).wasSuccessful())
+                        prTTLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
+                    else
+                        loginLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
+                }
+            }.start();
+        }
         
     }//GEN-LAST:event_testButtonActionPerformed
 
@@ -788,14 +802,16 @@ public class MainFrame1 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainFrame1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainFrame1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainFrame1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainFrame1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
@@ -803,7 +819,7 @@ public class MainFrame1 extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainFrame1().setVisible(true);
+                new MainFrame().setVisible(true);
             }
         });
     }
