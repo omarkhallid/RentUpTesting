@@ -16,12 +16,17 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import static org.junit.Assert.assertTrue;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 /**
  *
  * @author Omar Fekry
  */
 public class Methods {
+    
+    public static String browser = "Chrome", domain = "https://dev.rentup.co/";
 
     public static String getCellData(int row, int col) throws Exception {
         XSSFWorkbook ExcelWBook;
@@ -73,15 +78,35 @@ public class Methods {
     }
     
     
-    public static WebDriver login(WebDriver driver , String email ,String password) throws Exception{
+    public static WebDriver login(String email ,String password) throws Exception{
         
     	
 
         // Puts an Implicit wait, Will wait for 10 seconds before throwing exception
         //driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        
+        System.setProperty("webdriver.chrome.driver", new java.io.File(".").getCanonicalPath()+"\\" + "chromedriver.exe");
+        System.setProperty("webdriver.edge.driver", new java.io.File(".").getCanonicalPath()+"\\" + "msedgedriver.exe");
+        System.setProperty("webdriver.gecko.driver", new java.io.File(".").getCanonicalPath() + "\\" + "geckodriver.exe");
+        
+        WebDriver driver = null;
+        
+        switch(browser){
+            case "Chrome":
+                driver = new ChromeDriver();
+                break;
+            case "Edge":
+                driver = new EdgeDriver();
+                break;
+            case "Firefox":
+                driver = new FirefoxDriver();
+                break;
+        }        
+      
+        
         driver.manage().window().maximize();
         // Launch website
-        driver.navigate().to("http://rentup.co/");
+        driver.navigate().to(domain);
         // Maximize the browser
         
         
@@ -113,7 +138,33 @@ public class Methods {
         return driver;
     }
     
-    public static void main(String args[]){
+    public static WebDriver createDriver(){
+        
+        try{
+            System.setProperty("webdriver.chrome.driver", new java.io.File(".").getCanonicalPath() +"\\" + "chromedriver.exe");
+            System.setProperty("webdriver.edge.driver", new java.io.File(".").getCanonicalPath() +"\\" + "msedgedriver.exe");
+            System.setProperty("webdriver.gecko.driver", new java.io.File(".").getCanonicalPath() + "\\" + "geckodriver.exe");
+        } catch (Exception ex){
+            System.out.println("Couldn't find drivers in path");
+        }
+        
+        WebDriver driver = null;
+        
+        switch(browser){
+            case "Chrome":
+                driver = new ChromeDriver();
+                break;
+            case "Edge":
+                driver = new EdgeDriver();
+                break;
+            case "Firefox":
+                driver = new FirefoxDriver();
+                break;
+        }
+        
+        driver.manage().window().maximize();
+        driver.navigate().to(domain);
+        return driver;
         
     }
     

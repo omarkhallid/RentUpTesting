@@ -5,8 +5,6 @@
 package ui;
 
 import demo.Methods;
-import demo.logintest;
-import ui.LoginFrame;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JLayeredPane;
@@ -36,25 +34,15 @@ public class PostRequestPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
-        buttonGroup2 = new javax.swing.ButtonGroup();
-        buttonGroup3 = new javax.swing.ButtonGroup();
-        buttonGroup4 = new javax.swing.ButtonGroup();
-        jLabel8 = new javax.swing.JLabel();
-        term1 = new javax.swing.JRadioButton();
-        term2 = new javax.swing.JRadioButton();
-        term3 = new javax.swing.JRadioButton();
-        jLabel9 = new javax.swing.JLabel();
+        buttons = new javax.swing.ButtonGroup();
+        buttons2 = new javax.swing.ButtonGroup();
+        buttons3 = new javax.swing.ButtonGroup();
+        buttons4 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
-        status1 = new javax.swing.JRadioButton();
         jComboBox1 = new javax.swing.JComboBox<>();
-        status2 = new javax.swing.JRadioButton();
         jComboBox2 = new javax.swing.JComboBox<>();
-        status3 = new javax.swing.JRadioButton();
         jLabel2 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        budget1 = new javax.swing.JTextField();
         jComboBox3 = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -67,63 +55,29 @@ public class PostRequestPanel extends javax.swing.JPanel {
         ThirdDuration = new javax.swing.JRadioButton();
         jLabel7 = new javax.swing.JLabel();
         budget = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        term1 = new javax.swing.JRadioButton();
+        term2 = new javax.swing.JRadioButton();
+        term3 = new javax.swing.JRadioButton();
+        jLabel9 = new javax.swing.JLabel();
+        status1 = new javax.swing.JRadioButton();
+        status2 = new javax.swing.JRadioButton();
+        status3 = new javax.swing.JRadioButton();
+        jLabel10 = new javax.swing.JLabel();
+        budget1 = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         property1 = new javax.swing.JRadioButton();
         property2 = new javax.swing.JRadioButton();
         property3 = new javax.swing.JRadioButton();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-
-        jLabel8.setText("choose a term ");
-
-        term1.setSelected(true);
-        term1.setText("Minimum contract (12) months");
-        term1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                term1ActionPerformed(evt);
-            }
-        });
-
-        term2.setText("Eviction Notice at least (3) months prior");
-        term2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                term2ActionPerformed(evt);
-            }
-        });
-
-        term3.setText("No Security Deposit");
-        term3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                term3ActionPerformed(evt);
-            }
-        });
-
-        jLabel9.setText("Furnishing status");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setText("Post a Request Form");
-
-        buttonGroup3.add(status1);
-        status1.setText("Furnished");
-        status1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                status1ActionPerformed(evt);
-            }
-        });
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cairo", "Giza", "Luxor", "Alexanderia", "Dahab" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
-            }
-        });
-
-        buttonGroup3.add(status2);
-        status2.setSelected(true);
-        status2.setText("Unfurnished");
-        status2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                status2ActionPerformed(evt);
             }
         });
 
@@ -134,20 +88,9 @@ public class PostRequestPanel extends javax.swing.JPanel {
             }
         });
 
-        buttonGroup3.add(status3);
-        status3.setText("Serviced Apartment");
-
         jLabel2.setText("Select a City ");
 
-        jLabel10.setText("Minimum rooms (2)");
-
         jLabel3.setText("Select a district");
-
-        budget1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                budget1ActionPerformed(evt);
-            }
-        });
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Almazah", "El Korba", "El Nozha" }));
 
@@ -155,7 +98,7 @@ public class PostRequestPanel extends javax.swing.JPanel {
 
         jLabel5.setText("choose duration");
 
-        buttonGroup1.add(nightsbutton);
+        buttons.add(nightsbutton);
         nightsbutton.setText("Nights");
         nightsbutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -163,7 +106,7 @@ public class PostRequestPanel extends javax.swing.JPanel {
             }
         });
 
-        buttonGroup1.add(MonthsButton);
+        buttons.add(MonthsButton);
         MonthsButton.setSelected(true);
         MonthsButton.setText("Months");
         MonthsButton.addActionListener(new java.awt.event.ActionListener() {
@@ -172,7 +115,7 @@ public class PostRequestPanel extends javax.swing.JPanel {
             }
         });
 
-        buttonGroup1.add(YearsButton);
+        buttons.add(YearsButton);
         YearsButton.setText("Years");
         YearsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -182,7 +125,7 @@ public class PostRequestPanel extends javax.swing.JPanel {
 
         jLabel6.setText("choose duration number ");
 
-        buttonGroup2.add(firstDuration);
+        buttons2.add(firstDuration);
         firstDuration.setText("3");
         firstDuration.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -190,7 +133,7 @@ public class PostRequestPanel extends javax.swing.JPanel {
             }
         });
 
-        buttonGroup2.add(SecondDuration);
+        buttons2.add(SecondDuration);
         SecondDuration.setSelected(true);
         SecondDuration.setText("4");
         SecondDuration.addActionListener(new java.awt.event.ActionListener() {
@@ -199,7 +142,7 @@ public class PostRequestPanel extends javax.swing.JPanel {
             }
         });
 
-        buttonGroup2.add(ThirdDuration);
+        buttons2.add(ThirdDuration);
         ThirdDuration.setText("8");
         ThirdDuration.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -215,9 +158,63 @@ public class PostRequestPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel8.setText("choose a term ");
+
+        term1.setSelected(true);
+        term1.setText("will get pet");
+        term1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                term1ActionPerformed(evt);
+            }
+        });
+
+        term2.setText("Free WiFi");
+        term2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                term2ActionPerformed(evt);
+            }
+        });
+
+        term3.setText("Mobile charger");
+        term3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                term3ActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setText("Furnishing status");
+
+        buttons3.add(status1);
+        status1.setText("Furnished");
+        status1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                status1ActionPerformed(evt);
+            }
+        });
+
+        buttons3.add(status2);
+        status2.setSelected(true);
+        status2.setText("Unfurnished");
+        status2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                status2ActionPerformed(evt);
+            }
+        });
+
+        buttons3.add(status3);
+        status3.setText("Serviced Apartment");
+
+        jLabel10.setText("Minimum rooms (2)");
+
+        budget1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                budget1ActionPerformed(evt);
+            }
+        });
+
         jLabel11.setText("Property types");
 
-        buttonGroup4.add(property1);
+        buttons4.add(property1);
         property1.setText("Duplex");
         property1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -225,11 +222,11 @@ public class PostRequestPanel extends javax.swing.JPanel {
             }
         });
 
-        buttonGroup4.add(property2);
+        buttons4.add(property2);
         property2.setSelected(true);
         property2.setText("Hotel Room");
 
-        buttonGroup4.add(property3);
+        buttons4.add(property3);
         property3.setText("Villa");
         property3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -242,14 +239,6 @@ public class PostRequestPanel extends javax.swing.JPanel {
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
-            }
-        });
-
-        jButton2.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
-        jButton2.setText("Back");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
             }
         });
 
@@ -290,12 +279,13 @@ public class PostRequestPanel extends javax.swing.JPanel {
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addComponent(ThirdDuration)
                                                 .addGap(22, 22, 22)))))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addContainerGap(60, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(budget)
                                 .addGap(63, 63, 63))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel10)
                             .addComponent(jLabel11)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -309,6 +299,9 @@ public class PostRequestPanel extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                .addComponent(budget1)
+                                .addGap(57, 57, 57))
+                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(term2)
                                     .addComponent(status2))
@@ -319,14 +312,9 @@ public class PostRequestPanel extends javax.swing.JPanel {
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(property2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(property3)
-                                .addGap(87, 87, 87))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(budget1, javax.swing.GroupLayout.PREFERRED_SIZE, 394, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(65, 65, 65))))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -334,9 +322,7 @@ public class PostRequestPanel extends javax.swing.JPanel {
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(200, 200, 200)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(jButton1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -400,11 +386,9 @@ public class PostRequestPanel extends javax.swing.JPanel {
                     .addComponent(property1)
                     .addComponent(property2)
                     .addComponent(property3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                .addGap(24, 24, 24))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -905,13 +889,12 @@ public class PostRequestPanel extends javax.swing.JPanel {
     private javax.swing.JRadioButton YearsButton;
     private javax.swing.JTextField budget;
     private javax.swing.JTextField budget1;
-    private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.ButtonGroup buttonGroup2;
-    private javax.swing.ButtonGroup buttonGroup3;
-    private javax.swing.ButtonGroup buttonGroup4;
+    private javax.swing.ButtonGroup buttons;
+    private javax.swing.ButtonGroup buttons2;
+    private javax.swing.ButtonGroup buttons3;
+    private javax.swing.ButtonGroup buttons4;
     private javax.swing.JRadioButton firstDuration;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;

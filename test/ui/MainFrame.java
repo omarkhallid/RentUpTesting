@@ -4,16 +4,18 @@
  */
 package ui;
 
-import demo.LoginTests;
 import demo.Methods;
-import demo.PostRequesttest;
-import demo.SearchTests;
-import demo.SignupTests;
-import demo.logintest;
+import demo.PostRequestTest;
+import demo.SearchTest;
+import demo.SignupTest;
+import demo.LoginTest;
 import java.awt.Dimension;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JCheckBox;
 import javax.swing.*;
+import javax.swing.table.TableCellRenderer;
 import org.junit.internal.TextListener;
 import org.junit.runner.JUnitCore;
 import ui.*;
@@ -86,6 +88,9 @@ public class MainFrame extends javax.swing.JFrame {
         coTTLabel = new javax.swing.JLabel();
         searchEditButton = new javax.swing.JButton();
         coTTEditButton = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        table = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Rentup Automated Tester");
@@ -104,16 +109,16 @@ public class MainFrame extends javax.swing.JFrame {
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
         layeredPane.setBackground(new java.awt.Color(255, 0, 102));
-        layeredPane.setMaximumSize(new java.awt.Dimension(700, 700));
-        layeredPane.setMinimumSize(new java.awt.Dimension(700, 700));
-        layeredPane.setPreferredSize(new Dimension(700, 700));
+        layeredPane.setMaximumSize(new java.awt.Dimension(1400, 700));
+        layeredPane.setMinimumSize(new java.awt.Dimension(1400, 700));
+        layeredPane.setPreferredSize(new Dimension(1400, 700));
         layeredPane.setLayout(new java.awt.GridBagLayout());
 
         mainPanel.setBackground(new java.awt.Color(249, 249, 249));
-        mainPanel.setMaximumSize(new java.awt.Dimension(700, 700));
-        mainPanel.setMinimumSize(new java.awt.Dimension(700, 700));
+        mainPanel.setMaximumSize(new java.awt.Dimension(1400, 700));
+        mainPanel.setMinimumSize(new java.awt.Dimension(1400, 700));
         mainPanel.setName("mainPanel"); // NOI18N
-        mainPanel.setPreferredSize(new java.awt.Dimension(700, 700));
+        mainPanel.setPreferredSize(new java.awt.Dimension(1400, 700));
         mainPanel.setLayout(new java.awt.GridBagLayout());
 
         loginCheckBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -619,6 +624,33 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(0, 16, 0, 16);
         mainPanel.add(coTTEditButton, gridBagConstraints);
 
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        mainPanel.add(jButton1, new java.awt.GridBagConstraints());
+
+        table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(table);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridheight = 14;
+        mainPanel.add(jScrollPane1, gridBagConstraints);
+
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.ipadx = 4;
         gridBagConstraints.ipady = 4;
@@ -703,15 +735,21 @@ public class MainFrame extends javax.swing.JFrame {
             junit.addListener(new TextListener(System.out));
             new Thread(){
                 public void run(){
-                    if (junit.run(logintest.class).wasSuccessful())
+                    if (junit.run(LoginTest.class).wasSuccessful())
                         loginLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
                     else
                         loginLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
                 }
-            }.start(); 
+            }.start();
            
         }
-        
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Methods.browser = "Edge";
+        Methods.domain = "https://rentup.co/";
         
         if (signupCheckBox.isSelected()){
             signupLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
@@ -719,7 +757,7 @@ public class MainFrame extends javax.swing.JFrame {
             junit.addListener(new TextListener(System.out));
             new Thread(){
                 public void run(){
-                    if (junit.run(SignupTests.class).wasSuccessful())
+                    if (junit.run(SignupTest.class).wasSuccessful())
                         signupLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
                     else
                         signupLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
@@ -728,13 +766,22 @@ public class MainFrame extends javax.swing.JFrame {
            
         }
         
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        Methods.browser = "Firefox";
+        Methods.domain = "https://rentup.com.eg/";
+        
         if (searchCheckBox.isSelected()){
             searchLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
             JUnitCore junit = new JUnitCore();
             junit.addListener(new TextListener(System.out));
             new Thread(){
                 public void run(){
-                    if (junit.run(SearchTests.class).wasSuccessful())
+                    if (junit.run(SearchTest.class).wasSuccessful())
                         searchLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
                     else
                         searchLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
@@ -748,7 +795,7 @@ public class MainFrame extends javax.swing.JFrame {
             junit.addListener(new TextListener(System.out));
             new Thread(){
                 public void run(){
-                    if (junit.run(PostRequesttest.class).wasSuccessful())
+                    if (junit.run(PostRequestTest.class).wasSuccessful())
                         prTTLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
                     else
                         prTTLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
@@ -835,6 +882,14 @@ public class MainFrame extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+        
+        table.setValueAt(new ImageIcon(getClass().getResource("/Resources/loading.gif")), 0, 0);
+        table.revalidate();
+        table.repaint();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -895,10 +950,12 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton coTTEditButton;
     private javax.swing.JLabel coTTLabel;
     private javax.swing.JButton deselectAllButton;
+    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLayeredPane layeredPane;
     private javax.swing.JCheckBox loginCheckBox;
     private javax.swing.JButton loginEditButton;
@@ -920,6 +977,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JCheckBox signupCheckBox;
     private javax.swing.JButton signupEditButton;
     private javax.swing.JLabel signupLabel;
+    private javax.swing.JTable table;
     private javax.swing.JButton testButton;
     // End of variables declaration//GEN-END:variables
 }

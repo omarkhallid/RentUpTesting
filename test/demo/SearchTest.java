@@ -19,7 +19,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
  *
  * @author Omar Fekry
  */
-public class SearchTests {
+public class SearchTest {
 
     
     
@@ -27,32 +27,12 @@ public class SearchTests {
     public void ChromeTest() throws Exception {
 
         String searchPhrase;
-        WebDriver driver=null;
-        if(Methods.getCellData(1,2).equals("Chrome"))
-        {
-            System.setProperty("webdriver.chrome.driver", new java.io.File(".").getCanonicalPath()+"\\" + "chromedriver.exe");
-    	    driver = new ChromeDriver();
-        }
-        else if (Methods.getCellData(1,2).equals("Edge"))
-        {
-            System.setProperty("webdriver.edge.driver", new java.io.File(".").getCanonicalPath()+"\\" + "msedgedriver.exe");
-    	    driver = new EdgeDriver();
-        }
-        else if (Methods.getCellData(1,2).equals("Firefox"))
-        {
-             System.setProperty("webdriver.gecko.driver", new java.io.File(".").getCanonicalPath() + "\\" + "geckodriver.exe");
-             driver = new FirefoxDriver();
-        }
+        WebDriver driver = createDriver();
         
         if (!getCellData(10, 0).equals(""))
             searchPhrase = getCellData(10, 0);
         else
             searchPhrase = getCellData(9, 0);
-
-       
-        driver.manage().window().maximize();
-        //driver = login(driver,getCellData(1, 0),getCellData(1, 1));
-        driver.navigate().to("http://rentup.co/");
 
         while(true){
             try{
