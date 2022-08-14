@@ -5,10 +5,10 @@
 package ui;
 
 import demo.Methods;
-import demo.PostRequestTest;
+import demo.PostRequesttest;
 import demo.SearchTest;
 import demo.SignupTest;
-import demo.LoginTest;
+import demo.logintest;
 import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -735,7 +735,7 @@ public class MainFrame extends javax.swing.JFrame {
             junit.addListener(new TextListener(System.out));
             new Thread(){
                 public void run(){
-                    if (junit.run(LoginTest.class).wasSuccessful())
+                    if (junit.run(logintest.class).wasSuccessful())
                         loginLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
                     else
                         loginLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
@@ -795,7 +795,7 @@ public class MainFrame extends javax.swing.JFrame {
             junit.addListener(new TextListener(System.out));
             new Thread(){
                 public void run(){
-                    if (junit.run(PostRequestTest.class).wasSuccessful())
+                    if (junit.run(PostRequesttest.class).wasSuccessful())
                         prTTLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
                     else
                         prTTLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));

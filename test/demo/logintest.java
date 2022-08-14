@@ -26,13 +26,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import static demo.Methods.*;
 
 /**
  *
  * @author Tarek Radwan
  */
 public class logintest {
-     Methods m = new Methods();   
       
       
       
@@ -41,43 +41,20 @@ public class logintest {
     public void ChromeValidLoginTest() throws Exception {
         String email="";
         String password="";
-        WebDriver driver=null;
         // Set Firefox Web Driver
-        if(m.getCellData(2, 0).equals("") )
-        {
-             email=m.getCellData(1, 0);
-        }
+        if(getCellData(2, 0).equals("") )
+             email=getCellData(1, 0);
         else
-        {
-             email=m.getCellData(2, 0);
-        }
-         if(m.getCellData(2, 1).equals(""))
-        {
-             password=m.getCellData(1, 1);
-        }
+            email = getCellData(2, 0);
+        
+         if(getCellData(2, 1).equals(""))
+            password=getCellData(1, 1);
         else
-        {
-             password=m.getCellData(2, 1);
-        }   
-        if(m.getCellData(1,2).equals("Chrome"))
-        {
-            System.setProperty("webdriver.chrome.driver", new java.io.File(".").getCanonicalPath()+"\\" + "chromedriver.exe");
-    	    driver = new ChromeDriver();
-        }
-        else if (m.getCellData(1,2).equals("Edge"))
-        {
-            System.setProperty("webdriver.edge.driver", new java.io.File(".").getCanonicalPath()+"\\" + "msedgedriver.exe");
-    	    driver = new EdgeDriver();
-        }
-        else if (m.getCellData(1,2).equals("Firefox"))
-        {
-             System.setProperty("webdriver.gecko.driver", new java.io.File(".").getCanonicalPath() + "\\" + "geckodriver.exe");
-             driver = new FirefoxDriver();
-        }
+            password=getCellData(2, 1);
         
         
-        driver = m.login(driver,email,password);
-        System.out.println(driver.findElement(By.className("Content")).isDisplayed());
+        WebDriver driver = login(email,password);
+        //System.out.println(driver.findElement(By.className("Content")).isDisplayed());
         Thread.sleep(8000);
     	try {
             // Check whether a certain element appears which confirms that the login was not successful
