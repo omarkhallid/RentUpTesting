@@ -43,9 +43,7 @@ public class SignupTest {
 
         String name, email, password, phone;
         WebDriver driver = createDriver();
-        
-        
-        
+     
         if (!getCellData(19, 0).equals(""))
             name = getCellData(19, 0);
         else
@@ -68,7 +66,8 @@ public class SignupTest {
             phone = getCellData(18, 3);
         
                 
-        //driver.findElement(by)
+        if(Methods.platform.equals("Desktop"))
+        {
         Thread.sleep(2000);
         driver.findElement(By.cssSelector("#nav-collapse > ul > li:nth-child(3) > button")).click();
         driver.findElement(By.cssSelector("p.form-message:nth-child(8) > button:nth-child(1)")).click();
@@ -81,16 +80,37 @@ public class SignupTest {
         driver.findElement(By.cssSelector("button.btn:nth-child(6)")).click();
         Thread.sleep(10000);
         try {
-            // Check whether a certain element appears which confirms that the login was not successful
-
             assertEquals(true, driver.findElement(By.className("user-avatar")).isDisplayed()); 
         } catch(NoSuchElementException e){
             driver.close();
             assertTrue(false);
         }
-        
-        // Close the web driver
         driver.close();
+        }
+        else if(Methods.platform.equals("Mobile"))
+        {
+            Thread.sleep(2000);
+            driver.findElement(By.cssSelector("#__layout > div > header > nav > div > div.d-flex.align-items-center.d-none.d-lg-none.mobile-header-items > button")).click();
+            driver.findElement(By.cssSelector("#__layout > div > header > main > div.side-bar.active-side-bar > div > div > div > ul > li:nth-child(1) > div > a.auth-button.auth-button__register.font-bold.dark")).click();
+            driver.findElement(By.cssSelector("#auth-modal___BV_modal_body_ > div > span:nth-child(2) > form > p:nth-child(8) > button")).click();
+            driver.findElements(By.tagName("input")).get(0).sendKeys(name);
+            driver.findElements(By.tagName("input")).get(1).sendKeys(email);
+            driver.findElements(By.tagName("input")).get(2).sendKeys(password);
+            driver.findElements(By.tagName("input")).get(3).sendKeys(phone);
+            Thread.sleep(2000);
+            driver.findElement(By.cssSelector("#auth-modal___BV_modal_body_ > div > span:nth-child(2) > form > button")).click();
+            Thread.sleep(10000);
+            
+            try {
+                assertEquals(true, driver.findElement(By.cssSelector("#__layout > div > header > nav > div > div.d-flex.align-items-center.d-none.d-lg-none.mobile-header-items > a > svg")).isDisplayed()); 
+            } catch(NoSuchElementException e){
+                driver.close();
+                assertTrue(false);
+            }
+            driver.close();
+            }
+        }
+       
 
     }
-}
+
