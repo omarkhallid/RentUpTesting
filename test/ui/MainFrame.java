@@ -790,7 +790,7 @@ public class MainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         String choice = jComboBox1.getSelectedItem().toString();
-        Methods.setCellData(choice, 1, 2);
+        Methods.browser=choice;
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void deselectAllButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deselectAllButtonActionPerformed
@@ -827,14 +827,7 @@ public class MainFrame extends javax.swing.JFrame {
             }.start();
            
         }
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        Methods.browser = "Edge";
-        Methods.domain = "https://rentup.co/";
-        
+       
         if (signupCheckBox.isSelected()){
             signupLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
             JUnitCore junit = new JUnitCore();
@@ -850,15 +843,7 @@ public class MainFrame extends javax.swing.JFrame {
            
         }
         
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        Methods.browser = "Firefox";
-        Methods.domain = "https://rentup.com.eg/";
-        
+
         if (searchCheckBox.isSelected()){
             searchLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
             JUnitCore junit = new JUnitCore();
