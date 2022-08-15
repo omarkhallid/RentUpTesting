@@ -88,9 +88,6 @@ public class MainFrame extends javax.swing.JFrame {
         coTTLabel = new javax.swing.JLabel();
         searchEditButton = new javax.swing.JButton();
         coTTEditButton = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        table = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Rentup Automated Tester");
@@ -624,33 +621,6 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(0, 16, 0, 16);
         mainPanel.add(coTTEditButton, gridBagConstraints);
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        mainPanel.add(jButton1, new java.awt.GridBagConstraints());
-
-        table.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(table);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridheight = 14;
-        mainPanel.add(jScrollPane1, gridBagConstraints);
-
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.ipadx = 4;
         gridBagConstraints.ipady = 4;
@@ -882,14 +852,6 @@ public class MainFrame extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
-        
-        table.setValueAt(new ImageIcon(getClass().getResource("/Resources/loading.gif")), 0, 0);
-        table.revalidate();
-        table.repaint();
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -950,12 +912,10 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton coTTEditButton;
     private javax.swing.JLabel coTTLabel;
     private javax.swing.JButton deselectAllButton;
-    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLayeredPane layeredPane;
     private javax.swing.JCheckBox loginCheckBox;
     private javax.swing.JButton loginEditButton;
@@ -977,7 +937,6 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JCheckBox signupCheckBox;
     private javax.swing.JButton signupEditButton;
     private javax.swing.JLabel signupLabel;
-    private javax.swing.JTable table;
     private javax.swing.JButton testButton;
     // End of variables declaration//GEN-END:variables
 }

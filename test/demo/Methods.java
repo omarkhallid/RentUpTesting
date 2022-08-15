@@ -26,7 +26,10 @@ import org.openqa.selenium.firefox.FirefoxDriver;
  */
 public class Methods {
     
-    public static String browser = "Chrome", domain = "https://dev.rentup.co/";
+    public static String 
+            browser = "Chrome", 
+            domain = "https://dev.rentup.co/",
+            platform = "Desktop";
 
     public static String getCellData(int row, int col) throws Exception {
         XSSFWorkbook ExcelWBook;
