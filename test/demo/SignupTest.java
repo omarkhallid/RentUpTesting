@@ -21,7 +21,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
  *
  * @author Omar Fekry
  */
-public class SignupTests {
+public class SignupTest {
 
     public String createRandomString() {
         int leftLimit = 48; // numeral '0'
@@ -42,22 +42,7 @@ public class SignupTests {
     public void ChromeTest() throws Exception {
 
         String name, email, password, phone;
-        WebDriver driver=null;
-        if(Methods.getCellData(1,2).equals("Chrome"))
-        {
-            System.setProperty("webdriver.chrome.driver", new java.io.File(".").getCanonicalPath()+"\\" + "chromedriver.exe");
-    	    driver = new ChromeDriver();
-        }
-        else if (Methods.getCellData(1,2).equals("Edge"))
-        {
-            System.setProperty("webdriver.edge.driver", new java.io.File(".").getCanonicalPath()+"\\" + "msedgedriver.exe");
-    	    driver = new EdgeDriver();
-        }
-        else if (Methods.getCellData(1,2).equals("Firefox"))
-        {
-             System.setProperty("webdriver.gecko.driver", new java.io.File(".").getCanonicalPath() + "\\" + "geckodriver.exe");
-             driver = new FirefoxDriver();
-        }
+        WebDriver driver = createDriver();
         
         
         
@@ -82,21 +67,7 @@ public class SignupTests {
         else
             phone = getCellData(18, 3);
         
-        
-        driver.manage().window().maximize();
-        
-        if(Methods.getCellData(1, 3).equals("co"))
-        {
-            driver.navigate().to("http://rentup.co/");
-        }
-        else if (Methods.getCellData(1,3).equals("com"))
-        {
-            driver.navigate().to("https://rentup.com.eg/");
-        }
-        else if (Methods.getCellData(1,3).equals("dev"))
-        {
-            driver.navigate().to("https://dev.rentup.co/");
-        }
+                
         //driver.findElement(by)
         Thread.sleep(2000);
         driver.findElement(By.cssSelector("#nav-collapse > ul > li:nth-child(3) > button")).click();

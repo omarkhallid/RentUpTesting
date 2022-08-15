@@ -26,6 +26,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import static demo.Methods.*;
 
 /**
  *
@@ -59,23 +60,10 @@ public class logintest {
         {
              password=m.getCellData(2, 1);
         }   
-        if(m.getCellData(1,2).equals("Chrome"))
-        {
-            System.setProperty("webdriver.chrome.driver", new java.io.File(".").getCanonicalPath()+"\\" + "chromedriver.exe");
-    	    driver = new ChromeDriver();
-        }
-        else if (m.getCellData(1,2).equals("Edge"))
-        {
-            System.setProperty("webdriver.edge.driver", new java.io.File(".").getCanonicalPath()+"\\" + "msedgedriver.exe");
-    	    driver = new EdgeDriver();
-        }
-        else if (m.getCellData(1,2).equals("Firefox"))
-        {
-             System.setProperty("webdriver.gecko.driver", new java.io.File(".").getCanonicalPath() + "\\" + "geckodriver.exe");
-             driver = new FirefoxDriver();
-        }
-        driver = m.login(driver,email,password);
-        if(m.getCellData(1,4).equals("Desktop"))
+         
+        driver = m.login(email,password);
+        
+        if(platform.equals("Desktop"))
         {
             
         System.out.println(driver.findElement(By.className("Content")).isDisplayed());
@@ -89,7 +77,7 @@ public class logintest {
         }
         
         }
-        if(m.getCellData(1,4).equals("Mobile"))
+        if(platform.equals("Mobile"))
         {
             Thread.sleep(6000);
     	try {
@@ -106,4 +94,5 @@ public class logintest {
         
         driver.close();
     }
+    
 }

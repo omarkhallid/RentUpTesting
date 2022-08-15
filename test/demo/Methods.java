@@ -18,12 +18,20 @@ import static org.junit.Assert.assertTrue;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 /**
  *
  * @author Omar Fekry
  */
 public class Methods {
+    
+    public static String 
+            browser = "Chrome", 
+            domain = "https://dev.rentup.co/",
+            platform = "Desktop";
 
     public static String getCellData(int row, int col) throws Exception {
         XSSFWorkbook ExcelWBook;
@@ -75,70 +83,44 @@ public class Methods {
     }
     
     
-    public static WebDriver login(WebDriver driver , String email ,String password) throws Exception{
+    public static WebDriver login(String email ,String password) throws Exception{
         
     	
 
-        // Puts an Implicit wait, Will wait for 10 seconds before throwing exception
-        //driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-        if(Methods.getCellData(1, 4).equals("Desktop"))
-        {
-             driver.manage().window().maximize();
-        }
-        else
-        {
-            Dimension dimension = new Dimension(360,740);
-            driver.manage().window().setSize(dimension);
-        }
-        
-       
-        // Launch website
-        if(Methods.getCellData(1, 3).equals("co"))
-        {
-            driver.navigate().to("http://rentup.co/");
-        }
-        else if (Methods.getCellData(1,3).equals("com"))
-        {
-            driver.navigate().to("https://rentup.com.eg/");
-        }
-        else if (Methods.getCellData(1,3).equals("dev"))
-        {
-            driver.navigate().to("https://dev.rentup.co/");
-        }
-        // Maximize the browser
+        WebDriver driver = createDriver();
         
         
         // Click on Sign in button
-        if(Methods.getCellData(1, 4).equals("Desktop"))
+        if(platform.equals("Desktop"))
         {
             
-        Thread.sleep(2000);
-        driver.findElement(By.cssSelector("#nav-collapse > ul > li:nth-child(3) > button")).click();
-        Thread.sleep(2000);
-        // Enter the username and password
-        try{
-            //Thread.sleep(2000);
-            driver.findElements(By.tagName("input")).get(0).sendKeys(email);
-            driver.findElements(By.tagName("input")).get(1).sendKeys(password);
             Thread.sleep(2000);
-        }
-        catch(Exception ex){
-            driver.close();
-            assertTrue(false);
-        }
+            driver.findElement(By.cssSelector("#nav-collapse > ul > li:nth-child(3) > button")).click();
+            Thread.sleep(2000);
+            // Enter the username and password
+            try{
+                //Thread.sleep(2000);
+                driver.findElements(By.tagName("input")).get(0).sendKeys(email);
+                driver.findElements(By.tagName("input")).get(1).sendKeys(password);
+                Thread.sleep(2000);
+            }
+            catch(Exception ex){
+                driver.close();
+                assertTrue(false);
+            }
 
-        // Click on Sign in button
-        try{
-            driver.findElement(By.cssSelector("button.btn:nth-child(4)")).click();
+            // Click on Sign in button
+            try{
+                driver.findElement(By.cssSelector("button.btn:nth-child(4)")).click();
+            }
+            catch(Exception ex){
+                driver.close();
+                System.out.println(ex.getMessage());
+                assertTrue(false);
+            }
+            return driver;
         }
-        catch(Exception ex){
-            driver.close();
-            System.out.println(ex.getMessage());
-            assertTrue(false);
-        }
-        return driver;
-        }
-        else if (Methods.getCellData(1, 4).equals("Mobile"))
+        else if (platform.equals("Mobile"))
         {
             try{
                 Thread.sleep(2000);
@@ -163,7 +145,43 @@ public class Methods {
         return driver;
     }
     
-    public static void main(String args[]){
+    public static WebDriver createDriver(){
+        
+        
+        WebDriver driver = null;
+        
+        try{
+            switch(browser){
+                case "Chrome":
+                    driver = new ChromeDriver();
+                    System.setProperty("webdriver.chrome.driver", new java.io.File(".").getCanonicalPath() +"\\" + "chromedriver.exe");
+                    break;
+                case "Edge":
+                    driver = new EdgeDriver();
+                    System.setProperty("webdriver.edge.driver", new java.io.File(".").getCanonicalPath() +"\\" + "msedgedriver.exe");
+                    break;
+                case "Firefox":
+                    driver = new FirefoxDriver();
+                    System.setProperty("webdriver.gecko.driver", new java.io.File(".").getCanonicalPath() + "\\" + "geckodriver.exe");
+                    break;
+            }
+        } catch (Exception ex){
+            System.out.println("Couldn't find driver files in path");
+        }
+        
+        
+        if(platform.equals("Desktop"))
+        {
+             driver.manage().window().maximize();
+        }
+        else
+        {
+            Dimension dimension = new Dimension(375,812);
+            driver.manage().window().setSize(dimension);
+        }
+        
+        driver.navigate().to(domain);
+        return driver;
         
     }
     

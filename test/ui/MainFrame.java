@@ -4,16 +4,18 @@
  */
 package ui;
 
-import demo.LoginTests;
 import demo.Methods;
 import demo.PostRequesttest;
-import demo.SearchTests;
-import demo.SignupTests;
+import demo.SearchTest;
+import demo.SignupTest;
 import demo.logintest;
 import java.awt.Dimension;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JCheckBox;
 import javax.swing.*;
+import javax.swing.table.TableCellRenderer;
 import org.junit.internal.TextListener;
 import org.junit.runner.JUnitCore;
 import ui.*;
@@ -106,16 +108,16 @@ public class MainFrame extends javax.swing.JFrame {
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
         layeredPane.setBackground(new java.awt.Color(255, 0, 102));
-        layeredPane.setMaximumSize(new java.awt.Dimension(700, 700));
-        layeredPane.setMinimumSize(new java.awt.Dimension(700, 700));
-        layeredPane.setPreferredSize(new Dimension(700, 700));
+        layeredPane.setMaximumSize(new java.awt.Dimension(1400, 700));
+        layeredPane.setMinimumSize(new java.awt.Dimension(1400, 700));
+        layeredPane.setPreferredSize(new Dimension(1400, 700));
         layeredPane.setLayout(new java.awt.GridBagLayout());
 
         mainPanel.setBackground(new java.awt.Color(249, 249, 249));
-        mainPanel.setMaximumSize(new java.awt.Dimension(700, 700));
-        mainPanel.setMinimumSize(new java.awt.Dimension(700, 700));
+        mainPanel.setMaximumSize(new java.awt.Dimension(1400, 700));
+        mainPanel.setMinimumSize(new java.awt.Dimension(1400, 700));
         mainPanel.setName("mainPanel"); // NOI18N
-        mainPanel.setPreferredSize(new java.awt.Dimension(700, 700));
+        mainPanel.setPreferredSize(new java.awt.Dimension(1400, 700));
         mainPanel.setLayout(new java.awt.GridBagLayout());
 
         loginCheckBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -708,7 +710,7 @@ public class MainFrame extends javax.swing.JFrame {
     private void coLLEditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_coLLEditButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_coLLEditButtonActionPerformed
-
+                                  
     private void loginEditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginEditButtonActionPerformed
         LoginPanel panel = new LoginPanel(layeredPane);
         
@@ -781,7 +783,7 @@ public class MainFrame extends javax.swing.JFrame {
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
         // TODO add your handling code here:
         String choice = jComboBox2.getSelectedItem().toString();
-        Methods.setCellData(choice,1,3);
+        Methods.domain=choice;
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
@@ -790,70 +792,6 @@ public class MainFrame extends javax.swing.JFrame {
         String choice = jComboBox1.getSelectedItem().toString();
         Methods.setCellData(choice, 1, 2);
     }//GEN-LAST:event_jComboBox1ActionPerformed
-
-    private void testButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testButtonActionPerformed
-
-        for(JLabel label : labels)
-        label.setIcon(null);
-
-        if (loginCheckBox.isSelected()){
-            loginLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
-            JUnitCore junit = new JUnitCore();
-            junit.addListener(new TextListener(System.out));
-            new Thread(){
-                public void run(){
-                    if (junit.run(logintest.class).wasSuccessful())
-                    loginLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
-                    else
-                    loginLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
-                }
-            }.start();
-
-        }
-
-        if (signupCheckBox.isSelected()){
-            signupLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
-            JUnitCore junit = new JUnitCore();
-            junit.addListener(new TextListener(System.out));
-            new Thread(){
-                public void run(){
-                    if (junit.run(SignupTests.class).wasSuccessful())
-                    signupLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
-                    else
-                    signupLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
-                }
-            }.start();
-
-        }
-
-        if (searchCheckBox.isSelected()){
-            searchLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
-            JUnitCore junit = new JUnitCore();
-            junit.addListener(new TextListener(System.out));
-            new Thread(){
-                public void run(){
-                    if (junit.run(SearchTests.class).wasSuccessful())
-                    searchLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
-                    else
-                    searchLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
-                }
-            }.start();
-        }
-
-        if (prTTCheckBox.isSelected()){
-            prTTLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
-            JUnitCore junit = new JUnitCore();
-            junit.addListener(new TextListener(System.out));
-            new Thread(){
-                public void run(){
-                    if (junit.run(PostRequesttest.class).wasSuccessful())
-                    prTTLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
-                    else
-                    prTTLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
-                }
-            }.start();
-        }
-    }//GEN-LAST:event_testButtonActionPerformed
 
     private void deselectAllButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deselectAllButtonActionPerformed
         for(JCheckBox cb : checks)
@@ -868,8 +806,87 @@ public class MainFrame extends javax.swing.JFrame {
     private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
         // TODO add your handling code here:
         String choice = jComboBox3.getSelectedItem().toString();
-        Methods.setCellData(choice, 1, 4);
+        Methods.platform = choice;
     }//GEN-LAST:event_jComboBox3ActionPerformed
+
+    private void testButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testButtonActionPerformed
+        for(JLabel label : labels)
+            label.setIcon(null);
+        
+        if (loginCheckBox.isSelected()){
+            loginLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
+            JUnitCore junit = new JUnitCore();
+            junit.addListener(new TextListener(System.out));
+            new Thread(){
+                public void run(){
+                    if (junit.run(logintest.class).wasSuccessful())
+                        loginLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
+                    else
+                        loginLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
+                }
+            }.start();
+           
+        }
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Methods.browser = "Edge";
+        Methods.domain = "https://rentup.co/";
+        
+        if (signupCheckBox.isSelected()){
+            signupLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
+            JUnitCore junit = new JUnitCore();
+            junit.addListener(new TextListener(System.out));
+            new Thread(){
+                public void run(){
+                    if (junit.run(SignupTest.class).wasSuccessful())
+                        signupLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
+                    else
+                        signupLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
+                }
+            }.start(); 
+           
+        }
+        
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        Methods.browser = "Firefox";
+        Methods.domain = "https://rentup.com.eg/";
+        
+        if (searchCheckBox.isSelected()){
+            searchLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
+            JUnitCore junit = new JUnitCore();
+            junit.addListener(new TextListener(System.out));
+            new Thread(){
+                public void run(){
+                    if (junit.run(SearchTest.class).wasSuccessful())
+                        searchLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
+                    else
+                        searchLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
+                }
+            }.start();
+        }
+        
+        if (prTTCheckBox.isSelected()){
+            prTTLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
+            JUnitCore junit = new JUnitCore();
+            junit.addListener(new TextListener(System.out));
+            new Thread(){
+                public void run(){
+                    if (junit.run(PostRequesttest.class).wasSuccessful())
+                        prTTLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
+                    else
+                        prTTLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
+                }
+            }.start();
+        }
+    }//GEN-LAST:event_testButtonActionPerformed
 
     /**
      * @param args the command line arguments
