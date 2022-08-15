@@ -54,51 +54,47 @@ public class MainFrame extends javax.swing.JFrame {
         rrLLCheckBox = new javax.swing.JCheckBox();
         prTTCheckBox = new javax.swing.JCheckBox();
         jLabel8 = new javax.swing.JLabel();
-        rrLLLabel = new javax.swing.JLabel();
         arLLEditButton = new javax.swing.JButton();
         loginEditButton = new javax.swing.JButton();
         coLLEditButton = new javax.swing.JButton();
-        alLLLabel = new javax.swing.JLabel();
         rrTTCheckBox = new javax.swing.JCheckBox();
         jLabel10 = new javax.swing.JLabel();
-        coLLLabel = new javax.swing.JLabel();
         alLLEditButton = new javax.swing.JButton();
         searchCheckBox = new javax.swing.JCheckBox();
         signupEditButton = new javax.swing.JButton();
         signupCheckBox = new javax.swing.JCheckBox();
-        arLLLabel = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        loginLabel = new javax.swing.JLabel();
+        chromeLabel = new javax.swing.JLabel();
         rrLLEditButton = new javax.swing.JButton();
         arLLCheckBox = new javax.swing.JCheckBox();
-        signupLabel = new javax.swing.JLabel();
         arTTCheckBox = new javax.swing.JCheckBox();
-        prTTLabel = new javax.swing.JLabel();
         prTTEditButton = new javax.swing.JButton();
         buttonPanel = new javax.swing.JPanel();
         selectAllButton = new javax.swing.JButton();
         deselectAllButton = new javax.swing.JButton();
         testButton = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
         jComboBox2 = new javax.swing.JComboBox<>();
         jComboBox3 = new javax.swing.JComboBox<>();
+        chromeCB = new javax.swing.JCheckBox();
+        edgeCB = new javax.swing.JCheckBox();
+        firefoxCB = new javax.swing.JCheckBox();
         arTTEditButton = new javax.swing.JButton();
         rrTTEditButton = new javax.swing.JButton();
-        rrTTLabel = new javax.swing.JLabel();
-        arTTLabel = new javax.swing.JLabel();
-        searchLabel = new javax.swing.JLabel();
-        coTTLabel = new javax.swing.JLabel();
         searchEditButton = new javax.swing.JButton();
         coTTEditButton = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        edgeLabel = new javax.swing.JLabel();
+        firefoxLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Rentup Automated Tester");
         setBackground(new java.awt.Color(255, 255, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setMaximumSize(new java.awt.Dimension(715, 735));
-        setMinimumSize(new java.awt.Dimension(715, 735));
+        setMaximumSize(new java.awt.Dimension(915, 735));
+        setMinimumSize(new java.awt.Dimension(915, 735));
         setName("mainFrame"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(715, 735));
+        setPreferredSize(new java.awt.Dimension(915, 735));
         setSize(new java.awt.Dimension(700, 700));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
@@ -108,16 +104,16 @@ public class MainFrame extends javax.swing.JFrame {
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
         layeredPane.setBackground(new java.awt.Color(255, 0, 102));
-        layeredPane.setMaximumSize(new java.awt.Dimension(1400, 700));
-        layeredPane.setMinimumSize(new java.awt.Dimension(1400, 700));
-        layeredPane.setPreferredSize(new Dimension(1400, 700));
+        layeredPane.setMaximumSize(new java.awt.Dimension(900, 700));
+        layeredPane.setMinimumSize(new java.awt.Dimension(900, 700));
+        layeredPane.setPreferredSize(new Dimension(900, 700));
         layeredPane.setLayout(new java.awt.GridBagLayout());
 
         mainPanel.setBackground(new java.awt.Color(249, 249, 249));
-        mainPanel.setMaximumSize(new java.awt.Dimension(1400, 700));
-        mainPanel.setMinimumSize(new java.awt.Dimension(1400, 700));
+        mainPanel.setMaximumSize(new java.awt.Dimension(900, 700));
+        mainPanel.setMinimumSize(new java.awt.Dimension(900, 700));
         mainPanel.setName("mainPanel"); // NOI18N
-        mainPanel.setPreferredSize(new java.awt.Dimension(1400, 700));
+        mainPanel.setPreferredSize(new java.awt.Dimension(900, 700));
         mainPanel.setLayout(new java.awt.GridBagLayout());
 
         loginCheckBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -213,9 +209,9 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 13;
-        gridBagConstraints.ipadx = 28;
+        gridBagConstraints.ipadx = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
-        gridBagConstraints.weightx = 0.1;
+        gridBagConstraints.insets = new java.awt.Insets(0, 11, 0, 0);
         mainPanel.add(rrLLLabel, gridBagConstraints);
 
         arLLEditButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -264,9 +260,9 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 6;
-        gridBagConstraints.ipadx = 28;
+        gridBagConstraints.ipadx = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
-        gridBagConstraints.weightx = 0.1;
+        gridBagConstraints.insets = new java.awt.Insets(0, 11, 0, 0);
         mainPanel.add(alLLLabel, gridBagConstraints);
 
         rrTTCheckBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -285,7 +281,7 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         gridBagConstraints.insets = new java.awt.Insets(16, 15, 16, 0);
         mainPanel.add(jLabel10, gridBagConstraints);
@@ -296,9 +292,9 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 14;
-        gridBagConstraints.ipadx = 28;
+        gridBagConstraints.ipadx = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
-        gridBagConstraints.weightx = 0.1;
+        gridBagConstraints.insets = new java.awt.Insets(0, 11, 0, 0);
         mainPanel.add(coLLLabel, gridBagConstraints);
 
         alLLEditButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -357,9 +353,9 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 12;
-        gridBagConstraints.ipadx = 28;
+        gridBagConstraints.ipadx = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
-        gridBagConstraints.weightx = 0.1;
+        gridBagConstraints.insets = new java.awt.Insets(0, 11, 0, 0);
         mainPanel.add(arLLLabel, gridBagConstraints);
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -372,17 +368,12 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(16, 15, 16, 0);
         mainPanel.add(jLabel9, gridBagConstraints);
 
-        loginLabel.setMaximumSize(new java.awt.Dimension(35, 35));
-        loginLabel.setMinimumSize(new java.awt.Dimension(35, 35));
-        loginLabel.setName("loginStatusLabel"); // NOI18N
-        loginLabel.setPreferredSize(new java.awt.Dimension(35, 35));
+        chromeLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/chrome.png"))); // NOI18N
+        chromeLabel.setName("loginStatusLabel"); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.ipadx = 28;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
-        gridBagConstraints.weightx = 0.1;
-        mainPanel.add(loginLabel, gridBagConstraints);
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.insets = new java.awt.Insets(0, 11, 0, 0);
+        mainPanel.add(chromeLabel, gridBagConstraints);
 
         rrLLEditButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         rrLLEditButton.setText("Edit Values");
@@ -415,9 +406,9 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 3;
-        gridBagConstraints.ipadx = 28;
+        gridBagConstraints.ipadx = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
-        gridBagConstraints.weightx = 0.1;
+        gridBagConstraints.insets = new java.awt.Insets(0, 11, 0, 0);
         mainPanel.add(signupLabel, gridBagConstraints);
 
         arTTCheckBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -438,9 +429,9 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 5;
-        gridBagConstraints.ipadx = 28;
+        gridBagConstraints.ipadx = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
-        gridBagConstraints.weightx = 0.1;
+        gridBagConstraints.insets = new java.awt.Insets(0, 11, 0, 0);
         mainPanel.add(prTTLabel, gridBagConstraints);
 
         prTTEditButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -489,6 +480,7 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 4, 0, 4);
         buttonPanel.add(deselectAllButton, gridBagConstraints);
 
         testButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -503,37 +495,24 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 5;
+        gridBagConstraints.gridx = 7;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         gridBagConstraints.weightx = 0.1;
         buttonPanel.add(testButton, gridBagConstraints);
 
-        jComboBox1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chrome", "Edge", "Firefox" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
-        buttonPanel.add(jComboBox1, gridBagConstraints);
-
         jComboBox2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "co", "com", "dev" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Development", "Staging", "Production" }));
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox2ActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(0, 3, 0, 3);
         buttonPanel.add(jComboBox2, gridBagConstraints);
 
         jComboBox3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -547,12 +526,34 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(0, 22, 0, 4);
         buttonPanel.add(jComboBox3, gridBagConstraints);
+
+        chromeCB.setText("Chrome");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 3, 0, 3);
+        buttonPanel.add(chromeCB, gridBagConstraints);
+
+        edgeCB.setText("Edge");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 5;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 3, 0, 3);
+        buttonPanel.add(edgeCB, gridBagConstraints);
+
+        firefoxCB.setText("Firefox");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 3, 0, 3);
+        buttonPanel.add(firefoxCB, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridwidth = 7;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.insets = new java.awt.Insets(0, 13, 0, 13);
         mainPanel.add(buttonPanel, gridBagConstraints);
@@ -589,8 +590,9 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 9;
-        gridBagConstraints.ipadx = 28;
+        gridBagConstraints.ipadx = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 11, 0, 0);
         mainPanel.add(rrTTLabel, gridBagConstraints);
 
         arTTLabel.setMaximumSize(new java.awt.Dimension(35, 35));
@@ -599,8 +601,9 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 8;
-        gridBagConstraints.ipadx = 28;
+        gridBagConstraints.ipadx = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 11, 0, 0);
         mainPanel.add(arTTLabel, gridBagConstraints);
 
         searchLabel.setMaximumSize(new java.awt.Dimension(35, 35));
@@ -609,8 +612,9 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 4;
-        gridBagConstraints.ipadx = 28;
+        gridBagConstraints.ipadx = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 11, 0, 0);
         mainPanel.add(searchLabel, gridBagConstraints);
 
         coTTLabel.setMaximumSize(new java.awt.Dimension(35, 35));
@@ -619,8 +623,9 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 10;
-        gridBagConstraints.ipadx = 28;
+        gridBagConstraints.ipadx = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 11, 0, 0);
         mainPanel.add(coTTLabel, gridBagConstraints);
 
         searchEditButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -649,10 +654,280 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(0, 16, 0, 16);
         mainPanel.add(coTTEditButton, gridBagConstraints);
 
+        loginLabel1.setMaximumSize(new java.awt.Dimension(35, 35));
+        loginLabel1.setMinimumSize(new java.awt.Dimension(35, 35));
+        loginLabel1.setName("loginStatusLabel"); // NOI18N
+        loginLabel1.setPreferredSize(new java.awt.Dimension(35, 35));
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.ipadx = 4;
-        gridBagConstraints.ipady = 4;
-        layeredPane.add(mainPanel, gridBagConstraints);
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.ipadx = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 9);
+        mainPanel.add(loginLabel1, gridBagConstraints);
+
+        signupLabel1.setMaximumSize(new java.awt.Dimension(35, 35));
+        signupLabel1.setMinimumSize(new java.awt.Dimension(35, 35));
+        signupLabel1.setPreferredSize(new java.awt.Dimension(35, 35));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.ipadx = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 9);
+        mainPanel.add(signupLabel1, gridBagConstraints);
+
+        searchLabel1.setMaximumSize(new java.awt.Dimension(35, 35));
+        searchLabel1.setMinimumSize(new java.awt.Dimension(35, 35));
+        searchLabel1.setPreferredSize(new java.awt.Dimension(35, 35));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.ipadx = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 9);
+        mainPanel.add(searchLabel1, gridBagConstraints);
+
+        prTTLabel1.setMaximumSize(new java.awt.Dimension(35, 35));
+        prTTLabel1.setMinimumSize(new java.awt.Dimension(35, 35));
+        prTTLabel1.setName(""); // NOI18N
+        prTTLabel1.setPreferredSize(new java.awt.Dimension(35, 35));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.ipadx = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 9);
+        mainPanel.add(prTTLabel1, gridBagConstraints);
+
+        alLLLabel1.setMaximumSize(new java.awt.Dimension(35, 35));
+        alLLLabel1.setMinimumSize(new java.awt.Dimension(35, 35));
+        alLLLabel1.setPreferredSize(new java.awt.Dimension(35, 35));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.ipadx = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 9);
+        mainPanel.add(alLLLabel1, gridBagConstraints);
+
+        arTTLabel1.setMaximumSize(new java.awt.Dimension(35, 35));
+        arTTLabel1.setMinimumSize(new java.awt.Dimension(35, 35));
+        arTTLabel1.setPreferredSize(new java.awt.Dimension(35, 35));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.ipadx = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 9);
+        mainPanel.add(arTTLabel1, gridBagConstraints);
+
+        rrTTLabel1.setMaximumSize(new java.awt.Dimension(35, 35));
+        rrTTLabel1.setMinimumSize(new java.awt.Dimension(35, 35));
+        rrTTLabel1.setPreferredSize(new java.awt.Dimension(35, 35));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 9;
+        gridBagConstraints.ipadx = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 9);
+        mainPanel.add(rrTTLabel1, gridBagConstraints);
+
+        coTTLabel1.setMaximumSize(new java.awt.Dimension(35, 35));
+        coTTLabel1.setMinimumSize(new java.awt.Dimension(35, 35));
+        coTTLabel1.setPreferredSize(new java.awt.Dimension(35, 35));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.ipadx = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 9);
+        mainPanel.add(coTTLabel1, gridBagConstraints);
+
+        arLLLabel1.setMaximumSize(new java.awt.Dimension(35, 35));
+        arLLLabel1.setMinimumSize(new java.awt.Dimension(35, 35));
+        arLLLabel1.setPreferredSize(new java.awt.Dimension(35, 35));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 12;
+        gridBagConstraints.ipadx = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 9);
+        mainPanel.add(arLLLabel1, gridBagConstraints);
+
+        rrLLLabel1.setMaximumSize(new java.awt.Dimension(35, 35));
+        rrLLLabel1.setMinimumSize(new java.awt.Dimension(35, 35));
+        rrLLLabel1.setPreferredSize(new java.awt.Dimension(35, 35));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 13;
+        gridBagConstraints.ipadx = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 9);
+        mainPanel.add(rrLLLabel1, gridBagConstraints);
+
+        coLLLabel1.setMaximumSize(new java.awt.Dimension(35, 35));
+        coLLLabel1.setMinimumSize(new java.awt.Dimension(35, 35));
+        coLLLabel1.setPreferredSize(new java.awt.Dimension(35, 35));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 14;
+        gridBagConstraints.ipadx = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 9);
+        mainPanel.add(coLLLabel1, gridBagConstraints);
+
+        jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jSeparator1.setMaximumSize(new java.awt.Dimension(5, 600));
+        jSeparator1.setMinimumSize(new java.awt.Dimension(5, 600));
+        jSeparator1.setPreferredSize(new java.awt.Dimension(5, 600));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridheight = 14;
+        mainPanel.add(jSeparator1, gridBagConstraints);
+
+        jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jSeparator2.setMaximumSize(new java.awt.Dimension(5, 600));
+        jSeparator2.setMinimumSize(new java.awt.Dimension(5, 600));
+        jSeparator2.setPreferredSize(new java.awt.Dimension(5, 600));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 5;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridheight = 14;
+        mainPanel.add(jSeparator2, gridBagConstraints);
+
+        loginLabel2.setMaximumSize(new java.awt.Dimension(35, 35));
+        loginLabel2.setMinimumSize(new java.awt.Dimension(35, 35));
+        loginLabel2.setName("loginStatusLabel"); // NOI18N
+        loginLabel2.setPreferredSize(new java.awt.Dimension(35, 35));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.ipadx = 10;
+        mainPanel.add(loginLabel2, gridBagConstraints);
+
+        signupLabel2.setMaximumSize(new java.awt.Dimension(35, 35));
+        signupLabel2.setMinimumSize(new java.awt.Dimension(35, 35));
+        signupLabel2.setPreferredSize(new java.awt.Dimension(35, 35));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.ipadx = 10;
+        mainPanel.add(signupLabel2, gridBagConstraints);
+
+        searchLabel2.setMaximumSize(new java.awt.Dimension(35, 35));
+        searchLabel2.setMinimumSize(new java.awt.Dimension(35, 35));
+        searchLabel2.setPreferredSize(new java.awt.Dimension(35, 35));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.ipadx = 10;
+        mainPanel.add(searchLabel2, gridBagConstraints);
+
+        prTTLabel2.setMaximumSize(new java.awt.Dimension(35, 35));
+        prTTLabel2.setMinimumSize(new java.awt.Dimension(35, 35));
+        prTTLabel2.setName(""); // NOI18N
+        prTTLabel2.setPreferredSize(new java.awt.Dimension(35, 35));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.ipadx = 10;
+        mainPanel.add(prTTLabel2, gridBagConstraints);
+
+        alLLLabel2.setMaximumSize(new java.awt.Dimension(35, 35));
+        alLLLabel2.setMinimumSize(new java.awt.Dimension(35, 35));
+        alLLLabel2.setPreferredSize(new java.awt.Dimension(35, 35));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.ipadx = 10;
+        mainPanel.add(alLLLabel2, gridBagConstraints);
+
+        arTTLabel2.setMaximumSize(new java.awt.Dimension(35, 35));
+        arTTLabel2.setMinimumSize(new java.awt.Dimension(35, 35));
+        arTTLabel2.setPreferredSize(new java.awt.Dimension(35, 35));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.ipadx = 10;
+        mainPanel.add(arTTLabel2, gridBagConstraints);
+
+        rrTTLabel2.setMaximumSize(new java.awt.Dimension(35, 35));
+        rrTTLabel2.setMinimumSize(new java.awt.Dimension(35, 35));
+        rrTTLabel2.setPreferredSize(new java.awt.Dimension(35, 35));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 9;
+        gridBagConstraints.ipadx = 10;
+        mainPanel.add(rrTTLabel2, gridBagConstraints);
+
+        coTTLabel2.setMaximumSize(new java.awt.Dimension(35, 35));
+        coTTLabel2.setMinimumSize(new java.awt.Dimension(35, 35));
+        coTTLabel2.setPreferredSize(new java.awt.Dimension(35, 35));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.ipadx = 10;
+        mainPanel.add(coTTLabel2, gridBagConstraints);
+
+        arLLLabel2.setMaximumSize(new java.awt.Dimension(35, 35));
+        arLLLabel2.setMinimumSize(new java.awt.Dimension(35, 35));
+        arLLLabel2.setPreferredSize(new java.awt.Dimension(35, 35));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 12;
+        gridBagConstraints.ipadx = 10;
+        mainPanel.add(arLLLabel2, gridBagConstraints);
+
+        rrLLLabel2.setMaximumSize(new java.awt.Dimension(35, 35));
+        rrLLLabel2.setMinimumSize(new java.awt.Dimension(35, 35));
+        rrLLLabel2.setPreferredSize(new java.awt.Dimension(35, 35));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 13;
+        gridBagConstraints.ipadx = 10;
+        mainPanel.add(rrLLLabel2, gridBagConstraints);
+
+        coLLLabel2.setMaximumSize(new java.awt.Dimension(35, 35));
+        coLLLabel2.setMinimumSize(new java.awt.Dimension(35, 35));
+        coLLLabel2.setPreferredSize(new java.awt.Dimension(35, 35));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 14;
+        gridBagConstraints.ipadx = 10;
+        mainPanel.add(coLLLabel2, gridBagConstraints);
+
+        loginLabel.setMaximumSize(new java.awt.Dimension(35, 35));
+        loginLabel.setMinimumSize(new java.awt.Dimension(35, 35));
+        loginLabel.setName("loginStatusLabel"); // NOI18N
+        loginLabel.setPreferredSize(new java.awt.Dimension(35, 35));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.ipadx = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 11, 0, 0);
+        mainPanel.add(loginLabel, gridBagConstraints);
+
+        edgeLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/edge.png"))); // NOI18N
+        edgeLabel.setName("loginStatusLabel"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 1;
+        mainPanel.add(edgeLabel, gridBagConstraints);
+
+        firefoxLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/firefox.png"))); // NOI18N
+        firefoxLabel.setName("loginStatusLabel"); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 10);
+        mainPanel.add(firefoxLabel, gridBagConstraints);
+
+        layeredPane.add(mainPanel, new java.awt.GridBagConstraints());
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -767,31 +1042,60 @@ public class MainFrame extends javax.swing.JFrame {
         checks.add(rrLLCheckBox);
         checks.add(coLLCheckBox);
         
-        labels.add(loginLabel);
-        labels.add(signupLabel);
-        labels.add(searchLabel);
-        labels.add(prTTLabel);
-        labels.add(arTTLabel);
-        labels.add(rrTTLabel);
-        labels.add(coTTLabel);
-        labels.add(alLLLabel);
-        labels.add(arLLLabel);
-        labels.add(rrLLLabel);
-        labels.add(coLLLabel);
+        labels[0][0] = loginLabel;
+        labels[1][0] = signupLabel;
+        labels[2][0] = searchLabel;
+        labels[3][0] = prTTLabel;
+        labels[4][0] = arTTLabel;
+        labels[5][0] = rrTTLabel;
+        labels[6][0] = coTTLabel;
+        labels[7][0] = alLLLabel;
+        labels[8][0] = arLLLabel;
+        labels[9][0] = rrLLLabel;
+        labels[10][0] = coLLLabel;
+        
+        labels[0][1] = loginLabel2;
+        labels[1][1] = signupLabel2;
+        labels[2][1] = searchLabel2;
+        labels[3][1] = prTTLabel2;
+        labels[4][1] = arTTLabel2;
+        labels[5][1] = rrTTLabel2;
+        labels[6][1] = coTTLabel2;
+        labels[7][1] = alLLLabel2;
+        labels[8][1] = arLLLabel2;
+        labels[9][1] = rrLLLabel2;
+        labels[10][1] = coLLLabel2;
+        
+        labels[0][2] = loginLabel1;
+        labels[1][2] = signupLabel1;
+        labels[2][2] = searchLabel1;
+        labels[3][2] = prTTLabel1;
+        labels[4][2] = arTTLabel1;
+        labels[5][2] = rrTTLabel1;
+        labels[6][2] = coTTLabel1;
+        labels[7][2] = alLLLabel1;
+        labels[8][2] = arLLLabel1;
+        labels[9][2] = rrLLLabel1;
+        labels[10][2] = coLLLabel1;
+        
     }//GEN-LAST:event_formWindowOpened
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
         // TODO add your handling code here:
         String choice = jComboBox2.getSelectedItem().toString();
-        Methods.domain=choice;
+        switch(choice){
+            case "Development":
+                Methods.domain = "https://dev.rentup.co/";
+                break;
+            case "Staging":
+                Methods.domain = "https://rentup.co/";
+                break;
+            case "Production":
+                Methods.domain = "https://rentup.com.eg/";
+                break;
+        }
+        
     }//GEN-LAST:event_jComboBox2ActionPerformed
-
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-
-        String choice = jComboBox1.getSelectedItem().toString();
-        Methods.browser=choice;
-    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void deselectAllButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deselectAllButtonActionPerformed
         for(JCheckBox cb : checks)
@@ -806,70 +1110,110 @@ public class MainFrame extends javax.swing.JFrame {
     private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
         // TODO add your handling code here:
         String choice = jComboBox3.getSelectedItem().toString();
-        Methods.platform = choice;
+        Methods.platform=choice;
+        
     }//GEN-LAST:event_jComboBox3ActionPerformed
 
     private void testButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testButtonActionPerformed
-        for(JLabel label : labels)
-            label.setIcon(null);
         
-        if (loginCheckBox.isSelected()){
-            loginLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
-            JUnitCore junit = new JUnitCore();
-            junit.addListener(new TextListener(System.out));
-            new Thread(){
-                public void run(){
-                    if (junit.run(logintest.class).wasSuccessful())
-                        loginLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
-                    else
-                        loginLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
-                }
-            }.start();
-           
-        }
-       
-        if (signupCheckBox.isSelected()){
-            signupLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
-            JUnitCore junit = new JUnitCore();
-            junit.addListener(new TextListener(System.out));
-            new Thread(){
-                public void run(){
-                    if (junit.run(SignupTest.class).wasSuccessful())
-                        signupLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
-                    else
-                        signupLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
-                }
-            }.start(); 
-           
+        if (!chromeCB.isSelected() && !edgeCB.isSelected() && !firefoxCB.isSelected()){
+            JOptionPane.showMessageDialog(this, "Please pick a browser");
+            return;
         }
         
+        for(int i = 0; i < 11; i++)
+            for(JLabel label : labels[i]){
+                label.setIcon(null);
+                label.repaint();
+                label.revalidate();
+            }
 
-        if (searchCheckBox.isSelected()){
-            searchLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
-            JUnitCore junit = new JUnitCore();
-            junit.addListener(new TextListener(System.out));
-            new Thread(){
-                public void run(){
-                    if (junit.run(SearchTest.class).wasSuccessful())
-                        searchLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
-                    else
-                        searchLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
-                }
-            }.start();
-        }
+        ArrayList<String> browsers = new ArrayList<String>();
+        if (chromeCB.isSelected()) browsers.add("Chrome"); else browsers.add("");
+        if (edgeCB.isSelected()) browsers.add("Edge"); else browsers.add("");
+        if (firefoxCB.isSelected()) browsers.add("Firefox"); else browsers.add("");
         
-        if (prTTCheckBox.isSelected()){
-            prTTLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
-            JUnitCore junit = new JUnitCore();
-            junit.addListener(new TextListener(System.out));
-            new Thread(){
-                public void run(){
-                    if (junit.run(PostRequesttest.class).wasSuccessful())
-                        prTTLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
-                    else
-                        prTTLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
-                }
-            }.start();
+        for(int i = 0; i < browsers.size(); i++){
+        
+            if (browsers.get(i).equals("")) continue;
+            
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            Methods.browser = browsers.get(i);
+            
+            if (loginCheckBox.isSelected()){
+                labels[0][i].setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
+                final JLabel label = labels[0][i];
+                label.repaint();
+                label.revalidate();
+                JUnitCore junit = new JUnitCore();
+                junit.addListener(new TextListener(System.out));
+                new Thread(){
+                    public void run(){
+                        if (junit.run(logintest.class).wasSuccessful())
+                            label.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
+                        else
+                            label.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
+                    }
+                }.start();
+
+            }
+            
+
+            if (signupCheckBox.isSelected()){
+                labels[1][i].setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
+                final JLabel label = labels[1][i];
+                label.repaint();
+                label.revalidate();
+                JUnitCore junit = new JUnitCore();
+                junit.addListener(new TextListener(System.out));
+                new Thread(){
+                    public void run(){
+                        if (junit.run(SignupTest.class).wasSuccessful())
+                            label.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
+                        else
+                            label.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
+                    }
+                }.start(); 
+
+            }
+
+            if (searchCheckBox.isSelected()){
+                labels[2][i].setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
+                final JLabel label = labels[2][i];
+                label.repaint();
+                label.revalidate();
+                JUnitCore junit = new JUnitCore();
+                junit.addListener(new TextListener(System.out));
+                new Thread(){
+                    public void run(){
+                        if (junit.run(SearchTest.class).wasSuccessful())
+                            label.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
+                        else
+                            label.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
+                    }
+                }.start();
+            }
+
+            if (prTTCheckBox.isSelected()){
+                labels[3][i].setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
+                final JLabel label = labels[3][i];
+                label.repaint();
+                label.revalidate();
+                JUnitCore junit = new JUnitCore();
+                junit.addListener(new TextListener(System.out));
+                new Thread(){
+                    public void run(){
+                        if (junit.run(PostRequesttest.class).wasSuccessful())
+                            label.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
+                        else
+                            label.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
+                    }
+                }.start();
+            }
         }
     }//GEN-LAST:event_testButtonActionPerformed
 
@@ -913,53 +1257,82 @@ public class MainFrame extends javax.swing.JFrame {
     }
     
     private ArrayList<JCheckBox> checks = new ArrayList<JCheckBox>();
-    private ArrayList<JLabel> labels = new ArrayList<JLabel>();
+    private JLabel[][] labels = new JLabel[11][3];
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox alLLCheckBox;
     private javax.swing.JButton alLLEditButton;
-    private javax.swing.JLabel alLLLabel;
+    private final javax.swing.JLabel alLLLabel = new javax.swing.JLabel();
+    private final javax.swing.JLabel alLLLabel1 = new javax.swing.JLabel();
+    private final javax.swing.JLabel alLLLabel2 = new javax.swing.JLabel();
     private javax.swing.JCheckBox arLLCheckBox;
     private javax.swing.JButton arLLEditButton;
-    private javax.swing.JLabel arLLLabel;
+    private final javax.swing.JLabel arLLLabel = new javax.swing.JLabel();
+    private final javax.swing.JLabel arLLLabel1 = new javax.swing.JLabel();
+    private final javax.swing.JLabel arLLLabel2 = new javax.swing.JLabel();
     private javax.swing.JCheckBox arTTCheckBox;
     private javax.swing.JButton arTTEditButton;
-    private javax.swing.JLabel arTTLabel;
+    private final javax.swing.JLabel arTTLabel = new javax.swing.JLabel();
+    private final javax.swing.JLabel arTTLabel1 = new javax.swing.JLabel();
+    private final javax.swing.JLabel arTTLabel2 = new javax.swing.JLabel();
     private javax.swing.JPanel buttonPanel;
+    private javax.swing.JCheckBox chromeCB;
+    private javax.swing.JLabel chromeLabel;
     private javax.swing.JCheckBox coLLCheckBox;
     private javax.swing.JButton coLLEditButton;
-    private javax.swing.JLabel coLLLabel;
+    private final javax.swing.JLabel coLLLabel = new javax.swing.JLabel();
+    private final javax.swing.JLabel coLLLabel1 = new javax.swing.JLabel();
+    private final javax.swing.JLabel coLLLabel2 = new javax.swing.JLabel();
     private javax.swing.JCheckBox coTTCheckBox;
     private javax.swing.JButton coTTEditButton;
-    private javax.swing.JLabel coTTLabel;
+    private final javax.swing.JLabel coTTLabel = new javax.swing.JLabel();
+    private final javax.swing.JLabel coTTLabel1 = new javax.swing.JLabel();
+    private final javax.swing.JLabel coTTLabel2 = new javax.swing.JLabel();
     private javax.swing.JButton deselectAllButton;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JCheckBox edgeCB;
+    private javax.swing.JLabel edgeLabel;
+    private javax.swing.JCheckBox firefoxCB;
+    private javax.swing.JLabel firefoxLabel;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLayeredPane layeredPane;
     private javax.swing.JCheckBox loginCheckBox;
     private javax.swing.JButton loginEditButton;
-    private javax.swing.JLabel loginLabel;
+    private final javax.swing.JLabel loginLabel = new javax.swing.JLabel();
+    private final javax.swing.JLabel loginLabel1 = new javax.swing.JLabel();
+    private final javax.swing.JLabel loginLabel2 = new javax.swing.JLabel();
     private javax.swing.JPanel mainPanel;
     private javax.swing.JCheckBox prTTCheckBox;
     private javax.swing.JButton prTTEditButton;
-    private javax.swing.JLabel prTTLabel;
+    private final javax.swing.JLabel prTTLabel = new javax.swing.JLabel();
+    private final javax.swing.JLabel prTTLabel1 = new javax.swing.JLabel();
+    private final javax.swing.JLabel prTTLabel2 = new javax.swing.JLabel();
     private javax.swing.JCheckBox rrLLCheckBox;
     private javax.swing.JButton rrLLEditButton;
-    private javax.swing.JLabel rrLLLabel;
+    private final javax.swing.JLabel rrLLLabel = new javax.swing.JLabel();
+    private final javax.swing.JLabel rrLLLabel1 = new javax.swing.JLabel();
+    private final javax.swing.JLabel rrLLLabel2 = new javax.swing.JLabel();
     private javax.swing.JCheckBox rrTTCheckBox;
     private javax.swing.JButton rrTTEditButton;
-    private javax.swing.JLabel rrTTLabel;
+    private final javax.swing.JLabel rrTTLabel = new javax.swing.JLabel();
+    private final javax.swing.JLabel rrTTLabel1 = new javax.swing.JLabel();
+    private final javax.swing.JLabel rrTTLabel2 = new javax.swing.JLabel();
     private javax.swing.JCheckBox searchCheckBox;
     private javax.swing.JButton searchEditButton;
-    private javax.swing.JLabel searchLabel;
+    private final javax.swing.JLabel searchLabel = new javax.swing.JLabel();
+    private final javax.swing.JLabel searchLabel1 = new javax.swing.JLabel();
+    private final javax.swing.JLabel searchLabel2 = new javax.swing.JLabel();
     private javax.swing.JButton selectAllButton;
     private javax.swing.JCheckBox signupCheckBox;
     private javax.swing.JButton signupEditButton;
-    private javax.swing.JLabel signupLabel;
+    private final javax.swing.JLabel signupLabel = new javax.swing.JLabel();
+    private final javax.swing.JLabel signupLabel1 = new javax.swing.JLabel();
+    private final javax.swing.JLabel signupLabel2 = new javax.swing.JLabel();
     private javax.swing.JButton testButton;
     // End of variables declaration//GEN-END:variables
 }
