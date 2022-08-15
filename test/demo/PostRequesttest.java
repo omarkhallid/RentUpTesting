@@ -43,7 +43,7 @@ public class PostRequesttest {
              System.setProperty("webdriver.gecko.driver", new java.io.File(".").getCanonicalPath() + "\\" + "geckodriver.exe");
              driver = new FirefoxDriver();
         }
-        driver = login(driver,email,password);
+        driver = login(email,password);
         Thread.sleep(8000);
         driver.findElement(By.cssSelector("#__layout > div > header > nav > div > div.nav-links.d-none.d-lg-flex > a:nth-child(2)")).click();  //post A request
         driver.findElement(By.cssSelector("#citySelect > div > span")).click();  //click on city
