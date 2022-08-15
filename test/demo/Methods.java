@@ -4,6 +4,7 @@
  */
 package demo;
 
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -15,6 +16,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import static org.junit.Assert.assertTrue;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 
 /**
@@ -79,13 +81,37 @@ public class Methods {
 
         // Puts an Implicit wait, Will wait for 10 seconds before throwing exception
         //driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
+        if(Methods.getCellData(1, 4).equals("Desktop"))
+        {
+             driver.manage().window().maximize();
+        }
+        else
+        {
+            Dimension dimension = new Dimension(360,740);
+            driver.manage().window().setSize(dimension);
+        }
+        
+       
         // Launch website
-        driver.navigate().to("http://rentup.co/");
+        if(Methods.getCellData(1, 3).equals("co"))
+        {
+            driver.navigate().to("http://rentup.co/");
+        }
+        else if (Methods.getCellData(1,3).equals("com"))
+        {
+            driver.navigate().to("https://rentup.com.eg/");
+        }
+        else if (Methods.getCellData(1,3).equals("dev"))
+        {
+            driver.navigate().to("https://dev.rentup.co/");
+        }
         // Maximize the browser
         
         
         // Click on Sign in button
+        if(Methods.getCellData(1, 4).equals("Desktop"))
+        {
+            
         Thread.sleep(2000);
         driver.findElement(By.cssSelector("#nav-collapse > ul > li:nth-child(3) > button")).click();
         Thread.sleep(2000);
@@ -109,6 +135,30 @@ public class Methods {
             driver.close();
             System.out.println(ex.getMessage());
             assertTrue(false);
+        }
+        return driver;
+        }
+        else if (Methods.getCellData(1, 4).equals("Mobile"))
+        {
+            try{
+                Thread.sleep(2000);
+            driver.findElement(By.cssSelector("#__layout > div > header > nav > div > div.d-flex.align-items-center.d-none.d-lg-none.mobile-header-items > button")).click();
+            driver.findElement(By.cssSelector("#__layout > div > header > main > div.side-bar.active-side-bar > div > div > div > ul > li:nth-child(1) > div > a.auth-button.auth-button__login.font-bold")).click();
+            Thread.sleep(2000);
+            driver.findElements(By.tagName("input")).get(0).sendKeys(email);
+            driver.findElements(By.tagName("input")).get(1).sendKeys(password);
+            Thread.sleep(2000);
+            driver.findElement(By.cssSelector("#auth-modal___BV_modal_body_ > div > span:nth-child(2) > form > button")).click();
+            Thread.sleep(7000);
+            driver.findElement(By.cssSelector("#__layout > div > header > nav > div > div.d-flex.align-items-center.d-none.d-lg-none.mobile-header-items > button")).click();
+            
+            
+            }catch(Exception ex)
+            {
+            driver.close();
+            System.out.println(ex.getMessage());
+            assertTrue(false);
+            }return driver;
         }
         return driver;
     }

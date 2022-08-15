@@ -52,7 +52,19 @@ public class SearchTests {
        
         driver.manage().window().maximize();
         //driver = login(driver,getCellData(1, 0),getCellData(1, 1));
-        driver.navigate().to("http://rentup.co/");
+        if(Methods.getCellData(1, 3).equals("co"))
+        {
+            driver.navigate().to("http://rentup.co/");
+        }
+        else if (Methods.getCellData(1,3).equals("com"))
+        {
+            driver.navigate().to("https://rentup.com.eg/");
+        }
+        else if (Methods.getCellData(1,3).equals("dev"))
+        {
+            driver.navigate().to("https://dev.rentup.co/");
+        }
+        
 
         while(true){
             try{
