@@ -128,10 +128,10 @@ public class PostRequesttest {
               driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div.p-3.post-form-container > div:nth-child(2) > main > div > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div.section-white.px-minus-15 > div.row.mt-1 > div > div > span:nth-child(8)")).click();
          }
        
-        Thread.sleep(2000);
-        driver.findElement(By.cssSelector("#datepicker__value_")).click();
         Thread.sleep(3000);
-        driver.findElements(By.tagName("Button")).get(20).click();
+        driver.findElement(By.cssSelector("#datepicker")).click();
+        Thread.sleep(5000);
+        driver.findElements(By.tagName("Button")).get(21).click();
         
         Thread.sleep(2000);     
         if(m.getCellData(5, 5).equals("z"))
@@ -144,7 +144,7 @@ public class PostRequesttest {
         }
         Thread.sleep(2000);  
         driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div.p-3.post-form-container > div:nth-child(2) > main > div > div > div:nth-child(3) > div > div.col-7 > div > button")).click();
-        Thread.sleep(2000);
+        Thread.sleep(4000);
         
         if(m.getCellData(5, 6).equals("z"))
            {
