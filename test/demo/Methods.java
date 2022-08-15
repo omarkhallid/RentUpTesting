@@ -153,16 +153,16 @@ public class Methods {
         try{
             switch(browser){
                 case "Chrome":
-                    driver = new ChromeDriver();
                     System.setProperty("webdriver.chrome.driver", new java.io.File(".").getCanonicalPath() +"\\" + "chromedriver.exe");
+                    driver = new ChromeDriver();
                     break;
                 case "Edge":
-                    driver = new EdgeDriver();
                     System.setProperty("webdriver.edge.driver", new java.io.File(".").getCanonicalPath() +"\\" + "msedgedriver.exe");
+                    driver = new EdgeDriver();
                     break;
                 case "Firefox":
-                    driver = new FirefoxDriver();
                     System.setProperty("webdriver.gecko.driver", new java.io.File(".").getCanonicalPath() + "\\" + "geckodriver.exe");
+                    driver = new FirefoxDriver();
                     break;
             }
         } catch (Exception ex){
