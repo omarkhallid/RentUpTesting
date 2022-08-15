@@ -6,7 +6,6 @@ package ui;
 
 import demo.Methods;
 import demo.logintest;
-import ui.LoginFrame;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JLayeredPane;

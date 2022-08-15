@@ -85,7 +85,18 @@ public class SignupTests {
         
         driver.manage().window().maximize();
         
-        driver.navigate().to("http://rentup.co/");
+        if(Methods.getCellData(1, 3).equals("co"))
+        {
+            driver.navigate().to("http://rentup.co/");
+        }
+        else if (Methods.getCellData(1,3).equals("com"))
+        {
+            driver.navigate().to("https://rentup.com.eg/");
+        }
+        else if (Methods.getCellData(1,3).equals("dev"))
+        {
+            driver.navigate().to("https://dev.rentup.co/");
+        }
         //driver.findElement(by)
         Thread.sleep(2000);
         driver.findElement(By.cssSelector("#nav-collapse > ul > li:nth-child(3) > button")).click();

@@ -78,6 +78,8 @@ public class MainFrame extends javax.swing.JFrame {
         deselectAllButton = new javax.swing.JButton();
         testButton = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jComboBox3 = new javax.swing.JComboBox<>();
         arTTEditButton = new javax.swing.JButton();
         rrTTEditButton = new javax.swing.JButton();
         rrTTLabel = new javax.swing.JLabel();
@@ -499,7 +501,7 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridx = 5;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         gridBagConstraints.weightx = 0.1;
@@ -513,11 +515,37 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
         buttonPanel.add(jComboBox1, gridBagConstraints);
+
+        jComboBox2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "co", "com", "dev" }));
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2ActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        buttonPanel.add(jComboBox2, gridBagConstraints);
+
+        jComboBox3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Desktop", "Mobile" }));
+        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox3ActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        buttonPanel.add(jComboBox3, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -635,11 +663,6 @@ public class MainFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void selectAllButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectAllButtonActionPerformed
-        for(JCheckBox cb : checks)
-            cb.setSelected(true);
-    }//GEN-LAST:event_selectAllButtonActionPerformed
-
     private void arLLEditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arLLEditButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_arLLEditButtonActionPerformed
@@ -685,78 +708,6 @@ public class MainFrame extends javax.swing.JFrame {
     private void coLLEditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_coLLEditButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_coLLEditButtonActionPerformed
-
-    private void deselectAllButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deselectAllButtonActionPerformed
-        for(JCheckBox cb : checks)
-            cb.setSelected(false);
-    }//GEN-LAST:event_deselectAllButtonActionPerformed
-
-    private void testButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testButtonActionPerformed
-        
-        
-        for(JLabel label : labels)
-            label.setIcon(null);
-        
-        if (loginCheckBox.isSelected()){
-            loginLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
-            JUnitCore junit = new JUnitCore();
-            junit.addListener(new TextListener(System.out));
-            new Thread(){
-                public void run(){
-                    if (junit.run(logintest.class).wasSuccessful())
-                        loginLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
-                    else
-                        loginLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
-                }
-            }.start(); 
-           
-        }
-        
-        
-        if (signupCheckBox.isSelected()){
-            signupLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
-            JUnitCore junit = new JUnitCore();
-            junit.addListener(new TextListener(System.out));
-            new Thread(){
-                public void run(){
-                    if (junit.run(SignupTests.class).wasSuccessful())
-                        signupLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
-                    else
-                        signupLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
-                }
-            }.start(); 
-           
-        }
-        
-        if (searchCheckBox.isSelected()){
-            searchLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
-            JUnitCore junit = new JUnitCore();
-            junit.addListener(new TextListener(System.out));
-            new Thread(){
-                public void run(){
-                    if (junit.run(SearchTests.class).wasSuccessful())
-                        searchLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
-                    else
-                        searchLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
-                }
-            }.start();
-        }
-        
-        if (prTTCheckBox.isSelected()){
-            prTTLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
-            JUnitCore junit = new JUnitCore();
-            junit.addListener(new TextListener(System.out));
-            new Thread(){
-                public void run(){
-                    if (junit.run(PostRequesttest.class).wasSuccessful())
-                        prTTLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
-                    else
-                        prTTLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
-                }
-            }.start();
-        }
-        
-    }//GEN-LAST:event_testButtonActionPerformed
 
     private void loginEditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginEditButtonActionPerformed
         LoginPanel panel = new LoginPanel(layeredPane);
@@ -827,13 +778,98 @@ public class MainFrame extends javax.swing.JFrame {
         labels.add(coLLLabel);
     }//GEN-LAST:event_formWindowOpened
 
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+        // TODO add your handling code here:
+        String choice = jComboBox2.getSelectedItem().toString();
+        Methods.setCellData(choice,1,3);
+    }//GEN-LAST:event_jComboBox2ActionPerformed
+
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
-        
+
         String choice = jComboBox1.getSelectedItem().toString();
         Methods.setCellData(choice, 1, 2);
-        
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void testButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testButtonActionPerformed
+
+        for(JLabel label : labels)
+        label.setIcon(null);
+
+        if (loginCheckBox.isSelected()){
+            loginLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
+            JUnitCore junit = new JUnitCore();
+            junit.addListener(new TextListener(System.out));
+            new Thread(){
+                public void run(){
+                    if (junit.run(logintest.class).wasSuccessful())
+                    loginLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
+                    else
+                    loginLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
+                }
+            }.start();
+
+        }
+
+        if (signupCheckBox.isSelected()){
+            signupLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
+            JUnitCore junit = new JUnitCore();
+            junit.addListener(new TextListener(System.out));
+            new Thread(){
+                public void run(){
+                    if (junit.run(SignupTests.class).wasSuccessful())
+                    signupLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
+                    else
+                    signupLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
+                }
+            }.start();
+
+        }
+
+        if (searchCheckBox.isSelected()){
+            searchLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
+            JUnitCore junit = new JUnitCore();
+            junit.addListener(new TextListener(System.out));
+            new Thread(){
+                public void run(){
+                    if (junit.run(SearchTests.class).wasSuccessful())
+                    searchLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
+                    else
+                    searchLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
+                }
+            }.start();
+        }
+
+        if (prTTCheckBox.isSelected()){
+            prTTLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
+            JUnitCore junit = new JUnitCore();
+            junit.addListener(new TextListener(System.out));
+            new Thread(){
+                public void run(){
+                    if (junit.run(PostRequesttest.class).wasSuccessful())
+                    prTTLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
+                    else
+                    prTTLabel.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
+                }
+            }.start();
+        }
+    }//GEN-LAST:event_testButtonActionPerformed
+
+    private void deselectAllButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deselectAllButtonActionPerformed
+        for(JCheckBox cb : checks)
+        cb.setSelected(false);
+    }//GEN-LAST:event_deselectAllButtonActionPerformed
+
+    private void selectAllButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectAllButtonActionPerformed
+        for(JCheckBox cb : checks)
+        cb.setSelected(true);
+    }//GEN-LAST:event_selectAllButtonActionPerformed
+
+    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
+        // TODO add your handling code here:
+        String choice = jComboBox3.getSelectedItem().toString();
+        Methods.setCellData(choice, 1, 4);
+    }//GEN-LAST:event_jComboBox3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -896,6 +932,8 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel coTTLabel;
     private javax.swing.JButton deselectAllButton;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;

@@ -74,9 +74,10 @@ public class logintest {
              System.setProperty("webdriver.gecko.driver", new java.io.File(".").getCanonicalPath() + "\\" + "geckodriver.exe");
              driver = new FirefoxDriver();
         }
-        
-        
         driver = m.login(driver,email,password);
+        if(m.getCellData(1,4).equals("Desktop"))
+        {
+            
         System.out.println(driver.findElement(By.className("Content")).isDisplayed());
         Thread.sleep(8000);
     	try {
@@ -84,8 +85,20 @@ public class logintest {
             assertEquals(true, driver.findElement(By.className("user-avatar")).isDisplayed()); 
         } catch(NoSuchElementException e){
             driver.close();
-            assertTrue(false);
-            
+            assertTrue(false);  
+        }
+        
+        }
+        if(m.getCellData(1,4).equals("Mobile"))
+        {
+            Thread.sleep(6000);
+    	try {
+            // Check whether a certain element appears which confirms that the login was not successful
+            assertEquals(true, driver.findElement(By.cssSelector("#__layout > div > header > main > div.side-bar.active-side-bar > div > div > div > ul > li:nth-child(1) > div > div > span")).isDisplayed()); 
+        } catch(NoSuchElementException e){
+            driver.close();
+            assertTrue(false);  
+        }
         }
         Thread.sleep(2000);
         
