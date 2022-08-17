@@ -132,7 +132,7 @@ public class Methods {
             Thread.sleep(2000);
             driver.findElement(By.cssSelector("#auth-modal___BV_modal_body_ > div > span:nth-child(2) > form > button")).click();
             Thread.sleep(7000);
-            driver.findElement(By.cssSelector("#__layout > div > header > nav > div > div.d-flex.align-items-center.d-none.d-lg-none.mobile-header-items > button")).click();
+           
             
             
             }catch(Exception ex)

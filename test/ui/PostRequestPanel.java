@@ -47,7 +47,6 @@ public class PostRequestPanel extends javax.swing.JPanel {
         jComboBox3 = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        nightsbutton = new javax.swing.JRadioButton();
         MonthsButton = new javax.swing.JRadioButton();
         YearsButton = new javax.swing.JRadioButton();
         jLabel6 = new javax.swing.JLabel();
@@ -59,7 +58,6 @@ public class PostRequestPanel extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         term1 = new javax.swing.JRadioButton();
         term2 = new javax.swing.JRadioButton();
-        term3 = new javax.swing.JRadioButton();
         jLabel9 = new javax.swing.JLabel();
         status1 = new javax.swing.JRadioButton();
         status2 = new javax.swing.JRadioButton();
@@ -99,14 +97,6 @@ public class PostRequestPanel extends javax.swing.JPanel {
         jLabel4.setText("Select neighbourhood");
 
         jLabel5.setText("choose duration");
-
-        buttons.add(nightsbutton);
-        nightsbutton.setText("Nights");
-        nightsbutton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nightsbuttonActionPerformed(evt);
-            }
-        });
 
         buttons.add(MonthsButton);
         MonthsButton.setSelected(true);
@@ -163,24 +153,17 @@ public class PostRequestPanel extends javax.swing.JPanel {
         jLabel8.setText("choose a term ");
 
         term1.setSelected(true);
-        term1.setText("will get pet");
+        term1.setText("Minimum contract (12) months");
         term1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 term1ActionPerformed(evt);
             }
         });
 
-        term2.setText("Free WiFi");
+        term2.setText("Eviction Notice at least (3) months prior");
         term2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 term2ActionPerformed(evt);
-            }
-        });
-
-        term3.setText("Mobile charger");
-        term3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                term3ActionPerformed(evt);
             }
         });
 
@@ -270,32 +253,27 @@ public class PostRequestPanel extends javax.swing.JPanel {
                         .addGap(79, 79, 79)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                .addComponent(budget)
+                                .addGap(63, 63, 63))
+                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(nightsbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(firstDuration))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(MonthsButton)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(YearsButton))
+                                            .addComponent(firstDuration)
+                                            .addComponent(MonthsButton))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createSequentialGroup()
                                                 .addComponent(SecondDuration, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(ThirdDuration)
-                                                .addGap(22, 22, 22)))))
-                                .addContainerGap(60, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(budget)
-                                .addGap(63, 63, 63))))
+                                                .addGap(41, 41, 41)
+                                                .addComponent(ThirdDuration))
+                                            .addComponent(YearsButton)))
+                                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10)
                             .addComponent(jLabel11)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -309,22 +287,22 @@ public class PostRequestPanel extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(budget1)
-                                .addGap(57, 57, 57))
-                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(term2)
                                     .addComponent(status2))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(status3)
-                                    .addComponent(term3))
+                                .addComponent(status3)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(property2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(property3)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                                .addGap(82, 82, 82))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(budget1, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(62, 62, 62))))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -364,7 +342,6 @@ public class PostRequestPanel extends javax.swing.JPanel {
                         .addComponent(jLabel6))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(nightsbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(MonthsButton)
                             .addComponent(YearsButton))
                         .addGap(37, 37, 37)
@@ -380,8 +357,7 @@ public class PostRequestPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(term1)
-                    .addComponent(term2)
-                    .addComponent(term3))
+                    .addComponent(term2))
                 .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
@@ -413,10 +389,6 @@ public class PostRequestPanel extends javax.swing.JPanel {
     private void term2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_term2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_term2ActionPerformed
-
-    private void term3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_term3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_term3ActionPerformed
 
     private void status1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_status1ActionPerformed
         // TODO add your handling code here:
@@ -609,11 +581,6 @@ public class PostRequestPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_budget1ActionPerformed
 
-    private void nightsbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nightsbuttonActionPerformed
-        // TODO add your handling code here:genderGroup.getSelection().getActionCommand();
-
-    }//GEN-LAST:event_nightsbuttonActionPerformed
-
     private void MonthsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MonthsButtonActionPerformed
         // TODO add your handling code here:
 
@@ -740,15 +707,10 @@ public class PostRequestPanel extends javax.swing.JPanel {
         {
            
             try {
-                if((nightsbutton.isSelected()))
-                {
-                    Methods.setCellData("nights", 5, 3);
-                }
-                else
+                if((YearsButton.isSelected()))
                 {
                     Methods.setCellData("years", 5, 3);
-                }
-                
+                }           
             } catch (Exception ex) {
                 Logger.getLogger(PostRequestPanel.class.getName()).log(Level.SEVERE, null, ex);
             }   
@@ -800,15 +762,7 @@ public class PostRequestPanel extends javax.swing.JPanel {
                 {
                     Methods.setCellData("NA", 5, 7);
                 }
-                if ((term3.isSelected()))
-                {
-                    t.setCellData("No Security Deposit", 5, 8);
-                }
-                else
-                {
-                    Methods.setCellData("NA", 5, 8);
-                }
-                
+               
             } catch (Exception ex) {
                 Logger.getLogger(PostRequestPanel.class.getName()).log(Level.SEVERE, null, ex);
             }   
@@ -924,7 +878,6 @@ public class PostRequestPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JRadioButton nightsbutton;
     private javax.swing.JRadioButton property1;
     private javax.swing.JRadioButton property2;
     private javax.swing.JRadioButton property3;
@@ -933,6 +886,5 @@ public class PostRequestPanel extends javax.swing.JPanel {
     private javax.swing.JRadioButton status3;
     private javax.swing.JRadioButton term1;
     private javax.swing.JRadioButton term2;
-    private javax.swing.JRadioButton term3;
     // End of variables declaration//GEN-END:variables
 }

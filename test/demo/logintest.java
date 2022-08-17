@@ -82,6 +82,7 @@ public class logintest {
             Thread.sleep(6000);
     	try {
             // Check whether a certain element appears which confirms that the login was not successful
+             driver.findElement(By.cssSelector("#__layout > div > header > nav > div > div.d-flex.align-items-center.d-none.d-lg-none.mobile-header-items > button")).click();
             assertEquals(true, driver.findElement(By.cssSelector("#__layout > div > header > main > div.side-bar.active-side-bar > div > div > div > ul > li:nth-child(1) > div > div > span")).isDisplayed()); 
         } catch(NoSuchElementException e){
             driver.close();

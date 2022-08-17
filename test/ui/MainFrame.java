@@ -530,6 +530,11 @@ public class MainFrame extends javax.swing.JFrame {
         buttonPanel.add(jComboBox3, gridBagConstraints);
 
         chromeCB.setText("Chrome");
+        chromeCB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chromeCBActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 0;
@@ -1216,6 +1221,10 @@ public class MainFrame extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_testButtonActionPerformed
+
+    private void chromeCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chromeCBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chromeCBActionPerformed
 
     /**
      * @param args the command line arguments
