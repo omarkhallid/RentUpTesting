@@ -34,39 +34,69 @@ public class SearchTest {
         else
             searchPhrase = getCellData(9, 0);
 
-        while(true){
+        if (platform.equals("Desktop")){
+            while(true){
+                try{
+                    //click search button
+                    driver.findElement(By.className("SearchPhrase2")).click();
+                    Thread.sleep(1000);
+                    break;
+                } catch(Exception e){}
+            }
+            Thread.sleep(2000);
             try{
-                //click search button
-                driver.findElement(By.className("SearchPhrase2")).click();
-                Thread.sleep(1000);
-                break;
-            } catch(Exception e){}
+                //type searchPhrase into search field
+                driver.findElements(By.tagName("input")).get(1).sendKeys(searchPhrase);
+                Thread.sleep(5000);
+                //type choose first option from dropdown list
+                driver.findElements(By.tagName("ul")).get(2).findElement(By.tagName("li")).click();
+                Thread.sleep(4000);
+
+
+            }
+            catch(Exception ex){
+                driver.close();
+                assertTrue(false);
+            }
+
+            try {
+                // Check whether a certain element appears which confirms that the login was not successful
+                boolean flag = driver.findElement(By.className("property-container")).findElement(By.tagName("a")).getAttribute("href").contains(searchPhrase.toLowerCase());
+                driver.close();
+                assertEquals(true, flag); 
+            } catch(NoSuchElementException e){
+                driver.close();
+                assertTrue(false);
+            }
         }
-        Thread.sleep(2000);
-        try{
-            //type searchPhrase into search field
-            driver.findElements(By.tagName("input")).get(1).sendKeys(searchPhrase);
+        
+        else if (platform.equals("Mobile")){
+            //click search button
+            driver.findElement(By.tagName("h1")).click();
+            Thread.sleep(3000);
+            //click search box
+            driver.findElements(By.tagName("input")).get(0).click();
+            Thread.sleep(2000);
+            
+            //type search phrase
+            driver.findElement(By.tagName("input")).sendKeys(searchPhrase);
             Thread.sleep(5000);
+            
             //type choose first option from dropdown list
             driver.findElements(By.tagName("ul")).get(2).findElement(By.tagName("li")).click();
             Thread.sleep(4000);
             
+            try {
+                // Check whether a certain element appears which confirms that the login was not successful
+                boolean flag = driver.findElement(By.className("property-container")).findElement(By.tagName("a")).getAttribute("href").contains(searchPhrase.toLowerCase());
+                driver.close();
+                assertEquals(true, flag); 
+            } catch(NoSuchElementException e){
+                driver.close();
+                assertTrue(false);
+            }
             
         }
-        catch(Exception ex){
-            driver.close();
-            assertTrue(false);
-        }
         
-    	try {
-            // Check whether a certain element appears which confirms that the login was not successful
-            boolean flag = driver.findElement(By.className("property-container")).findElement(By.tagName("a")).getAttribute("href").contains(searchPhrase.toLowerCase());
-            driver.close();
-            assertEquals(true, flag); 
-        } catch(NoSuchElementException e){
-            driver.close();
-            assertTrue(false);
-        }
-
     }
 }

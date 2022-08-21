@@ -4,6 +4,7 @@
  */
 package ui;
 
+import demo.AddListingTest;
 import demo.Methods;
 import demo.PostRequesttest;
 import demo.SearchTest;
@@ -95,6 +96,7 @@ public class MainFrame extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(915, 735));
         setName("mainFrame"); // NOI18N
         setPreferredSize(new java.awt.Dimension(915, 735));
+        setResizable(false);
         setSize(new java.awt.Dimension(700, 700));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
@@ -529,6 +531,7 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(0, 22, 0, 4);
         buttonPanel.add(jComboBox3, gridBagConstraints);
 
+        chromeCB.setSelected(true);
         chromeCB.setText("Chrome");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
@@ -1046,10 +1049,10 @@ public class MainFrame extends javax.swing.JFrame {
         labels[1][0] = signupLabel;
         labels[2][0] = searchLabel;
         labels[3][0] = prTTLabel;
-        labels[4][0] = arTTLabel;
-        labels[5][0] = rrTTLabel;
-        labels[6][0] = coTTLabel;
-        labels[7][0] = alLLLabel;
+        labels[4][0] = alLLLabel;
+        labels[5][0] = arTTLabel;
+        labels[6][0] = rrTTLabel;
+        labels[7][0] = coTTLabel;
         labels[8][0] = arLLLabel;
         labels[9][0] = rrLLLabel;
         labels[10][0] = coLLLabel;
@@ -1058,10 +1061,10 @@ public class MainFrame extends javax.swing.JFrame {
         labels[1][1] = signupLabel2;
         labels[2][1] = searchLabel2;
         labels[3][1] = prTTLabel2;
-        labels[4][1] = arTTLabel2;
-        labels[5][1] = rrTTLabel2;
-        labels[6][1] = coTTLabel2;
-        labels[7][1] = alLLLabel2;
+        labels[4][1] = alLLLabel2;
+        labels[5][1] = arTTLabel2;
+        labels[6][1] = rrTTLabel2;
+        labels[7][1] = coTTLabel2;
         labels[8][1] = arLLLabel2;
         labels[9][1] = rrLLLabel2;
         labels[10][1] = coLLLabel2;
@@ -1070,10 +1073,10 @@ public class MainFrame extends javax.swing.JFrame {
         labels[1][2] = signupLabel1;
         labels[2][2] = searchLabel1;
         labels[3][2] = prTTLabel1;
-        labels[4][2] = arTTLabel1;
-        labels[5][2] = rrTTLabel1;
-        labels[6][2] = coTTLabel1;
-        labels[7][2] = alLLLabel1;
+        labels[4][2] = alLLLabel1;
+        labels[5][2] = arTTLabel1;
+        labels[6][2] = rrTTLabel1;
+        labels[7][2] = coTTLabel1;
         labels[8][2] = arLLLabel1;
         labels[9][2] = rrLLLabel1;
         labels[10][2] = coLLLabel1;
@@ -1082,18 +1085,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
         // TODO add your handling code here:
-        String choice = jComboBox2.getSelectedItem().toString();
-        switch(choice){
-            case "Development":
-                Methods.domain = "https://dev.rentup.co/";
-                break;
-            case "Staging":
-                Methods.domain = "https://rentup.co/";
-                break;
-            case "Production":
-                Methods.domain = "https://rentup.com.eg/";
-                break;
-        }
+        
         
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
@@ -1127,7 +1119,20 @@ public class MainFrame extends javax.swing.JFrame {
                 label.repaint();
                 label.revalidate();
             }
-
+        
+        String domain = jComboBox2.getSelectedItem().toString();
+        switch(domain){
+            case "Development":
+                Methods.domain = "https://dev.rentup.co/";
+                break;
+            case "Staging":
+                Methods.domain = "https://rentup.co/";
+                break;
+            case "Production":
+                Methods.domain = "https://rentup.com.eg/";
+                break;
+        }
+        
         ArrayList<String> browsers = new ArrayList<String>();
         if (chromeCB.isSelected()) browsers.add("Chrome"); else browsers.add("");
         if (edgeCB.isSelected()) browsers.add("Edge"); else browsers.add("");
@@ -1208,6 +1213,23 @@ public class MainFrame extends javax.swing.JFrame {
                 new Thread(){
                     public void run(){
                         if (junit.run(PostRequesttest.class).wasSuccessful())
+                            label.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
+                        else
+                            label.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
+                    }
+                }.start();
+            }
+            
+            if (alLLCheckBox.isSelected()){
+                labels[4][i].setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
+                final JLabel label = labels[4][i];
+                label.repaint();
+                label.revalidate();
+                JUnitCore junit = new JUnitCore();
+                junit.addListener(new TextListener(System.out));
+                new Thread(){
+                    public void run(){
+                        if (junit.run(AddListingTest.class).wasSuccessful())
                             label.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
                         else
                             label.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));

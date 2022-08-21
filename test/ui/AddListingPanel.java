@@ -145,7 +145,7 @@ public class AddListingPanel extends javax.swing.JPanel {
         jLabel2.setText("District");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel3.setText("Neighborhood");
+        jLabel3.setText("Street");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel4.setText("Property Type");
