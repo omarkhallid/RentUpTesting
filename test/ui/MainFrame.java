@@ -1090,7 +1090,7 @@ public class MainFrame extends javax.swing.JFrame {
         String choice = jComboBox2.getSelectedItem().toString();
         switch(choice){
             case "Development":
-                Methods.domain = "https://dev.rentup.co/";
+                Methods.domain = "https://rentup.com.eg/";
                 break;
             case "Staging":
                 Methods.domain = "https://rentup.co/";

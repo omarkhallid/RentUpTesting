@@ -30,7 +30,7 @@ public class Methods {
     
     public static String 
             browser = "Chrome", 
-            domain = "https://dev.rentup.co/",
+            domain = "https://rentup.com.eg/",
             platform = "Desktop";
 
     public static String getCellData(int row, int col) throws Exception {
