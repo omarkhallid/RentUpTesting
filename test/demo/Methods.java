@@ -179,6 +179,7 @@ public class Methods {
         }
         else
         {
+            
             Dimension dimension = new Dimension(375,812);
             driver.manage().window().setSize(dimension);
         }

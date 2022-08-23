@@ -31,7 +31,6 @@ public class AddListingTest {
     @Test
     public void ChromeTest() throws Exception {
 
-        String email = getCellData(1, 0), password = getCellData(1, 1);
         
         String city, district, street, furnish, propertyType, propertyName, rentPerNight = "", rentPerMonth = "", description;
         int beds = 0, baths = 0;
@@ -67,9 +66,11 @@ public class AddListingTest {
         if (getCellData(14,11).equals("")) description = getCellData(13,10);
         else description = getCellData(14,10);
         
+        String email = createRandomString() + "@abc.com", password = "123456";
+        System.out.println("Landlord credentials:\nEmail: " + email + "\nPassword: " + password);
         
         
-        WebDriver driver = signup("auto tester", createRandomString() + "@abc.com", "123456", "abcdefg");
+        WebDriver driver = signup("auto tester", email, password, "abcdefg");
         Thread.sleep(6000);
         if (platform.equals("Desktop")){
             
@@ -93,7 +94,7 @@ public class AddListingTest {
             driver.findElement(By.className("properties__content")).findElements(By.tagName("button")).get(driver.findElement(By.className("properties__content")).findElements(By.tagName("button")).size() - 1).click();
         
             for (WebElement we : driver.findElement(By.className("chips-container")).findElements(By.tagName("label")))
-                if (we.getText().equals(furnish))
+                if (we.getText().toLowerCase().equals(furnish.toLowerCase()))
                     we.click();
         
             for (WebElement we : driver.findElements(By.className("chips-container")).get(1).findElements(By.tagName("label")))
