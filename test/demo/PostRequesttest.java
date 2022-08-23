@@ -120,7 +120,8 @@ public class PostRequesttest {
         Thread.sleep(3000);
         driver.findElement(By.cssSelector("#datepicker")).click();
         Thread.sleep(5000);
-        driver.findElements(By.id("datepicker__dialog_")).get(0).findElements(By.tagName("footer")).get(1).findElements(By.tagName("button")).get(0).click();
+        driver.findElement(By.id("datepicker__dialog_")).findElements(By.tagName("footer")).get(1).findElements(By.tagName("button")).get(0).click();
+
         
         Thread.sleep(2000);     
         if(m.getCellData(5, 5).equals("z"))
