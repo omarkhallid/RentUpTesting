@@ -16,10 +16,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JCheckBox;
 import javax.swing.*;
-import javax.swing.table.TableCellRenderer;
 import org.junit.internal.TextListener;
 import org.junit.runner.JUnitCore;
-import ui.*;
 
 /**
  *
@@ -504,7 +502,7 @@ public class MainFrame extends javax.swing.JFrame {
         buttonPanel.add(testButton, gridBagConstraints);
 
         jComboBox2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Development", "Staging", "Production" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Production", "Development", "Staging" }));
         jComboBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox2ActionPerformed(evt);
@@ -1149,6 +1147,8 @@ public class MainFrame extends javax.swing.JFrame {
                 break;
         }
         
+        Methods.platform = jComboBox3.getSelectedItem().toString();
+        
         ArrayList<String> browsers = new ArrayList<String>();
         if (chromeCB.isSelected()) browsers.add("Chrome"); else browsers.add("");
         if (edgeCB.isSelected()) browsers.add("Edge"); else browsers.add("");
@@ -1198,7 +1198,7 @@ public class MainFrame extends javax.swing.JFrame {
                         else
                             label.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
                     }
-                }.start(); 
+                }.start();
 
             }
 

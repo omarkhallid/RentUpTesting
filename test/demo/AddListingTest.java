@@ -1,4 +1,8 @@
-/*
+                /*
+
+                                        
+
+  
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Other/File.java to edit this template
  */
@@ -30,23 +34,25 @@ public class AddListingTest {
     
     @Test
     public void ChromeTest() throws Exception {
+
         WebDriver driver=null;
         driver = m.AddListing();
            
-            Thread.sleep(8000);
-            //check if property was added in my properties
-            boolean added = false;
-            for (WebElement we : driver.findElements(By.className("property-data"))){
-                if (we.findElement(By.tagName("strong")).getText().contains(propertyName.substring(2))){
-                    added = true;
-                    break;
-                }
-            }   
-            try{
-                assertTrue(added);
-            } catch (Exception ex){}
-            
-            driver.close();
-        }
+        Thread.sleep(8000);
+
+        //check if property was added in my properties
+        boolean added = false;
+        for (WebElement we : driver.findElements(By.className("property-data"))){
+            if (we.findElement(By.tagName("strong")).getText().contains(propertyName.substring(2))){
+                added = true;
+                break;
+            }
+        }   
+        try{
+            assertTrue(added);
+        } catch (Exception ex){}
+
+        driver.close();
+        
     }
 

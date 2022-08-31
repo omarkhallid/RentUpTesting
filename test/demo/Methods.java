@@ -5,10 +5,14 @@
 package demo;
 
 
+<<<<<<< Tarek2
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
+=======
+import java.awt.Robot;
+>>>>>>> main
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
@@ -30,6 +34,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 /**
  *
@@ -130,27 +135,158 @@ public class Methods {
             }
             return driver;
         }
-        else if (platform.equals("Mobile"))
-        {
+        else if (platform.equals("Mobile")){
+            
+            driver.findElement(By.className("burger-menu")).click();
+            driver.findElement(By.className("sidebar-first-button")).click();
+            
+            driver.findElement(By.tagName("form")).findElements(By.className("dropdown-container")).get(0).click();
+            
+            for (WebElement element : driver.findElements(By.className("option-label"))){
+                if (element.getText().equals(city)){
+                    element.click();
+                    break;
+                }
+            }
+            Thread.sleep(5000);
+            
+            driver.findElement(By.tagName("form")).findElements(By.className("dropdown-container")).get(1).click();
+            
+            for (WebElement element : driver.findElements(By.className("option-label"))){
+                if (element.getText().equals(district)){
+                    element.click();
+                    break;
+                }
+            }
+            Thread.sleep(2000);
+            
+            //driver.findElement(By.tagName("input")).sendKeys(street);
+            //Thread.sleep(2000);
+            
+            driver.findElement(By.className("actions-container")).findElements(By.tagName("button")).get(1).click();
+        
+            for (WebElement we : driver.findElement(By.tagName("form")).findElement(By.className("second-step")).findElement(By.className("chips-container")).findElements(By.tagName("label")))
+                if (we.getText().toLowerCase().equals(furnish.toLowerCase()))
+                    we.click();
+        
+            for (WebElement we : driver.findElement(By.tagName("form")).findElement(By.className("second-step")).findElements(By.className("chips-container")).get(1).findElements(By.tagName("label")))
+                if (we.getText().equals(propertyType))
+                    we.click();
+            
+            for (int i = 1; i < beds; i++)
+                driver.findElement(By.className("second-step")).findElements(By.className("counter-input-contianer")).get(0).findElements(By.tagName("button")).get(1).click();
+            
+            for (int i = 1; i < baths; i++)
+                driver.findElement(By.className("second-step")).findElements(By.className("counter-input-contianer")).get(1).findElements(By.tagName("button")).get(1).click();
+            
+            driver.findElement(By.className("second-step")).findElement(By.className("actions-container")).findElements(By.tagName("button")).get(1).click();
+            Thread.sleep(8000);
+
+            
             try{
-                Thread.sleep(2000);
-            driver.findElement(By.cssSelector("#__layout > div > header > nav > div > div.d-flex.align-items-center.d-none.d-lg-none.mobile-header-items > button")).click();
-            driver.findElement(By.cssSelector("#__layout > div > header > main > div.side-bar.active-side-bar > div > div > div > ul > li:nth-child(1) > div > a.auth-button.auth-button__login.font-bold")).click();
-            Thread.sleep(2000);
-            driver.findElements(By.tagName("input")).get(0).sendKeys(email);
-            driver.findElements(By.tagName("input")).get(1).sendKeys(password);
-            Thread.sleep(2000);
-            driver.findElement(By.cssSelector("#auth-modal___BV_modal_body_ > div > span:nth-child(2) > form > button")).click();
-            Thread.sleep(7000);
-           
+                driver.findElement(By.className("third-step")).findElements(By.className("chips-container")).get(0).findElement(By.className("chip-label")).click();
+            } catch (Exception ex){}
+
+
+            try{
+                driver.findElement(By.className("third-step")).findElements(By.className("chips-container")).get(1).findElement(By.className("chip-label")).click();
+            } catch (Exception ex){}
+
+
+            try{
+                driver.findElement(By.className("third-step")).findElements(By.className("chips-container")).get(2).findElement(By.className("chip-label")).click();
+            } catch (Exception ex){}
+            
+            driver.findElement(By.className("third-step")).findElement(By.className("actions-container")).findElements(By.tagName("button")).get(1).click();
+            
+            driver.findElement(By.className("fourth_step")).findElement(By.tagName("input")).sendKeys(propertyName);
+                    
+            driver.findElement(By.className("fourth_step")).findElement(By.tagName("textarea")).sendKeys(description);
             
             
-            }catch(Exception ex)
-            {
+            
+            if (!rentPerNight.equals("")){
+                
+                for (WebElement we : driver.findElement(By.className("fourth_step")).findElements(By.className("chip-label")))
+                    if (we.getText().contains("per night")){
+                        we.click();
+                        break;
+                    }
+                
+                for (WebElement we : driver.findElement(By.className("fourth_step")).findElements(By.tagName("input")))
+                    if (we.getAttribute("placeholder").contains("per night")){
+                        we.sendKeys(rentPerNight);
+                        break;
+                    }
+            }
+            else if (!rentPerMonth.equals("")){
+                for (WebElement we : driver.findElement(By.className("fourth_step")).findElements(By.className("chip-label")))
+                    if (we.getText().contains("per month")){
+                        we.click();
+                        break;
+                    }
+                
+                for (WebElement we : driver.findElement(By.className("fourth_step")).findElements(By.tagName("input")))
+                    if (we.getAttribute("placeholder").contains("per month")){
+                        we.sendKeys(rentPerMonth);
+                        break;
+                    }
+            }
+            
+            driver.findElement(By.className("fourth_step")).findElement(By.className("actions-container")).findElements(By.tagName("button")).get(1).click();
+            
+            driver.findElement(By.className("fifth-step")).findElement(By.className("upload-file-target")).click();
+            
+            
+            // creating robot for uploading an image
+            Robot rb = new Robot();
+
+            // copying File path to Clipboard
+            StringSelection str = new StringSelection(new java.io.File(".").getCanonicalPath() + "\\test\\Resources\\placeholder.png");
+            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str, null);
+            
+            Thread.sleep(2000);
+             // press Contol+V for pasting
+            rb.keyPress(KeyEvent.VK_CONTROL);
+            rb.keyPress(KeyEvent.VK_V);
+
+            // release Contol+V for pasting
+            rb.keyRelease(KeyEvent.VK_CONTROL);
+            rb.keyRelease(KeyEvent.VK_V);
+
+            // for pressing and releasing Enter
+            Thread.sleep(1000);
+            rb.keyPress(KeyEvent.VK_ENTER);
+            rb.keyRelease(KeyEvent.VK_ENTER);
+            
+            Thread.sleep(3000);
+
+            driver.findElement(By.className("fifth-step")).findElement(By.className("actions-container")).findElements(By.tagName("button")).get(1).click();
+            
+            Thread.sleep(3000);
+            for (WebElement we : driver.findElements(By.tagName("button")))
+                    if (we.getText().contains("Submit your request")){
+                        we.click();
+                        break;
+                    }
+            Thread.sleep(5000);
+            
+            try{
+            //check if property was added in my properties
+            boolean added = false;
+            for (WebElement we : driver.findElements(By.className("property-data"))){
+                if (we.findElement(By.tagName("strong")).getText().contains(propertyName.substring(2))){
+                    added = true;
+                    break;
+                }
+            }
+            
+            
+                assertTrue(added);
+            } catch (Exception ex){}
+            
             driver.close();
-            System.out.println(ex.getMessage());
-            assertTrue(false);
-            }return driver;
+        }
         }
         return driver;
     }
@@ -179,16 +315,65 @@ public class Methods {
             System.out.println("Couldn't find driver files in path");
         }
         
-        
-        if(platform.equals("Desktop"))
-        {
-             driver.manage().window().maximize();
-        }
-        else
+        driver.manage().window().maximize();
+        if(platform.equals("Mobile"))
         {
             
-            Dimension dimension = new Dimension(375,812);
-            driver.manage().window().setSize(dimension);
+            Robot rb = null;
+            try{
+                 rb = new Robot();
+            } catch(Exception ex){}
+            
+            driver.navigate().to(domain);
+            
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Methods.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            rb.setAutoDelay(250);
+            
+            if (!browser.equals("Firefox")){
+                rb.keyPress(KeyEvent.VK_F12);
+                rb.keyRelease(KeyEvent.VK_F12);
+            }
+            
+            if (browser.equals("Edge")){
+                for (int i = 0; i < 4; i++){
+                    rb.keyPress(KeyEvent.VK_TAB);
+                    rb.keyRelease(KeyEvent.VK_TAB);
+                }
+                rb.keyPress(KeyEvent.VK_ENTER);
+                rb.keyRelease(KeyEvent.VK_ENTER);
+            }
+            
+            
+            rb.keyPress(KeyEvent.VK_CONTROL);
+            rb.keyPress(KeyEvent.VK_SHIFT);
+            rb.keyPress(KeyEvent.VK_M);
+            
+            rb.keyRelease(KeyEvent.VK_CONTROL);
+            rb.keyRelease(KeyEvent.VK_SHIFT);
+            rb.keyRelease(KeyEvent.VK_M);
+            
+            if (browser.equals("Firefox")){
+                for (int i = 0; i < 15; i++){
+                    rb.keyPress(KeyEvent.VK_TAB);
+                    rb.keyRelease(KeyEvent.VK_TAB);
+                }
+                rb.keyPress(KeyEvent.VK_ENTER);
+                rb.keyRelease(KeyEvent.VK_ENTER);
+                rb.keyPress(KeyEvent.VK_ENTER);
+                rb.keyRelease(KeyEvent.VK_ENTER);
+            }
+            
+            driver.navigate().to(domain);
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Methods.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         
         driver.navigate().to(domain);
@@ -216,17 +401,18 @@ public class Methods {
         }
         else if(Methods.platform.equals("Mobile"))
         {
-            Thread.sleep(2000);
-            driver.findElement(By.cssSelector("#__layout > div > header > nav > div > div.d-flex.align-items-center.d-none.d-lg-none.mobile-header-items > button")).click();
-            driver.findElement(By.cssSelector("#__layout > div > header > main > div.side-bar.active-side-bar > div > div > div > ul > li:nth-child(1) > div > a.auth-button.auth-button__register.font-bold.dark")).click();
-            driver.findElement(By.cssSelector("#auth-modal___BV_modal_body_ > div > span:nth-child(2) > form > p:nth-child(8) > button")).click();
+            
+            driver.findElement(By.className("burger-menu")).click();
+            Thread.sleep(1000);
+            driver.findElement(By.className("side-bar-container")).findElement(By.tagName("a")).click();
+            driver.findElements(By.className("form-message")).get(1).findElement(By.tagName("button")).click();
             driver.findElements(By.tagName("input")).get(0).sendKeys(name);
             driver.findElements(By.tagName("input")).get(1).sendKeys(email);
             driver.findElements(By.tagName("input")).get(2).sendKeys(password);
             driver.findElements(By.tagName("input")).get(3).sendKeys(phone);
             Thread.sleep(2000);
             driver.findElement(By.cssSelector("#auth-modal___BV_modal_body_ > div > span:nth-child(2) > form > button")).click();
-            Thread.sleep(10000);
+            Thread.sleep(5000);
             
         }
         
@@ -664,5 +850,28 @@ public class Methods {
           .toString();
 
         return generatedString;
+    }
+    public static WebDriver adminLogin() throws Exception{
+        domain = "https://api.rentup.com.eg/";
+        
+        String email = getCellData(22,0);
+        String password = getCellData(22,1);
+        WebDriver driver = createDriver();
+        
+        for(WebElement we : driver.findElement(By.className("auth-content")).findElements(By.tagName("input"))){
+            if (we.getAttribute("name").equals("email")){
+                we.sendKeys(email);
+                break;
+            }
+        }
+        for(WebElement we : driver.findElement(By.className("auth-content")).findElements(By.tagName("input"))){
+            if (we.getAttribute("name").equals("password")){
+                we.sendKeys(password);
+                break;
+            }
+        }        
+        driver.findElement(By.className("auth-content")).findElement(By.tagName("button")).click();
+        
+        return driver;
     }
 }
