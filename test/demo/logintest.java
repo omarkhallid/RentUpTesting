@@ -65,7 +65,6 @@ public class logintest {
         {
             driver.findElement(By.cssSelector("#__layout > div > header > nav > div > div.d-flex.align-items-center.d-none.d-lg-none.mobile-header-items > button")).click();
             Thread.sleep(6000);
-
             
             try {
                 // Check whether a certain element appears which confirms that the login was not successful
