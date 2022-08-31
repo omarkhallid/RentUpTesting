@@ -430,7 +430,7 @@ public class AddListingPanel extends javax.swing.JPanel {
                 districtComboBox.addItem("Mohandessin");
                 break;
             case "Alexanderia":
-                districtComboBox.addItem("Abu Qeer");
+                districtComboBox.addItem("Miami");
                 break;
             case "Sharm El Sheikh":
                 neighborhoodTextField.setText("");
