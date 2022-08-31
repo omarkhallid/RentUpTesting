@@ -27,25 +27,9 @@ public class PostRequesttest {
         String email = m.getCellData(1, 0);
     	String password = m.getCellData(1, 1);
         // Set Firefox Web Driver
-        WebDriver driver=null;
-        if(Methods.getCellData(1,2).equals("Chrome"))
-        {
-            System.setProperty("webdriver.chrome.driver", new java.io.File(".").getCanonicalPath()+"\\" + "chromedriver.exe");
-    	    driver = new ChromeDriver();
-        }
-        else if (Methods.getCellData(1,2).equals("Edge"))
-        {
-            System.setProperty("webdriver.edge.driver", new java.io.File(".").getCanonicalPath()+"\\" + "msedgedriver.exe");
-    	    driver = new EdgeDriver();
-        }
-        else if (Methods.getCellData(1,2).equals("Firefox"))
-        {
-             System.setProperty("webdriver.gecko.driver", new java.io.File(".").getCanonicalPath() + "\\" + "geckodriver.exe");
-             driver = new FirefoxDriver();
-        }
-        driver = login(email,password);
+        WebDriver driver = login(email,password);
         Thread.sleep(8000);
-        driver.findElement(By.cssSelector("#__layout > div > header > nav > div > div.nav-links.d-none.d-lg-flex > a:nth-child(2)")).click();  //post A request
+        driver.findElement(By.className("bt-home-control")).findElement(By.tagName("a")).click();  //post A request
         driver.findElement(By.cssSelector("#citySelect > div > span")).click();  //click on city
         
         Thread.sleep(3000);

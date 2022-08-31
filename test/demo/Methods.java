@@ -5,6 +5,8 @@
 package demo;
 
 
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -21,9 +23,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 /**
  *
@@ -32,8 +36,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class Methods {
     
     public static String 
-            browser = "Chrome", 
-            domain = "https://rentup.com.eg/",
+            browser = "Firefox", 
+            domain = "http://192.168.132.104:3000",
             platform = "Desktop";
 
     public static String getCellData(int row, int col) throws Exception {
@@ -127,23 +131,25 @@ public class Methods {
         {
             try{
                 Thread.sleep(2000);
-            driver.findElement(By.cssSelector("#__layout > div > header > nav > div > div.d-flex.align-items-center.d-none.d-lg-none.mobile-header-items > button")).click();
-            driver.findElement(By.cssSelector("#__layout > div > header > main > div.side-bar.active-side-bar > div > div > div > ul > li:nth-child(1) > div > a.auth-button.auth-button__login.font-bold")).click();
-            Thread.sleep(2000);
-            driver.findElements(By.tagName("input")).get(0).sendKeys(email);
-            driver.findElements(By.tagName("input")).get(1).sendKeys(password);
-            Thread.sleep(2000);
-            driver.findElement(By.cssSelector("#auth-modal___BV_modal_body_ > div > span:nth-child(2) > form > button")).click();
-            Thread.sleep(7000);
-            driver.findElement(By.cssSelector("#__layout > div > header > nav > div > div.d-flex.align-items-center.d-none.d-lg-none.mobile-header-items > button")).click();
+                //open burger menu
+                driver.findElement(By.cssSelector("#__layout > div > header > nav > div > div.d-flex.align-items-center.d-none.d-lg-none.mobile-header-items > button")).click();
+                //click login
+                Thread.sleep(1000);
+                driver.findElement(By.className("side-bar-container")).findElement(By.tagName("a")).click();
+                Thread.sleep(2000);
+                driver.findElements(By.tagName("input")).get(0).sendKeys(email);
+                driver.findElements(By.tagName("input")).get(1).sendKeys(password);
+                Thread.sleep(2000);
+                driver.findElement(By.cssSelector("#auth-modal___BV_modal_body_ > div > span:nth-child(2) > form > button")).click();
+                Thread.sleep(7000);
             
             
             }catch(Exception ex)
             {
-            driver.close();
-            System.out.println(ex.getMessage());
-            assertTrue(false);
-            }return driver;
+                driver.close();
+                System.out.println(ex.getMessage());
+                assertTrue(false);
+            }
         }
         return driver;
     }
@@ -172,16 +178,65 @@ public class Methods {
             System.out.println("Couldn't find driver files in path");
         }
         
-        
-        if(platform.equals("Desktop"))
-        {
-             driver.manage().window().maximize();
-        }
-        else
+        driver.manage().window().maximize();
+        if(platform.equals("Mobile"))
         {
             
-            Dimension dimension = new Dimension(375,812);
-            driver.manage().window().setSize(dimension);
+            Robot rb = null;
+            try{
+                 rb = new Robot();
+            } catch(Exception ex){}
+            
+            driver.navigate().to(domain);
+            
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Methods.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            rb.setAutoDelay(250);
+            
+            if (!browser.equals("Firefox")){
+                rb.keyPress(KeyEvent.VK_F12);
+                rb.keyRelease(KeyEvent.VK_F12);
+            }
+            
+            if (browser.equals("Edge")){
+                for (int i = 0; i < 4; i++){
+                    rb.keyPress(KeyEvent.VK_TAB);
+                    rb.keyRelease(KeyEvent.VK_TAB);
+                }
+                rb.keyPress(KeyEvent.VK_ENTER);
+                rb.keyRelease(KeyEvent.VK_ENTER);
+            }
+            
+            
+            rb.keyPress(KeyEvent.VK_CONTROL);
+            rb.keyPress(KeyEvent.VK_SHIFT);
+            rb.keyPress(KeyEvent.VK_M);
+            
+            rb.keyRelease(KeyEvent.VK_CONTROL);
+            rb.keyRelease(KeyEvent.VK_SHIFT);
+            rb.keyRelease(KeyEvent.VK_M);
+            
+            if (browser.equals("Firefox")){
+                for (int i = 0; i < 15; i++){
+                    rb.keyPress(KeyEvent.VK_TAB);
+                    rb.keyRelease(KeyEvent.VK_TAB);
+                }
+                rb.keyPress(KeyEvent.VK_ENTER);
+                rb.keyRelease(KeyEvent.VK_ENTER);
+                rb.keyPress(KeyEvent.VK_ENTER);
+                rb.keyRelease(KeyEvent.VK_ENTER);
+            }
+            
+            driver.navigate().to(domain);
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Methods.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         
         driver.navigate().to(domain);
@@ -209,17 +264,18 @@ public class Methods {
         }
         else if(Methods.platform.equals("Mobile"))
         {
-            Thread.sleep(2000);
-            driver.findElement(By.cssSelector("#__layout > div > header > nav > div > div.d-flex.align-items-center.d-none.d-lg-none.mobile-header-items > button")).click();
-            driver.findElement(By.cssSelector("#__layout > div > header > main > div.side-bar.active-side-bar > div > div > div > ul > li:nth-child(1) > div > a.auth-button.auth-button__register.font-bold.dark")).click();
-            driver.findElement(By.cssSelector("#auth-modal___BV_modal_body_ > div > span:nth-child(2) > form > p:nth-child(8) > button")).click();
+            
+            driver.findElement(By.className("burger-menu")).click();
+            Thread.sleep(1000);
+            driver.findElement(By.className("side-bar-container")).findElement(By.tagName("a")).click();
+            driver.findElements(By.className("form-message")).get(1).findElement(By.tagName("button")).click();
             driver.findElements(By.tagName("input")).get(0).sendKeys(name);
             driver.findElements(By.tagName("input")).get(1).sendKeys(email);
             driver.findElements(By.tagName("input")).get(2).sendKeys(password);
             driver.findElements(By.tagName("input")).get(3).sendKeys(phone);
             Thread.sleep(2000);
             driver.findElement(By.cssSelector("#auth-modal___BV_modal_body_ > div > span:nth-child(2) > form > button")).click();
-            Thread.sleep(10000);
+            Thread.sleep(5000);
             
         }
         
@@ -239,5 +295,28 @@ public class Methods {
           .toString();
 
         return generatedString;
+    }
+    public static WebDriver adminLogin() throws Exception{
+        domain = "https://api.rentup.com.eg/";
+        
+        String email = getCellData(22,0);
+        String password = getCellData(22,1);
+        WebDriver driver = createDriver();
+        
+        for(WebElement we : driver.findElement(By.className("auth-content")).findElements(By.tagName("input"))){
+            if (we.getAttribute("name").equals("email")){
+                we.sendKeys(email);
+                break;
+            }
+        }
+        for(WebElement we : driver.findElement(By.className("auth-content")).findElements(By.tagName("input"))){
+            if (we.getAttribute("name").equals("password")){
+                we.sendKeys(password);
+                break;
+            }
+        }        
+        driver.findElement(By.className("auth-content")).findElement(By.tagName("button")).click();
+        
+        return driver;
     }
 }

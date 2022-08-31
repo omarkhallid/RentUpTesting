@@ -1,4 +1,8 @@
-/*
+                /*
+
+                                        
+
+  
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Other/File.java to edit this template
  */
@@ -88,8 +92,8 @@ public class AddListingTest {
             driver.findElement(By.className("option-label")).click();
             Thread.sleep(2000);
             
-            driver.findElement(By.tagName("input")).sendKeys(street);
-            Thread.sleep(2000);
+            //driver.findElement(By.tagName("input")).sendKeys(street);
+            //Thread.sleep(2000);
             
             driver.findElement(By.className("properties__content")).findElements(By.tagName("button")).get(driver.findElement(By.className("properties__content")).findElements(By.tagName("button")).size() - 1).click();
         
@@ -102,10 +106,10 @@ public class AddListingTest {
                     we.click();
             
             for (int i = 1; i < beds; i++)
-                driver.findElements(By.className("counter-input-contianer")).get(1).click();
+                driver.findElements(By.className("counter-input-contianer")).get(0).findElements(By.tagName("button")).get(1).click();
             
             for (int i = 1; i < baths; i++)
-                driver.findElements(By.className("counter-input-contianer")).get(3).click();
+                driver.findElements(By.className("counter-input-contianer")).get(1).findElements(By.tagName("button")).get(1).click();
             
             driver.findElement(By.className("properties__content")).findElements(By.tagName("button")).get(driver.findElement(By.className("properties__content")).findElements(By.tagName("button")).size() - 1).click();
             Thread.sleep(8000);
@@ -135,10 +139,7 @@ public class AddListingTest {
                     we.sendKeys(propertyName);
                     break;
                 }
-                    
-            
-            
-            
+
             driver.findElement(By.tagName("textarea")).sendKeys(description);
             
             
@@ -166,7 +167,7 @@ public class AddListingTest {
                 
                 for (WebElement we : driver.findElements(By.tagName("input")))
                     if (we.getAttribute("placeholder").contains("per month")){
-                        we.sendKeys(rentPerNight);
+                        we.sendKeys(rentPerMonth);
                         break;
                     }
             }
@@ -224,7 +225,155 @@ public class AddListingTest {
 
         else if (platform.equals("Mobile")){
             
+            driver.findElement(By.className("burger-menu")).click();
+            driver.findElement(By.className("sidebar-first-button")).click();
             
+            driver.findElement(By.tagName("form")).findElements(By.className("dropdown-container")).get(0).click();
+            
+            for (WebElement element : driver.findElements(By.className("option-label"))){
+                if (element.getText().equals(city)){
+                    element.click();
+                    break;
+                }
+            }
+            Thread.sleep(5000);
+            
+            driver.findElement(By.tagName("form")).findElements(By.className("dropdown-container")).get(1).click();
+            
+            for (WebElement element : driver.findElements(By.className("option-label"))){
+                if (element.getText().equals(district)){
+                    element.click();
+                    break;
+                }
+            }
+            Thread.sleep(2000);
+            
+            //driver.findElement(By.tagName("input")).sendKeys(street);
+            //Thread.sleep(2000);
+            
+            driver.findElement(By.className("actions-container")).findElements(By.tagName("button")).get(1).click();
+        
+            for (WebElement we : driver.findElement(By.tagName("form")).findElement(By.className("second-step")).findElement(By.className("chips-container")).findElements(By.tagName("label")))
+                if (we.getText().toLowerCase().equals(furnish.toLowerCase()))
+                    we.click();
+        
+            for (WebElement we : driver.findElement(By.tagName("form")).findElement(By.className("second-step")).findElements(By.className("chips-container")).get(1).findElements(By.tagName("label")))
+                if (we.getText().equals(propertyType))
+                    we.click();
+            
+            for (int i = 1; i < beds; i++)
+                driver.findElement(By.className("second-step")).findElements(By.className("counter-input-contianer")).get(0).findElements(By.tagName("button")).get(1).click();
+            
+            for (int i = 1; i < baths; i++)
+                driver.findElement(By.className("second-step")).findElements(By.className("counter-input-contianer")).get(1).findElements(By.tagName("button")).get(1).click();
+            
+            driver.findElement(By.className("second-step")).findElement(By.className("actions-container")).findElements(By.tagName("button")).get(1).click();
+            Thread.sleep(8000);
+
+            
+            try{
+                driver.findElement(By.className("third-step")).findElements(By.className("chips-container")).get(0).findElement(By.className("chip-label")).click();
+            } catch (Exception ex){}
+
+
+            try{
+                driver.findElement(By.className("third-step")).findElements(By.className("chips-container")).get(1).findElement(By.className("chip-label")).click();
+            } catch (Exception ex){}
+
+
+            try{
+                driver.findElement(By.className("third-step")).findElements(By.className("chips-container")).get(2).findElement(By.className("chip-label")).click();
+            } catch (Exception ex){}
+            
+            driver.findElement(By.className("third-step")).findElement(By.className("actions-container")).findElements(By.tagName("button")).get(1).click();
+            
+            driver.findElement(By.className("fourth_step")).findElement(By.tagName("input")).sendKeys(propertyName);
+                    
+            driver.findElement(By.className("fourth_step")).findElement(By.tagName("textarea")).sendKeys(description);
+            
+            
+            
+            if (!rentPerNight.equals("")){
+                
+                for (WebElement we : driver.findElement(By.className("fourth_step")).findElements(By.className("chip-label")))
+                    if (we.getText().contains("per night")){
+                        we.click();
+                        break;
+                    }
+                
+                for (WebElement we : driver.findElement(By.className("fourth_step")).findElements(By.tagName("input")))
+                    if (we.getAttribute("placeholder").contains("per night")){
+                        we.sendKeys(rentPerNight);
+                        break;
+                    }
+            }
+            else if (!rentPerMonth.equals("")){
+                for (WebElement we : driver.findElement(By.className("fourth_step")).findElements(By.className("chip-label")))
+                    if (we.getText().contains("per month")){
+                        we.click();
+                        break;
+                    }
+                
+                for (WebElement we : driver.findElement(By.className("fourth_step")).findElements(By.tagName("input")))
+                    if (we.getAttribute("placeholder").contains("per month")){
+                        we.sendKeys(rentPerMonth);
+                        break;
+                    }
+            }
+            
+            driver.findElement(By.className("fourth_step")).findElement(By.className("actions-container")).findElements(By.tagName("button")).get(1).click();
+            
+            driver.findElement(By.className("fifth-step")).findElement(By.className("upload-file-target")).click();
+            
+            
+            // creating robot for uploading an image
+            Robot rb = new Robot();
+
+            // copying File path to Clipboard
+            StringSelection str = new StringSelection(new java.io.File(".").getCanonicalPath() + "\\test\\Resources\\placeholder.png");
+            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(str, null);
+            
+            Thread.sleep(2000);
+             // press Contol+V for pasting
+            rb.keyPress(KeyEvent.VK_CONTROL);
+            rb.keyPress(KeyEvent.VK_V);
+
+            // release Contol+V for pasting
+            rb.keyRelease(KeyEvent.VK_CONTROL);
+            rb.keyRelease(KeyEvent.VK_V);
+
+            // for pressing and releasing Enter
+            Thread.sleep(1000);
+            rb.keyPress(KeyEvent.VK_ENTER);
+            rb.keyRelease(KeyEvent.VK_ENTER);
+            
+            Thread.sleep(3000);
+
+            driver.findElement(By.className("fifth-step")).findElement(By.className("actions-container")).findElements(By.tagName("button")).get(1).click();
+            
+            Thread.sleep(3000);
+            for (WebElement we : driver.findElements(By.tagName("button")))
+                    if (we.getText().contains("Submit your request")){
+                        we.click();
+                        break;
+                    }
+            Thread.sleep(5000);
+            
+            try{
+            //check if property was added in my properties
+            boolean added = false;
+            for (WebElement we : driver.findElements(By.className("property-data"))){
+                if (we.findElement(By.tagName("strong")).getText().contains(propertyName.substring(2))){
+                    added = true;
+                    break;
+                }
+            }
+            
+            
+                assertTrue(added);
+            } catch (Exception ex){}
+            
+            driver.close();
         }
         
     }
