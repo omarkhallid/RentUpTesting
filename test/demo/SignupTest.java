@@ -24,7 +24,43 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class SignupTest {
 
     
-    
+    public static WebDriver signup(String name, String email, String password, String phone) throws InterruptedException{
+        
+        WebDriver driver = createDriver();
+        
+        if(Methods.platform.equals("Desktop"))
+        {
+            Thread.sleep(2000);
+            driver.findElement(By.cssSelector("#nav-collapse > ul > li:nth-child(3) > button")).click();
+            driver.findElement(By.cssSelector("p.form-message:nth-child(8) > button:nth-child(1)")).click();
+
+            driver.findElements(By.tagName("input")).get(0).sendKeys(name);
+            driver.findElements(By.tagName("input")).get(1).sendKeys(email);
+            driver.findElements(By.tagName("input")).get(2).sendKeys(password);
+            driver.findElements(By.tagName("input")).get(3).sendKeys(phone);
+
+            driver.findElement(By.cssSelector("button.btn:nth-child(6)")).click();
+            Thread.sleep(10000);
+        }
+        else if(Methods.platform.equals("Mobile"))
+        {
+            
+            driver.findElement(By.className("burger-menu")).click();
+            Thread.sleep(1000);
+            driver.findElement(By.className("side-bar-container")).findElement(By.tagName("a")).click();
+            driver.findElements(By.className("form-message")).get(1).findElement(By.tagName("button")).click();
+            driver.findElements(By.tagName("input")).get(0).sendKeys(name);
+            driver.findElements(By.tagName("input")).get(1).sendKeys(email);
+            driver.findElements(By.tagName("input")).get(2).sendKeys(password);
+            driver.findElements(By.tagName("input")).get(3).sendKeys(phone);
+            Thread.sleep(2000);
+            driver.findElement(By.cssSelector("#auth-modal___BV_modal_body_ > div > span:nth-child(2) > form > button")).click();
+            Thread.sleep(5000);
+            
+        }
+        
+        return driver;
+    }
     @Test
     public void ChromeTest() throws Exception {
 

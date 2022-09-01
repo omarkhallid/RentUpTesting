@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import static demo.Methods.*;
+import static demo.logintest.adminLogin;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import org.openqa.selenium.WebElement;
@@ -16,7 +17,6 @@ import org.openqa.selenium.WebElement;
  * @author Tarek Radwan
  */
 public class ApproveListing {
-      
     @Test
     public void test() throws Exception {
         

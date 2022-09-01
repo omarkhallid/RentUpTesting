@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import static demo.Methods.*;
+import static demo.logintest.adminLogin;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import org.openqa.selenium.WebElement;
@@ -25,7 +26,7 @@ public class DeleteUsersTest {
         
         WebDriver driver = adminLogin();
         
-        
+       
         //open "users / offers / parents / properites" caret
 
         driver.findElement(By.id("sidebar")).findElements(By.tagName("li")).get(1).click();
