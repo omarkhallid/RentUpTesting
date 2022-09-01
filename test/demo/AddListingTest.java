@@ -9,6 +9,7 @@
 package demo;
 
 import static demo.Methods.*;
+import static demo.SignupTest.signup;
 import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
@@ -32,8 +33,8 @@ public class AddListingTest {
 
     
     
-    @Test
-    public void ChromeTest() throws Exception {
+ 
+    public WebDriver AddListingTest() throws Exception {
 
         
         String city, district, street, furnish, propertyType, propertyName, rentPerNight = "", rentPerMonth = "", description;
@@ -119,17 +120,30 @@ public class AddListingTest {
 //            } catch (Exception ex){}
             try{
                 
-                driver.findElements(By.className("chips-container")).get(2).findElement(By.className("chip-label")).click();
+                driver.findElements(By.className("amenities")).get(0).findElement(By.className("chip")).click();
+//                for (WebElement we : driver.findElements(By.tagName("span")))
+//                if (we.getText().equals("Desk"))
+//                    we.click();
+            
+            } catch (Exception ex){
+               System.out.println( ex.getMessage());
+            
+            }
+
+
+            try{
+                driver.findElements(By.className("amenities")).get(1).findElement(By.className("chip")).click();
+//                 for (WebElement we : driver.findElements(By.tagName("span")))
+//                if (we.getText().equals("Cooker"))
+//                    we.click();
             } catch (Exception ex){}
 
 
             try{
-                driver.findElements(By.className("chips-container")).get(3).findElement(By.className("chip-label")).click();
-            } catch (Exception ex){}
-
-
-            try{
-                driver.findElements(By.className("chips-container")).get(4).findElement(By.className("chip-label")).click();
+                driver.findElements(By.className("amenities")).get(2).findElement(By.className("chip")).click();
+//                 for (WebElement we : driver.findElements(By.tagName("span")))
+//                if (we.getText().equals("Shampoo"))
+//                    we.click();
             } catch (Exception ex){}
             
             driver.findElement(By.className("properties__content")).findElements(By.tagName("button")).get(driver.findElement(By.className("properties__content")).findElements(By.tagName("button")).size() - 1).click();
@@ -357,7 +371,17 @@ public class AddListingTest {
                         we.click();
                         break;
                     }
-            Thread.sleep(5000);
+            
+        }
+        return driver;
+        
+    }
+    @Test
+    public void ChromeAddListingTest() throws Exception {
+        WebDriver driver=null;
+        driver = AddListingTest();
+
+        Thread.sleep(5000);
             
             try{
             //check if property was added in my properties
@@ -374,7 +398,5 @@ public class AddListingTest {
             } catch (Exception ex){}
             
             driver.close();
-        }
-        
-    }
+}
 }
