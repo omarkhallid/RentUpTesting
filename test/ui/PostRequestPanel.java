@@ -145,7 +145,7 @@ public class PostRequestPanel extends javax.swing.JPanel {
         });
 
         buttons2.add(ThirdDuration);
-        ThirdDuration.setText("8");
+        ThirdDuration.setText("6");
         ThirdDuration.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ThirdDurationActionPerformed(evt);
@@ -710,7 +710,7 @@ public class PostRequestPanel extends javax.swing.JPanel {
                 }
                 else
                 {
-                    Methods.setCellData("8", 5, 4);
+                    Methods.setCellData("6", 5, 4);
                 }
                 
             } catch (Exception ex) {

@@ -34,7 +34,7 @@ public class AddListingTest {
     
     
  
-    public WebDriver AddListingTest() throws Exception {
+    static public WebDriver AddListingTest() throws Exception {
 
         
         String city, district, street, furnish, propertyType, propertyName, rentPerNight = "", rentPerMonth = "", description;
@@ -71,11 +71,12 @@ public class AddListingTest {
         if (getCellData(14,11).equals("")) description = getCellData(13,10);
         else description = getCellData(14,10);
         
-        String email = createRandomString() + "@abc.com", password = "123456";
-        System.out.println("Landlord credentials:\nEmail: " + email + "\nPassword: " + password);
+        LandlordEmail = createRandomString() + "@abc.com";
+        String password = "123456";
+        System.out.println("Landlord credentials:\nEmail: " + LandlordEmail + "\nPassword: " + password);
         
-        
-        WebDriver driver = signup("auto tester", email, password, "abcdefg");
+        setCellData(LandlordEmail, 18, 1);
+        WebDriver driver = signup("auto tester", LandlordEmail, password, "abcdefg");
         Thread.sleep(6000);
         if (platform.equals("Desktop")){
             
@@ -97,7 +98,7 @@ public class AddListingTest {
             //Thread.sleep(2000);
             
             driver.findElement(By.className("properties__content")).findElements(By.tagName("button")).get(driver.findElement(By.className("properties__content")).findElements(By.tagName("button")).size() - 1).click();
-        
+            Thread.sleep(4000);
             for (WebElement we : driver.findElement(By.className("chips-container")).findElements(By.tagName("label")))
                 if (we.getText().toLowerCase().equals(furnish.toLowerCase()))
                     we.click();

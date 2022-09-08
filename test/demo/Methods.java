@@ -37,9 +37,11 @@ public class Methods {
     
     public static String 
             browser = "Chrome", 
-            domain = "https://rentup.com.eg/",
+            domain = "https://rentup.co/",
             platform = "Desktop",
-            propertyName="";
+            propertyName="",
+            TenantEmail="",
+            LandlordEmail="0JMTSkqZok@abc.com";
 
     public static String getCellData(int row, int col) throws Exception {
         XSSFWorkbook ExcelWBook;
