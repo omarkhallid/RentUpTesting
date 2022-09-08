@@ -142,7 +142,8 @@ public class logintest {
     
 
     public static WebDriver adminLogin() throws Exception{
-        domain = "https://api.rentup.com.eg/";
+        String oldDomain = domain;
+        domain = "https://api.rentup.co/";
         
         String email = getCellData(22,0);
         String password = getCellData(22,1);
@@ -161,7 +162,7 @@ public class logintest {
             }
         }        
         driver.findElement(By.className("auth-content")).findElement(By.tagName("button")).click();
-        
+        domain = oldDomain;
         return driver;
     }
 

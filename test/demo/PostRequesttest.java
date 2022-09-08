@@ -25,19 +25,26 @@ public class PostRequesttest {
 
     public static WebDriver PostRequestTest() throws Exception {
 
-        String email = createRandomString() + "@abc.com", password = "123456";
-        System.out.println("Landlord credentials:\nEmail: " + email + "\nPassword: " + password);
+        TenantEmail = createRandomString() + "@abc.com"; 
+        String password = "123456";
+        System.out.println("Landlord credentials:\nEmail: " + TenantEmail + "\nPassword: " + password);
         
         
-        WebDriver driver = signup("auto tester", email, password, "abcdefg");
+        WebDriver driver = signup("auto tester", TenantEmail, password, "abcdefg");
         Thread.sleep(3000);
        
         if(platform.equals("Desktop"))
         {
             Thread.sleep(8000);
         driver.findElement(By.cssSelector(".PostButt")).click();  //post A request
-        driver.findElement(By.cssSelector("#citySelect > div > span")).click();  //click on city
         
+        }
+        else if(platform.equals("Mobile"))
+        {
+            Thread.sleep(8000);
+            driver.findElement(By.cssSelector("#__layout > div > div.main-content-container.home > div > div.onboardingMobile.d-sm-block.d-md-none.p-0.m-0 > div > div.bt-home-control > a.slider-post-link")).click();  //post A request
+        }
+        driver.findElement(By.cssSelector("#citySelect > div > span")).click();  //click on city
         Thread.sleep(3000);
         if(getCellData(5, 0).equals("z"))
         {
@@ -104,24 +111,51 @@ public class PostRequesttest {
             driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div.p-3.post-form-container > div:nth-child(2) > main > div > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div.section-white.px-minus-15 > div.row.px-2.row-cols-12 > div:nth-child(3) > button > span")).click();
         }
 
-         Thread.sleep(2000);
-         if(getCellData(5, 4).equals("z"))
+         Thread.sleep(5000);
+         if(platform.equals("Mobile"))
+         {
+             if(getCellData(5, 4).equals("z"))
+         {
+             driver.findElement(By.xpath("//*[@id=\"__layout\"]/div/div[1]/div/div/div[2]/div[2]/main/div/div/div[2]/div[1]/div[3]/div/div/span[4]")).click();
+         }                                
+         else if (getCellData(5, 4).equals("3"))
+         {
+              driver.findElement(By.xpath("//*[@id=\"__layout\"]/div/div[1]/div/div/div[2]/div[2]/main/div/div/div[2]/div[1]/div[3]/div/div/span[3]")).click();
+         }                                       
+         else
+         {                              
+              driver.findElement(By.xpath("//*[@id=\"__layout\"]/div/div[1]/div/div/div[2]/div[2]/main/div/div/div[2]/div[1]/div[3]/div/div/span[6]")).click();
+         }
+         }
+         if(platform.equals("Desktop"))
+         {
+             if(getCellData(5, 4).equals("z"))
          {
              driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div.p-3.post-form-container > div:nth-child(2) > main > div > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div.section-white.px-minus-15 > div.row.mt-1 > div > div > span:nth-child(4)")).click();
          }
          else if (getCellData(5, 4).equals("3"))
          {
               driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div.p-3.post-form-container > div:nth-child(2) > main > div > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div.section-white.px-minus-15 > div.row.mt-1 > div > div > span:nth-child(3)")).click();
-         }
+         }                                       
          else
          {
               driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div.p-3.post-form-container > div:nth-child(2) > main > div > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div.section-white.px-minus-15 > div.row.mt-1 > div > div > span:nth-child(8)")).click();
          }
+         }
+         
        
         Thread.sleep(3000);
         driver.findElement(By.cssSelector("#datepicker")).click();
         Thread.sleep(5000);
-        driver.findElement(By.id("datepicker__dialog_")).findElements(By.tagName("footer")).get(1).findElements(By.tagName("button")).get(0).click();
+        if(domain.equals("https://rentup.co/"))
+        {
+            driver.findElement(By.id("datepicker__dialog_")).findElements(By.tagName("footer")).get(0).findElements(By.tagName("button")).get(0).click();
+        }
+        else
+        {
+            driver.findElement(By.id("datepicker__dialog_")).findElements(By.tagName("footer")).get(1).findElements(By.tagName("button")).get(0).click();
+        }
+        
 
         
         Thread.sleep(2000);     
@@ -148,20 +182,26 @@ public class PostRequesttest {
               driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div.p-3.post-form-container > div:nth-child(3) > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div.mt-2.section-white.col-12 > main > div > div:nth-child(2) > div")).click();
               Thread.sleep(1000);
            }
-        Thread.sleep(1000);
-        if(getCellData(5,12).equals("z"))
+        Thread.sleep(4000);
+      
+            if(getCellData(5,12).equals("z"))
         {
             for (WebElement we : driver.findElements(By.tagName("span")))
-                if (we.getText().equals("Early Check-In"))
-                    we.click();
-            Thread.sleep(1000);
+               if (we.getText().equals("Early Check-In"))
+                        we.click();
+             Thread.sleep(1000);
+            
+            
         }
         else
-        { for (WebElement we : driver.findElements(By.tagName("span")))
+        { 
+            for (WebElement we : driver.findElements(By.tagName("span")))
                 if (we.getText().equals("Late Check-Out"))
-                    we.click();
+                        we.click();
             Thread.sleep(1000);
         }
+        
+        
         if(getCellData(5,13).equals("z"))
         {
             int x = Integer.parseInt(getCellData(4, 13));
@@ -210,6 +250,7 @@ public class PostRequesttest {
              driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div.p-3.post-form-container > div:nth-child(3) > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div.mt-4.section-white.contract-section.col-12 > div:nth-child(3) > div.col-md-12.col-lg-4 > input")).sendKeys(getCellData(5, 15));
             Thread.sleep(1000);
         }
+        Thread.sleep(4000);
          if(getCellData(5, 9).equals("z"))
          {
              driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div.p-3.post-form-container > div:nth-child(3) > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(5) > main > div > div:nth-child(2) > div > span")).click();
@@ -217,7 +258,7 @@ public class PostRequesttest {
          else if (getCellData(5, 9).equals("Furnished"))
          {
              driver.findElement(By.cssSelector(" #__layout > div > div.main-content-container > div > div > div.p-3.post-form-container > div:nth-child(3) > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(5) > main > div > div:nth-child(1) > div > span")).click();
-         }                                       
+         }                                                                 
          else
          {
              driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div.p-3.post-form-container > div:nth-child(3) > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(5) > main > div > div:nth-child(3) > div > span")).click();
@@ -236,7 +277,7 @@ public class PostRequesttest {
          {
               driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div.p-3.post-form-container > div:nth-child(3) > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(7) > div > div.col-md-12.col-lg-8 > span > div.counter-input-contianer > button:nth-child(3)")).click();
          }
-         
+         Thread.sleep(4000);
          if(getCellData(5, 11).equals("z"))
             {
                      driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div.p-3.post-form-container > div:nth-child(3) > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(9) > main > div > div:nth-child(9) > div > span")).click();
@@ -246,28 +287,28 @@ public class PostRequesttest {
              if(getCellData(5, 11).equals("Duplex"))
              {
                  driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div.p-3.post-form-container > div:nth-child(3) > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(9) > main > div > div:nth-child(2) > div")).click();
-             }
+             }                                     
+                                                   
              else
              {
                  driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div.p-3.post-form-container > div:nth-child(3) > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(9) > main > div > div:nth-child(5) > div > span")).click();
              }
          }
-         Thread.sleep(2000);
+         Thread.sleep(4000);
          driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div.p-3.post-form-container > div:nth-child(3) > div > div:nth-child(3) > div > div.col-7 > div > button")).click();
-        
-        Thread.sleep(3000);
+                                            
+        Thread.sleep(3000);                
         driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div.p-3.post-form-container > div:nth-child(3) > div > div:nth-child(5) > button")).click();
         Thread.sleep(2000);
-        
-        }
         return driver;
     }
     @Test
     public void ChromePostRequestTest() throws Exception {
         WebDriver driver=null;
         driver = PostRequestTest();
-
-        Thread.sleep(5000);
+        if(platform.equals("Desktop"))
+        {
+            Thread.sleep(5000);
         try {
             // Check whether a certain element appears which confirms that the login was not successful
             assertEquals(true, driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div.is-desktop-device.container > div:nth-child(1) > div > svg > use")).isDisplayed()); 
@@ -278,6 +319,22 @@ public class PostRequesttest {
         
         // Close the web driver
         driver.close();
+        }
+        else if (platform.equals("Mobile"))
+        {
+            Thread.sleep(5000);
+        try {
+            // Check whether a certain element appears which confirms that the login was not successful
+            assertEquals(true, driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div.row.pb-3.is-mobile-device > div:nth-child(2) > svg > use")).isDisplayed()); 
+        } catch(NoSuchElementException e){
+            assertTrue(false);
+        }
+        Thread.sleep(2000);
+        
+        // Close the web driver
+        driver.close();
+        }
+        
 
         }
         
