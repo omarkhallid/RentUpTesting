@@ -63,7 +63,6 @@ public class MainFrame extends javax.swing.JFrame {
         signupEditButton = new javax.swing.JButton();
         signupCheckBox = new javax.swing.JCheckBox();
         jLabel9 = new javax.swing.JLabel();
-        chromeLabel = new javax.swing.JLabel();
         rrLLEditButton = new javax.swing.JButton();
         arLLCheckBox = new javax.swing.JCheckBox();
         arTTCheckBox = new javax.swing.JCheckBox();
@@ -74,17 +73,15 @@ public class MainFrame extends javax.swing.JFrame {
         testButton = new javax.swing.JButton();
         jComboBox2 = new javax.swing.JComboBox<>();
         jComboBox3 = new javax.swing.JComboBox<>();
-        chromeCB = new javax.swing.JCheckBox();
-        edgeCB = new javax.swing.JCheckBox();
-        firefoxCB = new javax.swing.JCheckBox();
         arTTEditButton = new javax.swing.JButton();
         rrTTEditButton = new javax.swing.JButton();
         searchEditButton = new javax.swing.JButton();
         coTTEditButton = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
-        edgeLabel = new javax.swing.JLabel();
-        firefoxLabel = new javax.swing.JLabel();
+        chromeButton = new javax.swing.JButton();
+        edgeButton = new javax.swing.JButton();
+        firefoxButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Rentup Automated Tester");
@@ -368,13 +365,6 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(16, 15, 16, 0);
         mainPanel.add(jLabel9, gridBagConstraints);
 
-        chromeLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/chrome.png"))); // NOI18N
-        chromeLabel.setName("loginStatusLabel"); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.insets = new java.awt.Insets(0, 11, 0, 0);
-        mainPanel.add(chromeLabel, gridBagConstraints);
-
         rrLLEditButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         rrLLEditButton.setText("Edit Values");
         rrLLEditButton.addActionListener(new java.awt.event.ActionListener() {
@@ -528,28 +518,6 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.insets = new java.awt.Insets(0, 22, 0, 4);
         buttonPanel.add(jComboBox3, gridBagConstraints);
-
-        chromeCB.setSelected(true);
-        chromeCB.setText("Chrome");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.insets = new java.awt.Insets(0, 3, 0, 3);
-        buttonPanel.add(chromeCB, gridBagConstraints);
-
-        edgeCB.setText("Edge");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 5;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.insets = new java.awt.Insets(0, 3, 0, 3);
-        buttonPanel.add(edgeCB, gridBagConstraints);
-
-        firefoxCB.setText("Firefox");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 6;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.insets = new java.awt.Insets(0, 3, 0, 3);
-        buttonPanel.add(firefoxCB, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -913,20 +881,38 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(0, 11, 0, 0);
         mainPanel.add(loginLabel, gridBagConstraints);
 
-        edgeLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/edge.png"))); // NOI18N
-        edgeLabel.setName("loginStatusLabel"); // NOI18N
+        chromeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/chrome.png"))); // NOI18N
+        chromeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chromeButtonActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 1;
+        mainPanel.add(chromeButton, gridBagConstraints);
+
+        edgeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/edge_gray.png"))); // NOI18N
+        edgeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                edgeButtonActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 1;
-        mainPanel.add(edgeLabel, gridBagConstraints);
+        mainPanel.add(edgeButton, gridBagConstraints);
 
-        firefoxLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/firefox.png"))); // NOI18N
-        firefoxLabel.setName("loginStatusLabel"); // NOI18N
+        firefoxButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/firefox_gray.png"))); // NOI18N
+        firefoxButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                firefoxButtonActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 6;
         gridBagConstraints.gridy = 1;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 3, 10);
-        mainPanel.add(firefoxLabel, gridBagConstraints);
+        mainPanel.add(firefoxButton, gridBagConstraints);
 
         layeredPane.add(mainPanel, new java.awt.GridBagConstraints());
 
@@ -1106,7 +1092,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void testButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testButtonActionPerformed
         
-        if (!chromeCB.isSelected() && !edgeCB.isSelected() && !firefoxCB.isSelected()){
+        if (!chrome && !edge && !firefox){
             JOptionPane.showMessageDialog(this, "Please pick a browser");
             return;
         }
@@ -1134,9 +1120,9 @@ public class MainFrame extends javax.swing.JFrame {
         Methods.platform = jComboBox3.getSelectedItem().toString();
         
         ArrayList<String> browsers = new ArrayList<String>();
-        if (chromeCB.isSelected()) browsers.add("Chrome"); else browsers.add("");
-        if (edgeCB.isSelected()) browsers.add("Edge"); else browsers.add("");
-        if (firefoxCB.isSelected()) browsers.add("Firefox"); else browsers.add("");
+        if (chrome) browsers.add("Chrome"); else browsers.add("");
+        if (edge) browsers.add("Edge"); else browsers.add("");
+        if (firefox) browsers.add("Firefox"); else browsers.add("");
         
         for(int i = 0; i < browsers.size(); i++){
         
@@ -1239,6 +1225,39 @@ public class MainFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_testButtonActionPerformed
 
+    private void chromeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chromeButtonActionPerformed
+        if (chrome){
+            chromeButton.setIcon(new ImageIcon(getClass().getResource("/Resources/chrome_gray.png")));
+            chrome = false;
+        }
+        else{
+            chromeButton.setIcon(new ImageIcon(getClass().getResource("/Resources/chrome.png")));
+            chrome = true;
+        }
+    }//GEN-LAST:event_chromeButtonActionPerformed
+
+    private void edgeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edgeButtonActionPerformed
+        if (edge){
+            edgeButton.setIcon(new ImageIcon(getClass().getResource("/Resources/edge_gray.png")));
+            edge = false;
+        }
+        else{
+            edgeButton.setIcon(new ImageIcon(getClass().getResource("/Resources/edge.png")));
+            edge = true;
+        }
+    }//GEN-LAST:event_edgeButtonActionPerformed
+
+    private void firefoxButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firefoxButtonActionPerformed
+        if (firefox){
+            firefoxButton.setIcon(new ImageIcon(getClass().getResource("/Resources/firefox_gray.png")));
+            firefox = false;
+        }
+        else{
+            firefoxButton.setIcon(new ImageIcon(getClass().getResource("/Resources/firefox.png")));
+            firefox = true;
+        }
+    }//GEN-LAST:event_firefoxButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1280,7 +1299,7 @@ public class MainFrame extends javax.swing.JFrame {
     
     private ArrayList<JCheckBox> checks = new ArrayList<JCheckBox>();
     private JLabel[][] labels = new JLabel[11][3];
-
+    private boolean chrome = true, edge = false, firefox = false;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox alLLCheckBox;
     private javax.swing.JButton alLLEditButton;
@@ -1298,8 +1317,7 @@ public class MainFrame extends javax.swing.JFrame {
     private final javax.swing.JLabel arTTLabel1 = new javax.swing.JLabel();
     private final javax.swing.JLabel arTTLabel2 = new javax.swing.JLabel();
     private javax.swing.JPanel buttonPanel;
-    private javax.swing.JCheckBox chromeCB;
-    private javax.swing.JLabel chromeLabel;
+    private javax.swing.JButton chromeButton;
     private javax.swing.JCheckBox coLLCheckBox;
     private javax.swing.JButton coLLEditButton;
     private final javax.swing.JLabel coLLLabel = new javax.swing.JLabel();
@@ -1311,10 +1329,8 @@ public class MainFrame extends javax.swing.JFrame {
     private final javax.swing.JLabel coTTLabel1 = new javax.swing.JLabel();
     private final javax.swing.JLabel coTTLabel2 = new javax.swing.JLabel();
     private javax.swing.JButton deselectAllButton;
-    private javax.swing.JCheckBox edgeCB;
-    private javax.swing.JLabel edgeLabel;
-    private javax.swing.JCheckBox firefoxCB;
-    private javax.swing.JLabel firefoxLabel;
+    private javax.swing.JButton edgeButton;
+    private javax.swing.JButton firefoxButton;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel10;

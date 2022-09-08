@@ -279,6 +279,5 @@ public class PostRequesttest {
         // Close the web driver
         driver.close();
 
-        }
-        
+    }
 }
