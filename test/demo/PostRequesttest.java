@@ -25,13 +25,13 @@ public class PostRequesttest {
 
     public static WebDriver PostRequestTest() throws Exception {
 
-        TenantEmail = createRandomString() + "@abc.com"; 
+        TenantEmail = createRandomString() + "@test.com"; 
         String password = "123456";
         System.out.println("Landlord credentials:\nEmail: " + TenantEmail + "\nPassword: " + password);
         
         
         WebDriver driver = signup("auto tester", TenantEmail, password, "abcdefg");
-        Thread.sleep(3000);
+        Thread.sleep(5000);
        
         if(platform.equals("Desktop"))
         {
@@ -44,7 +44,7 @@ public class PostRequesttest {
             Thread.sleep(8000);
             driver.findElement(By.cssSelector("#__layout > div > div.main-content-container.home > div > div.onboardingMobile.d-sm-block.d-md-none.p-0.m-0 > div > div.bt-home-control > a.slider-post-link")).click();  //post A request
         }
-        driver.findElement(By.cssSelector("#citySelect > div > span")).click();  //click on city
+        driver.findElement(By.cssSelector("#citySelect > div.dropdown-container > span")).click();  //click on city
         Thread.sleep(3000);
         if(getCellData(5, 0).equals("z"))
         {
@@ -62,14 +62,14 @@ public class PostRequesttest {
         
         if(getCellData(5, 1).equals("z"))
         {
-            driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div.p-3.post-form-container > div:nth-child(1) > div > div > div.row.justify-content-center > div > div:nth-child(2) > div > span")).click();
+            driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > div > div > div.row.justify-content-center > div > div:nth-child(2) > div > span")).click(); // select district
             driver.findElement(By.className("dropdown-search")).sendKeys(getCellData(4, 1));
             driver.findElement(By.className("option-label")).click();
              Thread.sleep(3000);
         }
         else if(!(getCellData(5, 1).equals("z"))&&!(getCellData(5, 1).equals("nothing")))
         {
-            driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div.p-3.post-form-container > div:nth-child(1) > div > div > div.row.justify-content-center > div > div:nth-child(2) > div > span")).click();
+            driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > div > div > div.row.justify-content-center > div > div:nth-child(2) > div > span")).click(); // select district
             driver.findElement(By.className("dropdown-search")).sendKeys(getCellData(5, 1));
             driver.findElement(By.className("option-label")).click();
              Thread.sleep(3000);
@@ -77,14 +77,14 @@ public class PostRequesttest {
         
         if(getCellData(5, 2).equals("z"))
         {
-            driver.findElement(By.cssSelector("#neighborhoodSelect > div > span")).click();
+            driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > div > div > div.row.justify-content-center > div > div:nth-child(3) > div > span")).click();
             driver.findElement(By.className("dropdown-search")).sendKeys(getCellData(4, 2));
             driver.findElement(By.className("option-label")).click();
             Thread.sleep(3000);
         }
         else if(!(getCellData(5, 2).equals("z"))&&!(getCellData(5, 2).equals("nothing")))
         {
-            driver.findElement(By.cssSelector("#neighborhoodSelect > div > span")).click();
+             driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > div > div > div.row.justify-content-center > div > div:nth-child(3) > div > span")).click();
             driver.findElement(By.className("dropdown-search")).sendKeys(getCellData(5, 2));
             driver.findElement(By.className("option-label")).click();
             Thread.sleep(3000);
