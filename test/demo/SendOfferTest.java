@@ -6,7 +6,7 @@ package demo;
 
 
 import org.openqa.selenium.WebDriver;
-import static demo.AddListingTest.AddListingTest;
+import static demo.AddListingTest.AddlistingTest;
 import static demo.ApproveListing.Approvetest;
 import static demo.Methods.LandlordEmail;
 import static demo.Methods.getCellData;
@@ -37,7 +37,7 @@ public class SendOfferTest {
        Robot rb = new Robot();
        driver= PostRequestTest();
        driver.close();
-      driver1 = AddListingTest();
+      driver1 = AddlistingTest();
 //       Thread.sleep(3000);
       driver2=Approvetest();
        driver2.close();
