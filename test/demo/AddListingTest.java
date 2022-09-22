@@ -18,6 +18,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -34,12 +35,12 @@ public class AddListingTest {
     
     
  
-    static public WebDriver AddListingTest() throws Exception {
+    static public WebDriver AddlistingTest() throws Exception {
 
         
         String city, district, street, furnish, propertyType, propertyName, rentPerNight = "", rentPerMonth = "", description;
         int beds = 0, baths = 0;
-        
+        Robot rb = new Robot();
         if (getCellData(14,0).equals("")) city = getCellData(13,0);
         else city = getCellData(14,0);
         
@@ -71,7 +72,7 @@ public class AddListingTest {
         if (getCellData(14,11).equals("")) description = getCellData(13,10);
         else description = getCellData(14,10);
         
-        LandlordEmail = createRandomString() + "@abc.com";
+        LandlordEmail = createRandomString() + "@test.com";
         String password = "123456";
         System.out.println("Landlord credentials:\nEmail: " + LandlordEmail + "\nPassword: " + password);
         
@@ -79,46 +80,108 @@ public class AddListingTest {
         WebDriver driver = signup("auto tester", LandlordEmail, password, "abcdefg");
         Thread.sleep(6000);
         if (platform.equals("Desktop")){
-            
-            driver.findElement(By.id("list-property")).click();
+            //click on i am a Landlord to open dropdown menu
+            driver.findElement(By.cssSelector("#__layout > div > header > div > div.desktop-nav > div > div > div:nth-child(2) > button")).click();
             Thread.sleep(2000);
-            driver.findElement(By.className("dropdown-container")).click();
             
+            // select on add a new property
+            driver.findElement(By.cssSelector("#__layout > div > header > div > div.desktop-nav > div > div > div:nth-child(2) > div > div > div:nth-child(1) > div.actions > a.btn.btn_primary > div")).click();
+            Thread.sleep(2000);
+            
+            //click on i am a Landlord inorder to close the dropdown menu
+            driver.findElement(By.cssSelector("#__layout > div > header > div > div.desktop-nav > div > div > div:nth-child(2) > button")).click();
+            Thread.sleep(8000);
+            
+            // select city 
+            driver.findElement(By.cssSelector("#citySelect > div > span")).click(); 
             driver.findElement(By.className("dropdown-search")).sendKeys(city); 
             driver.findElement(By.className("option-label")).click();
-            Thread.sleep(2000);
+            Thread.sleep(5000);
             
-            driver.findElements(By.className("dropdown-container")).get(1).click();
-            
+            //select district
+            driver.findElement(By.cssSelector("#districtSelect > div.dropdown-container > span")).click();
             driver.findElement(By.className("dropdown-search")).sendKeys(district); 
             driver.findElement(By.className("option-label")).click();
             Thread.sleep(2000);
             
+            //select neighbourhood
+            driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div.is-desktop-device > div > div.row.align-items-center > div > div > div.mb-4.m-auto.col-lg-4 > div > input")).sendKeys("AutomationTestRentUP");
+           
+            Thread.sleep(2000);
+
+            
             //driver.findElement(By.tagName("input")).sendKeys(street);
             //Thread.sleep(2000);
+            // press on next
+            driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div.is-desktop-device > div > div.col-12.mt-3.d-flex.justify-content-center.actions_buttons > button.btn.mx-2.next_button.col-2.btn-primary")).click();
+            //driver.findElement(By.className("properties__content")).findElements(By.tagName("button")).get(driver.findElement(By.className("properties__content")).findElements(By.tagName("button")).size() - 1).click();
+            Thread.sleep(6000);
+//            for (WebElement we : driver.findElement(By.className("chips-container")).findElements(By.tagName("label")))
+//                if (we.getText().toLowerCase().equals(furnish.toLowerCase()))
+//                    we.click();
+            //select furnished
+            if(furnish.equals("Furnished"))
+            {
+                 for (WebElement we : driver.findElements(By.tagName("span")))
+                           if (we.getText().equals("Furnished"))
+                                    we.click();
+            }
+            // select unfurnished
+            else if(furnish.equals("Unfurnished"))
+            {
+                for (WebElement we : driver.findElements(By.tagName("span")))
+                           if (we.getText().equals("Unfurnished"))
+                                    we.click();
+            } // select serviced Apartment
+            else
+            {
+                 for (WebElement we : driver.findElements(By.tagName("span")))
+                           if (we.getText().equals("Serviced Apartment"))
+                                    we.click();
+            }
             
-            driver.findElement(By.className("properties__content")).findElements(By.tagName("button")).get(driver.findElement(By.className("properties__content")).findElements(By.tagName("button")).size() - 1).click();
-            Thread.sleep(4000);
-            for (WebElement we : driver.findElement(By.className("chips-container")).findElements(By.tagName("label")))
-                if (we.getText().toLowerCase().equals(furnish.toLowerCase()))
-                    we.click();
-        
-            for (WebElement we : driver.findElements(By.className("chips-container")).get(1).findElements(By.tagName("label")))
-                if (we.getText().equals(propertyType))
-                    we.click();
+            if(propertyType.equals("Apartment"))
+            {
+                 for (WebElement we : driver.findElements(By.tagName("span")))
+                           if (we.getText().equals("Apartment"))
+                                    we.click();
+            }
+            // select unfurnished
+            else if(propertyType.equals("Studio"))
+            {
+                for (WebElement we : driver.findElements(By.tagName("span")))
+                           if (we.getText().equals("Studio"))
+                                    we.click();
+            } // select serviced Apartment
+            else
+            {
+                 for (WebElement we : driver.findElements(By.tagName("span")))
+                           if (we.getText().equals("Villa"))
+                                    we.click();
+            }
+           
+//            // select property type
+//            for (WebElement we : driver.findElements(By.className("chips-container")).get(1).findElements(By.tagName("label")))
+//                if (we.getText().equals(propertyType))
+//                    we.click();
             
+            // select number of beds
             for (int i = 1; i < beds; i++)
-                driver.findElements(By.className("counter-input-contianer")).get(0).findElements(By.tagName("button")).get(1).click();
+                driver.findElement(By.cssSelector(".rooms-number > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > span:nth-child(1) > div:nth-child(1) > button:nth-child(3)")).click();
             
+            // select number of baths
             for (int i = 1; i < baths; i++)
-                driver.findElements(By.className("counter-input-contianer")).get(1).findElements(By.tagName("button")).get(1).click();
-            
-            driver.findElement(By.className("properties__content")).findElements(By.tagName("button")).get(driver.findElement(By.className("properties__content")).findElements(By.tagName("button")).size() - 1).click();
-            Thread.sleep(8000);
+                //driver.findElements(By.className("counter-input-contianer")).get(1).findElements(By.tagName("button")).get(1).click();
+                driver.findElement(By.cssSelector(".rooms-number > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > span:nth-child(1) > div:nth-child(1) > button:nth-child(3)")).click();
+            // select next button
+     
+                 driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div.is-desktop-device > div > div.col-12.mt-3.d-flex.justify-content-center.actions_buttons > button.btn.mx-2.next_button.col-2.btn-primary")).click();
+            Thread.sleep(4000);
             //driver.findElements(By.className("chips-container")).get(2).click();
 //            try{
 //                driver.findElements(By.className("chips-container")).get(2).findElement(By.className("chip-label")).click();
 //            } catch (Exception ex){}
+           
             try{
                 
                 driver.findElements(By.className("amenities")).get(0).findElement(By.className("chip")).click();
@@ -147,51 +210,51 @@ public class AddListingTest {
 //                    we.click();
             } catch (Exception ex){}
             
-            driver.findElement(By.className("properties__content")).findElements(By.tagName("button")).get(driver.findElement(By.className("properties__content")).findElements(By.tagName("button")).size() - 1).click();
+            driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div.is-desktop-device > div > div.col-12.mt-3.d-flex.justify-content-center.actions_buttons > button.btn.mx-2.next_button.col-2.btn-primary")).click();
             
-            for (WebElement we : driver.findElements(By.tagName("input")))
-                if (we.getAttribute("placeholder").contains("Beautiful apartment")){
-                    we.sendKeys(propertyName);
-                    break;
-                }
-
-            driver.findElement(By.tagName("textarea")).sendKeys(description);
+           Thread.sleep(6000);
+            driver.findElements(By.tagName("input")).get(1).sendKeys(propertyName);
             
+            Thread.sleep(2000);
+            driver.findElements(By.tagName("textarea")).get(1).sendKeys(description);
+            Thread.sleep(2000);
             
             
             if (!rentPerNight.equals("")){
                 
-                for (WebElement we : driver.findElements(By.className("chip-label")))
-                    if (we.getText().contains("Per Day")){
-                        we.click();
-                        break;
-                    }
+//                for (WebElement we : driver.findElements(By.className("chip-label")))
+//                    if (we.getText().contains("Per Day")){
+//                        we.click();
+//                        break;
+//                    }
+            for (WebElement we : driver.findElements(By.tagName("span")))
+                                       if (we.getText().equals("per night"))
+                                                we.click();
                 
-                for (WebElement we : driver.findElements(By.tagName("input")))
-                    if (we.getAttribute("placeholder").contains("per night")){
-                        we.sendKeys(rentPerNight);
-                        break;
-                    }
+            Thread.sleep(2000);
+            driver.findElements(By.tagName("input")).get(3).sendKeys(rentPerNight);  
+            Thread.sleep(2000);
             }
             else if (!rentPerMonth.equals("")){
-                for (WebElement we : driver.findElements(By.className("chip-label")))
-                    if (we.getText().contains("Per Month")){
+                for (WebElement we : driver.findElements(By.className("span")))
+                    if (we.getText().equals("Per Month")){
                         we.click();
                         break;
                     }
                 
-                for (WebElement we : driver.findElements(By.tagName("input")))
-                    if (we.getAttribute("placeholder").contains("per month")){
-                        we.sendKeys(rentPerMonth);
-                        break;
-                    }
+            Thread.sleep(2000);
+            driver.findElements(By.tagName("input")).get(3).sendKeys(rentPerMonth);
+            Thread.sleep(2000);
             }
+            driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div.is-desktop-device > div > div.col-12.mt-3.d-flex.justify-content-center.actions_buttons > button.btn.mx-2.next_button.col-2.btn-primary")).click();
             
-            driver.findElement(By.className("upload-file-target")).click();
+            Thread.sleep(2000);
+            driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div.is-desktop-device > div > div.row.align-items-center > div > div > div.img-video-container > div > div")).click();
+            //driver.findElement(By.className("upload-file-target")).click();
             
             
             // creating robot for uploading an image
-            Robot rb = new Robot();
+            
 
             // copying File path to Clipboard
             StringSelection str = new StringSelection(new java.io.File(".").getCanonicalPath() + "\\test\\Resources\\placeholder.png");
@@ -212,30 +275,12 @@ public class AddListingTest {
             rb.keyRelease(KeyEvent.VK_ENTER);
             
             Thread.sleep(3000);
-            driver.findElement(By.className("properties__content")).findElements(By.tagName("button")).get(driver.findElement(By.className("properties__content")).findElements(By.tagName("button")).size() - 1).click();
+            driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div.is-desktop-device > div > div.col-12.mt-3.d-flex.justify-content-center.actions_buttons > button.btn.mx-2.next_button.col-2.btn-primary")).click();
             
             Thread.sleep(3000);
-            for (WebElement we : driver.findElements(By.tagName("button")))
-                    if (we.getText().contains("Submit your request")){
-                        we.click();
-                        break;
-                    }
+            driver.findElements(By.tagName("button")).get(7).click();
             Thread.sleep(8000);
             
-            //check if property was added in my properties
-            boolean added = false;
-            for (WebElement we : driver.findElements(By.className("property-data"))){
-                if (we.findElement(By.tagName("strong")).getText().contains(propertyName.substring(2))){
-                    added = true;
-                    break;
-                }
-            }
-            
-            try{
-                assertTrue(added);
-            } catch (Exception ex){}
-            
-            driver.close();
         }
 
         else if (platform.equals("Mobile")){
@@ -342,7 +387,7 @@ public class AddListingTest {
             
             
             // creating robot for uploading an image
-            Robot rb = new Robot();
+           
 
             // copying File path to Clipboard
             StringSelection str = new StringSelection(new java.io.File(".").getCanonicalPath() + "\\test\\Resources\\placeholder.png");
@@ -374,30 +419,41 @@ public class AddListingTest {
                     }
             
         }
+        
         return driver;
         
     }
     @Test
     public void ChromeAddListingTest() throws Exception {
         WebDriver driver=null;
-        driver = AddListingTest();
-
-        Thread.sleep(5000);
-            
-            try{
-            //check if property was added in my properties
-            boolean added = false;
-            for (WebElement we : driver.findElements(By.className("property-data"))){
-                if (we.findElement(By.tagName("strong")).getText().contains(propertyName.substring(2))){
-                    added = true;
-                    break;
-                }
-            }
-            
-            
-                assertTrue(added);
-            } catch (Exception ex){}
-            
+        driver = AddlistingTest();
+        boolean flag= false;
+        Thread.sleep(8000);
+        if(platform.equals("Desktop"))
+        {
+        try {
+            // Check whether a certain element appears which confirms that the login was not successful
+            assertEquals(true, driver.findElement(By.tagName("h1")).isDisplayed()); 
+        } catch(NoSuchElementException e){
+            assertTrue(false);
             driver.close();
+        }
+        Thread.sleep(2000);
+//        for (WebElement we : driver.findElements(By.tagName("span")))
+//                    if (we.getText().contains("Sort")){
+//                        flag=true;
+//                        break;
+//                    }
+//        try {
+//            // Check whether a certain element appears which confirms that the login was not successful
+//            assertEquals(true, flag); 
+//        } catch(NoSuchElementException e){
+//            assertTrue(false);
+//            driver.close();
+//        }
+        driver.close();
+        Thread.sleep(2000);
+    }
 }
 }
+
