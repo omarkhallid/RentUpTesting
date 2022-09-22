@@ -27,7 +27,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+
+
 
 /**
  *
@@ -111,11 +112,14 @@ public class Methods {
                     driver = new EdgeDriver();
                     break;
                 case "Firefox":
-                    System.setProperty("webdriver.gecko.driver", new java.io.File(".").getCanonicalPath() + "\\" + "geckodriver.exe");
+                    
+                    System.setProperty("webdriver.gecko.driver", new java.io.File(".").getCanonicalPath() +"\\" + "geckodriver.exe");
                     driver = new FirefoxDriver();
+                    
                     break;
             }
         } catch (Exception ex){
+            System.out.println("driver ="+driver);
             System.out.println("Couldn't find driver files in path");
         }
         
