@@ -37,7 +37,7 @@ public class SendOfferTest {
        Robot rb = new Robot();
        driver= PostRequestTest();
        driver.close();
-      driver1 = AddlistingTest();
+       driver1 = AddlistingTest();
 //       Thread.sleep(3000);
       driver2=Approvetest();
        driver2.close();
@@ -46,10 +46,13 @@ public class SendOfferTest {
        Thread.sleep(5000);
        //driver3.findElement(By.cssSelector("#__layout > div > header > nav > div > div.nav-links.d-none.d-lg-flex > a:nth-child(3)")).click();
       // driver3.findElements(By.tagName("a")).get(6).click();
-         driver3.findElement((By.cssSelector("#dropdown-divider__BV_toggle_ > div > h1"))).click();
+      //open i am a landlord
+        driver3.findElement(By.cssSelector("#__layout > div > header > div > div.desktop-nav > div > div > div:nth-child(2) > button")).click();
+            Thread.sleep(2000);
+         driver3.findElement(By.cssSelector("#__layout > div > header > div > div.desktop-nav > div > div > div:nth-child(2) > div > div > div:nth-child(1) > div.actions > a.btn.btn_outlined")).click();
          Thread.sleep(2000);
-         driver3.findElement(By.cssSelector("#dropdown-divider > ul > li:nth-child(5) > a > a")).click();
-         Thread.sleep(2000);
+         driver3.findElement(By.cssSelector("#__layout > div > header > div > div.desktop-nav > div > div > div:nth-child(2) > button")).click();
+            Thread.sleep(2000);
        driver3.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div.main-container-market.is-desktop-device > div.form-container.mt-3.container > div.row.align-items-center.mb-3 > div.col-4.order-3 > div > div > span")).click();
        Thread.sleep(3000);
        if(getCellData(5,0).equals("z"))
@@ -90,18 +93,20 @@ public class SendOfferTest {
 //               if (we.getText().equals("Best and final offer"))
 //                        we.click();
 //             Thread.sleep(1000);
-         driver3.findElements(By.tagName("button")).get(16).click();
+         driver3.findElements(By.tagName("button")).get(14).click();
          Thread.sleep(2000);
-         driver3.findElement(By.cssSelector("#dropdown-divider__BV_toggle_ > div > h1")).click();
-         Thread.sleep(1000);
-         driver3.findElement(By.cssSelector("#dropdown-divider > ul > li:nth-child(4) > a > a")).click();
+         driver3.findElement(By.cssSelector("#__layout > div > header > div > div.desktop-nav > div > div > div:nth-child(2) > button")).click();
+            Thread.sleep(2000);
+            driver3.findElement(By.cssSelector("#__layout > div > header > div > div.desktop-nav > div > div > div:nth-child(2) > div > div > div.col-6.landlord > div.actions > a:nth-child(1)")).click();
+         Thread.sleep(2000);
+         driver3.findElement(By.cssSelector("#__layout > div > header > div > div.desktop-nav > div > div > div:nth-child(2) > button")).click();
          Thread.sleep(2000);
          
          
          
          try {
             // Check whether a certain element appears which confirms that the login was not successful
-            assertEquals(true, driver3.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div.b-overlay-wrap.position-relative > div > div.offers-container > div > div > div.property-title.col-12")).isDisplayed()); 
+            assertEquals(true, driver3.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div.b-overlay-wrap.position-relative > div > div > div:nth-child(1) > a > div")).isDisplayed()); 
         } catch(NoSuchElementException e){
             assertTrue(false);
             driver3.close();

@@ -69,7 +69,7 @@ public class AddListingTest {
         else if (!getCellData(14,8).equals("")) rentPerNight = getCellData(14,8);
         else if (!getCellData(14,9).equals("")) rentPerMonth = getCellData(14,9);
         
-        if (getCellData(14,11).equals("")) description = getCellData(13,10);
+        if (getCellData(14,10).equals("")) description = getCellData(13,10);
         else description = getCellData(14,10);
         
         LandlordEmail = createRandomString() + "@test.com";
@@ -236,8 +236,8 @@ public class AddListingTest {
             Thread.sleep(2000);
             }
             else if (!rentPerMonth.equals("")){
-                for (WebElement we : driver.findElements(By.className("span")))
-                    if (we.getText().equals("Per Month")){
+                for (WebElement we : driver.findElements(By.tagName("span")))
+                    if (we.getText().equals("per month")){
                         we.click();
                         break;
                     }
@@ -411,9 +411,9 @@ public class AddListingTest {
 
             driver.findElement(By.className("fifth-step")).findElement(By.className("actions-container")).findElements(By.tagName("button")).get(1).click();
             
-            Thread.sleep(3000);
+            Thread.sleep(5000);
             for (WebElement we : driver.findElements(By.tagName("button")))
-                    if (we.getText().contains("Submit your request")){
+                    if (we.getText().contains("Submit your listing")){
                         we.click();
                         break;
                     }
@@ -452,7 +452,7 @@ public class AddListingTest {
 //            driver.close();
 //        }
         driver.close();
-        Thread.sleep(2000);
+     
     }
 }
 }

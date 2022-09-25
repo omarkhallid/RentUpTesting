@@ -40,25 +40,25 @@ public class PostRequesttest {
         //Click on post a request on Desktop
         if (platform.equals("Desktop")) {
 
-            Thread.sleep(5000);
+            Thread.sleep(3000);
             driver.findElement(By.cssSelector(".PostButt")).click();  //post A request
 
         } //Click on post a request on Mobile
         else if (platform.equals("Mobile")) {
-            Thread.sleep(8000);
+            Thread.sleep(5000);
             driver.findElement(By.cssSelector("#__layout > div > div.main-content-container.home > div > div.onboardingMobile.d-sm-block.d-md-none.p-0.m-0 > div > div.bt-home-control > a.slider-post-link")).click();  //post A request
         }
 
         //Click on City
         Thread.sleep(3000);
         driver.findElement(By.cssSelector("#citySelect > div.dropdown-container > span")).click();
-        Thread.sleep(3000);
+        Thread.sleep(2000);
 
         //City
         if (getCellData(5, 0).equals("z")) {
             // send data in the search bar
             driver.findElement(By.className("dropdown-search")).sendKeys(getCellData(4, 0));
-            Thread.sleep(8000);
+            Thread.sleep(3000);
             // click on the selected 
             driver.findElement(By.className("option-label")).click();
             Thread.sleep(5000);
@@ -67,7 +67,7 @@ public class PostRequesttest {
         else {
             // send data in the search bar
             driver.findElement(By.className("dropdown-search")).sendKeys(getCellData(5, 0));
-            Thread.sleep(8000);
+            Thread.sleep(3000);
             // click on the selected 
             driver.findElement(By.className("option-label")).click();
             Thread.sleep(5000);
@@ -77,10 +77,10 @@ public class PostRequesttest {
         if (getCellData(5, 1).equals("z")) {
             //Click on District
             driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > div > div > div.row.justify-content-center > div > div:nth-child(2) > div > span")).click(); // select district
-            Thread.sleep(5000);
+            Thread.sleep(3000);
             // send data in the search bar 
             driver.findElement(By.className("dropdown-search")).sendKeys(getCellData(4, 1));
-            Thread.sleep(8000);
+            Thread.sleep(3000);
             // click on the selected 
             driver.findElement(By.className("option-label")).click();
             Thread.sleep(5000);
@@ -88,10 +88,10 @@ public class PostRequesttest {
         else if (!(getCellData(5, 1).equals("z")) && !(getCellData(5, 1).equals("nothing"))) {
             //Click on District
             driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > div > div > div.row.justify-content-center > div > div:nth-child(2) > div > span")).click();
-            Thread.sleep(5000);
+            Thread.sleep(3000);
             // send data in the search bar 
             driver.findElement(By.className("dropdown-search")).sendKeys(getCellData(5, 1));
-            Thread.sleep(8000);
+            Thread.sleep(3000);
             // click on the selected 
             driver.findElement(By.className("option-label")).click();
             Thread.sleep(5000);
@@ -104,10 +104,10 @@ public class PostRequesttest {
             Thread.sleep(5000);               
             // send data in the search bar 
             driver.findElement(By.className("dropdown-search")).sendKeys(getCellData(4, 2));
-            Thread.sleep(8000);
+            Thread.sleep(5000);
             // click on the selected 
             driver.findElement(By.className("option-label")).click();
-            Thread.sleep(5000);
+            Thread.sleep(3000);
         } //Neighbour
         else if (!(getCellData(5, 2).equals("z")) && !(getCellData(5, 2).equals("nothing"))) {
             //Click on Neighbour
@@ -115,14 +115,14 @@ public class PostRequesttest {
             Thread.sleep(5000);
             // send data in the search bar 
             driver.findElement(By.className("dropdown-search")).sendKeys(getCellData(5, 2));
-            Thread.sleep(8000);
+            Thread.sleep(5000);
             // click on the selected 
             driver.findElement(By.className("option-label")).click();
-            Thread.sleep(5000);
+            Thread.sleep(3000);
         }
         //Click on Next Button
         driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > div > div > div.step-next-container > button")).click();   
-        Thread.sleep(5000);
+        Thread.sleep(3000);
        
         
         
@@ -142,7 +142,7 @@ public class PostRequesttest {
             driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > main > div > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div.section-white.px-minus-15 > div.row.px-2.row-cols-12 > div:nth-child(3) > button")).click();
         }
 
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         
         if (platform.equals("Mobile")) {
             if (getCellData(5, 4).equals("z")) {
@@ -174,12 +174,10 @@ public class PostRequesttest {
         
         
         //Enter Date
-        Thread.sleep(5000);
-        if (domain.equals("https://rentup.co/")) {
+        Thread.sleep(3000);
+        
             driver.findElement(By.id("datepicker__dialog_")).findElements(By.tagName("footer")).get(0).findElements(By.tagName("button")).get(0).click();
-        } else {
-            driver.findElement(By.id("datepicker__dialog_")).findElements(By.tagName("footer")).get(1).findElements(By.tagName("button")).get(0).click();
-        }
+        
        
         
         //Enter Budget
@@ -194,20 +192,20 @@ public class PostRequesttest {
         //Press on Next Button
         Thread.sleep(2000);
         driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > main > div > div > div:nth-child(3) > div > div.col-7 > div > button")).click();
-        Thread.sleep(4000);
+        Thread.sleep(3000);
 
         
         //Choose Terms
         if (getCellData(5, 6).equals("z") && !(getCellData(5, 6).equals("NA"))) {
-            driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div.mt-2.section-white.col-12 > main > div > div:nth-child(9)")).click();
+            driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div.mt-2.section-white.col-12 > main > div > div:nth-child(1) > div")).click();
             Thread.sleep(1000);
         }
        //no more terms 
         if (!(getCellData(5, 7).equals("NA"))) {
-            driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div.p-3.post-form-container > div:nth-child(3) > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div.mt-2.section-white.col-12 > main > div > div:nth-child(2) > div")).click();
+            driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div.mt-2.section-white.col-12 > main > div > div:nth-child(6) > div")).click();
             Thread.sleep(1000);
         }
-        Thread.sleep(4000);
+        Thread.sleep(2000);
 
         
         
@@ -228,12 +226,12 @@ public class PostRequesttest {
             Thread.sleep(2000);
             for (int i = 0; i <x -1 ; i++) {
                 driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(5) > div > div.col-md-12.col-lg-8 > span > div.counter-input-contianer > button:nth-child(3) > svg")).click();
-                Thread.sleep(1000);
+                Thread.sleep(500);
             }
         } else {
             driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(5) > div > div.col-md-12.col-lg-8 > span > div.counter-input-contianer > button:nth-child(3) > svg")).click();
         }
-        Thread.sleep(4000);
+        Thread.sleep(2000);
         
         
         
@@ -250,71 +248,16 @@ public class PostRequesttest {
         
         Thread.sleep(2000);
         driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > div > div:nth-child(3) > div > div.col-7 > div > button")).click();
-        Thread.sleep(7000);
-        driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > div > div:nth-child(5) > button")).click();
+        Thread.sleep(5000);
+          for (WebElement we : driver.findElements(By.tagName("button")))
+                    if (we.getText().contains("Submit your request")){
+                        we.click();
+                        break;
+                    }
          Thread.sleep(2000);
         return driver;
         
-      /*  //Choose 
-        if (getCellData(5, 12).equals("z")) {
-            for (WebElement we : driver.findElements(By.tagName("span"))) {
-                if (we.getText().equals("Early Check-In")) {
-                    we.click();
-                }
-            }
-            Thread.sleep(1000);
-
-        } else {
-            for (WebElement we : driver.findElements(By.tagName("span"))) {
-                if (we.getText().equals("Late Check-Out")) {
-                    we.click();
-                }
-            }
-            Thread.sleep(1000);
-        }
-
-        if (getCellData(5, 13).equals("z")) {
-            int x = Integer.parseInt(getCellData(4, 13));
-            for (int i = 0; i < x - 1; i++) {
-                driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div.p-3.post-form-container > div:nth-child(3) > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div.mt-4.section-white.contract-section.col-12 > div:nth-child(1) > div.col-md-12.col-lg-4 > span > div.counter-input-contianer > button:nth-child(3)")).click();
-                Thread.sleep(1000);
-            }
-        } else {
-            int x = Integer.parseInt(getCellData(5, 13));
-            for (int i = 0; i < x - 1; i++) {
-                driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div.p-3.post-form-container > div:nth-child(3) > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div.mt-4.section-white.contract-section.col-12 > div:nth-child(1) > div.col-md-12.col-lg-4 > span > div.counter-input-contianer > button:nth-child(3)")).click();
-                Thread.sleep(1000);
-            }
-        }
-        Thread.sleep(1000);
-        if (getCellData(5, 14).equals("z")) {
-            int x = Integer.parseInt(getCellData(4, 14));
-            for (int i = 0; i < x - 1; i++) {
-                driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div.p-3.post-form-container > div:nth-child(3) > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div.mt-4.section-white.contract-section.col-12 > div:nth-child(2) > div.col-md-12.col-lg-4 > span > div.counter-input-contianer > button:nth-child(3)")).click();
-                Thread.sleep(1000);
-            }
-        } else {
-            int x = Integer.parseInt(getCellData(5, 14));
-            for (int i = 0; i < x - 1; i++) {
-                driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div.p-3.post-form-container > div:nth-child(3) > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div.mt-4.section-white.contract-section.col-12 > div:nth-child(2) > div.col-md-12.col-lg-4 > span > div.counter-input-contianer > button:nth-child(3)")).click();
-                Thread.sleep(1000);
-            }
-        }
-        Thread.sleep(1000);
-        if (getCellData(5, 15).equals("z")) {
-            driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div.p-3.post-form-container > div:nth-child(3) > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div.mt-4.section-white.contract-section.col-12 > div:nth-child(3) > div.col-md-12.col-lg-4 > input")).sendKeys(getCellData(4, 15));
-            Thread.sleep(1000);
-        } else {
-            driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div.p-3.post-form-container > div:nth-child(3) > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div.mt-4.section-white.contract-section.col-12 > div:nth-child(3) > div.col-md-12.col-lg-4 > input")).sendKeys(getCellData(5, 15));
-            Thread.sleep(1000);
-        }
-        Thread.sleep(4000);
-        driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div.p-3.post-form-container > div:nth-child(3) > div > div:nth-child(3) > div > div.col-7 > div > button")).click();
-
-        Thread.sleep(3000);
-        driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div.p-3.post-form-container > div:nth-child(3) > div > div:nth-child(5) > button")).click();
-        Thread.sleep(2000);
-*/
+      
     
     }
 
@@ -322,16 +265,16 @@ public class PostRequesttest {
     public void ChromePostRequestTest() throws Exception {
         WebDriver driver = null;
         driver = PostRequestTest();
-        if (platform.equals("Desktop")) {
-            Thread.sleep(5000);
-            try {
-                // Check whether a certain element appears which confirms that the login was not successful
-                assertEquals(true, driver.findElement(By.cssSelector("#__BVID__242___BV_tab_button__")).isDisplayed());
-            } catch (NoSuchElementException e) {
-                assertTrue(false);
-            }
-            Thread.sleep(2000);
-
+        if(platform.equals("Desktop"))
+        {
+        try {
+            // Check whether a certain element appears which confirms that the login was not successful
+            assertEquals(true, driver.findElement(By.tagName("h1")).isDisplayed()); 
+        } catch(NoSuchElementException e){
+            assertTrue(false);
+            driver.close();
+        }
+        Thread.sleep(2000);
             // Close the web driver
             driver.close();
         } else if (platform.equals("Mobile")) {
