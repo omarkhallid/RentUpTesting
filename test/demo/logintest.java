@@ -86,7 +86,10 @@ public class logintest {
         {
             
             Thread.sleep(2000);
+
             driver.findElement(By.cssSelector("#__layout > div > header > div > div.desktop-nav > ul > li:nth-child(2) > div > button > span")).click();
+
+           
             Thread.sleep(2000);
             // Enter the username and password
             try{

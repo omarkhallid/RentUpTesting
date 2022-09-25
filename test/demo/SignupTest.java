@@ -32,7 +32,7 @@ public class SignupTest {
         {
             Thread.sleep(2000);
             // press on login or register
-            driver.findElement(By.cssSelector("#nav-collapse > ul > li:nth-child(2) > div > button")).click();
+            driver.findElement(By.cssSelector("#__layout > div > header > div > div.desktop-nav > ul > li:nth-child(2) > div > button")).click();
             Thread.sleep(1000);
             //press on Signup button
             driver.findElement(By.cssSelector("#auth-modal___BV_modal_body_ > div > span:nth-child(2) > form > p:nth-child(8) > button")).click();
