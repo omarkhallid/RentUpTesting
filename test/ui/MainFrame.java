@@ -73,6 +73,7 @@ public class MainFrame extends javax.swing.JFrame {
         testButton = new javax.swing.JButton();
         jComboBox2 = new javax.swing.JComboBox<>();
         jComboBox3 = new javax.swing.JComboBox<>();
+        jButton1 = new javax.swing.JButton();
         arTTEditButton = new javax.swing.JButton();
         rrTTEditButton = new javax.swing.JButton();
         searchEditButton = new javax.swing.JButton();
@@ -156,7 +157,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         coLLCheckBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         coLLCheckBox.setSelected(true);
-        coLLCheckBox.setText("Counter Offer");
+        coLLCheckBox.setText("Reject Counter Offer");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 14;
@@ -168,7 +169,8 @@ public class MainFrame extends javax.swing.JFrame {
 
         rrLLCheckBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         rrLLCheckBox.setSelected(true);
-        rrLLCheckBox.setText("Reject Request");
+        rrLLCheckBox.setText("Accept Counter Offer");
+        rrLLCheckBox.setActionCommand("Accept Counter Offer");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 13;
@@ -264,7 +266,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         rrTTCheckBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         rrTTCheckBox.setSelected(true);
-        rrTTCheckBox.setText("Reject Request");
+        rrTTCheckBox.setText("Reject Offer");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 9;
@@ -380,7 +382,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         arLLCheckBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         arLLCheckBox.setSelected(true);
-        arLLCheckBox.setText("Accept Request");
+        arLLCheckBox.setText("Send Offer");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 12;
@@ -403,7 +405,13 @@ public class MainFrame extends javax.swing.JFrame {
 
         arTTCheckBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         arTTCheckBox.setSelected(true);
-        arTTCheckBox.setText("Accept Request");
+        arTTCheckBox.setText("Accept Offer");
+        arTTCheckBox.setActionCommand("Accept Offer");
+        arTTCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                arTTCheckBoxActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 8;
@@ -518,6 +526,19 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.insets = new java.awt.Insets(0, 22, 0, 4);
         buttonPanel.add(jComboBox3, gridBagConstraints);
+
+        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButton1.setText("AdminPanel");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        buttonPanel.add(jButton1, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -755,6 +776,7 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.gridheight = 14;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
         mainPanel.add(jSeparator1, gridBagConstraints);
 
         jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
@@ -766,6 +788,7 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.gridx = 5;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.gridheight = 14;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
         mainPanel.add(jSeparator2, gridBagConstraints);
 
         loginLabel2.setMaximumSize(new java.awt.Dimension(35, 35));
@@ -1258,6 +1281,17 @@ public class MainFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_firefoxButtonActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        AdminFrame f2= new AdminFrame();
+        f2.show();
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void arTTCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arTTCheckBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_arTTCheckBoxActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1331,6 +1365,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton deselectAllButton;
     private javax.swing.JButton edgeButton;
     private javax.swing.JButton firefoxButton;
+    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel10;

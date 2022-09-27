@@ -18,6 +18,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 /**
@@ -38,6 +39,7 @@ public class SendOfferTest {
        driver= PostRequestTest();
        driver.close();
        driver1 = AddlistingTest();
+       driver1.close();
 //       Thread.sleep(3000);
       driver2=Approvetest();
        driver2.close();
@@ -95,14 +97,16 @@ public class SendOfferTest {
 //             Thread.sleep(1000);
          driver3.findElements(By.tagName("button")).get(14).click();
          Thread.sleep(2000);
+         // go to my properties
          driver3.findElement(By.cssSelector("#__layout > div > header > div > div.desktop-nav > div > div > div:nth-child(2) > button")).click();
             Thread.sleep(2000);
             driver3.findElement(By.cssSelector("#__layout > div > header > div > div.desktop-nav > div > div > div:nth-child(2) > div > div > div.col-6.landlord > div.actions > a:nth-child(1)")).click();
-         Thread.sleep(2000);
-         driver3.findElement(By.cssSelector("#__layout > div > header > div > div.desktop-nav > div > div > div:nth-child(2) > button")).click();
-         Thread.sleep(2000);
+         Thread.sleep(4000);
          
          
+         
+         JavascriptExecutor js = (JavascriptExecutor) driver3;
+         js.executeScript("window.scrollBy(0,-1200)");
          
          try {
             // Check whether a certain element appears which confirms that the login was not successful
