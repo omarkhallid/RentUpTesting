@@ -36,7 +36,7 @@ public class ApproveListing {
           driver.findElement(By.cssSelector("#sidebar > ul > li:nth-child(2) > a")).click();
           Thread.sleep(2000);
           driver.findElement(By.cssSelector("#users > li:nth-child(5) > a")).click();
-          Thread.sleep(4000);
+          Thread.sleep(20000);
           driver.findElement(By.cssSelector("#properties-table > tbody > tr:nth-child(1) > td:nth-child(2) > label > span")).click();
           Thread.sleep(2000);
         
