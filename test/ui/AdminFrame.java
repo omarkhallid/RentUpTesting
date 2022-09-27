@@ -83,23 +83,24 @@ public class AdminFrame extends javax.swing.JFrame {
         setTitle("Rentup Automated Tester");
         setBackground(new java.awt.Color(255, 255, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setMaximumSize(new java.awt.Dimension(915, 700));
-        setMinimumSize(new java.awt.Dimension(915, 700));
+        setMaximumSize(new java.awt.Dimension(915, 735));
+        setMinimumSize(new java.awt.Dimension(915, 735));
         setName("mainFrame"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(915, 700));
+        setPreferredSize(new java.awt.Dimension(915, 735));
         setResizable(false);
-        setSize(new java.awt.Dimension(910, 700));
+        setSize(new java.awt.Dimension(915, 735));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
             }
         });
+        getContentPane().setLayout(new java.awt.GridBagLayout());
 
         layeredPane.setBackground(new java.awt.Color(255, 0, 102));
         layeredPane.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(51, 0, 255)));
-        layeredPane.setMaximumSize(new java.awt.Dimension(900, 600));
-        layeredPane.setMinimumSize(new java.awt.Dimension(900, 600));
-        layeredPane.setPreferredSize(new Dimension(900, 700));
+        layeredPane.setMaximumSize(new java.awt.Dimension(900, 700));
+        layeredPane.setMinimumSize(new java.awt.Dimension(900, 700));
+        layeredPane.setPreferredSize(new java.awt.Dimension(900, 700));
         layeredPane.setLayout(new java.awt.GridBagLayout());
 
         mainPanel.setBackground(new java.awt.Color(249, 249, 249));
@@ -125,6 +126,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 45;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.weightx = 0.1;
+        gridBagConstraints.weighty = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(6, 25, 6, 0);
         mainPanel.add(EditUserCheckBox, gridBagConstraints);
 
@@ -142,6 +144,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 45;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.weightx = 0.1;
+        gridBagConstraints.weighty = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(6, 25, 6, 0);
         mainPanel.add(ConvertToCoorperateCheckBox, gridBagConstraints);
 
@@ -159,6 +162,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 45;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.weightx = 0.1;
+        gridBagConstraints.weighty = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(6, 25, 6, 0);
         mainPanel.add(EditPropertyCheckBox, gridBagConstraints);
 
@@ -173,6 +177,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
+        gridBagConstraints.weighty = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(0, 16, 0, 16);
         mainPanel.add(loginEditButton, gridBagConstraints);
 
@@ -184,6 +189,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints.gridy = 9;
         gridBagConstraints.ipadx = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.weighty = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(0, 11, 0, 0);
         mainPanel.add(ConvertToCoorperate, gridBagConstraints);
 
@@ -194,6 +200,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints.gridy = 1;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        gridBagConstraints.weighty = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(16, 15, 16, 0);
         mainPanel.add(jLabel10, gridBagConstraints);
 
@@ -207,6 +214,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 9;
+        gridBagConstraints.weighty = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(0, 16, 0, 16);
         mainPanel.add(alLLEditButton, gridBagConstraints);
 
@@ -219,6 +227,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 45;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.weightx = 0.1;
+        gridBagConstraints.weighty = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(6, 25, 6, 0);
         mainPanel.add(ApprovePropertyCheckBox, gridBagConstraints);
 
@@ -232,6 +241,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 3;
+        gridBagConstraints.weighty = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(0, 16, 0, 16);
         mainPanel.add(signupEditButton, gridBagConstraints);
 
@@ -244,6 +254,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 45;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.weightx = 0.1;
+        gridBagConstraints.weighty = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(6, 25, 6, 0);
         mainPanel.add(DeleteUserCheckBox, gridBagConstraints);
 
@@ -255,6 +266,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints.gridy = 3;
         gridBagConstraints.ipadx = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.weighty = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(0, 11, 0, 0);
         mainPanel.add(DeleteUser, gridBagConstraints);
 
@@ -267,6 +279,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints.gridy = 5;
         gridBagConstraints.ipadx = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.weighty = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(0, 11, 0, 0);
         mainPanel.add(EditProperty, gridBagConstraints);
 
@@ -280,6 +293,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 5;
+        gridBagConstraints.weighty = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(0, 16, 0, 16);
         mainPanel.add(prTTEditButton, gridBagConstraints);
 
@@ -383,7 +397,9 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints.gridy = 0;
         gridBagConstraints.gridwidth = 7;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.insets = new java.awt.Insets(0, 13, 0, 13);
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.PAGE_START;
+        gridBagConstraints.weighty = 0.1;
+        gridBagConstraints.insets = new java.awt.Insets(17, 13, 0, 13);
         mainPanel.add(buttonPanel, gridBagConstraints);
 
         ApproveProperty.setMaximumSize(new java.awt.Dimension(35, 35));
@@ -394,6 +410,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints.gridy = 4;
         gridBagConstraints.ipadx = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.weighty = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(0, 11, 0, 0);
         mainPanel.add(ApproveProperty, gridBagConstraints);
 
@@ -407,6 +424,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 4;
+        gridBagConstraints.weighty = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(0, 16, 0, 16);
         mainPanel.add(searchEditButton, gridBagConstraints);
 
@@ -419,6 +437,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints.gridy = 2;
         gridBagConstraints.ipadx = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.weighty = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 9);
         mainPanel.add(EditUserLabel2, gridBagConstraints);
 
@@ -430,6 +449,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints.gridy = 3;
         gridBagConstraints.ipadx = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.weighty = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 9);
         mainPanel.add(DeleteUser2, gridBagConstraints);
 
@@ -441,6 +461,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints.gridy = 4;
         gridBagConstraints.ipadx = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.weighty = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 9);
         mainPanel.add(ApproveProperty2, gridBagConstraints);
 
@@ -453,6 +474,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints.gridy = 5;
         gridBagConstraints.ipadx = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.weighty = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 9);
         mainPanel.add(EditProperty2, gridBagConstraints);
 
@@ -464,6 +486,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints.gridy = 9;
         gridBagConstraints.ipadx = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.weighty = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 9);
         mainPanel.add(ConvertToCoorperate2, gridBagConstraints);
 
@@ -475,6 +498,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.ipadx = 10;
+        gridBagConstraints.weighty = 0.1;
         mainPanel.add(EditUserLabel1, gridBagConstraints);
 
         DeleteUser1.setMaximumSize(new java.awt.Dimension(35, 35));
@@ -484,6 +508,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.ipadx = 10;
+        gridBagConstraints.weighty = 0.1;
         mainPanel.add(DeleteUser1, gridBagConstraints);
 
         ApproveProperty1.setMaximumSize(new java.awt.Dimension(35, 35));
@@ -493,6 +518,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 4;
         gridBagConstraints.ipadx = 10;
+        gridBagConstraints.weighty = 0.1;
         mainPanel.add(ApproveProperty1, gridBagConstraints);
 
         EditProperty1.setMaximumSize(new java.awt.Dimension(35, 35));
@@ -503,6 +529,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 5;
         gridBagConstraints.ipadx = 10;
+        gridBagConstraints.weighty = 0.1;
         mainPanel.add(EditProperty1, gridBagConstraints);
 
         ConvertToCoorperate1.setMaximumSize(new java.awt.Dimension(35, 35));
@@ -512,6 +539,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 9;
         gridBagConstraints.ipadx = 10;
+        gridBagConstraints.weighty = 0.1;
         mainPanel.add(ConvertToCoorperate1, gridBagConstraints);
 
         EditUserLabel.setMaximumSize(new java.awt.Dimension(35, 35));
@@ -523,6 +551,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints.gridy = 2;
         gridBagConstraints.ipadx = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.weighty = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(0, 11, 0, 0);
         mainPanel.add(EditUserLabel, gridBagConstraints);
 
@@ -535,6 +564,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 1;
+        gridBagConstraints.weighty = 0.1;
         mainPanel.add(chromeButton, gridBagConstraints);
 
         edgeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/edge_gray.png"))); // NOI18N
@@ -546,6 +576,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 1;
+        gridBagConstraints.weighty = 0.1;
         mainPanel.add(edgeButton, gridBagConstraints);
 
         firefoxButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/firefox_gray.png"))); // NOI18N
@@ -557,6 +588,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 6;
         gridBagConstraints.gridy = 1;
+        gridBagConstraints.weighty = 0.1;
         mainPanel.add(firefoxButton, gridBagConstraints);
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
@@ -565,9 +597,10 @@ public class AdminFrame extends javax.swing.JFrame {
         jSeparator1.setToolTipText("");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridheight = 9;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridheight = 8;
         gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
+        gridBagConstraints.weighty = 0.1;
         mainPanel.add(jSeparator1, gridBagConstraints);
 
         jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
@@ -575,9 +608,10 @@ public class AdminFrame extends javax.swing.JFrame {
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 5;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridheight = 9;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridheight = 8;
         gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
+        gridBagConstraints.weighty = 0.1;
         mainPanel.add(jSeparator2, gridBagConstraints);
 
         DeletePropertyCheckBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -589,6 +623,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 45;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.weightx = 0.1;
+        gridBagConstraints.weighty = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(6, 25, 6, 0);
         mainPanel.add(DeletePropertyCheckBox, gridBagConstraints);
 
@@ -602,6 +637,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 6;
+        gridBagConstraints.weighty = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(0, 16, 0, 16);
         mainPanel.add(alLLEditButton1, gridBagConstraints);
 
@@ -613,6 +649,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints.gridy = 6;
         gridBagConstraints.ipadx = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.weighty = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(0, 11, 0, 0);
         mainPanel.add(DeleteProperty, gridBagConstraints);
 
@@ -623,6 +660,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 6;
         gridBagConstraints.ipadx = 10;
+        gridBagConstraints.weighty = 0.1;
         mainPanel.add(DeleteProperty1, gridBagConstraints);
 
         DeleteProperty2.setMaximumSize(new java.awt.Dimension(35, 35));
@@ -633,6 +671,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints.gridy = 6;
         gridBagConstraints.ipadx = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.weighty = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 9);
         mainPanel.add(DeleteProperty2, gridBagConstraints);
 
@@ -645,6 +684,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 45;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.weightx = 0.1;
+        gridBagConstraints.weighty = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(6, 25, 6, 0);
         mainPanel.add(DeleteOfferCheckBox, gridBagConstraints);
 
@@ -658,6 +698,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 7;
+        gridBagConstraints.weighty = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(0, 16, 0, 16);
         mainPanel.add(alLLEditButton2, gridBagConstraints);
 
@@ -669,6 +710,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints.gridy = 7;
         gridBagConstraints.ipadx = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.weighty = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(0, 11, 0, 0);
         mainPanel.add(DeleteOffer, gridBagConstraints);
 
@@ -679,6 +721,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 7;
         gridBagConstraints.ipadx = 10;
+        gridBagConstraints.weighty = 0.1;
         mainPanel.add(DeleteOffer1, gridBagConstraints);
 
         DeleteOffer2.setMaximumSize(new java.awt.Dimension(35, 35));
@@ -689,6 +732,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints.gridy = 7;
         gridBagConstraints.ipadx = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.weighty = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 9);
         mainPanel.add(DeleteOffer2, gridBagConstraints);
 
@@ -701,6 +745,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 45;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.weightx = 0.1;
+        gridBagConstraints.weighty = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(6, 25, 6, 0);
         mainPanel.add(DeleteRequestCheckBox, gridBagConstraints);
 
@@ -714,6 +759,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 8;
+        gridBagConstraints.weighty = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(0, 16, 0, 16);
         mainPanel.add(alLLEditButton3, gridBagConstraints);
 
@@ -725,6 +771,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints.gridy = 8;
         gridBagConstraints.ipadx = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.weighty = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(0, 11, 0, 0);
         mainPanel.add(DeleteRequest, gridBagConstraints);
 
@@ -735,6 +782,7 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 8;
         gridBagConstraints.ipadx = 10;
+        gridBagConstraints.weighty = 0.1;
         mainPanel.add(DeleteRequest1, gridBagConstraints);
 
         DeleteRequest2.setMaximumSize(new java.awt.Dimension(35, 35));
@@ -745,29 +793,22 @@ public class AdminFrame extends javax.swing.JFrame {
         gridBagConstraints.gridy = 8;
         gridBagConstraints.ipadx = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.weighty = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 9);
         mainPanel.add(DeleteRequest2, gridBagConstraints);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(layeredPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(layeredPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        layeredPane.add(mainPanel, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        getContentPane().add(layeredPane, gridBagConstraints);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
