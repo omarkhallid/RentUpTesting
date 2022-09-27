@@ -170,7 +170,6 @@ public class MainFrame extends javax.swing.JFrame {
         rrLLCheckBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         rrLLCheckBox.setSelected(true);
         rrLLCheckBox.setText("Accept Counter Offer");
-        rrLLCheckBox.setActionCommand("Accept Counter Offer");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 13;
@@ -406,7 +405,6 @@ public class MainFrame extends javax.swing.JFrame {
         arTTCheckBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         arTTCheckBox.setSelected(true);
         arTTCheckBox.setText("Accept Offer");
-        arTTCheckBox.setActionCommand("Accept Offer");
         arTTCheckBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 arTTCheckBoxActionPerformed(evt);
