@@ -5,6 +5,7 @@
  */
 package demo;
 
+import static demo.AddListingTest.AddlistingTest;
 import static demo.Methods.createRandomString;
 import static demo.logintest.adminLogin;
 import static demo.logintest.login;
@@ -21,67 +22,48 @@ import org.openqa.selenium.WebDriver;
  * @author Farida Osama
  */
 public class EditProperty {
-      public static WebDriver Editlandlord() throws Exception {
+      public static WebDriver EditProperty() throws Exception {
 
-        WebDriver driver = adminLogin();
+        WebDriver driver = AddlistingTest();
+        WebDriver driver1 = adminLogin();
         Robot rb = new Robot();
         Thread.sleep(3000);
-        driver.findElement(By.cssSelector("#sidebar > ul > li:nth-child(2) > a")).click();
+        //click on users offers parents properties
+        driver1.findElement(By.cssSelector("#sidebar > ul > li:nth-child(2) > a")).click();
         Thread.sleep(2000);
-        driver.findElement(By.cssSelector("#users > li:nth-child(5) > a")).click();
+        //click on properties
+        driver1.findElement(By.cssSelector("#users > li:nth-child(5) > a")).click();
         Thread.sleep(4000);
-        driver.findElement(By.cssSelector("#tt-table_wrapper > div:nth-child(1) > div.m-auto.float-right.col-sm-12.col-md-6 > div > button.dt-button.btn.btn-primary.btn-sm > span > i")).click();
+        //search for property
+        driver1.findElement(By.cssSelector("#properties-table_wrapper > div:nth-child(2) > div > div.dataTables_scroll > div.dataTables_scrollFoot > div > table > tfoot > tr > td:nth-child(6) > input")).sendKeys("Automation");
         Thread.sleep(3000);
-        driver.findElement(By.cssSelector("#name")).sendKeys("tarek");
+        //click edit
+        driver1.findElement(By.cssSelector("#properties-table > tbody > tr:nth-child(1) > td:nth-child(2) > a")).click();
         Thread.sleep(2000);
-        driver.findElement(By.cssSelector("#email")).sendKeys(createRandomString() + "@abc.com");
+        //edit name
+        driver1.findElement(By.cssSelector("#name_en")).sendKeys("Edit");
         Thread.sleep(2000);
-        driver.findElement(By.cssSelector("#password")).sendKeys("123456");
-        Thread.sleep(2000);
-        driver.findElement(By.cssSelector("#mobile")).sendKeys("01123456");
-        Thread.sleep(2000);
-        driver.findElement(By.cssSelector("#landlord_form > div > div.col-12.mt-2 > div > div:nth-child(1) > button")).click();
+        //click on submit
+        driver1.findElement(By.cssSelector("#app > div > div > button > span")).click();
         Thread.sleep(10000);
-        driver.findElement(By.cssSelector("#tt-table_wrapper > div:nth-child(2) > div > div.dataTables_scroll > div.dataTables_scrollFoot > div > table > tfoot > tr > td:nth-child(7) > input")).sendKeys("tarek");
-        Thread.sleep(5000);
-        driver.findElement(By.cssSelector("#tt-table > tbody > tr:nth-child(1) > td:nth-child(3) > a:nth-child(1)")).click();
+        
+        WebDriver driver2 = login("magdaosamaAdmin@test.com", "123456");
+        Thread.sleep(2000);
+        driver.findElement(By.cssSelector("#__layout > div > header > div > div.desktop-nav > div > div > div:nth-child(2) > button")).click();
         Thread.sleep(3000);
-        driver.findElement(By.cssSelector("#email")).clear();
-//           rb.keyPress(KeyEvent.VK_CONTROL);
-//       rb.keyPress(KeyEvent.VK_SHIFT);
-//       rb.keyPress(KeyEvent.VK_RIGHT);
-//       rb.keyRelease(KeyEvent.VK_CONTROL);
-//       rb.keyRelease(KeyEvent.VK_SHIFT);
-//       rb.keyRelease(KeyEvent.VK_RIGHT);
-//       for(int i=0;i<12;i++)
-//       {
-//           rb.keyPress(KeyEvent.VK_BACK_SPACE);
-//           rb.keyRelease(KeyEvent.VK_BACK_SPACE);
-//       }
+        driver.findElement(By.cssSelector("#__layout > div > header > div > div.desktop-nav > div > div > div:nth-child(2) > div > div > div.col-6.landlord > div.actions > a:nth-child(2) > div > span")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div.container-fluid > div > div > div.row > div:nth-child(1)")).clear();
+      
+//   
+      
 
-        Thread.sleep(4000);
-
-        driver.findElement(By.cssSelector("#email")).sendKeys("tarek12@abc.com");
-        Thread.sleep(8000);
-        driver.findElement(By.cssSelector("#landlord_update_form > div > div.col-12.mt-2 > div > div:nth-child(1) > button")).click();
-        Thread.sleep(8000);
-
-        WebDriver driver1 = login("tarek12@abc.com", "123456");
-        try {
-            // Check whether a certain element appears which confirms that the login was not successful
-            assertEquals(true, driver1.findElements(By.tagName("button")).get(3).isDisplayed());
-        } catch (NoSuchElementException e) {
-
-            assertTrue(false);
-            driver1.close();
-        }
-
-        return driver;
+        return driver1;
     }
 
     @Test
     public void test() throws Exception {
-        WebDriver driver = Editlandlord();
+        WebDriver driver = EditProperty();
         driver.close();
     }
 }

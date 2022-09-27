@@ -77,7 +77,7 @@ public class AddListingTest {
         System.out.println("Landlord credentials:\nEmail: " + LandlordEmail + "\nPassword: " + password);
         
         setCellData(LandlordEmail, 18, 1);
-        WebDriver driver = signup("auto tester", LandlordEmail, password, "abcdefg");
+        WebDriver driver = signup("automation tester", LandlordEmail, password, "abcdefg");
         Thread.sleep(6000);
         if (platform.equals("Desktop")){
             //click on i am a Landlord to open dropdown menu
