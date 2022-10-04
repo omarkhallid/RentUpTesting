@@ -7,8 +7,9 @@ package demo;
 
 import org.openqa.selenium.WebDriver;
 import static demo.AddListingTest.AddlistingTest;
+import static demo.AddListingTest.LandlordEmail;
 import static demo.ApproveListing.Approvetest;
-import static demo.Methods.LandlordEmail;
+
 import static demo.Methods.getCellData;
 import static demo.PostRequesttest.PostRequestTest;
 import static demo.logintest.login;
@@ -38,6 +39,7 @@ public class SendOfferTest {
        Robot rb = new Robot();
        driver= PostRequestTest();
        driver.close();
+       Thread.sleep(5000);
        driver1 = AddlistingTest();
        driver1.close();
 //       Thread.sleep(3000);
@@ -48,14 +50,20 @@ public class SendOfferTest {
        Thread.sleep(5000);
        //driver3.findElement(By.cssSelector("#__layout > div > header > nav > div > div.nav-links.d-none.d-lg-flex > a:nth-child(3)")).click();
       // driver3.findElements(By.tagName("a")).get(6).click();
-      //open i am a landlord
+      //open i am a landlord              
+       driver3.findElement(By.cssSelector("#__layout > div > header > div > div.desktop-nav > div > div > div:nth-child(2) > button")).click();
+            Thread.sleep(5000);
+            
+//        driver3.findElement(By.cssSelector("#__BVID__51 > ul > div > div > div:nth-child(1) > div.actions > a.btn.btn_outlined")).click();
+          for (WebElement we : driver3.findElements(By.tagName("span")))
+                    if (we.getText().contains("Marketplace")){
+                        we.click();
+                        break;
+                    }
+         Thread.sleep(2000); 
         driver3.findElement(By.cssSelector("#__layout > div > header > div > div.desktop-nav > div > div > div:nth-child(2) > button")).click();
-            Thread.sleep(2000);
-         driver3.findElement(By.cssSelector("#__layout > div > header > div > div.desktop-nav > div > div > div:nth-child(2) > div > div > div:nth-child(1) > div.actions > a.btn.btn_outlined")).click();
-         Thread.sleep(2000);
-         driver3.findElement(By.cssSelector("#__layout > div > header > div > div.desktop-nav > div > div > div:nth-child(2) > button")).click();
-            Thread.sleep(2000);
-       driver3.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div.main-container-market.is-desktop-device > div.form-container.mt-3.container > div.row.align-items-center.mb-3 > div.col-4.order-3 > div > div > span")).click();
+            Thread.sleep(2000);            
+       driver3.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div.mt-3.container > div.filter-options > div.filters > div > div.dropdown-container > span")).click();
        Thread.sleep(3000);
        if(getCellData(5,0).equals("z"))
        {
@@ -68,8 +76,8 @@ public class SendOfferTest {
        Thread.sleep(2000);
        driver3.findElement(By.cssSelector("#desktop-option-container > div.options-container > div > div.option-label")).click();
        Thread.sleep(3000);
-       driver3.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div.main-container-market.is-desktop-device > div.form-container.mt-3.container > div.row.mt-3 > div:nth-child(1) > div > div.col-9 > div > h1")).click();
-       Thread.sleep(3000);
+       driver3.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div.mt-3.container > div.b-overlay-wrap.position-relative > div.row.mt-3 > div:nth-child(1) > div > div.col-9 > div > h1")).click();
+       Thread.sleep(3000);                  
        driver3.findElement(By.className("modal-footer")).findElements(By.tagName("button")).get(driver3.findElement(By.className("modal-footer")).findElements(By.tagName("button")).size()-1).click();
             
        
@@ -95,12 +103,20 @@ public class SendOfferTest {
 //               if (we.getText().equals("Best and final offer"))
 //                        we.click();
 //             Thread.sleep(1000);
-         driver3.findElements(By.tagName("button")).get(14).click();
+         for (WebElement we : driver3.findElements(By.tagName("button")))
+                    if (we.getText().contains("Best and final offer")){
+                        we.click();
+                        break;
+                    }
          Thread.sleep(2000);
          // go to my properties
          driver3.findElement(By.cssSelector("#__layout > div > header > div > div.desktop-nav > div > div > div:nth-child(2) > button")).click();
-            Thread.sleep(2000);
-            driver3.findElement(By.cssSelector("#__layout > div > header > div > div.desktop-nav > div > div > div:nth-child(2) > div > div > div.col-6.landlord > div.actions > a:nth-child(1)")).click();
+            Thread.sleep(4000);
+          for (WebElement we : driver3.findElements(By.tagName("a")))
+                    if (we.getText().contains("My Offers")){
+                        we.click();
+                        break;
+                    }
          Thread.sleep(4000);
          
          

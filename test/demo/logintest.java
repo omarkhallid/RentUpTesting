@@ -47,11 +47,11 @@ public class logintest {
         Thread.sleep(8000);
     	try {
             // Check whether a certain element appears which confirms that the login was not successful
-            assertEquals(true, driver.findElements(By.tagName("button")).get(3).isDisplayed()); 
+            assertEquals(true, driver.findElement(By.cssSelector("#__BVID__71__BV_toggle_")).isDisplayed()); 
         } catch(NoSuchElementException e){
-            
+            driver.close();
             assertTrue(false); 
-            driver.close(); 
+            
         }
         
         }
@@ -62,7 +62,7 @@ public class logintest {
             
             try {
                 // Check whether a certain element appears which confirms that the login was not successful
-                assertEquals(true, driver.findElements(By.tagName("button")).get(3).isDisplayed());   
+               assertEquals(true, driver.findElement(By.cssSelector("#__BVID__71__BV_toggle_")).isDisplayed());   
             } catch(NoSuchElementException e){
                 driver.close();
                 assertTrue(false);  
@@ -144,7 +144,16 @@ public class logintest {
 
     public static WebDriver adminLogin() throws Exception{
         String oldDomain = domain;
-        domain = "https://api.rentup.co/";
+        if(oldDomain.equals("https://rentup.co/"))
+        {
+            domain = "https://api.rentup.co/";
+        }
+        else
+        {
+            domain = "https://api.rentup.com.eg/";
+        }
+        
+       
         
         String email = getCellData(22,0);
         String password = getCellData(22,1);

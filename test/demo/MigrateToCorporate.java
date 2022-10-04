@@ -5,8 +5,9 @@
 package demo;
 
 import static demo.AddListingTest.AddlistingTest;
+import static demo.AddListingTest.LandlordEmail;
 import static demo.DeleteUser.Deleteuser;
-import static demo.Methods.LandlordEmail;
+
 import static demo.Methods.createRandomString;
 import static demo.Methods.getCellData;
 import static demo.PostRequesttest.PostRequestTest;

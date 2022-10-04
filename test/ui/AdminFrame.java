@@ -6,6 +6,7 @@ package ui;
 
 import demo.AddListingTest;
 import demo.ApproveListing;
+import demo.EditUser;
 import demo.Methods;
 import demo.PostRequesttest;
 import demo.SearchTest;
@@ -100,7 +101,6 @@ public class AdminFrame extends javax.swing.JFrame {
         layeredPane.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(51, 0, 255)));
         layeredPane.setMaximumSize(new java.awt.Dimension(900, 700));
         layeredPane.setMinimumSize(new java.awt.Dimension(900, 700));
-        layeredPane.setPreferredSize(new java.awt.Dimension(900, 700));
         layeredPane.setLayout(new java.awt.GridBagLayout());
 
         mainPanel.setBackground(new java.awt.Color(249, 249, 249));
@@ -848,7 +848,7 @@ public class AdminFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_signupEditButtonActionPerformed
                                   
     private void loginEditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginEditButtonActionPerformed
-        LoginPanel panel = new LoginPanel(layeredPane);
+        EditUserPanel panel = new EditUserPanel(layeredPane);
         
         layeredPane.add(panel, new java.awt.GridBagConstraints());
         panel.setSize(layeredPane.getWidth(), layeredPane.getHeight());
@@ -997,7 +997,7 @@ public class AdminFrame extends javax.swing.JFrame {
                 junit.addListener(new TextListener(System.out));
                 new Thread(){
                     public void run(){
-                        if (junit.run(logintest.class).wasSuccessful())
+                        if (junit.run(EditUser.class).wasSuccessful())
                             label.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
                         else
                             label.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));

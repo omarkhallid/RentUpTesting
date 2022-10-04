@@ -7,7 +7,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Other/File.java to edit this template
  */
 package demo;
-
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import static demo.Methods.*;
 import static demo.SignupTest.signup;
 import java.awt.Robot;
@@ -34,10 +35,10 @@ public class AddListingTest {
 
     
     
- 
+ public static String  LandlordEmail ;
     static public WebDriver AddlistingTest() throws Exception {
-
         
+        LandlordEmail = createRandomString() + "@test.com";
         String city, district, street, furnish, propertyType, propertyName, rentPerNight = "", rentPerMonth = "", description;
         int beds = 0, baths = 0;
         Robot rb = new Robot();
@@ -72,54 +73,60 @@ public class AddListingTest {
         if (getCellData(14,10).equals("")) description = getCellData(13,10);
         else description = getCellData(14,10);
         
-        LandlordEmail = createRandomString() + "@test.com";
+        
         String password = "123456";
         System.out.println("Landlord credentials:\nEmail: " + LandlordEmail + "\nPassword: " + password);
         
         setCellData(LandlordEmail, 18, 1);
         WebDriver driver = signup("automation tester", LandlordEmail, password, "abcdefg");
-        Thread.sleep(6000);
+        WebDriverWait wait = new WebDriverWait(driver,30);
+        //Thread.sleep(6000);
+        
         if (platform.equals("Desktop")){
             //click on i am a Landlord to open dropdown menu
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > header > div > div.desktop-nav > div > div > div:nth-child(2) > button")));
             driver.findElement(By.cssSelector("#__layout > div > header > div > div.desktop-nav > div > div > div:nth-child(2) > button")).click();
-            Thread.sleep(2000);
-            
+            Thread.sleep(2000);  
             // select on add a new property
-            driver.findElement(By.cssSelector("#__layout > div > header > div > div.desktop-nav > div > div > div:nth-child(2) > div > div > div:nth-child(1) > div.actions > a.btn.btn_primary > div")).click();
-            Thread.sleep(2000);
-            
-            //click on i am a Landlord inorder to close the dropdown menu
+             driver.findElements(By.tagName("a")).get(12).click();
+            //Thread.sleep(5000);
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > header > div > div.desktop-nav > div > div > div:nth-child(2) > button")));
+//            click on i am a Landlord inorder to close the dropdown menu
             driver.findElement(By.cssSelector("#__layout > div > header > div > div.desktop-nav > div > div > div:nth-child(2) > button")).click();
-            Thread.sleep(8000);
-            
+            //Thread.sleep(8000);
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#citySelect > div > span")));
             // select city 
             driver.findElement(By.cssSelector("#citySelect > div > span")).click(); 
             driver.findElement(By.className("dropdown-search")).sendKeys(city); 
             driver.findElement(By.className("option-label")).click();
-            Thread.sleep(5000);
-            
+//            Thread.sleep(5000);
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#districtSelect > div.dropdown-container > span")));
             //select district
             driver.findElement(By.cssSelector("#districtSelect > div.dropdown-container > span")).click();
             driver.findElement(By.className("dropdown-search")).sendKeys(district); 
             driver.findElement(By.className("option-label")).click();
-            Thread.sleep(2000);
+//            Thread.sleep(2000);
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.main-content-container > div > div.is-desktop-device > div > div.row.align-items-center > div > div > div.mb-4.m-auto.col-lg-4 > div > input")));
             
             //select neighbourhood
             driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div.is-desktop-device > div > div.row.align-items-center > div > div > div.mb-4.m-auto.col-lg-4 > div > input")).sendKeys("AutomationTestRentUP");
            
-            Thread.sleep(2000);
-
+//            Thread.sleep(2000);
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.main-content-container > div > div.is-desktop-device > div > div.col-12.mt-3.d-flex.justify-content-center.actions_buttons > button.btn.mx-2.next_button.col-2.btn-primary")));
             
             //driver.findElement(By.tagName("input")).sendKeys(street);
             //Thread.sleep(2000);
             // press on next
             driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div.is-desktop-device > div > div.col-12.mt-3.d-flex.justify-content-center.actions_buttons > button.btn.mx-2.next_button.col-2.btn-primary")).click();
             //driver.findElement(By.className("properties__content")).findElements(By.tagName("button")).get(driver.findElement(By.className("properties__content")).findElements(By.tagName("button")).size() - 1).click();
-            Thread.sleep(6000);
+           // Thread.sleep(3000);
+           //wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.main-content-container > div > div.is-desktop-device > div > div.container--fluid.col-6.m-auto.detail-container > div > div:nth-child(1) > div.row > div:nth-child(1) > span")));
+           wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.main-content-container > div > div.is-desktop-device > div > div.container--fluid.col-6.m-auto.detail-container > div > div:nth-child(2) > div.row > div:nth-child(1) > span")));
 //            for (WebElement we : driver.findElement(By.className("chips-container")).findElements(By.tagName("label")))
 //                if (we.getText().toLowerCase().equals(furnish.toLowerCase()))
 //                    we.click();
             //select furnished
+            
             if(furnish.equals("Furnished"))
             {
                  for (WebElement we : driver.findElements(By.tagName("span")))
@@ -176,7 +183,8 @@ public class AddListingTest {
             // select next button
      
                  driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div.is-desktop-device > div > div.col-12.mt-3.d-flex.justify-content-center.actions_buttons > button.btn.mx-2.next_button.col-2.btn-primary")).click();
-            Thread.sleep(4000);
+            //Thread.sleep(4000);
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.main-content-container > div > div.is-desktop-device > div > div.row > div > div:nth-child(1) > div > div:nth-child(1) > p")));
             //driver.findElements(By.className("chips-container")).get(2).click();
 //            try{
 //                driver.findElements(By.className("chips-container")).get(2).findElement(By.className("chip-label")).click();
@@ -212,7 +220,8 @@ public class AddListingTest {
             
             driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div.is-desktop-device > div > div.col-12.mt-3.d-flex.justify-content-center.actions_buttons > button.btn.mx-2.next_button.col-2.btn-primary")).click();
             
-           Thread.sleep(6000);
+          // Thread.sleep(6000);
+          wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.main-content-container > div > div.is-desktop-device > div > div.row.align-items-center.col-6.m-auto.detail-container > div > div > div > div.col-5 > p")));
             driver.findElements(By.tagName("input")).get(1).sendKeys(propertyName);
             
             Thread.sleep(2000);
@@ -244,11 +253,13 @@ public class AddListingTest {
                 
             Thread.sleep(2000);
             driver.findElements(By.tagName("input")).get(3).sendKeys(rentPerMonth);
-            Thread.sleep(2000);
+//            Thread.sleep(2000);
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.main-content-container > div > div.is-desktop-device > div > div.col-12.mt-3.d-flex.justify-content-center.actions_buttons > button.btn.mx-2.next_button.col-2.btn-primary")));
             }
             driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div.is-desktop-device > div > div.col-12.mt-3.d-flex.justify-content-center.actions_buttons > button.btn.mx-2.next_button.col-2.btn-primary")).click();
             
-            Thread.sleep(2000);
+//            Thread.sleep(2000);
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.main-content-container > div > div.is-desktop-device > div > div.row.align-items-center > div > div > div.img-video-container > div > div")));
             driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div.is-desktop-device > div > div.row.align-items-center > div > div > div.img-video-container > div > div")).click();
             //driver.findElement(By.className("upload-file-target")).click();
             
@@ -275,11 +286,14 @@ public class AddListingTest {
             rb.keyRelease(KeyEvent.VK_ENTER);
             
             Thread.sleep(3000);
+            //wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.main-content-container > div > div.is-desktop-device > div > div.col-12.mt-3.d-flex.justify-content-center.actions_buttons > button.btn.mx-2.next_button.col-2.btn-primary")));
             driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div.is-desktop-device > div > div.col-12.mt-3.d-flex.justify-content-center.actions_buttons > button.btn.mx-2.next_button.col-2.btn-primary")).click();
             
-            Thread.sleep(3000);
-            driver.findElements(By.tagName("button")).get(7).click();
-            Thread.sleep(8000);
+            Thread.sleep(5000);
+            
+            driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div.col-12.mt-3.d-flex.justify-content-center.actions_buttons > button.btn.mx-2.next_button.col-6.btn-primary")).click();
+            //driver.findElements(By.tagName("button")).get(7).click();
+//            Thread.sleep(8000);
             
         }
 
@@ -419,7 +433,7 @@ public class AddListingTest {
                     }
             
         }
-        
+        Thread.sleep(5000);
         return driver;
         
     }
@@ -427,8 +441,10 @@ public class AddListingTest {
     public void ChromeAddListingTest() throws Exception {
         WebDriver driver=null;
         driver = AddlistingTest();
+        WebDriverWait wait = new WebDriverWait(driver,30);
         boolean flag= false;
-        Thread.sleep(8000);
+//        Thread.sleep(8000);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("h1")));
         if(platform.equals("Desktop"))
         {
         try {

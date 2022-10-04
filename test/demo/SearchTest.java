@@ -43,15 +43,16 @@ public class SearchTest {
                     break;
                 } catch(Exception e){}
             }
-            Thread.sleep(2000);
+            Thread.sleep(3000);
             try{
                 //type searchPhrase into search field
                 driver.findElements(By.tagName("input")).get(1).sendKeys(searchPhrase);
+               
                 Thread.sleep(5000);
                 //type choose first option from dropdown list
-                driver.findElements(By.tagName("ul")).get(2).findElement(By.tagName("li")).click();
+                driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div.home-front > main > div > div > div > div > div > div > div:nth-child(2) > div > div > form > div.search-field-cintainer.position-relative > ul > li:nth-child(1)")).click();
                 Thread.sleep(4000);
-
+   
 
             }
             catch(Exception ex){
@@ -60,7 +61,6 @@ public class SearchTest {
             }
 
             try {
-                // Check whether a certain element appears which confirms that the login was not successful
                 boolean flag = driver.findElement(By.className("property-container")).findElement(By.tagName("a")).getAttribute("href").contains(searchPhrase.toLowerCase());
                 driver.close();
                 assertEquals(true, flag); 

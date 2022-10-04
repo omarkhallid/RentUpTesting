@@ -362,7 +362,15 @@ public class AddListingPanel extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Methods.setCellData(cityComboBox.getSelectedItem().toString(), 14, 0);
-        Methods.setCellData(districtComboBox.getSelectedItem().toString(), 14, 1);
+        if(districtComboBox.isEnabled())
+        {
+            Methods.setCellData(districtComboBox.getSelectedItem().toString(), 14, 1);
+        }
+        else
+        {
+            Methods.setCellData("", 14, 1);
+        }
+        
         if (furnishedRB.isSelected())
             Methods.setCellData("Furnished", 14, 3);
         else if (unfurnishedRB.isSelected())
@@ -418,10 +426,10 @@ public class AddListingPanel extends javax.swing.JPanel {
                 districtComboBox.addItem("Mohandessin");
                 break;
             case "Alexanderia":
-                districtComboBox.addItem("Abu Qeer");
+                districtComboBox.addItem("Miami");
                 break;
             case "Sharm El Sheikh":
-                districtComboBox.setEnabled(false);
+                districtComboBox.addItem("Nabq Bay");
                 
         }
     }//GEN-LAST:event_cityComboBoxActionPerformed

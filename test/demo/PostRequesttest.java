@@ -27,12 +27,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  * @author Tarek Radwan
  */
 public class PostRequesttest {
-
+    public static String  TenantEmail ;
     public static WebDriver PostRequestTest() throws Exception {
-
-        TenantEmail = createRandomString() + "@test.com";
-        String password = "123456";
-        System.out.println("Landlord credentials:\nEmail: " + TenantEmail + "\nPassword: " + password);
+           TenantEmail = createRandomString() + "@test.com";
+                String password = "123456";
+        System.out.println("Tenant credentials:\nEmail: " + TenantEmail + "\nPassword: " + password);
 
         WebDriver driver = signup("auto tester", TenantEmail, password, "abcdefg");
         Thread.sleep(1000);
@@ -192,10 +191,10 @@ public class PostRequesttest {
         //Press on Next Button
         Thread.sleep(2000);
         driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > main > div > div > div:nth-child(3) > div > div.col-7 > div > button")).click();
-        Thread.sleep(3000);
+        Thread.sleep(6000);
 
         
-        //Choose Terms
+       
         if (getCellData(5, 6).equals("z") && !(getCellData(5, 6).equals("NA"))) {
             driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div.mt-2.section-white.col-12 > main > div > div:nth-child(1) > div")).click();
             Thread.sleep(1000);
@@ -265,11 +264,12 @@ public class PostRequesttest {
     public void ChromePostRequestTest() throws Exception {
         WebDriver driver = null;
         driver = PostRequestTest();
+        Thread.sleep(6000);
         if(platform.equals("Desktop"))
         {
         try {
             // Check whether a certain element appears which confirms that the login was not successful
-            assertEquals(true, driver.findElement(By.tagName("h1")).isDisplayed()); 
+            assertEquals(true, driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div.b-overlay-wrap.position-relative > div > div.container > div > div > a > div")).isDisplayed()); 
         } catch(NoSuchElementException e){
             assertTrue(false);
             driver.close();

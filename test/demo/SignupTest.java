@@ -77,7 +77,7 @@ public class SignupTest {
         if (!getCellData(19, 1).equals(""))
             email = getCellData(19, 1);
         else {
-            email = createRandomString() + "@xyz.com";
+            email = createRandomString() + "@test.com";
         }
 
         if (!getCellData(19, 2).equals(""))
@@ -97,7 +97,7 @@ public class SignupTest {
             Thread.sleep(1000);
              try {
                 // Check whether a certain element appears which confirms that the login was not successful
-                assertEquals(true, driver.findElements(By.tagName("button")).get(3).isDisplayed());   
+                assertEquals(true, driver.findElement(By.cssSelector("#__BVID__71__BV_toggle_")).isDisplayed());   
             } catch(NoSuchElementException e){
                 driver.close();
                 assertTrue(false);  
@@ -108,7 +108,7 @@ public class SignupTest {
         {
             Thread.sleep(2000);
             try {
-                assertEquals(true,driver.findElements(By.tagName("button")).get(3).isDisplayed());
+                 assertEquals(true, driver.findElement(By.cssSelector("#__BVID__71__BV_toggle_")).isDisplayed());   
             } catch(NoSuchElementException e){
                 assertTrue(false); 
                 driver.close();
