@@ -40,9 +40,9 @@ public class Methods {
             browser = "Chrome", 
             domain = "https://rentup.co/",
             platform = "Desktop",
-            propertyName="",
-            TenantEmail="",
-            LandlordEmail="0JMTSkqZok@abc.com";
+            propertyName="";
+          
+
 
     public static String getCellData(int row, int col) throws Exception {
         XSSFWorkbook ExcelWBook;

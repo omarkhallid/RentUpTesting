@@ -34,7 +34,7 @@ public class EditTanentProfile {
         driver.findElement(By.cssSelector("#sidebar > ul > li:nth-child(2) > a")).click();
         Thread.sleep(2000);
         driver.findElement(By.cssSelector("#users > li:nth-child(1) > a")).click();
-        Thread.sleep(4000);
+        Thread.sleep(20000);
         driver.findElement(By.cssSelector("#tt-table_wrapper > div:nth-child(1) > div.m-auto.float-right.col-sm-12.col-md-6 > div > button.dt-button.btn.btn-primary.btn-sm > span > i")).click();
         Thread.sleep(3000);
         driver.findElement(By.cssSelector("#name")).sendKeys("magda");
@@ -52,17 +52,6 @@ public class EditTanentProfile {
         driver.findElement(By.cssSelector("#tt-table > tbody > tr:nth-child(1) > td:nth-child(3) > a")).click();
         Thread.sleep(3000);
         driver.findElement(By.cssSelector("#email")).clear();
-//           rb.keyPress(KeyEvent.VK_CONTROL);
-//       rb.keyPress(KeyEvent.VK_SHIFT);
-//       rb.keyPress(KeyEvent.VK_RIGHT);
-//       rb.keyRelease(KeyEvent.VK_CONTROL);
-//       rb.keyRelease(KeyEvent.VK_SHIFT);
-//       rb.keyRelease(KeyEvent.VK_RIGHT);
-//       for(int i=0;i<12;i++)
-//       {
-//           rb.keyPress(KeyEvent.VK_BACK_SPACE);
-//           rb.keyRelease(KeyEvent.VK_BACK_SPACE);
-//       }
 
         Thread.sleep(4000);
 

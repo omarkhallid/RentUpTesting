@@ -27,7 +27,8 @@ public class MainFrame extends javax.swing.JFrame {
     
     /**
      * Creates new form MainFrame
-     */
+     */   int passed=0;
+         int failed=0;
     public MainFrame() {
         initComponents();
     }
@@ -74,6 +75,7 @@ public class MainFrame extends javax.swing.JFrame {
         jComboBox2 = new javax.swing.JComboBox<>();
         jComboBox3 = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
+        jSpinner1 = new javax.swing.JSpinner();
         arTTEditButton = new javax.swing.JButton();
         rrTTEditButton = new javax.swing.JButton();
         searchEditButton = new javax.swing.JButton();
@@ -135,6 +137,11 @@ public class MainFrame extends javax.swing.JFrame {
         alLLCheckBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         alLLCheckBox.setSelected(true);
         alLLCheckBox.setText("Add Listing");
+        alLLCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                alLLCheckBoxActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 6;
@@ -537,6 +544,13 @@ public class MainFrame extends javax.swing.JFrame {
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         buttonPanel.add(jButton1, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 5;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
+        gridBagConstraints.ipadx = 14;
+        gridBagConstraints.ipady = 9;
+        buttonPanel.add(jSpinner1, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -1112,7 +1126,7 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox3ActionPerformed
 
     private void testButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_testButtonActionPerformed
-        
+          
         if (!chrome && !edge && !firefox){
             JOptionPane.showMessageDialog(this, "Please pick a browser");
             return;
@@ -1155,7 +1169,6 @@ public class MainFrame extends javax.swing.JFrame {
                 Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
             }
             Methods.browser = browsers.get(i);
-            
             if (loginCheckBox.isSelected()){
                 labels[0][i].setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
                 final JLabel label = labels[0][i];
@@ -1226,9 +1239,9 @@ public class MainFrame extends javax.swing.JFrame {
                     }
                 }.start();
             }
-            
+            int temp=i;
             if (alLLCheckBox.isSelected()){
-                labels[4][i].setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
+                
                 final JLabel label = labels[4][i];
                 label.repaint();
                 label.revalidate();
@@ -1236,12 +1249,39 @@ public class MainFrame extends javax.swing.JFrame {
                 junit.addListener(new TextListener(System.out));
                 new Thread(){
                     public void run(){
-                        if (junit.run(AddListingTest.class).wasSuccessful())
-                            label.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
-                        else
-                            label.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
+                        int size=(int) jSpinner1.getValue();
+                        if(size==0)
+                        {
+                            size++;
+                        }
+                        for(int x=0;x<size;x++)
+                        {
+                            
+                            labels[4][temp].setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
+                            if (junit.run(AddListingTest.class).wasSuccessful())
+                            {
+                                label.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
+                                passed+=1;
+                            }
+                            else
+                            {
+                                
+                                label.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
+                                failed+=1;
+                            }
+                            try {
+                                Thread.sleep(2000);
+                            } catch (InterruptedException ex) {
+                                Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
+                        System.out.println("Passed :"+passed);
+                        System.out.println("failed :"+failed);
+                        passed=0;
+                        failed=0;
                     }
                 }.start();
+                
             }
         }
     }//GEN-LAST:event_testButtonActionPerformed
@@ -1289,6 +1329,10 @@ public class MainFrame extends javax.swing.JFrame {
     private void arTTCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arTTCheckBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_arTTCheckBoxActionPerformed
+
+    private void alLLCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alLLCheckBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_alLLCheckBoxActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1371,6 +1415,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSpinner jSpinner1;
     private javax.swing.JLayeredPane layeredPane;
     private javax.swing.JCheckBox loginCheckBox;
     private javax.swing.JButton loginEditButton;
