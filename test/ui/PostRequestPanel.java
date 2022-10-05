@@ -396,41 +396,52 @@ public class PostRequestPanel extends javax.swing.JPanel {
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         String value = jComboBox1.getSelectedItem().toString();
-        if(value.equals("Cairo"))
-        {
+        
+        switch(value){
+        
+            case "Cairo":{
             jComboBox2.removeAllItems();
             jComboBox2.addItem("Masr El Gedida");
             jComboBox2.addItem("Zamalek");
-            jComboBox2.addItem("Maadi");
-             
-        }
-        else if (value.equals("Giza"))
+            jComboBox2.addItem("Maadi");         
+            break;
+            }
+            case "Giza":
         {
             jComboBox2.removeAllItems();
             jComboBox2.addItem("Agouza");
             jComboBox2.addItem("Dokki");
             jComboBox2.addItem("October");
+            break;
         }
-        else if (value.equals("Luxor"))
+            case"Luxor":
         {
             jComboBox2.removeAllItems();
             jComboBox2.addItem("nothing");
+            break;
             
         }
-         else if (value.equals("Alexanderia"))
+            case "Alexanderia":
         {
             jComboBox2.removeAllItems();
             jComboBox2.addItem("Miami");
+            break;
         }
-         else if(value.equals("Dahab"))
+            case "Dahab":
          {
              jComboBox2.removeAllItems();
              jComboBox2.addItem("Blue Hole");
              jComboBox2.addItem("Canyon");
              jComboBox2.addItem("Laguna");
+             break;
          }
+         
+         default:
+             System.out.println("Error in Selecting Cities");
         
+        }
         
+     
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void status2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_status2ActionPerformed
@@ -443,70 +454,82 @@ public class PostRequestPanel extends javax.swing.JPanel {
         try
         {
             String value2 = jComboBox2.getSelectedItem().toString();
-
-            if(value2.equals("Masr El Gedida"))
+               
+            switch(value2){
+               case "Masr El Gedida":
             {
                 jComboBox3.removeAllItems();
                 jComboBox3.addItem("Almazah");
                 jComboBox3.addItem("El Korba");
                 jComboBox3.addItem("El Nozha");
+                break;
             }
-            if(value2.equals("Zamalek"))
+               case "Zamalek":
             {
                 jComboBox3.removeAllItems();
                 jComboBox3.addItem("nothing");
-
+                   break;
             }
-            if(value2.equals("Miami"))
+               case "Miami":
             {
              jComboBox3.removeAllItems();
              jComboBox3.addItem("nothing");
+             break;
             }   
-            if(value2.equals("Maadi"))
+               case "Maadi":
             {
                 jComboBox3.removeAllItems();
                 jComboBox3.addItem("Cornich El Maadi");
-
+                break;
             }
-            if(value2.equals("Agouza"))
+               case "Agouza":
             {
                 jComboBox3.removeAllItems();
                 jComboBox3.addItem("nothing");
+                break;
             }
-            if(value2.equals("Dokki"))
+               case "Dokki":
             {
                 jComboBox3.removeAllItems();
                 jComboBox3.addItem("nothing");
+                break;
             }
-            if(value2.equals("October"))
+               case "October":
             {
                 jComboBox3.removeAllItems();
                 jComboBox3.addItem("Hay El Motamayez");
                 jComboBox3.addItem("West Somid");
+                break;
             }
-            if(value2.equals("nothing"))
+               case "nothing":
             {
                 jComboBox3.removeAllItems();
                 jComboBox3.addItem("nothing");
-
+                break;
             }
-            if(value2.equals("Blue Hole"))
+               case "Blue Hole":
             {
                 jComboBox3.removeAllItems();
                 jComboBox3.addItem("nothing");
+                break;
             }
-            if(value2.equals("Canyon"))
+               case "Canyon":
             {
                 jComboBox3.removeAllItems();
                 jComboBox3.addItem("Canyon Estate");
                 jComboBox3.addItem("Tropitel");
+                break;
             }
-            if(value2.equals("Laguna"))
+               case "Laguna":
             {
                 jComboBox3.removeAllItems();
                 jComboBox3.addItem("Gannet Sinai");
                 jComboBox3.addItem("Golden Heights");
+                break;
             }
+            
+            }
+            
         }
         catch(Exception e)
         {

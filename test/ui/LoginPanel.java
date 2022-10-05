@@ -59,6 +59,11 @@ public class LoginPanel extends javax.swing.JPanel {
         jLabel2.setText("Email: ");
 
         emailTextField.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        emailTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                emailTextFieldActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel3.setText("Password:");
@@ -163,6 +168,10 @@ public class LoginPanel extends javax.swing.JPanel {
         layeredPane.revalidate();
         layeredPane.repaint();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void emailTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailTextFieldActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
