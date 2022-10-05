@@ -35,7 +35,7 @@ public class AddListingTest {
 
     
     
- public static String  LandlordEmail ;
+ public static String  LandlordEmail = createRandomString() + "@test.com";
     static public WebDriver AddlistingTest() throws Exception {
         
         LandlordEmail = createRandomString() + "@test.com";
@@ -119,7 +119,7 @@ public class AddListingTest {
             // press on next
             driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div.is-desktop-device > div > div.col-12.mt-3.d-flex.justify-content-center.actions_buttons > button.btn.mx-2.next_button.col-2.btn-primary")).click();
             //driver.findElement(By.className("properties__content")).findElements(By.tagName("button")).get(driver.findElement(By.className("properties__content")).findElements(By.tagName("button")).size() - 1).click();
-           // Thread.sleep(3000);
+            Thread.sleep(3000);
            //wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.main-content-container > div > div.is-desktop-device > div > div.container--fluid.col-6.m-auto.detail-container > div > div:nth-child(1) > div.row > div:nth-child(1) > span")));
            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.main-content-container > div > div.is-desktop-device > div > div.container--fluid.col-6.m-auto.detail-container > div > div:nth-child(2) > div.row > div:nth-child(1) > span")));
 //            for (WebElement we : driver.findElement(By.className("chips-container")).findElements(By.tagName("label")))
