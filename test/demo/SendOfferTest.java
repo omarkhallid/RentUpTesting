@@ -22,6 +22,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 /**
  *
  * @author Tarek Radwan
@@ -47,13 +49,14 @@ public class SendOfferTest {
        driver2.close();
        Thread.sleep(4000);
        driver3=login(LandlordEmail,getCellData(18,2));
-       Thread.sleep(5000);
+       WebDriverWait wait = new WebDriverWait(driver3,30);
+       wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > header > div > div.desktop-nav > div > div > div:nth-child(2) > button")));
        //driver3.findElement(By.cssSelector("#__layout > div > header > nav > div > div.nav-links.d-none.d-lg-flex > a:nth-child(3)")).click();
       // driver3.findElements(By.tagName("a")).get(6).click();
       //open i am a landlord              
        driver3.findElement(By.cssSelector("#__layout > div > header > div > div.desktop-nav > div > div > div:nth-child(2) > button")).click();
-            Thread.sleep(5000);
-            
+            Thread.sleep(8000);
+                                            
 //        driver3.findElement(By.cssSelector("#__BVID__51 > ul > div > div > div:nth-child(1) > div.actions > a.btn.btn_outlined")).click();
           for (WebElement we : driver3.findElements(By.tagName("span")))
                     if (we.getText().contains("Marketplace")){
