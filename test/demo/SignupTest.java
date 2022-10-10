@@ -97,7 +97,7 @@ public class SignupTest {
             Thread.sleep(1000);
              try {
                 // Check whether a certain element appears which confirms that the login was not successful
-                assertEquals(true, driver.findElement(By.cssSelector("#__BVID__71__BV_toggle_")).isDisplayed());   
+                assertEquals(true, driver.findElement(By.cssSelector("#__layout > div > header > div > div.desktop-nav > ul > li:nth-child(2) > a")).isDisplayed());   
             } catch(NoSuchElementException e){
                 driver.close();
                 assertTrue(false);  

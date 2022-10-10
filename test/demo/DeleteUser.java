@@ -21,6 +21,8 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  *
@@ -31,24 +33,34 @@ public class DeleteUser {
     public static WebDriver Deleteuser() throws Exception {
         
         WebDriver driver1 = AddlistingTest();
+        driver1.close();
         WebDriver driver = adminLogin();
+        WebDriverWait wait = new WebDriverWait(driver,30);
+       
         Thread.sleep(3000);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#sidebar > ul > li:nth-child(2) > a")));
         //click on users offers properties
         driver.findElement(By.cssSelector("#sidebar > ul > li:nth-child(2) > a")).click();
+        
+        
         Thread.sleep(2000);
-
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#users > li:nth-child(6) > a")));
         //click on landlord
         driver.findElement(By.cssSelector("#users > li:nth-child(6) > a")).click();
         Thread.sleep(4000);
-
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#tt-table_wrapper > div:nth-child(2) > div > div.dataTables_scroll > div.dataTables_scrollFoot > div > table > tfoot > tr > td:nth-child(7) > input")));
         //search for specific user
-        driver.findElement(By.cssSelector("#tt-table_wrapper > div:nth-child(2) > div > div.dataTables_scroll > div.dataTables_scrollFoot > div > table > tfoot > tr > td:nth-child(7) > input")).sendKeys("automation tester");
-        Thread.sleep(3000);
-
+        
+        driver.findElement(By.cssSelector("#myInputTextField")).sendKeys(LandlordEmail);
+        Thread.sleep(10000);                
+        
+        
         //click on delete
         driver.findElement(By.cssSelector("#tt-table > tbody > tr:nth-child(1) > td:nth-child(3) > button.btn.btn-xs.btn-danger.btn-delete")).click();
         Thread.sleep(2000);
-
+       
+        
+        
         //click on yes delete 
         Robot rb = null;
         try {
@@ -69,28 +81,32 @@ public class DeleteUser {
         rb.keyRelease(KeyEvent.VK_CONTROL);
         rb.keyRelease(KeyEvent.VK_SHIFT);
         rb.keyRelease(KeyEvent.VK_M);
-        Thread.sleep(2000);
-
-        WebDriver driver2 = login(LandlordEmail, "123456");
-
-        try {
-            String txt = driver2.findElement(By.cssSelector("#auth-modal___BV_modal_body_ > div > span:nth-child(1) > div > div")).getText();
-            assertEquals("users.validation_messages.wrong_email_or_password" , txt);
-        } catch (NoSuchElementException e) {
-
-           
-            driver2.close();
-            driver.close();
-            driver1.close();
-        }
-
+        Thread.sleep(4000);
+        
+       
+       // driver2.close();
         return driver;
     }
 
     @Test
     public void test() throws Exception {
+        boolean x;
         WebDriver driver = Deleteuser();
         driver.close();
+        WebDriver driver2 = login(LandlordEmail, "123456");
+        Thread.sleep(4000);
+        
+         try {
+                // Check whether a certain element appears which confirms that the login was not successful
+                assertEquals(true, driver2.findElement(By.cssSelector("#auth-modal___BV_modal_body_ > div > span:nth-child(1) > div > div")).isDisplayed());   
+                                                                        
+            } catch(NoSuchElementException e){
+                driver2.close();
+                assertTrue(false);
+                
+                  
+            }
+        driver2.close();
     }
 
 }

@@ -166,7 +166,7 @@ public class Methods {
             rb.keyRelease(KeyEvent.VK_M);
             
             if (browser.equals("Firefox")){
-                for (int i = 0; i < 16; i++){
+                for (int i = 0; i < 15; i++){
                     rb.keyPress(KeyEvent.VK_TAB);
                     rb.keyRelease(KeyEvent.VK_TAB);
                 }
