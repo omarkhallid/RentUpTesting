@@ -6,6 +6,7 @@ package ui;
 
 import demo.AddListingTest;
 import demo.ApproveListing;
+import demo.DeleteUser;
 import demo.EditUser;
 import demo.Methods;
 import demo.PostRequesttest;
@@ -837,7 +838,7 @@ public class AdminFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_prTTEditButtonActionPerformed
 
     private void signupEditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupEditButtonActionPerformed
-        SignupPanel panel = new SignupPanel(layeredPane);
+        DeleteUserPanel panel = new DeleteUserPanel(layeredPane);
         
         layeredPane.add(panel, new java.awt.GridBagConstraints());
         panel.setSize(layeredPane.getWidth(), layeredPane.getHeight());
@@ -1016,7 +1017,7 @@ public class AdminFrame extends javax.swing.JFrame {
                 junit.addListener(new TextListener(System.out));
                 new Thread(){
                     public void run(){
-                        if (junit.run(SignupTest.class).wasSuccessful())
+                        if (junit.run(DeleteUser.class).wasSuccessful())
                             label.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
                         else
                             label.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
