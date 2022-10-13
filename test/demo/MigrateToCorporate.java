@@ -18,8 +18,11 @@ import java.awt.event.KeyEvent;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  *
@@ -28,69 +31,53 @@ import org.openqa.selenium.WebDriver;
 public class MigrateToCorporate {
 
     public static WebDriver migrateuser() throws Exception {
-        WebDriver driver2 = AddlistingTest();
+        //WebDriver driver2 = AddlistingTest();
         WebDriver driver = adminLogin();
         Thread.sleep(2000);
+        WebDriverWait wait = new WebDriverWait(driver,30);
+      
+        //Thread.sleep(3000);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#sidebar > ul > li:nth-child(2) > a"))); 
 
         //click on users offers properties
         driver.findElement(By.cssSelector("#sidebar > ul > li:nth-child(2) > a")).click();
-        Thread.sleep(2000);
-
-        //click on landlord
+        //Thread.sleep(3000);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#users > li:nth-child(6) > a")));
+        
+        //click on LandLords
         driver.findElement(By.cssSelector("#users > li:nth-child(6) > a")).click();
-        Thread.sleep(25000);
-
-        //search for specific user
-        
-        driver.findElement(By.cssSelector("#tt-table_wrapper > div:nth-child(2) > div > div.dataTables_scroll > div.dataTables_scrollFoot > div > table > tfoot > tr > td:nth-child(8) > input")).sendKeys(LandlordEmail);
-        
-        Thread.sleep(2000);
-        Robot rb1 = null;
-        try {
-            rb1 = new Robot();
-        } catch (Exception ex) {
-        }
-        rb1.setAutoDelay(250);
-        rb1.keyPress(KeyEvent.VK_ENTER);
-        rb1.keyRelease(KeyEvent.VK_ENTER);
-        
-        Thread.sleep(2000);
-        
-        
-
-        //click on migrate
-        driver.findElement(By.cssSelector("#tt-table > tbody > tr > td:nth-child(3) > a.btn.btn-warning")).click();
         Thread.sleep(3000);
-
-        //click on users offers properties
-        driver.findElement(By.cssSelector("#sidebar > ul > li:nth-child(2) > a")).click();
-        Thread.sleep(3000);
-
-        //click on corporate users
-        driver.findElement(By.cssSelector("#users > li:nth-child(7) > a")).click();
-        Thread.sleep(2000);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"myInputTextField\"]")));
         
-        //search for the migrated user
-        driver.findElement(By.cssSelector("#tt-table_wrapper > div:nth-child(2) > div > div.dataTables_scroll > div.dataTables_scrollFoot > div > table > tfoot > tr > td:nth-child(6) > input")).sendKeys(LandlordEmail);
-        Thread.sleep(3000);
-        
-          Robot rb = null;
-        try {
-            rb = new Robot();
-        } catch (Exception ex) {
-        }
-        rb.setAutoDelay(250);
-        rb.keyPress(KeyEvent.VK_ENTER);
-        rb.keyRelease(KeyEvent.VK_ENTER);
-        Thread.sleep(2000);
-        
+        //search on certain Field by Email
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#tt-table > tbody > tr > td:nth-child(8)")));
+        String email = "DXqUWzRIRo@test.com";
+        driver.findElement(By.xpath("//*[@id=\"myInputTextField\"]")).sendKeys(email);
+        Thread.sleep(10000);
+        //driver.findElement(By.xpath("#tt-table_wrapper > div:nth-child(1) > div.m-auto.float-right.col-sm-12.col-md-6 > div > button.dt-button.btn.btn-success.btn-sm > span > i")).click();
+        //wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#tt-table > tbody > tr > td:nth-child(8)")));
         
         try {
-             assertEquals(true, driver.findElement(By.cssSelector("#tt-table > tbody > tr > td:nth-child(3) > a:nth-child(1)")).isDisplayed());
+             //wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#tt-table > tbody > tr > td:nth-child(8)")));
+             //Thread.sleep(5000);
+             System.out.println(driver.findElement(By.cssSelector("#tt-table > tbody > tr > td:nth-child(8)")).getText());
+             assertEquals(email, driver.findElement(By.cssSelector("#tt-table > tbody > tr > td:nth-child(8)")).getText());
+                          
+             
+             //click on migrate
+             driver.findElement(By.cssSelector("#tt-table > tbody > tr > td:nth-child(3) > a.btn.btn-warning")).click();
+             Thread.sleep(5000);
+             
+             //Another search for Asserting
+             driver.findElement(By.xpath("//*[@id=\"myInputTextField\"]")).sendKeys(email);
+             Thread.sleep(10000);
+             assertEquals(true, !(driver.findElement(By.cssSelector("#tt-table > tbody > tr > td:nth-child(8)"))).isDisplayed());
+             //driver.findElement(By.cssSelector("#tt-table > tbody > tr:nth-child(1) > td:nth-child(4)")).click();
+             
         } catch (NoSuchElementException e) {
 
-            driver2.close();
-            driver.close();
+            //driver2.close();
+            driver.quit();
         }
         
       
@@ -98,9 +85,9 @@ public class MigrateToCorporate {
     }
     
      @Test
-    public void test() throws Exception {
+        public void test() throws Exception {
         WebDriver driver = migrateuser();
-        driver.close();
+        driver.quit();
     }
 
 }
