@@ -42,6 +42,10 @@ public class DeleteUserPanel extends javax.swing.JPanel {
         SaveButton = new javax.swing.JButton();
         Backbutton = new javax.swing.JButton();
 
+        setMaximumSize(new java.awt.Dimension(915, 735));
+        setMinimumSize(new java.awt.Dimension(915, 735));
+        setPreferredSize(new java.awt.Dimension(915, 735));
+
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel1.setText("DeleteUser");
 
@@ -58,6 +62,12 @@ public class DeleteUserPanel extends javax.swing.JPanel {
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel3.setText("Email : ");
+
+        EmailField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EmailFieldActionPerformed(evt);
+            }
+        });
 
         SaveButton.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         SaveButton.setLabel("Save");
@@ -153,6 +163,10 @@ public class DeleteUserPanel extends javax.swing.JPanel {
         layeredPane.revalidate();
         layeredPane.repaint();
     }//GEN-LAST:event_BackbuttonActionPerformed
+
+    private void EmailFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EmailFieldActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
