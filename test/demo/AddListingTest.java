@@ -222,7 +222,7 @@ public class AddListingTest {
             
           // Thread.sleep(6000);
           wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.main-content-container > div > div.is-desktop-device > div > div.row.align-items-center.col-6.m-auto.detail-container > div > div > div > div.col-5 > p")));
-            driver.findElements(By.tagName("input")).get(1).sendKeys(propertyName);
+            driver.findElements(By.tagName("input")).get(3).sendKeys(propertyName);
             
             Thread.sleep(2000);
             driver.findElements(By.tagName("textarea")).get(1).sendKeys(description);
@@ -236,23 +236,23 @@ public class AddListingTest {
 //                        we.click();
 //                        break;
 //                    }
-            for (WebElement we : driver.findElements(By.tagName("span")))
-                                       if (we.getText().equals("per night"))
-                                                we.click();
-                
-            Thread.sleep(2000);
-            driver.findElements(By.tagName("input")).get(3).sendKeys(rentPerNight);  
+//            for (WebElement we : driver.findElements(By.tagName("span")))
+//                                       if (we.getText().equals("per night"))
+//                                                we.click();
+//                
+//            Thread.sleep(2000);
+            driver.findElements(By.tagName("input")).get(4).sendKeys(rentPerNight);  
             Thread.sleep(2000);
             }
             else if (!rentPerMonth.equals("")){
-                for (WebElement we : driver.findElements(By.tagName("span")))
-                    if (we.getText().equals("per month")){
-                        we.click();
-                        break;
-                    }
+//                for (WebElement we : driver.findElements(By.tagName("span")))
+//                    if (we.getText().equals("per month")){
+//                        we.click();
+//                        break;
+//                    }
                 
-            Thread.sleep(2000);
-            driver.findElements(By.tagName("input")).get(3).sendKeys(rentPerMonth);
+//            Thread.sleep(2000);
+            driver.findElements(By.tagName("input")).get(5).sendKeys(rentPerMonth);
 //            Thread.sleep(2000);
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.main-content-container > div > div.is-desktop-device > div > div.col-12.mt-3.d-flex.justify-content-center.actions_buttons > button.btn.mx-2.next_button.col-2.btn-primary")));
             }
