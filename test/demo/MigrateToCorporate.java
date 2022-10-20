@@ -35,7 +35,8 @@ public class MigrateToCorporate {
         WebDriver driver = adminLogin();
         Thread.sleep(2000);
         WebDriverWait wait = new WebDriverWait(driver,30);
-      
+        
+        
         //Thread.sleep(3000);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#sidebar > ul > li:nth-child(2) > a"))); 
 
@@ -51,30 +52,36 @@ public class MigrateToCorporate {
         
         //search on certain Field by Email
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#tt-table > tbody > tr > td:nth-child(8)")));
-        String email = "DXqUWzRIRo@test.com";
-        driver.findElement(By.xpath("//*[@id=\"myInputTextField\"]")).sendKeys(email);
-        Thread.sleep(10000);
-        //driver.findElement(By.xpath("#tt-table_wrapper > div:nth-child(1) > div.m-auto.float-right.col-sm-12.col-md-6 > div > button.dt-button.btn.btn-success.btn-sm > span > i")).click();
-        //wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#tt-table > tbody > tr > td:nth-child(8)")));
+        String name = getCellData(35,0);
+        driver.findElement(By.xpath("//*[@id=\"myInputTextField\"]")).sendKeys(name);
+        Thread.sleep(25000);
+        String userId = "";
+        String delUserId = "";
         
-        try {
-             //wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#tt-table > tbody > tr > td:nth-child(8)")));
+             try {
              //Thread.sleep(5000);
+             assertEquals(true,driver.findElement(By.xpath("//*[@id=\"tt-table\"]/tbody/tr/td[4]")).isDisplayed());
+             userId = driver.findElement(By.xpath("//*[@id=\"tt-table\"]/tbody/tr/td[4]")).getText();
              System.out.println(driver.findElement(By.cssSelector("#tt-table > tbody > tr > td:nth-child(8)")).getText());
-             assertEquals(email, driver.findElement(By.cssSelector("#tt-table > tbody > tr > td:nth-child(8)")).getText());
-                          
              
              //click on migrate
              driver.findElement(By.cssSelector("#tt-table > tbody > tr > td:nth-child(3) > a.btn.btn-warning")).click();
              Thread.sleep(5000);
              
              //Another search for Asserting
-             driver.findElement(By.xpath("//*[@id=\"myInputTextField\"]")).sendKeys(email);
-             Thread.sleep(10000);
-             assertEquals(true, !(driver.findElement(By.cssSelector("#tt-table > tbody > tr > td:nth-child(8)"))).isDisplayed());
-             //driver.findElement(By.cssSelector("#tt-table > tbody > tr:nth-child(1) > td:nth-child(4)")).click();
+             driver.findElement(By.xpath("//*[@id=\"myInputTextField\"]")).sendKeys(name);
+             Thread.sleep(25000);
+             assertEquals(true,driver.findElement(By.xpath("//*[@id=\"tt-table\"]/tbody/tr/td[4]")).isDisplayed());
+             delUserId = driver.findElement(By.xpath("//*[@id=\"tt-table\"]/tbody/tr/td[4]")).getText();
+             if(userId.equals(delUserId))
+             {
+                 boolean x = true ;
+                 assertEquals(false, x);
+             }
+             
              
         } catch (NoSuchElementException e) {
+            System.out.println("NO Such User Found! OR ");
 
             //driver2.close();
             driver.quit();
