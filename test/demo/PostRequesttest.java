@@ -52,7 +52,7 @@ public class PostRequesttest {
          //Click on City
         Thread.sleep(2000);
         driver.findElement(By.cssSelector("#citySelect > div.dropdown-container > span")).click();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
 
         //City
         if (getCellData(5, 0).equals("z")) {
@@ -61,16 +61,16 @@ public class PostRequesttest {
             Thread.sleep(2000);
             // click on the selected 
             driver.findElement(By.className("option-label")).click();
-            Thread.sleep(2000);
+            Thread.sleep(1000);
 
         } //City
         else {
             // send data in the search bar
             driver.findElement(By.className("dropdown-search")).sendKeys(getCellData(5, 0));
-            Thread.sleep(2000);
+            Thread.sleep(1000);
             // click on the selected 
             driver.findElement(By.className("option-label")).click();
-            Thread.sleep(2000);
+            Thread.sleep(1000);
 
         }
         //District

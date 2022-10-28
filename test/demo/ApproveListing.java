@@ -1,4 +1,4 @@
-    package demo;
+package demo;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -31,17 +31,8 @@ public class ApproveListing {
           //Thread.sleep(2000);
           wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#users > li:nth-child(5) > a")));
           driver.findElement(By.cssSelector("#users > li:nth-child(5) > a")).click();
-          Thread.sleep(16000);    
-          
-          if(getCellData(29,0).equals("test1"))
-          {
-              driver.findElement(By.cssSelector("#myInputTextField")).sendKeys("test1");
-          }
-          else
-          {
-              driver.findElement(By.cssSelector("#myInputTextField")).sendKeys(getCellData(29,0));
-          }
-          Thread.sleep(6000);
+          //Thread.sleep(20000);
+          wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#properties-table > tbody > tr:nth-child(1) > td:nth-child(2) > label > span")));
           driver.findElement(By.cssSelector("#properties-table > tbody > tr:nth-child(1) > td:nth-child(2) > label > span")).click();
           Thread.sleep(2000);
           
