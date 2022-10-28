@@ -38,7 +38,7 @@ public class EditUser {
         String Landlord =createRandomString() + "@test.com";
         WebDriver driver1 = null;
         WebDriverWait wait = new WebDriverWait(driver,30);
-        Thread.sleep(3000);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#sidebar > ul > li:nth-child(2) > a")));
         driver.findElement(By.cssSelector("#sidebar > ul > li:nth-child(2) > a")).click();
         
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#users > li:nth-child(1) > a")));
@@ -58,7 +58,7 @@ public class EditUser {
         driver.findElement(By.cssSelector("#tt-table_wrapper > div:nth-child(1) > div.m-auto.float-right.col-sm-12.col-md-6 > div > button.dt-button.btn.btn-primary.btn-sm > span > i")).click();
          
         
-        Thread.sleep(3000);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#name")));
         if(getCellData(25,0).equals("Tenant"))
         {
             driver.findElement(By.cssSelector("#name")).sendKeys("Tenant");
@@ -95,19 +95,9 @@ public class EditUser {
         }
         if(getCellData(25,0).equals("Tenant"))
         {
-            if(domain.equals("https://rentup.co/"))
-            {
-                Thread.sleep(2000);
+            Thread.sleep(2000);
             driver.get("https://api.rentup.co/dashboard/tenants");
             driver.navigate().refresh();
-            }
-            else
-            {
-                Thread.sleep(2000);
-            driver.get("https://api.rentup.com.eg/dashboard/tenants");
-            driver.navigate().refresh();
-            }
-            
         }
        
         
@@ -116,14 +106,14 @@ public class EditUser {
          if(getCellData(25,0).equals("Tenant"))
         {
            driver.findElement(By.cssSelector("#myInputTextField")).sendKeys(Tenant);
-           Thread.sleep(20000);
+           Thread.sleep(10000);
         }
         else
         {
             driver.findElement(By.cssSelector("#myInputTextField")).sendKeys(Landlord);
-            Thread.sleep(20000);
+            Thread.sleep(10000);
         }
-         
+         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#tt-table > tbody > tr:nth-child(1) > td:nth-child(3) > a")));
         driver.findElement(By.cssSelector("#tt-table > tbody > tr:nth-child(1) > td:nth-child(3) > a")).click();
         
 //        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#email")));
@@ -177,11 +167,10 @@ public class EditUser {
         {
              driver1 = login("modified"+Landlord, "123456");
         }
-        Thread.sleep(8000);
+        Thread.sleep(6000);
         try {
-            // Check whether a certain element appears which confirms that the login was  successful
-            assertEquals(true, driver1.findElements(By.tagName("button")).get(4).isDisplayed());
-            
+            // Check whether a certain element appears which confirms that the login was not successful
+            assertEquals(true, driver1.findElements(By.tagName("button")).get(3).isDisplayed());
              driver1.close();
         } catch (NoSuchElementException e) {
 

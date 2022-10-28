@@ -39,7 +39,7 @@ public class SendOfferTest {
     public  void OFferTest() throws Exception 
     {
        Robot rb = new Robot();
-        driver= PostRequestTest();
+       driver= PostRequestTest();
        driver.close();
        Thread.sleep(5000);
        driver1 = AddlistingTest();

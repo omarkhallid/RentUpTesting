@@ -104,14 +104,8 @@ public class Methods {
         try{
             switch(browser){
                 case "Chrome":
-                    System.out.println("hello");
-                    System.out.println("hello2");
-                    System.out.println(new java.io.File(".").getCanonicalPath());
                     System.setProperty("webdriver.chrome.driver", new java.io.File(".").getCanonicalPath() +"\\" + "chromedriver.exe");
-                    
                     driver = new ChromeDriver();
-                    
-                    
                     break;
                 case "Edge":
                     System.setProperty("webdriver.edge.driver", new java.io.File(".").getCanonicalPath() +"\\" + "msedgedriver.exe");
