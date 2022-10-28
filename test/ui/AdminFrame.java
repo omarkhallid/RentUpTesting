@@ -8,6 +8,7 @@ import demo.AddListingTest;
 import demo.ApproveListing;
 import demo.EditUser;
 import demo.Methods;
+import demo.MigrateToCorporate;
 import demo.PostRequesttest;
 import demo.SearchTest;
 import demo.SignupTest;
@@ -814,7 +815,7 @@ public class AdminFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void alLLEditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alLLEditButtonActionPerformed
-        AddListingPanel panel = new AddListingPanel(layeredPane);
+        MigrateToCorporatePanel panel = new MigrateToCorporatePanel(layeredPane);
         
         layeredPane.add(panel, new java.awt.GridBagConstraints());
         panel.setSize(layeredPane.getWidth(), layeredPane.getHeight());
@@ -1060,15 +1061,15 @@ public class AdminFrame extends javax.swing.JFrame {
             }
             
             if (ConvertToCoorperateCheckBox.isSelected()){
-                labels[4][i].setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
-                final JLabel label = labels[4][i];
+                labels[7][i].setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
+                final JLabel label = labels[7][i];
                 label.repaint();
                 label.revalidate();
                 JUnitCore junit = new JUnitCore();
                 junit.addListener(new TextListener(System.out));
                 new Thread(){
                     public void run(){
-                        if (junit.run(AddListingTest.class).wasSuccessful())
+                        if (junit.run(MigrateToCorporate.class).wasSuccessful())
                             label.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
                         else
                             label.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
