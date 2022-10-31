@@ -6,6 +6,8 @@ package ui;
 
 import demo.AddListingTest;
 import demo.ApproveListing;
+import demo.DeleteProperty;
+import demo.DeleteUser;
 import demo.EditUser;
 import demo.Methods;
 import demo.MigrateToCorporate;
@@ -98,7 +100,7 @@ public class AdminFrame extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
-        layeredPane.setBackground(new java.awt.Color(255, 0, 102));
+        layeredPane.setBackground(new java.awt.Color(255, 255, 255));
         layeredPane.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(51, 0, 255)));
         layeredPane.setMaximumSize(new java.awt.Dimension(900, 700));
         layeredPane.setMinimumSize(new java.awt.Dimension(900, 700));
@@ -838,7 +840,7 @@ public class AdminFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_prTTEditButtonActionPerformed
 
     private void signupEditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupEditButtonActionPerformed
-        SignupPanel panel = new SignupPanel(layeredPane);
+        DeleteUserPanel panel = new DeleteUserPanel(layeredPane);
         
         layeredPane.add(panel, new java.awt.GridBagConstraints());
         panel.setSize(layeredPane.getWidth(), layeredPane.getHeight());
@@ -865,7 +867,7 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void searchEditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchEditButtonActionPerformed
         
-        searchPanel panel = new searchPanel(layeredPane);
+        ApproveListingPanel panel = new ApproveListingPanel(layeredPane);
         
         layeredPane.add(panel, new java.awt.GridBagConstraints());
         panel.setSize(layeredPane.getWidth(), layeredPane.getHeight());
@@ -1017,7 +1019,7 @@ public class AdminFrame extends javax.swing.JFrame {
                 junit.addListener(new TextListener(System.out));
                 new Thread(){
                     public void run(){
-                        if (junit.run(SignupTest.class).wasSuccessful())
+                        if (junit.run(DeleteUser.class).wasSuccessful())
                             label.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
                         else
                             label.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
@@ -1076,6 +1078,22 @@ public class AdminFrame extends javax.swing.JFrame {
                     }
                 }.start();
             }
+            if (DeletePropertyCheckBox.isSelected()){
+                labels[4][i].setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
+                final JLabel label = labels[4][i];
+                label.repaint();
+                label.revalidate();
+                JUnitCore junit = new JUnitCore();
+                junit.addListener(new TextListener(System.out));
+                new Thread(){
+                    public void run(){
+                        if (junit.run(DeleteProperty.class).wasSuccessful())
+                            label.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
+                        else
+                            label.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
+                    }
+                }.start();
+            }
         }
     }//GEN-LAST:event_testButtonActionPerformed
 
@@ -1121,6 +1139,14 @@ public class AdminFrame extends javax.swing.JFrame {
 
     private void alLLEditButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alLLEditButton1ActionPerformed
         // TODO add your handling code here:
+        DeletePropertyPanel panel = new DeletePropertyPanel(layeredPane);
+        
+        layeredPane.add(panel, new java.awt.GridBagConstraints());
+        panel.setSize(layeredPane.getWidth(), layeredPane.getHeight());
+        layeredPane.setLayer(panel, 1);
+        mainPanel.setVisible(false);
+        layeredPane.revalidate();
+        layeredPane.repaint();
     }//GEN-LAST:event_alLLEditButton1ActionPerformed
 
     private void alLLEditButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alLLEditButton2ActionPerformed
