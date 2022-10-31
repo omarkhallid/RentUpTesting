@@ -52,7 +52,7 @@ public class PostRequesttest {
          //Click on City
         Thread.sleep(2000);
         driver.findElement(By.cssSelector("#citySelect > div.dropdown-container > span")).click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
 
         //City
         if (getCellData(5, 0).equals("z")) {
@@ -61,16 +61,16 @@ public class PostRequesttest {
             Thread.sleep(2000);
             // click on the selected 
             driver.findElement(By.className("option-label")).click();
-            Thread.sleep(1000);
+            Thread.sleep(2000);
 
         } //City
         else {
             // send data in the search bar
             driver.findElement(By.className("dropdown-search")).sendKeys(getCellData(5, 0));
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             // click on the selected 
             driver.findElement(By.className("option-label")).click();
-            Thread.sleep(1000);
+            Thread.sleep(2000);
 
         }
         //District
@@ -240,30 +240,6 @@ public class PostRequesttest {
             driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(5) > div > div.col-md-12.col-lg-8 > span > div.counter-input-contianer > button:nth-child(3) > svg")).click();
         }
         
-        
-                //Choose Minimum Contract
-        if (!(getCellData(5, 13).equals("z"))) {
-            int x = Integer.parseInt(getCellData(5, 13));
-            Thread.sleep(2000);
-            for (int i = 0; i <x -1 ; i++) {
-                driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div.step > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(2) > div > div > span > div.counter-input-contianer > button:nth-child(3) > svg")).click();
-                Thread.sleep(500);
-            }
-        } else {
-            driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div.step > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(2) > div > div > span > div.counter-input-contianer > button:nth-child(3) > svg")).click();
-        }
-        
-        //Choose Eviction notice
-        if (!(getCellData(5, 14).equals("z"))) {
-            int x = Integer.parseInt(getCellData(5, 14));
-            Thread.sleep(2000);
-            for (int i = 0; i <x -1 ; i++) {
-                driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div.step > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(3) > div > div > span > div.counter-input-contianer > button:nth-child(3) > svg")).click();
-                Thread.sleep(500);
-            }
-        } else {
-            driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div.step > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(3) > div > div > span > div.counter-input-contianer > button:nth-child(3) > svg")).click();
-        }
         
         
         

@@ -6,6 +6,7 @@
 package demo;
 
 import static demo.AddListingTest.AddlistingTest;
+import static demo.AddListingTest.LandlordEmail;
 import static demo.Methods.createRandomString;
 import static demo.logintest.adminLogin;
 import static demo.logintest.login;
@@ -47,7 +48,7 @@ public class EditProperty {
         driver1.findElement(By.cssSelector("#app > div > div > button > span")).click();
         Thread.sleep(10000);
         
-        WebDriver driver2 = login("magdaosamaAdmin@test.com", "123456");
+        WebDriver driver2 = login(LandlordEmail, "123456");
         Thread.sleep(2000);
         driver.findElement(By.cssSelector("#__layout > div > header > div > div.desktop-nav > div > div > div:nth-child(2) > button")).click();
         Thread.sleep(3000);
