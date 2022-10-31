@@ -10,8 +10,6 @@ import static demo.AddListingTest.LandlordEmail;
 
 import static demo.Methods.createRandomString;
 import static demo.Methods.getCellData;
-import static demo.PostRequesttest.PostRequestTest;
-import static demo.PostRequesttest.TenantEmail;
 import static demo.SignupTest.signup;
 import static demo.logintest.adminLogin;
 import static demo.logintest.login;
@@ -33,9 +31,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class DeleteUser {
 
     public static WebDriver Deleteuser() throws Exception {
-        if(getCellData(25,0).equals("Landlord"))
-        {
-            WebDriver driver1 = AddlistingTest();
+        
+        WebDriver driver1 = AddlistingTest();
         driver1.close();
         WebDriver driver = adminLogin();
         WebDriverWait wait = new WebDriverWait(driver,30);
@@ -90,82 +87,13 @@ public class DeleteUser {
        // driver2.close();
         return driver;
     }
-        else
-        {
-        WebDriver driver1 = PostRequestTest();
-        driver1.close();
-        WebDriver driver = adminLogin();
-        WebDriverWait wait = new WebDriverWait(driver,30);
-       
-        Thread.sleep(3000);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#sidebar > ul > li:nth-child(2) > a")));
-        //click on users offers properties
-        driver.findElement(By.cssSelector("#sidebar > ul > li:nth-child(2) > a")).click();
-        
-        
-        Thread.sleep(2000);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#users > li:nth-child(1) > a")));
-        //click on landlord
-        driver.findElement(By.cssSelector("#users > li:nth-child(1) > a")).click();
-        Thread.sleep(4000);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#tt-table_wrapper > div:nth-child(2) > div > div.dataTables_scroll > div.dataTables_scrollFoot > div > table > tfoot > tr > td:nth-child(7) > input")));
-        //search for specific user
-        
-        driver.findElement(By.cssSelector("#myInputTextField")).sendKeys(TenantEmail);
-        Thread.sleep(10000);                
-        
-        
-        //click on delete
-        driver.findElement(By.cssSelector("#tt-table > tbody > tr:nth-child(1) > td:nth-child(3) > button.btn.btn-xs.btn-danger.btn-delete")).click();
-        Thread.sleep(2000);
-       
-        
-        
-        //click on yes delete 
-        Robot rb = null;
-        try {
-            rb = new Robot();
-        } catch (Exception ex) {
-        }
-        rb.setAutoDelay(250);
-        for (int i = 0; i < 4; i++) {
-            rb.keyPress(KeyEvent.VK_TAB);
-            rb.keyRelease(KeyEvent.VK_TAB);
-        }
-        rb.keyPress(KeyEvent.VK_ENTER);
-        rb.keyRelease(KeyEvent.VK_ENTER);
-        rb.keyPress(KeyEvent.VK_CONTROL);
-        rb.keyPress(KeyEvent.VK_SHIFT);
-        rb.keyPress(KeyEvent.VK_M);
-
-        rb.keyRelease(KeyEvent.VK_CONTROL);
-        rb.keyRelease(KeyEvent.VK_SHIFT);
-        rb.keyRelease(KeyEvent.VK_M);
-        Thread.sleep(4000);
-        
-       
-       // driver2.close();
-        return driver;
-            
-        }
-        }
-        
 
     @Test
     public void test() throws Exception {
         boolean x;
         WebDriver driver = Deleteuser();
-        WebDriver driver2=null;
         driver.close();
-        if(getCellData(25,0).equals("Tenant"))
-        {
-              driver2 = login(TenantEmail, "123456");
-        }
-        else
-        {
-             driver2 = login(LandlordEmail, "123456");
-        }
-        
+        WebDriver driver2 = login(LandlordEmail, "123456");
         Thread.sleep(4000);
         
          try {
