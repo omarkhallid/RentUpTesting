@@ -241,30 +241,6 @@ public class PostRequesttest {
         }
         
         
-                //Choose Minimum Contract
-        if (!(getCellData(5, 13).equals("z"))) {
-            int x = Integer.parseInt(getCellData(5, 13));
-            Thread.sleep(2000);
-            for (int i = 0; i <x -1 ; i++) {
-                driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div.step > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(2) > div > div > span > div.counter-input-contianer > button:nth-child(3) > svg")).click();
-                Thread.sleep(500);
-            }
-        } else {
-            driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div.step > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(2) > div > div > span > div.counter-input-contianer > button:nth-child(3) > svg")).click();
-        }
-        
-        //Choose Eviction notice
-        if (!(getCellData(5, 14).equals("z"))) {
-            int x = Integer.parseInt(getCellData(5, 14));
-            Thread.sleep(2000);
-            for (int i = 0; i <x -1 ; i++) {
-                driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div.step > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(3) > div > div > span > div.counter-input-contianer > button:nth-child(3) > svg")).click();
-                Thread.sleep(500);
-            }
-        } else {
-            driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div.step > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(3) > div > div > span > div.counter-input-contianer > button:nth-child(3) > svg")).click();
-        }
-        
         
         
         //Choose Property types
