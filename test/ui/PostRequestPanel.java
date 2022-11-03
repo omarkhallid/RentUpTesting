@@ -101,7 +101,7 @@ public class PostRequestPanel extends javax.swing.JPanel {
 
         buttons.add(MonthsButton);
         MonthsButton.setSelected(true);
-        MonthsButton.setText("Months");
+        MonthsButton.setText("Nights");
         MonthsButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MonthsButtonActionPerformed(evt);
