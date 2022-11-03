@@ -86,9 +86,10 @@ public class AddListingTest {
             //click on i am a Landlord to open dropdown menu
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > header > div > div.desktop-nav > div > div > div:nth-child(2) > button")));
             driver.findElement(By.cssSelector("#__layout > div > header > div > div.desktop-nav > div > div > div:nth-child(2) > button")).click();
-            Thread.sleep(2000);  
+            Thread.sleep(4000);  
             // select on add a new property
-             driver.findElements(By.tagName("a")).get(12).click();
+             driver.findElements(By.tagName("a")).get(11).click();
+            //driver.findElement(By.cssSelector("#__BVID__51 > ul > div > div > div:nth-child(1) > div.actions > a.btn.btn_primary"));
             //Thread.sleep(5000);
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > header > div > div.desktop-nav > div > div > div:nth-child(2) > button")));
 //            click on i am a Landlord inorder to close the dropdown menu

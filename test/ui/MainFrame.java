@@ -8,6 +8,7 @@ import demo.AddListingTest;
 import demo.Methods;
 import demo.PostRequesttest;
 import demo.SearchTest;
+import demo.SendOfferTest;
 import demo.SignupTest;
 import demo.logintest;
 import java.awt.Dimension;
@@ -103,7 +104,7 @@ public class MainFrame extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
-        layeredPane.setBackground(new java.awt.Color(255, 0, 102));
+        layeredPane.setBackground(new java.awt.Color(255, 255, 255));
         layeredPane.setMaximumSize(new java.awt.Dimension(900, 700));
         layeredPane.setMinimumSize(new java.awt.Dimension(900, 700));
         layeredPane.setPreferredSize(new Dimension(900, 700));
@@ -964,6 +965,14 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void arLLEditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_arLLEditButtonActionPerformed
         // TODO add your handling code here:
+        SendOfferPanel panel = new SendOfferPanel(layeredPane);
+        
+        layeredPane.add(panel, new java.awt.GridBagConstraints());
+        panel.setSize(layeredPane.getWidth(), layeredPane.getHeight());
+        layeredPane.setLayer(panel, 1);
+        mainPanel.setVisible(false);
+        layeredPane.revalidate();
+        layeredPane.repaint();
     }//GEN-LAST:event_arLLEditButtonActionPerformed
 
     private void rrLLEditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rrLLEditButtonActionPerformed
@@ -1283,6 +1292,50 @@ public class MainFrame extends javax.swing.JFrame {
                 }.start();
                 
             }
+            if (arLLCheckBox.isSelected()){
+                
+                final JLabel label = labels[8][i];
+                label.repaint();
+                label.revalidate();
+                JUnitCore junit = new JUnitCore();
+                junit.addListener(new TextListener(System.out));
+                new Thread(){
+                    public void run(){
+                        int size=(int) jSpinner1.getValue();
+                        if(size==0)
+                        {
+                            size++;
+                        }
+                        for(int x=0;x<size;x++)
+                        {
+                            
+                            labels[8][temp].setIcon(new ImageIcon(getClass().getResource("/Resources/loading.gif")));
+                            if (junit.run(SendOfferTest.class).wasSuccessful())
+                            {
+                                label.setIcon(new ImageIcon(getClass().getResource("/Resources/check.png")));
+                                passed+=1;
+                            }
+                            else
+                            {
+                                
+                                label.setIcon(new ImageIcon(getClass().getResource("/Resources/cross.png")));
+                                failed+=1;
+                            }
+                            try {
+                                Thread.sleep(2000);
+                            } catch (InterruptedException ex) {
+                                Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                        }
+                        System.out.println("Passed :"+passed);
+                        System.out.println("failed :"+failed);
+                        passed=0;
+                        failed=0;
+                    }
+                }.start();
+                
+            }
+            
         }
     }//GEN-LAST:event_testButtonActionPerformed
 
