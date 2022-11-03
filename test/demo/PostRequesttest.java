@@ -129,16 +129,11 @@ public class PostRequesttest {
         
         //Select Months
         if (getCellData(5, 3).equals("z")) {
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > main > div > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div.section-white.px-minus-15 > div.row.px-2.row-cols-12 > div:nth-child(2) > button")));
-            driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > main > div > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div.section-white.px-minus-15 > div.row.px-2.row-cols-12 > div:nth-child(2) > button")).click();
+             wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > main > div > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div.section-white.px-minus-15 > div.row.px-2.row-cols-12 > div:nth-child(1) > button")));
+            driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > main > div > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div.section-white.px-minus-15 > div.row.px-2.row-cols-12 > div:nth-child(1) > button")).click();
     
         } 
-        //Select Nights
-        else if (getCellData(5, 3).equals("Nights")) {
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > main > div > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div.section-white.px-minus-15 > div.row.px-2.row-cols-12 > div:nth-child(1) > button")));
-            driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > main > div > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div.section-white.px-minus-15 > div.row.px-2.row-cols-12 > div:nth-child(1) > button")).click();
-
-        } 
+       
         //Select Years
         else {
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > main > div > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div.section-white.px-minus-15 > div.row.px-2.row-cols-12 > div:nth-child(3) > button")));
@@ -211,21 +206,33 @@ public class PostRequesttest {
             Thread.sleep(1000);
         }
         
-
-        
+        // select conditions
+        if(getCellData(5, 3).equals("z"))
+        {
+            driver.findElement(By.cssSelector("#earlyCheckinRadio")).click();
+             Thread.sleep(4000);
         
         //Select Furnishing status
         if (getCellData(5, 9).equals("z")) {
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(3) > main > div > div:nth-child(2)")));
-            driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(3) > main > div > div:nth-child(2)")).click();
-        } else if (getCellData(5, 9).equals("Furnished")) {
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(3) > main > div > div:nth-child(1)")));
-            driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(3) > main > div > div:nth-child(1)")).click();
+//            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div.step > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(6) > main > div > div:nth-child(2)")));
+            driver.findElement(By.xpath("//*[@id=\"__layout\"]/div/div[1]/div/div/div/div[2]/div/div[2]/div[4]/main/div/div[2]/div/span")).click();
+//        for (WebElement we : driver.findElements(By.tagName("span")))
+//                           if (we.getText().equals("Unfurnished"))
+//                                    we.click();
+        } else if (getCellData(5, 9).equals("Furnished")) {                          
+//            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div.step > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(6) > main > div > div:nth-child(1)")));
+            driver.findElement(By.xpath("//*[@id=\"__layout\"]/div/div[1]/div/div/div/div[2]/div/div[2]/div[4]/main/div/div[1]/div/span")).click();
+//        for (WebElement we : driver.findElements(By.tagName("span")))
+//                           if (we.getText().equals("furnished"))
+//                                    we.click();
         } else {
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(3) > main > div > div:nth-child(3)")));
-            driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(3) > main > div > div:nth-child(3)")).click();
+//            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div.step > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(6) > main > div > div:nth-child(3)")));
+            driver.findElement(By.xpath("//*[@id=\"__layout\"]/div/div[1]/div/div/div/div[2]/div/div[2]/div[4]/main/div/div[1]/div/span")).click();
+//             for (WebElement we : driver.findElements(By.tagName("span")))
+//                           if (we.getText().equals("Serviced Apartment"))
+//                                    we.click();
         }
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         
         
         //Choose number of min rooms
@@ -233,32 +240,101 @@ public class PostRequesttest {
             int x = Integer.parseInt(getCellData(5, 10));
             Thread.sleep(2000);
             for (int i = 0; i <x -1 ; i++) {
-                driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(5) > div > div.col-md-12.col-lg-8 > span > div.counter-input-contianer > button:nth-child(3) > svg")).click();
+                driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div.step > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(6) > div > div.col-md-12.col-lg-8 > span > div.counter-input-contianer > button:nth-child(3)")).click();
                 Thread.sleep(500);
             }
         } else {
-            driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(5) > div > div.col-md-12.col-lg-8 > span > div.counter-input-contianer > button:nth-child(3) > svg")).click();
+            driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div.step > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(6) > div > div.col-md-12.col-lg-8 > span > div.counter-input-contianer > button:nth-child(3)")).click();
         }
         
         
-        
+        Thread.sleep(3000);
         
         //Choose Property types
         if (getCellData(5, 11).equals("z")) {
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(7) > main > div > div:nth-child(3)")));
-            driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(7) > main > div > div:nth-child(3)")).click();
+            //wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div.step > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(10) > main > div > div:nth-child(3)")));
+            driver.findElement(By.xpath("//*[@id=\"__layout\"]/div/div[1]/div/div/div/div[2]/div/div[2]/div[8]/main/div/div[3]/div/span")).click();
         } else {
             if (getCellData(5, 11).equals("Duplex")) {
-                wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(7) > main > div > div:nth-child(2)")));
-                driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(7) > main > div > div:nth-child(2)")).click();
+                //wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div.step > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(10) > main > div > div:nth-child(2)")));
+                driver.findElement(By.xpath("//*[@id=\"__layout\"]/div/div[1]/div/div/div/div[2]/div/div[2]/div[8]/main/div/div[2]/div/span")).click();
             } else {
-                wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(7) > main > div > div:nth-child(1)")));
-                driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(7) > main > div > div:nth-child(1)")).click();
+                //wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div.step > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(10) > main > div > div:nth-child(5)")));
+                driver.findElement(By.xpath("//*[@id=\"__layout\"]/div/div[1]/div/div/div/div[2]/div/div[2]/div[8]/main/div/div[5]/div/span")).click();
             }
         }
         
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > div > div:nth-child(3) > div > div.col-7 > div > button")));
-        driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div > div > div:nth-child(3) > div > div.col-7 > div > button")).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div.step > div > div:nth-child(3) > div > div.col-7 > div > button")));
+        driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div.step > div > div:nth-child(3) > div > div.col-7 > div > button")).click();
+        }
+        else
+        {
+            driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div.step > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(2) > div > div > span > div.counter-input-contianer > button:nth-child(3)")).click();
+            Thread.sleep(1000);
+            driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div.step > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(3) > div > div > span > div.counter-input-contianer > button:nth-child(3)")).click();
+            Thread.sleep(1000);
+            driver.findElement(By.cssSelector("#maximumAnnualIncrease")).sendKeys("30");
+            Thread.sleep(1000);
+            
+             Thread.sleep(3000);
+        
+        //Select Furnishing status
+        if (getCellData(5, 9).equals("z")) {
+//            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div.step > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(6) > main > div > div:nth-child(2)")));
+           // driver.findElement(By.xpath("//*[@id=\"__layout\"]/div/div[1]/div/div/div/div[2]/div/div[2]/div[6]/main/div/div[2]/div/span")).click();
+ for (WebElement we : driver.findElements(By.tagName("span")))
+                           if (we.getText().equals("Unfurnished"))
+                                    we.click();
+        } else if (getCellData(5, 9).equals("Furnished")) {                          
+//            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div.step > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(6) > main > div > div:nth-child(1)")));
+        //    driver.findElement(By.xpath("//*[@id=\"__layout\"]/div/div[1]/div/div/div/div[2]/div/div[2]/div[6]/main/div/div[1]/div/span")).click();
+        for (WebElement we : driver.findElements(By.tagName("span")))
+                           if (we.getText().equals("furnished"))
+                                    we.click();
+        } else {
+//            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div.step > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(6) > main > div > div:nth-child(3)")));
+           // driver.findElement(By.xpath("//*[@id=\"__layout\"]/div/div[1]/div/div/div/div[2]/div/div[2]/div[6]/main/div/div[3]/div/span")).click();
+             for (WebElement we : driver.findElements(By.tagName("span")))
+                           if (we.getText().equals("Serviced Apartment"))
+                                    we.click();
+        }
+        Thread.sleep(3000);
+        
+        
+        //Choose number of min rooms
+        if (!(getCellData(5, 10).equals("z"))) {
+            int x = Integer.parseInt(getCellData(5, 10));
+            Thread.sleep(2000);
+            for (int i = 0; i <x -1 ; i++) {
+                driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div.step > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(8) > div > div.col-md-12.col-lg-8 > span > div.counter-input-contianer > button:nth-child(3)")).click();
+                Thread.sleep(500);
+            }
+        } else {
+            driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div.step > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(8) > div > div.col-md-12.col-lg-8 > span > div.counter-input-contianer > button:nth-child(3)")).click();
+        }
+        
+        
+        Thread.sleep(3000);
+        
+        //Choose Property types
+        if (getCellData(5, 11).equals("z")) {
+            //wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div.step > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(10) > main > div > div:nth-child(3)")));
+            driver.findElement(By.xpath("//*[@id=\"__layout\"]/div/div[1]/div/div/div/div[2]/div/div[2]/div[10]/main/div/div[3]/div/span")).click();
+        } else {
+            if (getCellData(5, 11).equals("Duplex")) {
+                //wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div.step > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(10) > main > div > div:nth-child(2)")));
+                driver.findElement(By.xpath("//*[@id=\"__layout\"]/div/div[1]/div/div/div/div[2]/div/div[2]/div[10]/main/div/div[2]/div/span")).click();
+            } else {
+                //wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div.step > div > div.mt-4.step-content.pt-2.mx-auto.col-lg-6.col-12 > div:nth-child(10) > main > div > div:nth-child(5)")));
+                driver.findElement(By.xpath("//*[@id=\"__layout\"]/div/div[1]/div/div/div/div[2]/div/div[2]/div[10]/main/div/div[5]/div/span")).click();
+            }
+        }
+        
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div.step > div > div:nth-child(3) > div > div.col-7 > div > button")));
+        driver.findElement(By.cssSelector("#__layout > div > div.main-content-container > div > div > div > div.step > div > div:nth-child(3) > div > div.col-7 > div > button")).click();
+           
+        }
+       
         Thread.sleep(5000);
           for (WebElement we : driver.findElements(By.tagName("button")))
                     if (we.getText().contains("Submit your request")){
